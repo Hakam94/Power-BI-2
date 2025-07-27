@@ -65,7 +65,7 @@ RETURN
 
 ---
 
-## 🎁 BONUS – Build Everything in M (No DAX Needed)
+## 🎁 BONUS – Build Everything in M (No DAX Needed) (does not work unfortunitily!!)
 
 If you want a **pure M solution** (no measures), here's the complete code:
 
