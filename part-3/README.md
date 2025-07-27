@@ -1,27 +1,19 @@
-### 📄 `part-3/README.md`
+### 📄 Final `part-3/README.md`
 
 ````markdown
-# 📊 Part 3 – Dynamic Greeting + Refresh Timestamp in Power BI
+# 📊 Part 3 – Dynamic Greeting + Last Refresh Time in Power BI
 
-In this step, we focus on enhancing the user experience with a **personalized greeting message** and **automatic refresh time tracking**, using both **DAX** and **M (Power Query)**.
+In this part, we enhance the dashboard user experience by adding a **personalized greeting message** that includes the **last time the report was refreshed**.
 
----
-
-## ✅ Objective
-
-- Show a custom greeting (Good morning / afternoon / evening)
-- Display the exact time the report was last refreshed
-- Optionally build the entire logic using **only M code** (no DAX)
+You’ll learn how to:
+- Create a Power Query table to capture the refresh time
+- Build a DAX measure that shows a dynamic greeting message with that time
 
 ---
 
-## 🧠 DAX Approach
+## 🔁 Step 1 – Create Refresh Time Table (M Language)
 
-### 1. Create a Refresh Table in Power Query
-
-Go to Power Query Editor and create a **new blank query**. Rename it to: `Fact_RefreshTime`
-
-Paste the following:
+Start by creating a **Blank Query** in Power BI and paste the following M code:
 
 ```m
 let
@@ -39,13 +31,14 @@ in
     ChangedType
 ````
 
-### 2. DAX Measure: `Last Data Refresh Time`
+📌 Rename the query to: `Fact_RefreshTime`
+📌 This query will refresh every time the data is updated
 
-```dax
-Last Data Refresh Time = MAX(Fact_RefreshTime[LastRefreshedLocal])
-```
+---
 
-### 3. DAX Measure: `GreetingMessage`
+## ✅ Option 1 – DAX-Only (Recommended)
+
+After the M query is loaded, create this single DAX measure:
 
 ```dax
 GreetingMessage =
@@ -58,38 +51,29 @@ VAR _TimeOfDay =
         "evening"
     )
 VAR _RefreshTime =
-    FORMAT([Last Data Refresh Time], "HH:mm:ss")
+    FORMAT(MAX(Fact_RefreshTime[LastRefreshedLocal]), "HH:mm:ss")
 RETURN
     "Good " & _TimeOfDay & "! Here's the report I refreshed at " & _RefreshTime & "."
 ```
 
+✅ Add this to a Card visual to show the dynamic greeting.
+
 ---
 
-## 🎁 BONUS – Build Everything in M (No DAX Needed) (does not work unfortunitily!!)
+## 🟡 Option 2 – M Query with Wrapper DAX
 
-If you want a **pure M solution** (no measures), here's the complete code:
+If you generate the greeting directly in Power Query like this:
 
 ```m
 let
-    // Step 1: Get the current local datetime
     Now = DateTime.LocalNow(),
-
-    // Step 2: Extract hour using proper M syntax
     CurrentHour = Time.Hour(DateTime.Time(Now)),
-
-    // Step 3: Determine time of day
     TimeOfDay =
         if CurrentHour < 12 then "morning"
         else if CurrentHour < 18 then "afternoon"
         else "evening",
-
-    // Step 4: Format refresh time as HH:mm:ss
     FormattedTime = Time.ToText(DateTime.Time(Now), "HH:mm:ss"),
-
-    // Step 5: Build greeting message
     Greeting = "Good " & TimeOfDay & "! Here's the report I refreshed at " & FormattedTime & ".",
-
-    // Step 6: Return as single-row table
     Output = #table(
         {"GreetingMessage"},
         {{Greeting}}
@@ -98,22 +82,29 @@ in
     Output
 ```
 
-📌 **To use this:**
+You’ll need to wrap it with this DAX to use it in a visual:
 
-* Create a blank query
-* Paste the code above
-* Rename it to `Greeting`
-* Add a Card visual in Power BI: select `Greeting[GreetingMessage]`
-
----
-
-## ✅ Result Example:
-
-| GreetingMessage                                          |
-| -------------------------------------------------------- |
-| Good morning! Here's the report I refreshed at 08:44:13. |
+```dax
+GreetingMessage = FIRSTNONBLANK(Greeting[GreetingMessage], "")
+```
 
 ---
 
+## 🧠 Summary
 
+| Step    | Description                                                         | Required?     |
+| ------- | ------------------------------------------------------------------- | ------------- |
+| Step 1  | Create a table in Power Query with refresh datetime                 | ✅ Yes         |
+| Step 2A | Build greeting logic in DAX using `MAX(...)`                        | ✅ Recommended |
+| Step 2B | Optional: Build greeting directly in M, wrap with `FIRSTNONBLANK()` | Optional      |
+
+---
+
+## ✅ Output Example
+
+| GreetingMessage                                            |
+| ---------------------------------------------------------- |
+| Good afternoon! Here's the report I refreshed at 15:08:42. |
+
+---
 
