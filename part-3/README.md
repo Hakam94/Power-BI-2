@@ -13,7 +13,10 @@ You’ll learn how to:
 
 ## 🔁 Step 1 – Create Refresh Time Table (M Language)
 
-Start by creating a **Blank Query** in Power BI and paste the following M code:
+1. Go to **Home → Transform Data → Power Query Editor**  
+2. In Power Query, click **Home → New Source → Blank Query**  
+3. With the new Blank Query selected, go to **Home → Advanced Editor**  
+4. Paste the following M code into the Advanced Editor:
 
 ```m
 let
@@ -29,16 +32,16 @@ let
     })
 in
     ChangedType
-````
+```
 
-📌 Rename the query to: `Fact_RefreshTime`
-📌 This query will refresh every time the data is updated
+📌 Rename the query to: `Fact_RefreshTime`  
+📌 This query will refresh every time the dataset is refreshed
 
 ---
 
 ## ✅ Option 1 – DAX-Only (Recommended)
 
-After the M query is loaded, create this single DAX measure:
+After the M query is loaded, create this DAX measure:
 
 ```dax
 GreetingMessage =
@@ -56,13 +59,13 @@ RETURN
     "Good " & _TimeOfDay & "! Here's the report I refreshed at " & _RefreshTime & "."
 ```
 
-✅ Add this to a Card visual to show the dynamic greeting.
+✅ Place this measure inside a **Card visual** to show the dynamic greeting.
 
 ---
 
 ## 🟡 Option 2 – M Query with Wrapper DAX
 
-If you generate the greeting directly in Power Query like this:
+If you prefer to generate the greeting **directly in Power Query**, use this M code in the Advanced Editor of a Blank Query:
 
 ```m
 let
@@ -82,7 +85,9 @@ in
     Output
 ```
 
-You’ll need to wrap it with this DAX to use it in a visual:
+📌 Rename this query to **Greeting**  
+
+Then create a simple DAX measure to show it in a visual:
 
 ```dax
 GreetingMessage = FIRSTNONBLANK(Greeting[GreetingMessage], "")
@@ -107,4 +112,4 @@ GreetingMessage = FIRSTNONBLANK(Greeting[GreetingMessage], "")
 | Good afternoon! Here's the report I refreshed at 15:08:42. |
 
 ---
-
+````
