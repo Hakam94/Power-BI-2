@@ -115,7 +115,7 @@ FORMAT(MAX(RefreshInfo[RefreshedAtUTC]), "yyyy-MM-dd HH:mm:ss") & " UTC"
 
 ## 📹 Video Reference
 
-👉 Full video walkthrough: **[YouTube Part 3: Power BI Row-Level Security (RLS) Tutorial]([https://youtu.be/YOUR-LINK-HERE](https://youtu.be/ysnD_-scwhg))**
+👉 Full video walkthrough: [[**[YouTube Part 3: Power BI Row-Level Security (RLS) Tutorial]([https://youtu.be/YOUR-LINK-HERE](https://youtu.be/ysnD_-scwhg))**](https://youtu.be/ysnD_-scwhg)](https://youtu.be/ysnD_-scwhg)
 
 ---
 
