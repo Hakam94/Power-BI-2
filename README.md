@@ -9,8 +9,10 @@ In these step-by-step videos, you’ll learn to build a complete, interactive da
   Follow along as we import raw coffee-shop sales data, clean it, and create your first visuals. ([YouTube][1])
 * **Part 2 – Build Power BI Project | Coffee Shop Sales Dashboard Part 2**
   Dive into DAX: calculating metrics like Profit, Price, MoM Growth, and enhancing interactivity. ([YouTube][2])
-
-📌 **Part 3** is in progress — get ready for design improvements, dynamic greeting messages, refresh timestamps, and more!
+* **Part 3 – Dynamic Greeting, Refresh Timestamps & Row-Level Security (RLS)**
+  Personalize your dashboard with dynamic greetings, display refresh timestamps, and configure dynamic RLS filters. ([YouTube][3])
+* **Part 4 – Field Parameters | The Smart Dashboard Technique**
+  Use Field Parameters to build a flexible, user-driven dashboard that switches dimensions and measures dynamically. ([YouTube][4])
 
 ---
 
@@ -21,7 +23,9 @@ Power-BI-CoffeeShop/
 │
 ├── part-1/        # Dataset, .pbix file & notes from Video Part 1
 ├── part-2/        # DAX measures and enhancements from Part 2
-├── part-3/        # Upcoming: polished layout, KPIs, greeting logic
+├── part-3/        # Dynamic greeting, refresh timestamps & layout
+├── Part-3N/       # Row-Level Security (RLS) implementation
+├── part-4/        # Field Parameters & Smart Dashboard Technique
 ├── shared/        # Reusable M & DAX code snippets used across parts
 └── README.md      # You're here: overview of all parts
 ```
@@ -32,9 +36,10 @@ Power-BI-CoffeeShop/
 
 | Part                    | What’s Covered                                                                                                                                         |
 | ----------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| **Part 1**              | Import and clean raw coffee shop sales data, build your first Power BI visuals, set up the initial layout. ([YouTube][3], [YouTube][1])                |
+| **Part 1**              | Import and clean raw coffee shop sales data, build your first Power BI visuals, set up the initial layout. ([YouTube][1])                              |
 | **Part 2**              | Create calculated measures (Profit, Price, MoM Growth, etc.), enhance interactivity with slicers and KPIs, improve data modeling. ([YouTube][2])       |
-| **Part 3** *(Upcoming)* | Work on design polish, greeting message logic (time-of-day), display refresh timestamp, professional dashboard UI, optionally using pure M code logic. |
+| **Part 3**              | Implement time-of-day greeting logic, show local and UTC refresh timestamps, and apply dynamic Row-Level Security (RLS). ([YouTube][3])                |
+| **Part 4**              | Set up Field Parameters to allow users to toggle dimensions and measures dynamically in report visuals. ([YouTube][4])                                 |
 
 ---
 
@@ -72,3 +77,8 @@ Created by **Hakam Data Studio** — powered by real-world coffee shop sales dat
 Reach out on LinkedIn or GitHub for questions or collaboration
 
 ---
+
+[1]: https://www.youtube.com/watch?v=E5IwVrO7bvk
+[2]: https://www.youtube.com/watch?v=mXn-_VGXMsI
+[3]: https://youtu.be/ysnD_-scwhg
+[4]: https://youtu.be/81GNe3HosF4
