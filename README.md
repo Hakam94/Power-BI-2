@@ -13,6 +13,8 @@ In these step-by-step videos, you’ll learn to build a complete, interactive da
   Personalize your dashboard with dynamic greetings, display refresh timestamps, and configure dynamic RLS filters. ([YouTube][3])
 * **Part 4 – Field Parameters | The Smart Dashboard Technique**
   Use Field Parameters to build a flexible, user-driven dashboard that switches dimensions and measures dynamically. ([YouTube][4])
+* **Part 5 – Dashboard Design Basics | Clean Layout, Themes & UX Tips**
+  Learn dashboard design fundamentals, aligning visuals, formatting themes, and structuring containers for a professional layout. ([YouTube][5])
 
 ---
 
@@ -26,6 +28,7 @@ Power-BI-CoffeeShop/
 ├── part-3/        # Dynamic greeting, refresh timestamps & layout
 ├── Part-3N/       # Row-Level Security (RLS) implementation
 ├── part-4/        # Field Parameters & Smart Dashboard Technique
+├── part-5/        # Dashboard design, layouts, themes & UX tips
 ├── shared/        # Reusable M & DAX code snippets used across parts
 └── README.md      # You're here: overview of all parts
 ```
@@ -40,6 +43,7 @@ Power-BI-CoffeeShop/
 | **Part 2**              | Create calculated measures (Profit, Price, MoM Growth, etc.), enhance interactivity with slicers and KPIs, improve data modeling. ([YouTube][2])       |
 | **Part 3**              | Implement time-of-day greeting logic, show local and UTC refresh timestamps, and apply dynamic Row-Level Security (RLS). ([YouTube][3])                |
 | **Part 4**              | Set up Field Parameters to allow users to toggle dimensions and measures dynamically in report visuals. ([YouTube][4])                                 |
+| **Part 5**              | Apply professional design principles: layout grid spacing, alignment, custom themes, and container groupings for clean UX. ([YouTube][5])              |
 
 ---
 
@@ -82,3 +86,4 @@ Reach out on LinkedIn or GitHub for questions or collaboration
 [2]: https://www.youtube.com/watch?v=mXn-_VGXMsI
 [3]: https://youtu.be/ysnD_-scwhg
 [4]: https://youtu.be/81GNe3HosF4
+[5]: https://www.youtube.com/watch?v=kYJ_tXnZ9c8

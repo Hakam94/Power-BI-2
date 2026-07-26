@@ -37,7 +37,6 @@ Drag the newly created Field Parameter field to the **X-axis** (for dynamic dime
 
 ## 📂 Files Included
 
-*(Note: Files will be updated soon. Please request the `.pbix` and `.xlsx` files if needed)*
-
-* `CoffeeShop_Sales_v4.xlsx` (Dataset)
-* `Café-part 4_smart_dashboard.pbix` (Power BI Project File)
+* `Café-part 4_AND_5_field parameter_test2.pbix` — Power BI Project File (Field Parameters)
+* `CoffeeShop_Sales_v3.xlsx` — Coffee Shop Sales dataset
+* `RLS_Tables.xlsx` — User access mappings and Store dimension tables
