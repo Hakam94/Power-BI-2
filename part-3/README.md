@@ -1,11 +1,29 @@
-# 📊 Power BI Row-Level Security (RLS) – Part 3 of Coffee Shop Series
+# 📊 Part 3 – Dynamic Greeting, Refresh Timestamps & Row-Level Security (RLS)
 
-This project is Part 3 of the **Hakam Data Studio Power BI Series**.
-In this episode, we implement **Dynamic Row-Level Security (RLS)** in Power BI so each store manager can only view **their store’s data**, while the general manager can view **all stores**—without creating multiple reports.
+This is **Part 3** of the **Hakam Data Studio Coffee Shop Sales Dashboard Series**.
+In this episode, we enhance the dashboard with **personalized features** and **Row-Level Security (RLS)** to ensure each store manager can only view **their store's data**, while the general manager can view **all stores**—without creating multiple reports.
 
 ---
 
-## 🎯 Objective
+## 🎯 What You'll Learn in Part 3
+
+In Part 3, you'll:
+* **Create dynamic greetings** that change based on time of day (Good Morning, Good Afternoon, etc.)
+* **Display refresh timestamps** to show when data was last updated (local and UTC)
+* **Implement Row-Level Security (RLS)** for granular data access control
+* **Use DAX to personalize** the dashboard experience based on logged-in user
+* **Understand bridge tables** to handle many-to-many relationships safely
+* **Test RLS** in both Power BI Desktop and Power BI Service
+
+---
+
+## 🔗 Video Reference
+
+📺 [Dynamic Greeting, Refresh Timestamps & Row-Level Security (RLS)](https://youtu.be/ysnD_-scwhg)
+
+---
+
+## 🎯 Part 3 Objectives
 
 * Implement **Dynamic RLS** using `USERPRINCIPALNAME()`
 * Show how to avoid **many-to-many relationships** by using a **bridge table**
