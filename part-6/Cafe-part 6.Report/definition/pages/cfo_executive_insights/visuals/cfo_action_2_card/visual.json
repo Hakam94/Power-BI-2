@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "cfo_action_2_card",
+  "position": {
+    "x": 450,
+    "y": 95,
+    "z": 3000,
+    "height": 180,
+    "width": 380,
+    "tabOrder": 300
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "📈 ACTION 2: Premium Price Tiering\n\n",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI, sans-serif",
+                      "fontSize": "11pt",
+                      "fontWeight": "bold",
+                      "color": "#39FF14"
+                    }
+                  },
+                  {
+                    "value": "Evidence: Premium items yield average revenue of $5.70/unit. Repricing Standard tier items upwards by +5% yields $4.2K net monthly gain.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI, sans-serif",
+                      "fontSize": "10pt",
+                      "color": "#FFFFFF"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

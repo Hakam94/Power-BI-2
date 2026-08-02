@@ -1,0 +1,14 @@
+relationship 9f136e93-2dad-4ba3-d411-a24d7b003957
+	fromColumn: Sheet1.Date
+	toColumn: Dates.Date
+
+relationship 13b84d91-6335-7396-1a42-95371642e1d3
+	fromColumn: Sheet1.Store
+	toColumn: Stores.Store
+
+relationship 249eed18-9b96-db61-b2b0-ff43d92e2762
+	crossFilteringBehavior: bothDirections
+	securityFilteringBehavior: bothDirections
+	fromColumn: Managers_WithStore.Store
+	toColumn: Stores.Store
+

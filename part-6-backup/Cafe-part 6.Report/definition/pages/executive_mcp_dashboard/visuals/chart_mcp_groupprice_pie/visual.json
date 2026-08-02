@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "chart_mcp_groupprice_pie",
+  "position": { "x": 450, "y": 115, "z": 8000, "height": 360, "width": 380, "tabOrder": 800 },
+  "visual": {
+    "visualType": "pieChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "GroupPrice" } },
+              "queryRef": "Sheet1.GroupPrice",
+              "nativeQueryRef": "GroupPrice",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "Total Revenue" } },
+              "queryRef": "Sheet1.Total Revenue",
+              "nativeQueryRef": "Total Revenue"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

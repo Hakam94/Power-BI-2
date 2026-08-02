@@ -1,0 +1,32 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "chart_mcp_cups_time",
+  "position": { "x": 450, "y": 490, "z": 11000, "height": 360, "width": 380, "tabOrder": 1100 },
+  "visual": {
+    "visualType": "areaChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": { "Column": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "Time_of_Day" } },
+              "queryRef": "Sheet1.Time_of_Day",
+              "nativeQueryRef": "Time_of_Day",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "Total Cups Sold" } },
+              "queryRef": "Sheet1.Total Cups Sold",
+              "nativeQueryRef": "Total Cups Sold"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

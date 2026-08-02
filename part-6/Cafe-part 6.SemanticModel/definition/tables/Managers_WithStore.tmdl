@@ -1,0 +1,35 @@
+table Managers_WithStore
+	lineageTag: a9bc7417-9f1b-4b4d-acf2-7c0aa918e1a2
+
+	column Store
+		dataType: string
+		lineageTag: 0d87f73d-9a1e-4701-90ce-f64794b855e2
+		summarizeBy: none
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+	column UserEmail
+		dataType: string
+		lineageTag: 19b54d5b-ac1e-40ec-bb88-a54d913e0456
+		summarizeBy: none
+		sourceColumn: UserEmail
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Managers_WithStore = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\z004mbcw\.gemini\antigravity\scratch\Power-BI-2\part-6\RLS_Tables.xlsx"), null, true),
+				    User_Access_Sheet = Source{[Item="User_Access",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(User_Access_Sheet,{{"Column1", type text}, {"Column2", type text}}),
+				    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"UserEmail", type text}, {"Store", type text}})
+				in
+				    #"Changed Type1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

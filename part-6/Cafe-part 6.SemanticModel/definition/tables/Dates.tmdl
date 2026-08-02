@@ -1,0 +1,62 @@
+table Dates
+	lineageTag: ffbab55f-fd6d-4e41-b6f4-3de32bfd3a34
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: Short Date
+		lineageTag: 94f5fea1-6468-4683-8c4e-447243c4fa05
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: 3d7ddd1f-ec05-423b-b413-221fca89136d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNum
+		formatString: 0
+		lineageTag: 1f0992e1-ce79-4b8c-ae8c-94be680ecaea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNum]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		lineageTag: 0f994ede-a515-41af-95fc-5e18aa18e76d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthName]
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearMonth
+		lineageTag: 8b03a6f1-9792-49e1-b82c-431e108e7182
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [YearMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dates = calculated
+		mode: import
+		source =
+				
+				ADDCOLUMNS(
+				    CALENDARAUTO(),
+				    "Year",YEAR([Date]),
+				    "MonthNum",MONTH([Date]),
+				    "MonthName",FORMAT([Date],"MMMM"),
+				    "YearMonth",FORMAT([Date],"YYYY-MM")
+				)
+
+	annotation PBI_Id = 4c00cbf886584e9b84bb5ba4f17485c5
+

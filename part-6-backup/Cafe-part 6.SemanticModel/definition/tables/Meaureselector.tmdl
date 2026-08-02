@@ -1,0 +1,49 @@
+table Meaureselector
+	lineageTag: 4e6c111d-b70a-4041-952c-f1796626af7a
+
+	column Meaureselector
+		lineageTag: ee8b8037-ab5d-4d87-9b1a-3231da72044e
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'Meaureselector Order'
+
+		relatedColumnDetails
+			groupByColumn: 'Meaureselector Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Meaureselector Fields'
+		isHidden
+		lineageTag: 35afcdfe-9d93-4aed-9e19-37258d35a622
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'Meaureselector Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Meaureselector Order'
+		isHidden
+		formatString: 0
+		lineageTag: b19a0e39-51dd-4c13-938c-1c4a858f959b
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Meaureselector = calculated
+		mode: import
+		source =
+				{
+				    ("Profit", NAMEOF('Sheet1'[Profit]), 0),
+				    ("Contribution margin %", NAMEOF('Sheet1'[Contribution margin %]), 1),
+				    ("Revenue", NAMEOF([Revenue1]), 2)
+				}
+
+	annotation PBI_Id = c4de4d41f5274bb880b3f17b4c12d459
+
