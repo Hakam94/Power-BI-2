@@ -1,7 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "kpi_mcp_stores",
-  "position": { "x": 1040, "y": 20, "z": 6000, "height": 75, "width": 180, "tabOrder": 600 },
+  "position": {
+    "x": 1040,
+    "y": 20,
+    "z": 6000,
+    "height": 75,
+    "width": 180,
+    "tabOrder": 600
+  },
   "visual": {
     "visualType": "card",
     "query": {
@@ -12,7 +19,14 @@
               "field": {
                 "Aggregation": {
                   "Expression": {
-                    "Column": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "Store" }
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "Sheet1"
+                        }
+                      },
+                      "Property": "Store"
+                    }
                   },
                   "Function": 4
                 }

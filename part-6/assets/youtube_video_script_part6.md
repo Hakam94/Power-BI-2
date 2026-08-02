@@ -1,14 +1,14 @@
-# 🎬 High-Retention Storytelling YouTube Script — Part 6
+# 🎬 High-Retention Problem-Hook YouTube Script — Part 6
 **Channel**: `@HakamDataStudio`  
 **Video Length**: ~15 Minutes  
 **Series**: Coffee Shop Sales Analytics (Part 6)  
-**Storytelling Theme**: *"From Frown Errors & Radioactive Green Disasters to AI Dashboard Victory"*  
+**Hook Strategy**: Aggressive Pain-Point Attack -> Mind-Blowing Solution -> Open Loop Curiosity Gap  
 
 ---
 
 ## ⏱️ Video Chapters & Narrative Arc
-- **00:00 - 00:25**: 💥 20-Second High-Impact Hook (Live AI Build + Crash Teaser)
-- **00:25 - 01:45**: 📌 Welcome Back & The Big Promise of Part 6
+- **00:00 - 00:25**: 💥 AGGRESSIVE PAIN-POINT HOOK (Stop Wasting Hours in Power BI!)
+- **00:25 - 01:45**: 📌 Welcome Back & What Makes Part 6 Different
 - **01:45 - 03:50**: ⚡ Step 1: PBIR & TMDL — Opening the Hood of Power BI
 - **03:50 - 06:30**: ⚙️ Step 2: 4-Step Guide — Connecting Power BI MCP to Antigravity AI
 - **06:30 - 09:30**: 💥 Step 3: THE DISASTER! (Frown Errors & The Radioactive Green Page)
@@ -20,11 +20,15 @@
 
 ## 🎬 Full Storytelling 15-Minute Video Script
 
-### 💥 00:00 - 00:25 | 20-Second High-Impact Hook
-> **[VISUAL ON SCREEN]**: High-energy intro cuts showing Hakam on screen, flashing between a Power BI Frown Error crash screen, a radioactive bright green dashboard disaster, and finally a stunning dark emerald 3-page executive dashboard.
+### 💥 00:00 - 00:25 | Aggressive Pain-Point Hook (High Retention)
+> **[VISUAL ON SCREEN]**: Rapid high-contrast visual cuts. Hakam standing in his beige suit pointing to a glowing laptop running Power BI, showing a tedious manual drag-and-drop workflow dissolving into a live AI prompt automatically generating a pristine 3-page executive dashboard.
 >
 > **HAKAM (SPEAKER)**:  
-> *"What happens when you let an AI coding agent build your Power BI reports? You get incredible 3-page executive dashboards... but you also get **Power BI crash screens and radioactive green disasters** if you don't do it right! Welcome back to **Part 6** of our Coffee Shop Analytics series. Today, I'm showing you the real, unfiltered story of connecting **Power BI MCP to Antigravity AI**. Let’s jump in!"*
+> *"Are you still wasting 3 to 4 hours clicking around in Power BI Desktop, manually dragging visual containers, and writing DAX measures line by line — only for a single misclick to break your entire `.pbix` report? Stop doing that right now!  
+> 
+> What if you could connect an AI coding agent directly to your Power BI data model, and let it build 3-page executive dashboards, calculate CFO profit margins, and auto-fix schema errors in under 30 seconds?  
+> 
+> Welcome back to **Part 6** of our Coffee Shop Analytics series. Today, I'm showing you the exact step-by-step setup to connect **Power BI MCP to Antigravity AI**. But watch carefully — because one wrong encoding setting will throw a fatal crash error that destroys your entire report layout! Let’s jump straight in!"*
 
 ---
 

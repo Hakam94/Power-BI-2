@@ -1,7 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "kpi_mcp_profit",
-  "position": { "x": 240, "y": 20, "z": 2000, "height": 75, "width": 180, "tabOrder": 200 },
+  "position": {
+    "x": 240,
+    "y": 20,
+    "z": 2000,
+    "height": 75,
+    "width": 180,
+    "tabOrder": 200
+  },
   "visual": {
     "visualType": "card",
     "query": {
@@ -9,7 +16,16 @@
         "Fields": {
           "projections": [
             {
-              "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "Profit" } },
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sheet1"
+                    }
+                  },
+                  "Property": "Profit"
+                }
+              },
               "queryRef": "Sheet1.Profit",
               "nativeQueryRef": "Profit"
             }

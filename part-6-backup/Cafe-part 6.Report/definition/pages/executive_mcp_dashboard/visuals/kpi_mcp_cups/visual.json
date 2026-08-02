@@ -1,7 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
   "name": "kpi_mcp_cups",
-  "position": { "x": 440, "y": 20, "z": 3000, "height": 75, "width": 180, "tabOrder": 300 },
+  "position": {
+    "x": 440,
+    "y": 20,
+    "z": 3000,
+    "height": 75,
+    "width": 180,
+    "tabOrder": 300
+  },
   "visual": {
     "visualType": "card",
     "query": {
@@ -9,7 +16,16 @@
         "Fields": {
           "projections": [
             {
-              "field": { "Measure": { "Expression": { "SourceRef": { "Entity": "Sheet1" } }, "Property": "Total Cups Sold" } },
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Sheet1"
+                    }
+                  },
+                  "Property": "Total Cups Sold"
+                }
+              },
               "queryRef": "Sheet1.Total Cups Sold",
               "nativeQueryRef": "Total Cups Sold"
             }
