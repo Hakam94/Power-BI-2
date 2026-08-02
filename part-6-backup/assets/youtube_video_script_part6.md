@@ -1,71 +1,77 @@
-# 🎬 Masterclass Prompting & Setup YouTube Script — Part 6
+# 🎬 High-Impact Problem Hook & Tool Comparison YouTube Script — Part 6
 **Channel**: `@HakamDataStudio`  
 **Video Length**: ~15 Minutes  
 **Series**: Coffee Shop Sales Analytics (Part 6)  
-**Core Focus**: Efficient AI Prompting, Power BI MCP Configuration, & Live Testing Walkthrough  
+**Core Narrative**: Aggressive Problem Hook -> Why Antigravity Beats Paywalled Tools -> Power BI MCP Masterclass  
 
 ---
 
 ## ⏱️ Video Chapters & Timestamp Overview
-- **00:00 - 00:25**: 💥 20-Second High-Impact Problem Hook
-- **00:25 - 01:45**: 📌 Welcome Back & What Makes Part 6 Different
-- **01:45 - 03:50**: ⚡ Step 1: PBIR & TMDL Developer Mode Architecture
-- **03:50 - 07:00**: ⚙️ Step 2: Masterclass Prompting — Configuring Power BI MCP in Antigravity
-- **07:00 - 10:15**: 🧮 Step 3: Prompting DAX Modeling & TMDL Measures
-- **10:15 - 13:00**: 📊 Step 4: Generating the CFO Action Plan & Executive MCP Dashboard
-- **13:00 - 14:15**: 🎨 Step 5: The Screenshot Theme Trick & Testing the Report Live
-- **14:15 - 15:00**: 🚀 Step 6: Outro, Free Asset Downloads & Community Q&A
+- **00:00 - 00:30**: 💥 AGGRESSIVE PROBLEM HOOK (The Real Power BI & AI Tool Pain Point)
+- **00:30 - 02:00**: ⚡ Why Antigravity AI? (Free Testing vs. Claude Code & OpenAI Codex Paywalls)
+- **02:00 - 04:00**: 📌 Step 1: PBIR & TMDL Developer Mode Architecture
+- **04:00 - 07:15**: ⚙️ Step 2: 4-Step Setup Guide — Connecting Power BI MCP in Antigravity
+- **07:15 - 10:30**: 🧮 Step 3: Masterclass Prompting — DAX Modeling & TMDL Measures
+- **10:30 - 13:15**: 📊 Step 4: Generating the CFO Action Plan & Executive MCP Dashboard
+- **13:15 - 14:15**: 🎨 Step 5: The Thumbnail Screenshot Theme Trick & Live Testing
+- **14:15 - 15:00**: 🚀 Step 6: Final Victory, Outro & Free Code Downloads
 
 ---
 
-## 🎬 Full Masterclass 15-Minute Video Script
+## 🎬 Full Storytelling & Comparison 15-Minute Video Script
 
-### 💥 00:00 - 00:25 | 20-Second High-Impact Problem Hook
+### 💥 00:00 - 00:30 | Aggressive Problem Hook (Real Developer Pain Point)
 > **[VISUAL ON SCREEN]**: Rapid visual cuts. Hakam standing in his beige suit pointing to a glowing laptop running Power BI, showing a manual drag-and-drop workflow dissolving into a live AI prompt automatically generating a 3-page executive dashboard.
 >
 > **HAKAM (SPEAKER)**:  
-> *"Are you still wasting 3 to 4 hours clicking around in Power BI Desktop, manually dragging visual containers, and writing DAX measures line by line? Stop doing that right now!  
+> *"Are you tired of wasting hours clicking around in Power BI Desktop, manually formatting DAX measures, and praying your `.pbix` file doesn't corrupt? And when you try using AI coding assistants, you hit paywalls before you can even test your code!  
 > 
-> What if you could write a single prompt to an AI coding agent, and let it configure your Power BI data model, build 3-page executive dashboards, and calculate CFO profit margins in seconds?  
+> What if you could use a powerful, free agentic AI tool to connect directly to your Power BI data model, build multi-page executive dashboards, and calculate CFO profit margins in seconds?  
 > 
-> Welcome back to **Part 6** of our Coffee Shop Analytics series. Today, I'm showing you the exact masterclass prompting guide to connect **Power BI MCP to Antigravity AI** and test it live. Let’s jump straight in!"*
+> Welcome back to **Part 6** of our Coffee Shop Analytics series! Today, we are connecting **Power BI MCP to Antigravity AI**. Let’s jump straight in!"*
 
 ---
 
-### 📌 00:25 - 01:45 | Welcome Back & What Makes Part 6 Different
-> **[VISUAL ON SCREEN]**: B-roll recap of Parts 1–5 showing dataset matrices and KPI cards.
+### ⚡ 00:30 - 02:00 | Why Antigravity AI? (Comparing Antigravity vs Claude Code & Codex)
+> **[VISUAL ON SCREEN]**: On-screen comparison graphic showing Antigravity AI vs Claude Code vs OpenAI Codex.
 >
 > **HAKAM (SPEAKER)**:  
-> *"Welcome back to `@HakamDataStudio`! In Parts 1 through 5, we built standard DAX measures and matrix tables manually.  
+> *"Now, why are we using **Antigravity AI** instead of other AI coding tools? Let's talk about the real developer experience:  
 > 
-> But today in Part 6, we are unlocking full AI automation. We will look at how to structure your prompts so Antigravity AI configures the **Model Context Protocol (MCP)**, edits your Power BI project files (`.pbip`), and builds complete multi-page reports automatically."*
+> 1. ❌ **Claude Code**: Requires immediate paid API credits or upfront subscriptions just to try basic code tasks on your machine.  
+> 2. ❌ **OpenAI Codex / ChatGPT**: Extremely strict rate limits, token caps, and rigid file access.  
+> 3. ✅ **Antigravity AI (by Google DeepMind)**: Gives you a powerful, free agentic AI workspace with full chat, live terminal execution, and native MCP support — allowing you to test, build, and debug complex data engineering projects for free without hitting paywalls!  
+> 
+> That’s why Antigravity is the ultimate playground for Power BI developers."*
 
 ---
 
-### ⚡ 01:45 - 03:50 | Step 1: PBIR & TMDL Developer Mode Architecture
+### 📌 02:00 - 04:00 | Step 1: PBIR & TMDL Developer Mode Architecture
 > **[VISUAL ON SCREEN]**: Showing file explorer `.pbip` vs `.pbix`.
 >
 > **HAKAM (SPEAKER)**:  
-> *"Before we write our prompt, let's understand the architecture. Power BI Project format (`.pbip`) breaks your report into two key components:  
-> 1. **PBIR Files (`.pbir`)**: Clean JSON definitions for visual pages and containers.  
+> *"Let's look at how Power BI Developer Mode (`.pbip`) works under the hood. Standard `.pbix` files are closed binary blobs. If an AI touches a `.pbix`, it corrupts.  
+> 
+> But with `.pbip`, Power BI splits your report into two clean text components:  
+> 1. **PBIR Files (`.pbir`)**: JSON definitions for visual pages and containers.  
 > 2. **TMDL Files (`.tmdl`)**: Tabular Model Definition Language for tables and DAX measures.  
 > 
-> Because these are text files, Antigravity AI can read the schema, write DAX, and construct visual containers programmatically!"*
+> This text-based structure allows Antigravity AI to read the model schema, write DAX, and generate page visuals programmatically!"*
 
 ---
 
-### ⚙️ 03:50 - 07:00 | Step 2: Masterclass Prompting — Configuring Power BI MCP in Antigravity
-> **[VISUAL ON SCREEN]**: Hakam opening VS Code / Antigravity IDE, typing the Masterclass Prompt into the AI prompt box, and inspecting the generated `mcp_config.json`.
+### ⚙️ 04:00 - 07:15 | Step 2: 4-Step Setup Guide — Connecting Power BI MCP in Antigravity
+> **[VISUAL ON SCREEN]**: Screen recording stepping through VS Code installation -> downloading `powerbi-modeling-mcp.exe` -> prompting Antigravity AI -> inspecting `mcp_config.json`.
 >
 > **HAKAM (SPEAKER)**:  
-> *"Now, here is the core of today's video: **How to write the most efficient prompt to connect Power BI MCP to Antigravity AI**.  
+> *"Here is how you connect Power BI MCP to Antigravity AI in 4 simple steps:  
 > 
-> Instead of manually editing JSON config files, here is the exact prompt you give Antigravity AI:
+> **Step 1: Open VS Code or Antigravity IDE**. Set up your code editor workspace.  
+> **Step 2: Download Power BI MCP (`powerbi-modeling-mcp.exe`)**. Save the modeling executable in a folder on your machine.  
+> **Step 3: Prompt Antigravity AI**. Simply ask:  
+> 💬 *'Please configure my Power BI MCP modeling server using the executable at C:/path/to/powerbi-modeling-mcp.exe for workspace ./part-6.'*  
 > 
-> 💬 **MASTERCLASS PROMPT**:
-> > *'Please configure my Power BI MCP modeling server using the executable at C:/path/to/powerbi-modeling-mcp.exe for workspace ./part-6. Verify connection and inspect table schema.'*
-> 
-> When you give this prompt, Antigravity automatically creates and formats your `mcp_config.json`:
+> Antigravity automatically generates your `mcp_config.json`:
 ```json
 {
   "mcpServers": {
@@ -76,18 +82,18 @@
   }
 }
 ```
-> **Pro-Tip**: Make sure the executable command path points to where `powerbi-modeling-mcp.exe` is saved on your computer!"*
+> **Step 4: Verify Connection**. In my setup, the path points to my local folder. Make sure yours points to wherever you saved `powerbi-modeling-mcp.exe` on your machine!"*
 
 ---
 
-### 🧮 07:00 - 10:15 | Step 3: Prompting DAX Modeling & TMDL Measures
-> **[VISUAL ON SCREEN]**: Typing the DAX generation prompt into Antigravity AI, showing `Sheet1.tmdl` being updated live.
+### 🧮 07:15 - 10:30 | Step 3: Masterclass Prompting — DAX Modeling & TMDL Measures
+> **[VISUAL ON SCREEN]**: Typing the DAX prompt into Antigravity AI, showing `Sheet1.tmdl` being updated live.
 >
 > **HAKAM (SPEAKER)**:  
-> *"Now, let's prompt the AI to write our core DAX measures. Here is how you prompt Antigravity for DAX:
+> *"Now let's prompt the AI to write our DAX measures:  
 > 
-> 💬 **DAX GENERATION PROMPT**:
-> > *'In Sheet1.tmdl, create DAX measures for Total Revenue, Total Profit, and Profit Margin % formatted as 0.00%. Save all files strictly in UTF-8 without BOM.'*
+> 💬 **DAX PROMPT**:
+> > *'In Sheet1.tmdl, create DAX measures for Total Revenue, Total Profit, and Profit Margin % formatted as 0.00%. Save all files strictly in UTF-8 without BOM.'*  
 > 
 > Watch how Antigravity updates `Sheet1.tmdl` instantly:
 ```dax
@@ -100,18 +106,18 @@ measure 'Profit' = SUM(Sheet1[Profit1])
 measure 'Profit Margin %' = DIVIDE([Profit], [Total Revenue], 0)
   formatString: 0.00%
 ```
-> Notice how the prompt explicitly specifies **UTF-8 without BOM** formatting so your files load smoothly without any encoding errors!"*
+> Notice how the prompt explicitly specifies **UTF-8 without BOM** formatting so your files load smoothly without any encoding crashes!"*
 
 ---
 
-### 📊 10:15 - 13:00 | Step 4: Generating the CFO Action Plan & Executive MCP Dashboard
+### 📊 10:30 - 13:15 | Step 4: Generating the CFO Action Plan & Executive MCP Dashboard
 > **[VISUAL ON SCREEN]**: Antigravity creating Page 2 (`cfo_executive_insights`) and Page 3 (`executive_mcp_dashboard`).
 >
 > **HAKAM (SPEAKER)**:  
-> *"Next, let's prompt the AI to generate our report pages:
+> *"Next, let's prompt the AI to generate our report pages:  
 > 
-> 💬 **DASHBOARD GENERATION PROMPT**:
-> > *'Build Page 2 CFO Executive Action Plan featuring cards with data evidence showing Espresso at 66.67% profit margin and +12.4% EBITDA growth. Then build Page 3 Executive MCP Dashboard with a 6-KPI header and a 6-chart grid layout.'*
+> 💬 **DASHBOARD PROMPT**:
+> > *'Build Page 2 CFO Executive Action Plan featuring cards with data evidence showing Espresso at 66.67% profit margin and +12.4% EBITDA growth. Then build Page 3 Executive MCP Dashboard with a 6-KPI header and a 6-chart grid layout.'*  
 > 
 > Let's look at the data evidence on Page 2:  
 > - **EBITDA** is Earnings Before Interest, Taxes, Depreciation, and Amortization (Total Revenue minus Operating Costs).  
@@ -120,7 +126,7 @@ measure 'Profit Margin %' = DIVIDE([Profit], [Total Revenue], 0)
 
 ---
 
-### 🎨 13:00 - 14:15 | Step 5: The Screenshot Theme Trick & Testing the Report Live
+### 🎨 13:15 - 14:15 | Step 5: The Screenshot Theme Trick & Testing Live
 > **[VISUAL ON SCREEN]**: Opening `Cafe-part 6.pbip` in Power BI Desktop to test all 3 pages live.
 >
 > **HAKAM (SPEAKER)**:  
@@ -132,7 +138,7 @@ measure 'Profit Margin %' = DIVIDE([Profit], [Total Revenue], 0)
 
 ---
 
-### 🚀 14:15 - 15:00 | Step 6: Outro, Free Asset Downloads & Community Q&A
+### 🚀 14:15 - 15:00 | Step 6: Final Victory, Outro & Free Asset Downloads
 > **[VISUAL ON SCREEN]**: Hakam on camera showing the final 3-page dashboard, with links to GitHub and asset packages.
 >
 > **HAKAM (SPEAKER)**:  
