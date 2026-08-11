@@ -1,5 +1,6 @@
 """
 Generate PowerPoint presentation for Hakam Data Studio
+With embedded architecture diagrams (generated from Microsoft official concepts)
 Topic: Agentic AI for Power BI - Arabic with English terms in parentheses
 Brand Colors: Cyber Slate #0D2229 | Lime Green #BFFF00 | Electric Cyan #00D2FF
 """
@@ -10,6 +11,9 @@ from pptx.dml.color import RGBColor
 from pptx.enum.text import PP_ALIGN
 from pptx.util import Inches, Pt
 import os
+from pathlib import Path
+
+SCRIPT_DIR = Path(__file__).parent
 
 # ─── Brand Colors ───────────────────────────────────────────────
 BG_DARK       = RGBColor(0x0D, 0x22, 0x29)   # Cyber Slate
@@ -26,6 +30,18 @@ prs.slide_width  = SLIDE_W
 prs.slide_height = SLIDE_H
 
 blank_layout = prs.slide_layouts[6]  # Completely blank
+
+
+def add_image(slide, img_filename, left, top, width, height=None):
+    """Add image from script directory if it exists."""
+    img_path = SCRIPT_DIR / img_filename
+    if img_path.exists():
+        if height:
+            slide.shapes.add_picture(str(img_path), left, top, width, height)
+        else:
+            slide.shapes.add_picture(str(img_path), left, top, width)
+    else:
+        print(f"[WARN] Image not found: {img_path}")
 
 
 def set_bg(slide, color=BG_DARK):
@@ -198,6 +214,12 @@ for title, year, desc, color, left in eras:
     add_textbox(slide, desc, left, Inches(3.4), Inches(4.1), Inches(2.3),
                 font_size=16, color=WHITE, align=PP_ALIGN.CENTER, rtl=True)
 
+# Embed Agentic Stack Architecture diagram below the era cards
+add_image(slide,
+    "agentic_stack_diagram.png",
+    Inches(0.4), Inches(5.85),
+    Inches(12.5), Inches(1.45))
+
 add_logo_placeholder(slide)
 add_slide_number(slide, 2)
 
@@ -289,6 +311,12 @@ add_textbox(slide, '✦  تكتب جملة أو تحط لقطة شاشة  (Scree
     Inches(0.6), Inches(6.05), Inches(12.1), Inches(0.7),
     font_size=18, bold=True, color=LIME_GREEN)
 
+# Embed Agent Skills workflow diagram
+add_image(slide,
+    "agent_skills_workflow.png",
+    Inches(0.4), Inches(1.38),
+    Inches(12.5), Inches(4.4))
+
 add_logo_placeholder(slide)
 add_slide_number(slide, 4)
 
@@ -372,6 +400,12 @@ for title, desc, color, left in servers:
     add_textbox(slide, desc, left + Inches(0.2), Inches(3.85), Inches(5.8), Inches(3.1),
                 font_size=13, color=WHITE, align=PP_ALIGN.RIGHT, rtl=True)
 
+# Embed MCP architecture diagram
+add_image(slide,
+    "mcp_architecture_diagram.png",
+    Inches(0.4), Inches(1.38),
+    Inches(12.5), Inches(5.0))
+
 add_logo_placeholder(slide)
 add_slide_number(slide, 6)
 
@@ -414,6 +448,12 @@ add_textbox(slide,
     "✦  الوكلاء يشتغلون على نفس فهم الأعمال — بدون تخمينات أو أخطاء  (Governed & Trusted AI)",
     Inches(0.6), Inches(6.65), Inches(12.1), Inches(0.5),
     font_size=16, bold=True, color=LIME_GREEN)
+
+# Embed Fabric IQ ecosystem diagram
+add_image(slide,
+    "fabric_iq_ecosystem.png",
+    Inches(0.4), Inches(1.38),
+    Inches(12.5), Inches(5.0))
 
 add_logo_placeholder(slide)
 add_slide_number(slide, 7)
