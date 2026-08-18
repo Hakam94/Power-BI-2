@@ -34,6 +34,14 @@ export function InstagramIcon({ className = "w-5 h-5", ...props }) {
   );
 }
 
+export function TiktokIcon({ className = "w-5 h-5", ...props }) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="currentColor" {...props}>
+      <path d="M16.6 5.82c-1.12-1.08-1.67-2.64-1.75-4.17H11.5v13.68c0 1.7-1.38 3.08-3.08 3.08s-3.08-1.38-3.08-3.08 1.38-3.08 3.08-3.08c.31 0 .61.05.89.13v-3.5a6.6 6.6 0 0 0-.89-.06c-3.63 0-6.58 2.95-6.58 6.58s2.95 6.58 6.58 6.58 6.58-2.95 6.58-6.58V8.6a8.32 8.32 0 0 0 4.86 1.56V6.66c-.85 0-1.65-.31-2.26-.84z"/>
+    </svg>
+  );
+}
+
 export function FacebookIcon({ className = "w-5 h-5", ...props }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="currentColor" {...props}>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Eye, Globe2, Video, TrendingUp, Sparkles } from 'lucide-react';
-import { YoutubeIcon } from './BrandIcons';
+import { Users2, Share2, TrendingUp } from 'lucide-react';
 
 function CounterItem({ icon: Icon, target, label, suffix, color }) {
   const [count, setCount] = useState(0);
@@ -58,38 +57,24 @@ export default function StatsSection() {
             Global Analytics Reach
           </h2>
           <p className="text-gray-400 text-base sm:text-lg">
-            Empowering thousands of business analysts, SQL engineers, and BI professionals worldwide.
+            Empowering business analysts, SQL engineers, and BI professionals worldwide.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          <CounterItem 
-            icon={YoutubeIcon} 
-            target={50000} 
-            suffix="+" 
-            label="YouTube Subscribers" 
-            color="#FF0000" 
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-2xl mx-auto">
+          <CounterItem
+            icon={Users2}
+            target={5000}
+            suffix="+"
+            label="Community Members Across Social Media"
+            color="#F2C811"
           />
-          <CounterItem 
-            icon={Eye} 
-            target={2500000} 
-            suffix="+" 
-            label="Total Tutorial Views" 
-            color="#F2C811" 
-          />
-          <CounterItem 
-            icon={Globe2} 
-            target={120} 
-            suffix="+" 
-            label="Countries Reached" 
-            color="#00D2FF" 
-          />
-          <CounterItem 
-            icon={Video} 
-            target={150} 
-            suffix="+" 
-            label="Practical Tutorials" 
-            color="#BFFF00" 
+          <CounterItem
+            icon={Share2}
+            target={5}
+            suffix=""
+            label="Platforms — YouTube, LinkedIn, Instagram, TikTok & Facebook"
+            color="#00D2FF"
           />
         </div>
 
