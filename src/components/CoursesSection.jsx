@@ -14,6 +14,7 @@ import {
   BookOpen,
   CheckCircle2
 } from 'lucide-react';
+import TiltCard from './TiltCard';
 
 export default function CoursesSection() {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -185,9 +186,9 @@ export default function CoursesSection() {
           {filteredCourses.map((course) => {
             const CourseIcon = course.icon;
             return (
-              <div 
-                key={course.id}
-                className="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between glass-card-hover group relative overflow-hidden"
+              <TiltCard key={course.id} className="relative">
+              <div
+                className="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between glass-card-hover group relative overflow-hidden h-full"
               >
                 <div>
                   {/* Top Badge & Duration */}
@@ -233,6 +234,7 @@ export default function CoursesSection() {
                   </button>
                 </div>
               </div>
+              </TiltCard>
             );
           })}
         </div>

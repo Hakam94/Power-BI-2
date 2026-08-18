@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
 import { PayPalScriptProvider, PayPalButtons } from '@paypal/react-paypal-js';
-import { X, ShieldCheck, CheckCircle2, AlertTriangle, Mail } from 'lucide-react';
+import { X, ShieldCheck, CheckCircle2, AlertTriangle, Mail, ExternalLink } from 'lucide-react';
 
 const PAYPAL_CLIENT_ID = import.meta.env.VITE_PAYPAL_CLIENT_ID;
+
+// PayPal account that receives payment for the "classic" redirect checkout —
+// works with any PayPal account (personal or business), no API app required.
+// This email is bundled into the public site JS, same as any PayPal.me link.
+const PAYPAL_BUSINESS_EMAIL = import.meta.env.VITE_PAYPAL_BUSINESS_EMAIL || 'h.abushanab94@gmail.com';
 
 export default function PayPalCheckoutModal({ service, onClose }) {
   const [status, setStatus] = useState('idle'); // idle | success | error
@@ -63,7 +68,7 @@ export default function PayPalCheckoutModal({ service, onClose }) {
               hours with available times.
             </p>
             <a
-              href={`mailto:contact@hakamdatastudio.com?subject=${encodeURIComponent(`Booking: ${service.name}`)}`}
+              href={`mailto:h.abushanab94@gmail.com?subject=${encodeURIComponent(`Booking: ${service.name}`)}`}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F2C811] text-black font-bold text-xs font-mono shadow-lg shadow-yellow-500/20 hover:bg-yellow-400"
             >
               <Mail className="w-4 h-4" />
@@ -82,15 +87,7 @@ export default function PayPalCheckoutModal({ service, onClose }) {
               </p>
             </div>
 
-            {!PAYPAL_CLIENT_ID ? (
-              <div className="p-4 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-start gap-3">
-                <AlertTriangle className="w-4 h-4 text-[#F2C811] shrink-0 mt-0.5" />
-                <p className="text-xs text-gray-200 leading-relaxed">
-                  PayPal checkout isn't configured yet. Set <code>VITE_PAYPAL_CLIENT_ID</code> in your
-                  environment to enable payments.
-                </p>
-              </div>
-            ) : (
+            {PAYPAL_CLIENT_ID ? (
               <PayPalScriptProvider
                 options={{ clientId: PAYPAL_CLIENT_ID, currency: 'USD', intent: 'capture' }}
               >
@@ -106,6 +103,45 @@ export default function PayPalCheckoutModal({ service, onClose }) {
                   }}
                 />
               </PayPalScriptProvider>
+            ) : PAYPAL_BUSINESS_EMAIL ? (
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                <input type="hidden" name="cmd" value="_xclick" />
+                <input type="hidden" name="business" value={PAYPAL_BUSINESS_EMAIL} />
+                <input type="hidden" name="item_name" value={service.name} />
+                <input type="hidden" name="item_number" value={service.id} />
+                <input type="hidden" name="amount" value={service.price} />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input type="hidden" name="no_shipping" value="1" />
+                <input type="hidden" name="no_note" value="1" />
+                <input
+                  type="hidden"
+                  name="return"
+                  value={`${window.location.origin}${window.location.pathname}?paid=1&service=${service.id}#services`}
+                />
+                <input
+                  type="hidden"
+                  name="cancel_return"
+                  value={`${window.location.origin}${window.location.pathname}#services`}
+                />
+                <button
+                  type="submit"
+                  className="w-full py-3.5 rounded-full bg-[#F2C811] text-black font-bold text-sm shadow-lg shadow-yellow-500/20 hover:bg-yellow-400 transition-all flex items-center justify-center gap-2"
+                >
+                  <span>Pay ${service.price} with PayPal</span>
+                  <ExternalLink className="w-4 h-4" />
+                </button>
+                <p className="text-[11px] text-gray-500 mt-3 text-center leading-relaxed">
+                  You'll complete payment securely on PayPal's site, then return here automatically.
+                </p>
+              </form>
+            ) : (
+              <div className="p-4 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-start gap-3">
+                <AlertTriangle className="w-4 h-4 text-[#F2C811] shrink-0 mt-0.5" />
+                <p className="text-xs text-gray-200 leading-relaxed">
+                  PayPal checkout isn't configured yet. Set <code>VITE_PAYPAL_BUSINESS_EMAIL</code> (or{' '}
+                  <code>VITE_PAYPAL_CLIENT_ID</code>) in your environment to enable payments.
+                </p>
+              </div>
             )}
 
             {status === 'error' && (
