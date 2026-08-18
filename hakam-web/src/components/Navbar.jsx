@@ -34,6 +34,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenRoadmap }) {
     { name: 'Transformation', href: '#story' },
     { name: 'About Hakam', href: '#about' },
     { name: 'Courses', href: '#courses' },
+    { name: 'Services', href: '#services' },
     { name: 'Tutorials', href: '#youtube' },
     { name: 'AI & MCP', href: '#ai-mcp' },
     { name: 'Stats', href: '#stats' },

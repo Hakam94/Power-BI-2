@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, BarChart3, Database, BookOpen, Cpu, Download, ArrowRight } from 'lucide-react';
+import { Search, X, BarChart3, Database, BookOpen, Cpu, Download, ArrowRight, Phone } from 'lucide-react';
 import { YoutubeIcon } from './BrandIcons';
 
 export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
@@ -27,6 +27,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
   const items = [
     { title: 'Power BI Masterclass 2026', type: 'Course', href: '#courses', icon: BarChart3, color: '#F2C811' },
     { title: 'Modern SQL & Data Warehousing', type: 'Course', href: '#courses', icon: Database, color: '#00D2FF' },
+    { title: '1:1 Power BI & DAX Strategy Session', type: 'Service', href: '#services', icon: Phone, color: '#F2C811' },
     { title: 'YouTube Channel @HakamDataStudio', type: 'Channel', href: '#youtube', icon: YoutubeIcon, color: '#FF0000' },
     { title: '8-Step Data Evolution Pipeline', type: 'Story', href: '#story', icon: BookOpen, color: '#BFFF00' },
     { title: 'AI & MCP Protocol Simulator', type: 'Simulator', href: '#ai-mcp', icon: Cpu, color: '#00D2FF' },
