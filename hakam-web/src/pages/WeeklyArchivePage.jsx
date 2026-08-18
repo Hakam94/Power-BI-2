@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Radar, ArrowRight, ArrowLeft } from 'lucide-react';
-import { weeklyUpdates } from '../data/weeklyUpdates';
+import { getPublishedWeeklyUpdates } from '../data/weeklyUpdates';
 
 export default function WeeklyArchivePage() {
-  const sorted = [...weeklyUpdates].sort((a, b) => new Date(b.date) - new Date(a.date));
+  const sorted = getPublishedWeeklyUpdates().sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <main className="pt-32 pb-24 relative overflow-hidden bg-[#0D2229] min-h-screen">

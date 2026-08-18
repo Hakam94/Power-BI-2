@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
-import { ArrowLeft, Radar, BookOpen, TrendingUp, ExternalLink, Sparkles } from 'lucide-react';
+import { ArrowLeft, Radar, BookOpen, TrendingUp, ExternalLink, Sparkles, AlertTriangle } from 'lucide-react';
 import { getWeeklyUpdateBySlug } from '../data/weeklyUpdates';
 
 export default function WeeklyArticlePage() {
@@ -23,6 +23,16 @@ export default function WeeklyArticlePage() {
           <ArrowLeft className="w-3.5 h-3.5" />
           <span>Back to Weekly Updates</span>
         </Link>
+
+        {/* Draft Review Banner — visible only to whoever has this direct link */}
+        {update.status !== 'published' && (
+          <div className="mb-8 p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 flex items-start gap-3">
+            <AlertTriangle className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
+            <p className="text-xs text-amber-200 leading-relaxed">
+              <span className="font-bold">Draft — pending your review.</span> This page is unlisted (not shown in the archive or homepage), reachable only via this direct link. Reply with edits or approval and it'll be published once you sign off.
+            </p>
+          </div>
+        )}
 
         {/* Header */}
         <div className="mb-10">
