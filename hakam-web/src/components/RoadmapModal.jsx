@@ -24,7 +24,7 @@ export default function RoadmapModal({ isOpen, onClose }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-2xl animate-in fade-in">
-      <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-yellow-500/30 max-w-lg w-full relative bg-[#0D0E12] shadow-2xl">
+      <div className="glass-panel p-6 sm:p-8 rounded-3xl border border-lime-500/30 max-w-lg w-full relative bg-[#0D0E12] shadow-2xl">
         
         <button
           onClick={() => { setSubmitted(false); onClose(); }}
@@ -35,11 +35,11 @@ export default function RoadmapModal({ isOpen, onClose }) {
 
         {!submitted ? (
           <div>
-            <div className="w-12 h-12 rounded-2xl bg-yellow-500/10 border border-yellow-500/30 flex items-center justify-center mb-4 text-[#F2C811]">
+            <div className="w-12 h-12 rounded-2xl bg-lime-500/10 border border-lime-500/30 flex items-center justify-center mb-4 text-[#BFFF00]">
               <Download className="w-6 h-6" />
             </div>
 
-            <span className="text-xs font-mono text-[#F2C811] uppercase tracking-wider block mb-1">
+            <span className="text-xs font-mono text-[#BFFF00] uppercase tracking-wider block mb-1">
               FREE DOWNLOADABLE PDF
             </span>
             <h3 className="text-2xl font-bold text-white font-heading mb-3">
@@ -75,14 +75,14 @@ export default function RoadmapModal({ isOpen, onClose }) {
                     placeholder="name@company.com"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 rounded-full py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F2C811]"
+                    className="w-full bg-white/5 border border-white/10 rounded-full py-3 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#BFFF00]"
                   />
                 </div>
               </div>
 
               <button
                 type="submit"
-                className="w-full py-3.5 rounded-full bg-[#F2C811] text-black font-bold text-sm shadow-xl shadow-yellow-500/25 hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 font-mono"
+                className="w-full py-3.5 rounded-full bg-[#BFFF00] text-black font-bold text-sm shadow-xl shadow-lime-500/25 hover:bg-lime-400 transition-all flex items-center justify-center gap-2 font-mono"
               >
                 <Download className="w-4 h-4" />
                 <span>Download Free Roadmap PDF</span>
@@ -97,7 +97,7 @@ export default function RoadmapModal({ isOpen, onClose }) {
 
             <h3 className="text-2xl font-bold text-white font-heading mb-2">Roadmap On Its Way!</h3>
             <p className="text-gray-300 text-sm mb-6">
-              We've sent the download link to <strong className="text-[#F2C811]">{email}</strong>.
+              We've sent the download link to <strong className="text-[#BFFF00]">{email}</strong>.
             </p>
 
             <button

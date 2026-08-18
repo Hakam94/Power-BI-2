@@ -57,22 +57,22 @@ function GlassDashboardFrame({ viewMode }) {
   // Data views based on interactive selection
   const dataSets = {
     quarterly: [
-      { label: 'Q1', height: 1.8, val: '$120K', color: '#F2C811' },
+      { label: 'Q1', height: 1.8, val: '$120K', color: '#BFFF00' },
       { label: 'Q2', height: 2.6, val: '$240K', color: '#00D2FF' },
-      { label: 'Q3', height: 3.2, val: '$380K', color: '#BFFF00' },
-      { label: 'Q4', height: 4.1, val: '$510K', color: '#F2C811' },
+      { label: 'Q3', height: 3.2, val: '$380K', color: '#FFFFFF' },
+      { label: 'Q4', height: 4.1, val: '$510K', color: '#FF5555' },
     ],
     regional: [
       { label: 'US', height: 3.8, val: '45%', color: '#00D2FF' },
-      { label: 'EU', height: 2.9, val: '30%', color: '#F2C811' },
-      { label: 'ASIA', height: 2.2, val: '18%', color: '#BFFF00' },
+      { label: 'EU', height: 2.9, val: '30%', color: '#BFFF00' },
+      { label: 'ASIA', height: 2.2, val: '18%', color: '#FFFFFF' },
       { label: 'LATAM', height: 1.4, val: '7%', color: '#FF5555' },
     ],
     ai: [
       { label: 'DAX', height: 4.2, val: '98%', color: '#BFFF00' },
-      { label: 'SQL', height: 3.9, val: '94%', color: '#F2C811' },
+      { label: 'SQL', height: 3.9, val: '94%', color: '#FFFFFF' },
       { label: 'Fabric', height: 3.5, val: '89%', color: '#00D2FF' },
-      { label: 'MCP', height: 4.5, val: '99%', color: '#BFFF00' },
+      { label: 'MCP', height: 4.5, val: '99%', color: '#FF5555' },
     ]
   };
 
@@ -94,7 +94,7 @@ function GlassDashboardFrame({ viewMode }) {
       <mesh position={[0, 1.5, -0.3]}>
         <boxGeometry args={[4.8, 3.8, 0.08]} />
         <meshPhysicalMaterial
-          color="#0B0B0B"
+          color="#0D2229"
           transparent
           opacity={0.7}
           roughness={0.1}
@@ -109,14 +109,14 @@ function GlassDashboardFrame({ viewMode }) {
       {/* Gold Border Highlight Frame */}
       <lineSegments position={[0, 1.5, -0.25]}>
         <edgesGeometry args={[new THREE.BoxGeometry(4.85, 3.85, 0.09)]} />
-        <lineBasicMaterial color="#F2C811" linewidth={2} transparent opacity={0.4} />
+        <lineBasicMaterial color="#BFFF00" linewidth={2} transparent opacity={0.4} />
       </lineSegments>
 
       {/* Title Header inside 3D Dashboard */}
       <Text
         position={[-1.9, 3.0, 0]}
         fontSize={0.28}
-        color="#F2C811"
+        color="#BFFF00"
         anchorX="left"
         anchorY="top"
       >
@@ -207,7 +207,7 @@ function ParticleGrid() {
           itemSize={3}
         />
       </bufferGeometry>
-      <pointsMaterial size={0.04} color="#F2C811" transparent opacity={0.4} sizeAttenuation />
+      <pointsMaterial size={0.04} color="#BFFF00" transparent opacity={0.4} sizeAttenuation />
     </points>
   );
 }
@@ -219,12 +219,12 @@ export default function Hero3DDashboard() {
   return (
     <div className="relative w-full h-[520px] sm:h-[600px] rounded-3xl overflow-hidden glass-panel border border-white/10 shadow-2xl">
       {/* Floating Mode Switcher Overlay */}
-      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 flex items-center gap-2 p-1.5 rounded-full bg-[#0B0B0B]/80 backdrop-blur-xl border border-white/10">
+      <div className="absolute top-4 left-4 sm:top-6 sm:left-6 z-10 flex items-center gap-2 p-1.5 rounded-full bg-[#0D2229]/80 backdrop-blur-xl border border-white/10">
         <button
           onClick={() => setViewMode('quarterly')}
           className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${
             viewMode === 'quarterly' 
-              ? 'bg-[#F2C811] text-black font-semibold shadow-md shadow-yellow-500/20' 
+              ? 'bg-[#BFFF00] text-black font-semibold shadow-md shadow-lime-500/20'
               : 'text-gray-400 hover:text-white'
           }`}
         >
@@ -244,7 +244,7 @@ export default function Hero3DDashboard() {
           onClick={() => setViewMode('ai')}
           className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${
             viewMode === 'ai' 
-              ? 'bg-[#BFFF00] text-black font-semibold shadow-md shadow-lime-500/20' 
+              ? 'bg-[#FF5555] text-black font-semibold shadow-md shadow-red-500/20'
               : 'text-gray-400 hover:text-white'
           }`}
         >
@@ -264,7 +264,7 @@ export default function Hero3DDashboard() {
         gl={{ antialias: true, alpha: true }}
       >
         <ambientLight intensity={0.7} />
-        <pointLight position={[10, 10, 10]} intensity={1.5} color="#F2C811" />
+        <pointLight position={[10, 10, 10]} intensity={1.5} color="#BFFF00" />
         <pointLight position={[-10, -5, 5]} intensity={1.2} color="#00D2FF" />
         <spotLight position={[0, 8, 8]} angle={0.4} penumbra={1} intensity={2} color="#FFFFFF" />
 

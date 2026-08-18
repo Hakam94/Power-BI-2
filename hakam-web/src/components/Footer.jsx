@@ -19,18 +19,18 @@ export default function Footer({ onOpenRoadmap }) {
   };
 
   return (
-    <footer className="relative bg-[#070709] text-gray-400 border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-[#061114] text-gray-400 border-t border-white/10 overflow-hidden">
       {/* Background Subtle Mesh */}
       <div className="absolute inset-0 cyber-grid opacity-10 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-12 relative z-10">
         
         {/* Top Newsletter Card */}
-        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 mb-16 relative overflow-hidden bg-gradient-to-r from-yellow-500/5 via-cyan-500/5 to-transparent">
+        <div className="glass-panel p-8 sm:p-12 rounded-3xl border border-white/10 mb-16 relative overflow-hidden bg-gradient-to-r from-lime-500/5 via-cyan-500/5 to-transparent">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             <div className="lg:col-span-7">
-              <span className="text-xs font-mono text-[#F2C811] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-mono text-[#BFFF00] uppercase tracking-wider block mb-2">
                 STAY AHEAD OF THE CURVE
               </span>
               <h3 className="text-2xl sm:text-4xl font-extrabold text-white font-heading tracking-tight mb-3">
@@ -52,12 +52,12 @@ export default function Footer({ onOpenRoadmap }) {
                       placeholder="Enter your email"
                       value={newsletterEmail}
                       onChange={(e) => setNewsletterEmail(e.target.value)}
-                      className="w-full bg-white/5 border border-white/10 rounded-full py-3.5 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#F2C811]"
+                      className="w-full bg-white/5 border border-white/10 rounded-full py-3.5 pl-10 pr-4 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-[#BFFF00]"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="px-6 py-3.5 rounded-full bg-[#F2C811] text-black font-bold text-xs font-mono shadow-lg shadow-yellow-500/20 hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 shrink-0"
+                    className="px-6 py-3.5 rounded-full bg-[#BFFF00] text-black font-bold text-xs font-mono shadow-lg shadow-lime-500/20 hover:bg-lime-400 transition-all flex items-center justify-center gap-2 shrink-0"
                   >
                     <span>Join Free</span>
                     <Send className="w-3.5 h-3.5" />
@@ -82,13 +82,13 @@ export default function Footer({ onOpenRoadmap }) {
           {/* Col 1: Brand */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#F2C811] to-[#00D2FF] p-[1.5px]">
-                <div className="w-full h-full bg-[#0B0B0B] rounded-[10.5px] flex items-center justify-center">
-                  <BarChart3 className="w-5 h-5 text-[#F2C811]" />
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#BFFF00] to-[#00D2FF] p-[1.5px]">
+                <div className="w-full h-full bg-[#0D2229] rounded-[10.5px] flex items-center justify-center">
+                  <BarChart3 className="w-5 h-5 text-[#BFFF00]" />
                 </div>
               </div>
               <span className="font-bold text-lg text-white font-heading tracking-tight">
-                HAKAM <span className="text-[#F2C811]">DATA STUDIO</span>
+                HAKAM <span className="text-[#BFFF00]">DATA STUDIO</span>
               </span>
             </div>
             <p className="text-gray-400 text-xs leading-relaxed max-w-sm">
@@ -120,11 +120,11 @@ export default function Footer({ onOpenRoadmap }) {
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-400">
               <li><a href="#story" className="hover:text-white transition-colors">8-Step Pipeline</a></li>
-              <li><a href="#services" className="hover:text-[#F2C811] transition-colors">1:1 Services</a></li>
+              <li><a href="#services" className="hover:text-[#BFFF00] transition-colors">1:1 Services</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">About Hakam</a></li>
               <li><a href="#youtube" className="hover:text-white transition-colors">YouTube Tutorials</a></li>
               <li><a href="#stats" className="hover:text-white transition-colors">Community Stats</a></li>
-              <li><button onClick={onOpenRoadmap} className="hover:text-[#F2C811] transition-colors text-left">Free Roadmap PDF</button></li>
+              <li><button onClick={onOpenRoadmap} className="hover:text-[#BFFF00] transition-colors text-left">Free Roadmap PDF</button></li>
             </ul>
           </div>
 
@@ -134,7 +134,7 @@ export default function Footer({ onOpenRoadmap }) {
               Official Hub
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-400">
-              <li><a href="https://www.youtube.com/@HakamDataStudio" target="_blank" rel="noreferrer" className="hover:text-[#F2C811] transition-colors flex items-center gap-2"><YoutubeIcon className="w-3.5 h-3.5" /> YouTube @HakamDataStudio</a></li>
+              <li><a href="https://www.youtube.com/@HakamDataStudio" target="_blank" rel="noreferrer" className="hover:text-[#BFFF00] transition-colors flex items-center gap-2"><YoutubeIcon className="w-3.5 h-3.5" /> YouTube @HakamDataStudio</a></li>
               <li><a href="https://www.linkedin.com/in/hakam-abushanab-a99523b6" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><LinkedinIcon className="w-3.5 h-3.5" /> LinkedIn</a></li>
               <li><a href="https://www.instagram.com/hakam_data_studio" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><InstagramIcon className="w-3.5 h-3.5" /> Instagram</a></li>
               <li><a href="https://github.com/Hakam94" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><GithubIcon className="w-3.5 h-3.5" /> GitHub</a></li>

@@ -42,14 +42,14 @@ function CounterItem({ icon: Icon, target, label, suffix, color }) {
 
 export default function StatsSection() {
   return (
-    <section id="stats" className="py-24 relative overflow-hidden bg-[#070709]">
+    <section id="stats" className="py-24 relative overflow-hidden bg-[#061114]">
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] glow-orb-yellow pointer-events-none opacity-20 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#BFFF00] mb-4">
             <TrendingUp className="w-3.5 h-3.5" />
             <span>Community Impact</span>
           </div>
@@ -67,7 +67,7 @@ export default function StatsSection() {
             target={5000}
             suffix="+"
             label="Community Members Across Social Media"
-            color="#F2C811"
+            color="#BFFF00"
           />
           <CounterItem
             icon={Share2}

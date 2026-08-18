@@ -14,15 +14,15 @@ export default function HeroSection({ onOpenRoadmap }) {
         
         {/* Top Announcement Badge */}
         <div className="flex justify-center mb-8">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel-gold border border-[#F2C811]/30 hover:border-[#F2C811]/60 transition-all duration-300 group cursor-pointer" onClick={onOpenRoadmap}>
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel-gold border border-[#BFFF00]/30 hover:border-[#BFFF00]/60 transition-all duration-300 group cursor-pointer" onClick={onOpenRoadmap}>
             <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F2C811] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#F2C811]"></span>
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#BFFF00] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#BFFF00]"></span>
             </span>
             <span className="text-xs font-mono text-gray-200">
               NEW: 2026 Data Engineering & Power BI AI Masterclass
             </span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#F2C811] group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3.5 h-3.5 text-[#BFFF00] group-hover:translate-x-1 transition-transform" />
           </div>
         </div>
 
@@ -35,14 +35,14 @@ export default function HeroSection({ onOpenRoadmap }) {
           </h1>
 
           <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Master <strong className="text-white font-semibold">Power BI, SQL, Snowflake, Microsoft Fabric, AI & MCP</strong> with <strong className="text-[#F2C811]">Hakam Abushanab</strong>. Practical enterprise tutorials for real-world impact.
+            Master <strong className="text-white font-semibold">Power BI, SQL, Snowflake, Microsoft Fabric, AI & MCP</strong> with <strong className="text-[#BFFF00]">Hakam Abushanab</strong>. Practical enterprise tutorials for real-world impact.
           </p>
 
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
             <a
               href="#courses"
-              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#F2C811] text-black font-bold text-base shadow-xl shadow-yellow-500/25 hover:shadow-yellow-500/40 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group"
+              className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#BFFF00] text-black font-bold text-base shadow-xl shadow-lime-500/25 hover:shadow-lime-500/40 hover:scale-105 active:scale-95 transition-all duration-200 flex items-center justify-center gap-2 group"
             >
               <span>Start Learning Now</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -69,9 +69,9 @@ export default function HeroSection({ onOpenRoadmap }) {
 
         {/* Floating Quick Feature Cards below Hero */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12">
-          <div className="glass-panel p-5 rounded-2xl border border-white/5 hover:border-[#F2C811]/30 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-3">
-              <Database className="w-5 h-5 text-[#F2C811]" />
+          <div className="glass-panel p-5 rounded-2xl border border-white/5 hover:border-[#BFFF00]/30 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-lime-500/10 border border-lime-500/20 flex items-center justify-center mb-3">
+              <Database className="w-5 h-5 text-[#BFFF00]" />
             </div>
             <h3 className="font-bold text-white text-sm mb-1">Enterprise SQL & DAX</h3>
             <p className="text-xs text-gray-400">Production data modeling & optimization</p>
@@ -93,9 +93,9 @@ export default function HeroSection({ onOpenRoadmap }) {
             <p className="text-xs text-gray-400">Model Context Protocol for Power BI</p>
           </div>
 
-          <div className="glass-panel p-5 rounded-2xl border border-white/5 hover:border-yellow-500/30 transition-all">
-            <div className="w-10 h-10 rounded-xl bg-yellow-500/10 border border-yellow-500/20 flex items-center justify-center mb-3">
-              <Award className="w-5 h-5 text-[#F2C811]" />
+          <div className="glass-panel p-5 rounded-2xl border border-white/5 hover:border-lime-500/30 transition-all">
+            <div className="w-10 h-10 rounded-xl bg-lime-500/10 border border-lime-500/20 flex items-center justify-center mb-3">
+              <Award className="w-5 h-5 text-[#BFFF00]" />
             </div>
             <h3 className="font-bold text-white text-sm mb-1">Real-World Projects</h3>
             <p className="text-xs text-gray-400">Portfolio builds that get you hired</p>
