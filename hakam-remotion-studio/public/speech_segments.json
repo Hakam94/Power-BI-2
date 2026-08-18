@@ -1,0 +1,350 @@
+{
+  "generatedAt": "2026-08-13T09:16:17.294Z",
+  "sourceFile": "C:\\Users\\z004mbcw\\.gemini\\antigravity\\scratch\\Power-BI-2\\hakam-remotion-studio\\public\\DHBP6661.MP4",
+  "fps": 30,
+  "minSilenceSec": 0.8,
+  "noiseThreshold": "-20dB",
+  "padding": 0.08,
+  "totalDurationSec": 1089.26,
+  "totalSpeechSec": 1033.3274800000004,
+  "totalRemovedSec": 55.93251999999961,
+  "compositionFrames": 31015,
+  "clips": [
+    {
+      "id": 0,
+      "srcStartSec": 9.896312,
+      "srcEndSec": 15.226229,
+      "durationSec": 5.329917,
+      "trimBefore": 296,
+      "durationFrames": 160
+    },
+    {
+      "id": 1,
+      "srcStartSec": 16.275625,
+      "srcEndSec": 29.468145999999997,
+      "durationSec": 13.192520999999996,
+      "trimBefore": 488,
+      "durationFrames": 396
+    },
+    {
+      "id": 2,
+      "srcStartSec": 30.962458,
+      "srcEndSec": 36.749125,
+      "durationSec": 5.786666999999998,
+      "trimBefore": 928,
+      "durationFrames": 174
+    },
+    {
+      "id": 3,
+      "srcStartSec": 37.464667,
+      "srcEndSec": 38.254771,
+      "durationSec": 0.7901039999999995,
+      "trimBefore": 1123,
+      "durationFrames": 24
+    },
+    {
+      "id": 4,
+      "srcStartSec": 38.934292,
+      "srcEndSec": 42.556792,
+      "durationSec": 3.6225000000000023,
+      "trimBefore": 1168,
+      "durationFrames": 109
+    },
+    {
+      "id": 5,
+      "srcStartSec": 45.134146,
+      "srcEndSec": 61.095957999999996,
+      "durationSec": 15.961811999999995,
+      "trimBefore": 1354,
+      "durationFrames": 479
+    },
+    {
+      "id": 6,
+      "srcStartSec": 61.765979,
+      "srcEndSec": 65.051875,
+      "durationSec": 3.285895999999994,
+      "trimBefore": 1852,
+      "durationFrames": 99
+    },
+    {
+      "id": 7,
+      "srcStartSec": 65.708083,
+      "srcEndSec": 72.533542,
+      "durationSec": 6.825458999999995,
+      "trimBefore": 1971,
+      "durationFrames": 205
+    },
+    {
+      "id": 8,
+      "srcStartSec": 73.21825,
+      "srcEndSec": 77.815542,
+      "durationSec": 4.597291999999996,
+      "trimBefore": 2196,
+      "durationFrames": 138
+    },
+    {
+      "id": 9,
+      "srcStartSec": 78.760187,
+      "srcEndSec": 81.983792,
+      "durationSec": 3.223604999999992,
+      "trimBefore": 2362,
+      "durationFrames": 97
+    },
+    {
+      "id": 10,
+      "srcStartSec": 82.798417,
+      "srcEndSec": 86.370188,
+      "durationSec": 3.5717709999999983,
+      "trimBefore": 2483,
+      "durationFrames": 108
+    },
+    {
+      "id": 11,
+      "srcStartSec": 87.884375,
+      "srcEndSec": 88.504604,
+      "durationSec": 0.6202289999999948,
+      "trimBefore": 2636,
+      "durationFrames": 19
+    },
+    {
+      "id": 12,
+      "srcStartSec": 90.250687,
+      "srcEndSec": 91.144625,
+      "durationSec": 0.8939380000000057,
+      "trimBefore": 2707,
+      "durationFrames": 27
+    },
+    {
+      "id": 13,
+      "srcStartSec": 93.936479,
+      "srcEndSec": 94.10535399999999,
+      "durationSec": 0.16887499999998568,
+      "trimBefore": 2818,
+      "durationFrames": 6
+    },
+    {
+      "id": 14,
+      "srcStartSec": 94.774896,
+      "srcEndSec": 96.491646,
+      "durationSec": 1.7167500000000047,
+      "trimBefore": 2843,
+      "durationFrames": 52
+    },
+    {
+      "id": 15,
+      "srcStartSec": 98.283833,
+      "srcEndSec": 98.444458,
+      "durationSec": 0.16062499999999602,
+      "trimBefore": 2948,
+      "durationFrames": 5
+    },
+    {
+      "id": 16,
+      "srcStartSec": 101.420375,
+      "srcEndSec": 103.672583,
+      "durationSec": 2.252207999999996,
+      "trimBefore": 3042,
+      "durationFrames": 68
+    },
+    {
+      "id": 17,
+      "srcStartSec": 104.341542,
+      "srcEndSec": 116.558917,
+      "durationSec": 12.21737499999999,
+      "trimBefore": 3130,
+      "durationFrames": 367
+    },
+    {
+      "id": 18,
+      "srcStartSec": 117.244771,
+      "srcEndSec": 131.75039600000002,
+      "durationSec": 14.505625000000023,
+      "trimBefore": 3517,
+      "durationFrames": 436
+    },
+    {
+      "id": 19,
+      "srcStartSec": 132.542813,
+      "srcEndSec": 140.465,
+      "durationSec": 7.922187000000008,
+      "trimBefore": 3976,
+      "durationFrames": 238
+    },
+    {
+      "id": 20,
+      "srcStartSec": 141.18083299999998,
+      "srcEndSec": 178.20695800000001,
+      "durationSec": 37.026125000000036,
+      "trimBefore": 4235,
+      "durationFrames": 1111
+    },
+    {
+      "id": 21,
+      "srcStartSec": 179.097896,
+      "srcEndSec": 190.54737500000002,
+      "durationSec": 11.449479000000025,
+      "trimBefore": 5372,
+      "durationFrames": 344
+    },
+    {
+      "id": 22,
+      "srcStartSec": 191.62322899999998,
+      "srcEndSec": 228.87343700000002,
+      "durationSec": 37.25020800000004,
+      "trimBefore": 5748,
+      "durationFrames": 1118
+    },
+    {
+      "id": 23,
+      "srcStartSec": 229.54925,
+      "srcEndSec": 231.448937,
+      "durationSec": 1.8996870000000001,
+      "trimBefore": 6886,
+      "durationFrames": 57
+    },
+    {
+      "id": 24,
+      "srcStartSec": 232.12893699999998,
+      "srcEndSec": 238.98460400000002,
+      "durationSec": 6.8556670000000395,
+      "trimBefore": 6963,
+      "durationFrames": 206
+    },
+    {
+      "id": 25,
+      "srcStartSec": 240.198104,
+      "srcEndSec": 243.054896,
+      "durationSec": 2.856792000000013,
+      "trimBefore": 7205,
+      "durationFrames": 86
+    },
+    {
+      "id": 26,
+      "srcStartSec": 245.989625,
+      "srcEndSec": 246.14966700000002,
+      "durationSec": 0.16004200000003266,
+      "trimBefore": 7379,
+      "durationFrames": 5
+    },
+    {
+      "id": 27,
+      "srcStartSec": 248.121479,
+      "srcEndSec": 260.85325,
+      "durationSec": 12.731771000000009,
+      "trimBefore": 7443,
+      "durationFrames": 382
+    },
+    {
+      "id": 28,
+      "srcStartSec": 261.802021,
+      "srcEndSec": 360.998833,
+      "durationSec": 99.19681199999997,
+      "trimBefore": 7854,
+      "durationFrames": 2976
+    },
+    {
+      "id": 29,
+      "srcStartSec": 361.90977100000003,
+      "srcEndSec": 364.906729,
+      "durationSec": 2.9969579999999496,
+      "trimBefore": 10857,
+      "durationFrames": 90
+    },
+    {
+      "id": 30,
+      "srcStartSec": 365.5695,
+      "srcEndSec": 385.24839599999996,
+      "durationSec": 19.678895999999952,
+      "trimBefore": 10967,
+      "durationFrames": 591
+    },
+    {
+      "id": 31,
+      "srcStartSec": 386.30741700000004,
+      "srcEndSec": 392.14183299999996,
+      "durationSec": 5.834415999999919,
+      "trimBefore": 11589,
+      "durationFrames": 176
+    },
+    {
+      "id": 32,
+      "srcStartSec": 392.936917,
+      "srcEndSec": 401.434771,
+      "durationSec": 8.497854000000018,
+      "trimBefore": 11788,
+      "durationFrames": 255
+    },
+    {
+      "id": 33,
+      "srcStartSec": 402.31239600000004,
+      "srcEndSec": 403.907562,
+      "durationSec": 1.5951659999999492,
+      "trimBefore": 12069,
+      "durationFrames": 48
+    },
+    {
+      "id": 34,
+      "srcStartSec": 405.314958,
+      "srcEndSec": 409.943292,
+      "durationSec": 4.628333999999995,
+      "trimBefore": 12159,
+      "durationFrames": 139
+    },
+    {
+      "id": 35,
+      "srcStartSec": 410.686104,
+      "srcEndSec": 545.746042,
+      "durationSec": 135.059938,
+      "trimBefore": 12320,
+      "durationFrames": 4052
+    },
+    {
+      "id": 36,
+      "srcStartSec": 546.438,
+      "srcEndSec": 661.6760830000001,
+      "durationSec": 115.23808300000007,
+      "trimBefore": 16393,
+      "durationFrames": 3458
+    },
+    {
+      "id": 37,
+      "srcStartSec": 662.508708,
+      "srcEndSec": 793.518771,
+      "durationSec": 131.01006300000006,
+      "trimBefore": 19875,
+      "durationFrames": 3931
+    },
+    {
+      "id": 38,
+      "srcStartSec": 794.2565209999999,
+      "srcEndSec": 818.0514790000001,
+      "durationSec": 23.79495800000018,
+      "trimBefore": 23827,
+      "durationFrames": 714
+    },
+    {
+      "id": 39,
+      "srcStartSec": 818.8625,
+      "srcEndSec": 882.038208,
+      "durationSec": 63.1757080000001,
+      "trimBefore": 24565,
+      "durationFrames": 1896
+    },
+    {
+      "id": 40,
+      "srcStartSec": 882.719937,
+      "srcEndSec": 1086.70725,
+      "durationSec": 203.98731299999997,
+      "trimBefore": 26481,
+      "durationFrames": 6120
+    },
+    {
+      "id": 41,
+      "srcStartSec": 1087.502146,
+      "srcEndSec": 1089.26,
+      "durationSec": 1.757853999999952,
+      "trimBefore": 32625,
+      "durationFrames": 53
+    }
+  ]
+}
