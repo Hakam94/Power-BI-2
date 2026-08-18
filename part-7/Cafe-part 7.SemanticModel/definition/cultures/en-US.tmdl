@@ -1,0 +1,116 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "sheet1.store": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sheet1",
+			          "ConceptualProperty": "Store"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Store": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sheet1.profit": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sheet1",
+			          "ConceptualProperty": "Profit"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Profit": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sheet1.contribution_margin_": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sheet1",
+			          "ConceptualProperty": "Contribution margin %"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Contribution margin %": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sheet1.revenue1": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sheet1",
+			          "ConceptualProperty": "Revenue1"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Revenue": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "sheet1.drink": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Sheet1",
+			          "ConceptualProperty": "Drink"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Drink": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

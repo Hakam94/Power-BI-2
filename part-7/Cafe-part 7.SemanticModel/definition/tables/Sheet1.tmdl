@@ -1,0 +1,176 @@
+table Sheet1
+	lineageTag: 22b3ecfc-8faf-4e37-a4da-974f61b51092
+
+	measure Profit = sum(Sheet1[Revenue]) - sum(Sheet1[Cost])
+		displayFolder: KPIs
+		lineageTag: 49e408f9-4532-4d8e-bb3a-281d647ef64a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Contribution margin %' = ([Profit] / sum(Sheet1[Revenue]))*100
+		displayFolder: KPIs
+		lineageTag: 3b099b1a-737f-4d40-9b3f-f6a41640f10c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Price = sum(Sheet1[Revenue]) / sum(Sheet1[Cups_Sold])
+		displayFolder: KPIs
+		lineageTag: 596a478d-76b8-444f-aad7-25b1533728d2
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure CurrentMonth = CALCULATE(sum(Sheet1[Revenue]),DATESINPERIOD(Dates[Date],MAX(Dates[Date]),-1,MONTH))
+		displayFolder: 'Time Intelligence (legacy - see Part 7 Visual Calculations Lab)'
+		lineageTag: 0c7e48d7-3278-4f6f-a7ac-f1942aa779a0
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure PrevMonth = CALCULATE(sum(Sheet1[Revenue]),DATEADD(Dates[Date],-1,MONTH))
+		displayFolder: 'Time Intelligence (legacy - see Part 7 Visual Calculations Lab)'
+		lineageTag: 89d67660-49a3-4b01-8737-b97bc1106afc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'MoM Growth % 1' = DIVIDE([CurrentMonth]-[PrevMonth],[PrevMonth],0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 'Time Intelligence (legacy - see Part 7 Visual Calculations Lab)'
+		lineageTag: 8e61ff87-d635-450f-b828-49e5fe282e30
+
+	measure 'MoM Growth % Var' = ```
+			
+			VAR CurrentMonth =
+			    CALCULATE(
+			        SUM(Sheet1[Revenue]),
+			        DATESINPERIOD(Dates[Date], MAX(Dates[Date]), -1, MONTH)
+			    )
+			VAR PrevMonth =
+			    CALCULATE(
+			        SUM(Sheet1[Revenue]),
+			        DATEADD(Dates[Date], -1, MONTH)
+			    )
+			RETURN
+			    DIVIDE(CurrentMonth - PrevMonth, PrevMonth, 0)
+			
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: 'Time Intelligence (legacy - see Part 7 Visual Calculations Lab)'
+		lineageTag: 2c946321-e5d6-44de-a3ea-22bddaec6a3d
+
+	measure 'Revenue of Downtown' = CALCULATE(sum(Sheet1[Revenue]),Sheet1[Store]="Downtown")
+		displayFolder: Debug
+		lineageTag: c0b20ee5-ca6a-477a-83cf-473a9d66bd05
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure Revenue1 = sum(Sheet1[Revenue])
+		displayFolder: Debug
+		lineageTag: acf64056-cd89-4fdf-8cf3-d43b7d15acbb
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Revenue' = SUM(Sheet1[Revenue])
+		formatString: \$#,##0.00;(\$#,##0.00);\$0.00
+		displayFolder: KPIs
+		lineageTag: e8a912c3-5b8d-4f12-9c1a-7b89f01e2345
+
+	measure 'Total Cups Sold' = SUM(Sheet1[Cups_Sold])
+		formatString: #,##0
+		displayFolder: KPIs
+		lineageTag: a7b89f01-e234-4567-890a-bcdef0123456
+
+	measure 'Average Order Value' = DIVIDE([Total Revenue], [Total Cups Sold], 0)
+		formatString: \$#,##0.00;(\$#,##0.00);\$0.00
+		displayFolder: KPIs
+		lineageTag: f1234567-89ab-4cde-8012-3456789abcde
+
+	measure 'Profit Margin %' = DIVIDE([Profit], SUM(Sheet1[Revenue]), 0)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: KPIs
+		lineageTag: 7a89b012-c345-4678-90ab-cdef01234567
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: c6bd0ee2-2f49-4568-b938-f0c2576bca2b
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Time_of_Day
+		dataType: string
+		lineageTag: 89862b2d-3b93-46ab-b461-1dfde50dcc69
+		summarizeBy: none
+		sourceColumn: Time_of_Day
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store
+		dataType: string
+		lineageTag: e4e402fe-ee32-4e9f-a8e7-c4318aa068b5
+		summarizeBy: none
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+	column Drink
+		dataType: string
+		lineageTag: 0390627d-2957-4e9c-a891-9f05630648be
+		summarizeBy: none
+		sourceColumn: Drink
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cups_Sold
+		dataType: int64
+		formatString: 0
+		lineageTag: 2e67a3e3-60fa-46aa-8fd4-60819db639c1
+		summarizeBy: sum
+		sourceColumn: Cups_Sold
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue
+		dataType: double
+		lineageTag: a48653b9-45a0-47f0-a0b9-20692dfa5db5
+		summarizeBy: sum
+		sourceColumn: Revenue
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Cost
+		dataType: double
+		isHidden
+		lineageTag: 297a8f02-78a0-49eb-9eb5-85f4c35eae80
+		summarizeBy: sum
+		sourceColumn: Cost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GroupPrice = IF([Price]<4,"Economic",IF([Price]<5,"Stardard","Premium"))
+		lineageTag: f8bfd413-24a0-4df0-9965-cc304c388bdd
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sheet1 = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\z004mbcw\.gemini\antigravity\scratch\Power-BI-2\part-7\CoffeeShop_Sales_v3.xlsx"), null, true),
+				    Sheet1_Sheet = Source{[Item="Sheet1",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sheet1_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Time_of_Day", type text}, {"Store", type text}, {"Drink", type text}, {"Cups_Sold", Int64.Type}, {"Revenue", type number}, {"Cost", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

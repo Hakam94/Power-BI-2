@@ -1,0 +1,7 @@
+role 'Store Managers'
+	modelPermission: read
+
+	tablePermission Managers_WithStore = LOWER((TRIM(Managers_WithStore[UserEmail]=USERPRINCIPALNAME())))
+
+	annotation PBI_Id = 7bbf98b9fa9040809e0ad2510780851b
+

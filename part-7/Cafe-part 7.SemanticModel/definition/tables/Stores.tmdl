@@ -1,0 +1,36 @@
+table Stores
+	lineageTag: 7f82c05c-b6b8-40c8-b74b-35726d40a2f9
+
+	column StoreID
+		dataType: int64
+		formatString: 0
+		isHidden
+		lineageTag: 387fe65c-3a00-4f7f-964a-147a2c8bc938
+		summarizeBy: count
+		sourceColumn: StoreID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Store
+		dataType: string
+		lineageTag: e30f081e-ba7f-4f3a-bd1b-747ff5915aaf
+		summarizeBy: none
+		sourceColumn: Store
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Stores = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\z004mbcw\.gemini\antigravity\scratch\Power-BI-2\part-7\RLS_Tables.xlsx"), null, true),
+				    Stores_Sheet = Source{[Item="Dim_Store",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Stores_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"StoreID", Int64.Type}, {"Store", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

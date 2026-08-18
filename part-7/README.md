@@ -55,14 +55,13 @@ VAR PrevMonth = CALCULATE(SUM(Sheet1[Revenue]), DATEADD(Dates[Date], -1, MONTH))
 RETURN DIVIDE(CurrentMonth - PrevMonth, PrevMonth, 0)
 ```
 
-That's a permanent model measure. On a **Matrix** with `Revenue` by month, you can now get the same comparison as a **visual calculation**, scoped to just that visual:
+That's a permanent model measure. Open `Cafe-part 7.pbip` in Power BI Desktop and go to the **"Part 7 - Visual Calculations Lab"** page — it already has a Matrix built with `Dates[YearMonth]` on rows and `Total Revenue`, `Profit`, and `Total Cups Sold` in values, plus on-canvas instructions. You can get the same MoM comparison as a **visual calculation**, scoped to just that visual:
 
-1. Build a Matrix with `Month` on rows and the `Revenue` measure in values.
-2. Right-click the `Revenue` field on the visual → **New calculation**.
-3. Enter:
+1. Right-click the `Total Revenue` field on the matrix → **New calculation**.
+2. Enter:
 
 ```DAX
-MoM Growth (visual) = DIVIDE([Revenue] - PREVIOUS([Revenue]), PREVIOUS([Revenue]))
+MoM Growth (visual) = DIVIDE([Total Revenue] - PREVIOUS([Total Revenue]), PREVIOUS([Total Revenue]))
 ```
 
 `PREVIOUS()` walks the axis already on the visual — no `CALCULATE`, no `DATEADD`, no relationship to a Dates table required for this to work.
@@ -72,7 +71,7 @@ MoM Growth (visual) = DIVIDE([Revenue] - PREVIOUS([Revenue]), PREVIOUS([Revenue]
 On the same Matrix:
 
 ```DAX
-Running Revenue = RUNNINGSUM([Revenue], HIGHESTPARENT)
+Running Revenue = RUNNINGSUM([Total Revenue], HIGHESTPARENT)
 ```
 
 Use the **Axis** parameter (`ROWS` / `COLUMNS`) if your matrix has both months across rows and stores across columns and you only want the total running down one direction.
@@ -80,7 +79,7 @@ Use the **Axis** parameter (`ROWS` / `COLUMNS`) if your matrix has both months a
 ### 3. 📈 Visual Calculation #3 — 3-Month Moving Average of Cups Sold
 
 ```DAX
-Cups Sold MA3 = MOVINGAVERAGE([Cups Sold], 3)
+Cups Sold MA3 = MOVINGAVERAGE([Total Cups Sold], 3)
 ```
 
 ### 4. Σ Custom Totals — Fix the "Price" Total Row
@@ -98,14 +97,19 @@ Cups Sold MA3 = MOVINGAVERAGE([Cups Sold], 3)
 
 ### 6. 🔍 Audit the Model — Best Practice Analyzer
 
-Visual calculations clean up *new* work. Best Practice Analyzer (BPA) checks what we already built:
+Visual calculations clean up *new* work. Best Practice Analyzer (BPA) checks what we already built. The Part 7 model (`Cafe-part 7.SemanticModel`, copied and updated from Part 6) already has a few obvious fixes applied so you can show the before/after live in the video:
 
-1. Install [Tabular Editor](https://tabulareditor.com/) (free, Tabular Editor 2 or 3) and open the Part 6 PBIP semantic model (`part-6/Cafe-part 6.SemanticModel`), or point it at the running Power BI Desktop session.
+- **Hid technical columns that were never dragged into a visual**: `Sheet1[Cost]` (fully covered by the `Profit` measure), `Stores[StoreID]` (surrogate key), and `Managers_WithStore[UserEmail]` (PII, only needed inside the RLS rule — the RLS role still works fine on a hidden column).
+- **Organized measures into display folders** — `KPIs` for the reusable business measures, `Time Intelligence (legacy - see Part 7 Visual Calculations Lab)` for the Part 2 measures this episode is replacing, and `Debug` for exploratory ones (`Revenue1`, `Revenue of Downtown`) — purely cosmetic, doesn't change any visual binding.
+
+To find what's still outstanding:
+
+1. Install [Tabular Editor](https://tabulareditor.com/) (free, Tabular Editor 2 or 3) and open `part-7/Cafe-part 7.SemanticModel`, or point it at the running Power BI Desktop session.
 2. Run **Best Practice Analyzer** with the standard [Microsoft/Tabular Editor rule set](https://github.com/microsoft/Analysis-Services/tree/master/BestPracticeRules).
 3. Review flags relevant to this project, for example:
-   - Bi-directional relationship on `User_Access` ↔ `Dim_Store` from Part 3 — confirm it's intentional (RLS) and not silently affecting other visuals.
-   - Any implicit measures (aggregating a raw column straight from a visual instead of a named measure).
-   - Unused columns imported in Parts 1–2 that never made it into a measure or a relationship.
+   - Bi-directional relationship on `Managers_WithStore` ↔ `Stores` from Part 3 — confirm it's intentional (RLS) and not silently affecting other visuals.
+   - Any implicit measures (aggregating a raw column straight from a visual instead of a named measure) — `Sheet1[Revenue]` and `Sheet1[Cups_Sold]` are still visible because two Part 6 dashboard visuals bind to them directly; decide whether to repoint those visuals to the `Total Revenue` / `Total Cups Sold` measures and hide the columns too.
+   - Unused columns or measures that never made it into a visual or a relationship.
 4. Fix or document each finding.
 
 ### 7. ⚡ Find What's Actually Slow — Optimize Ribbon
@@ -154,14 +158,19 @@ Review and adjust the generated DAX — Copilot drafts it, you still validate it
 
 ## 📂 Files
 
-* `README.md` — this guide (planning reference for the Part 7 video)
+* `Cafe-part 7.pbip` — Power BI Project pointer file, open this in Power BI Desktop
+* `Cafe-part 7.SemanticModel/` — TMDL semantic model (copied from Part 6, plus the display-folder and hidden-column cleanup described above)
+* `Cafe-part 7.Report/` — PBIR report, including the new **"Part 7 - Visual Calculations Lab"** page with a ready-built Matrix and on-canvas instructions
+* `CoffeeShop_Sales_v3.xlsx`, `RLS_Tables.xlsx` — datasets (same as Part 6)
+* `README.md` — this guide
 * `assets/` — thumbnail and images for Part 7
 
-The updated `.pbix`/PBIP files with the visual calculations above will be added here alongside the recorded video.
+On first open, Power BI Desktop will likely ask you to repoint the Excel data sources (**Transform data → Data source settings**) to wherever `CoffeeShop_Sales_v3.xlsx` and `RLS_Tables.xlsx` live on your machine — same as every other part in this repo, since the M queries store an absolute file path.
 
 ## 📌 Status
 
-🚧 Guide drafted — video recording and dataset/report files pending.
+✅ PBIP scaffold, data model cleanup, and the Visual Calculations Lab page are in the repo.
+🚧 Still to do: record the video, add the visual calculations live in Desktop (see Step 1–3 above — they're authored interactively and aren't hand-written into the project files), and export a `.pbix` alongside it.
 
 ## 🚀 Next Steps
 

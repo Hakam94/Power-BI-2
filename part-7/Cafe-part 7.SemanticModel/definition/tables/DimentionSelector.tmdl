@@ -1,0 +1,49 @@
+table DimentionSelector
+	lineageTag: 6a2f8b03-0b9a-4f58-ab0a-94997df7f6e3
+
+	column DimentionSelector
+		lineageTag: 8646df4c-0296-4c9a-9b8f-17271be0d40d
+		summarizeBy: none
+		sourceColumn: [Value1]
+		sortByColumn: 'DimentionSelector Order'
+
+		relatedColumnDetails
+			groupByColumn: 'DimentionSelector Fields'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DimentionSelector Fields'
+		isHidden
+		lineageTag: 944547ed-b369-4414-b0f9-815f4f498d48
+		summarizeBy: none
+		sourceColumn: [Value2]
+		sortByColumn: 'DimentionSelector Order'
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 3,
+				  "kind": 2
+				}
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'DimentionSelector Order'
+		isHidden
+		formatString: 0
+		lineageTag: b8aebcb6-6fe4-422b-881c-3d34bced4cab
+		summarizeBy: sum
+		sourceColumn: [Value3]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimentionSelector = calculated
+		mode: import
+		source =
+				{
+				    ("Drink", NAMEOF('Sheet1'[Drink]), 0),
+				    ("Store", NAMEOF('Sheet1'[Store]), 1),
+				    ("Date", NAMEOF('Sheet1'[Date]), 2)
+				}
+
+	annotation PBI_Id = 7ed9953162a8436ab611787bace03caa
+

@@ -1,0 +1,88 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "p7_instructions_note",
+  "position": {
+    "x": 40,
+    "y": 90,
+    "z": 1001,
+    "height": 150,
+    "width": 1200,
+    "tabOrder": 110
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Right-click a value on the matrix below (e.g. Total Revenue) -> New calculation, then try:",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI, sans-serif",
+                      "fontSize": "11pt",
+                      "color": "#E5F7F1"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "1) MoM Growth (visual) = DIVIDE([Total Revenue] - PREVIOUS([Total Revenue]), PREVIOUS([Total Revenue]))",
+                    "textStyle": {
+                      "fontFamily": "Cascadia Code, Consolas, monospace",
+                      "fontSize": "10pt",
+                      "color": "#7FFFD4"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "2) Running Revenue = RUNNINGSUM([Total Revenue], HIGHESTPARENT)",
+                    "textStyle": {
+                      "fontFamily": "Cascadia Code, Consolas, monospace",
+                      "fontSize": "10pt",
+                      "color": "#7FFFD4"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "3) Cups Sold MA3 = MOVINGAVERAGE([Total Cups Sold], 3)",
+                    "textStyle": {
+                      "fontFamily": "Cascadia Code, Consolas, monospace",
+                      "fontSize": "10pt",
+                      "color": "#7FFFD4"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "See part-7/README.md for the full walkthrough, Custom Totals, and the Best Practice Analyzer / Performance Analyzer steps.",
+                    "textStyle": {
+                      "fontFamily": "Segoe UI, sans-serif",
+                      "fontSize": "10pt",
+                      "fontItalic": true,
+                      "color": "#9FB8B2"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}

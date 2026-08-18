@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 241.66666666666669,
+            "y": 423.83333333333337
+          },
+          "nodeIndex": "Sheet1",
+          "nodeLineageTag": "22b3ecfc-8faf-4e37-a4da-974f61b51092",
+          "size": {
+            "height": 248,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 739.99999999999989,
+            "y": 466.16666666666663
+          },
+          "nodeIndex": "Dates",
+          "nodeLineageTag": "ffbab55f-fd6d-4e41-b6f4-3de32bfd3a34",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 661.33332538604736,
+            "y": 0
+          },
+          "nodeIndex": "Managers_WithStore",
+          "nodeLineageTag": "a9bc7417-9f1b-4b4d-acf2-7c0aa918e1a2",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 343.76190476190465,
+            "y": 193.78571428571425
+          },
+          "nodeIndex": "Stores",
+          "nodeLineageTag": "7f82c05c-b6b8-40c8-b74b-35726d40a2f9",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 4
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 60,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

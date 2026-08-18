@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "nav_to_overview_button",
+  "position": {
+    "x": 1040,
+    "y": 685,
+    "z": 7000,
+    "height": 45,
+    "width": 200,
+    "tabOrder": 700
+  },
+  "visual": {
+    "visualType": "actionButton",
+    "drillFilterOtherVisuals": true
+  },
+  "howCreated": "InsertVisualButton"
+}
