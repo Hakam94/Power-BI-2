@@ -44,7 +44,7 @@ export default function WeeklyUpdatesTeaser() {
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-[10px] font-mono px-2.5 py-1 rounded-full bg-white/5 text-[#00D2FF] border border-white/10">
-                    {update.tool}
+                    {update.tool || (update.tags && update.tags[0]) || 'Roundup'}
                   </span>
                   <span className="text-[11px] font-mono text-gray-500">{update.date}</span>
                 </div>

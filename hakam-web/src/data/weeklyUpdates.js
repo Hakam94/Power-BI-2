@@ -96,24 +96,81 @@ Units YoY %  = YoYPercent( [Total Units] )`,
     ]
   },
   {
-    slug: 'snowflake-ai-classify',
+    slug: 'weekly-roundup-2026-08-18',
     status: 'draft',
-    title: 'Snowflake Retired CLASSIFY_TEXT for AI_CLASSIFY — Here\'s the Rewrite',
-    tool: 'Snowflake',
+    title: 'Weekly Data & AI Roundup — Aug 18, 2026',
     date: '2026-08-18',
-    readTime: '5 min read',
-    tags: ['Snowflake', 'Cortex AI', 'SQL'],
+    readTime: '13 min read',
+    tags: ['Databricks', 'Snowflake', 'Job Market'],
     summary:
-      'Snowflake Cortex\'s AI_CLASSIFY function reached general availability in November 2025 as the replacement for the older SNOWFLAKE.CORTEX.CLASSIFY_TEXT function, which Snowflake has marked for deprecation by the end of 2026. AI_CLASSIFY runs classification natively in SQL — no external ML pipeline — and adds multi-label output, task descriptions, and image classification that CLASSIFY_TEXT never had.',
-    whatChanged: [
-      'AI_CLASSIFY is the GA replacement for the legacy SNOWFLAKE.CORTEX.CLASSIFY_TEXT function; Snowflake has stated CLASSIFY_TEXT will be deprecated by the end of 2026.',
-      'AI_CLASSIFY supports both single-label (default) and multi-label classification via an output_mode option — CLASSIFY_TEXT only ever returned one label.',
-      'An optional task_description (50 words or fewer) can be passed to give the model context about the classification task, improving accuracy on ambiguous inputs.',
-      'AI_CLASSIFY is one of several functions renamed under Snowflake\'s new AI_ prefix convention — AI_EXTRACT replaces the older EXTRACT_ANSWER the same way.',
-      'Categories still need 2–100 unique, case-sensitive entries in both the old and new function — that constraint didn\'t change.'
-    ],
-    codeLanguage: 'sql',
-    codeBefore: `SELECT
+      'This week: Databricks Unity Catalog can now natively manage Apache Iceberg tables (no more Delta+UniForm workaround), and Snowflake\'s legacy CLASSIFY_TEXT function is being replaced by AI_CLASSIFY ahead of its end-of-2026 deprecation. Plus two tools worth watching, and a sourced look at which skills actually show up most in data analyst job postings right now.',
+    toolSections: [
+      {
+        tool: 'Databricks',
+        headline: 'Unity Catalog Now Natively Manages Apache Iceberg Tables',
+        whatChanged: [
+          'Unity Catalog managed tables now support Apache Iceberg directly — CREATE TABLE ... USING iceberg creates a natively managed, UC-governed Iceberg table, not just a Delta table exposing Iceberg-compatible reads.',
+          'Previously, giving external Iceberg engines access to Databricks data meant creating a Delta table and enabling UniForm (delta.universalFormat.enabledFormats = \'iceberg\'), which generates Iceberg metadata alongside Delta but keeps Delta as the primary, writable format.',
+          'A native Iceberg table skips the dual-format shim entirely — the table is Iceberg, governed by Unity Catalog privileges like any other managed table.',
+          'Iceberg v3 features (e.g. deletion vectors) are configurable via TBLPROPERTIES, such as \'iceberg.enableDeletionVectors\' = \'true\'.'
+        ],
+        codeLanguage: 'sql',
+        codeBefore: `-- Delta table with UniForm enabled for Iceberg-compatible external reads
+CREATE TABLE analytics.sales.orders (
+    order_id BIGINT,
+    order_total DECIMAL(10,2)
+)
+TBLPROPERTIES (
+    'delta.columnMapping.mode' = 'id',
+    'delta.enableIcebergCompatV2' = 'true',
+    'delta.universalFormat.enabledFormats' = 'iceberg'
+);
+-- Table is still fundamentally Delta; Iceberg readers get a
+-- generated, read-oriented metadata layer alongside it.`,
+        codeAfter: `-- Natively managed Iceberg table in Unity Catalog
+CREATE TABLE analytics.sales.orders (
+    order_id BIGINT,
+    order_total DECIMAL(10,2)
+)
+USING iceberg
+TBLPROPERTIES (
+    'iceberg.enableDeletionVectors' = 'true'
+);
+-- No Delta layer underneath — this is Iceberg end to end,
+-- governed directly by Unity Catalog.`,
+        whyItMatters:
+          'UniForm was always a compatibility bridge — useful, but a workaround. Teams standardizing on Iceberg (for a multi-engine lakehouse where Snowflake, Trino, or other engines read the same tables) no longer need to maintain a Delta table just to get there; the table can be Iceberg natively while still getting Unity Catalog\'s governance, lineage, and access control.',
+        references: [
+          {
+            label: 'Unity Catalog managed tables for Delta Lake and Apache Iceberg — Databricks Docs',
+            url: 'https://docs.databricks.com/aws/en/tables/managed'
+          },
+          {
+            label: 'Read Delta Lake tables with Iceberg clients using UniForm — Databricks Docs',
+            url: 'https://docs.databricks.com/gcp/en/delta/uniform'
+          },
+          {
+            label: 'Use Apache Iceberg v3 features — Databricks Docs',
+            url: 'https://docs.databricks.com/aws/en/iceberg/iceberg-v3'
+          },
+          {
+            label: 'Announcing full Apache Iceberg support in Databricks — Databricks Blog',
+            url: 'https://www.databricks.com/blog/announcing-full-apache-iceberg-support-databricks'
+          }
+        ]
+      },
+      {
+        tool: 'Snowflake',
+        headline: 'CLASSIFY_TEXT Is Being Replaced by AI_CLASSIFY',
+        whatChanged: [
+          'AI_CLASSIFY is the GA replacement for the legacy SNOWFLAKE.CORTEX.CLASSIFY_TEXT function; Snowflake has stated CLASSIFY_TEXT will be deprecated by the end of 2026.',
+          'AI_CLASSIFY supports both single-label (default) and multi-label classification via an output_mode option — CLASSIFY_TEXT only ever returned one label.',
+          'An optional task_description (50 words or fewer) can be passed to give the model context about the classification task, improving accuracy on ambiguous inputs.',
+          'AI_CLASSIFY is one of several functions renamed under Snowflake\'s new AI_ prefix convention — AI_EXTRACT replaces the older EXTRACT_ANSWER the same way.',
+          'Categories still need 2–100 unique, case-sensitive entries in both the old and new function — that constraint didn\'t change.'
+        ],
+        codeLanguage: 'sql',
+        codeBefore: `SELECT
     feedback_id,
     feedback_text,
     SNOWFLAKE.CORTEX.CLASSIFY_TEXT(
@@ -121,7 +178,7 @@ Units YoY %  = YoYPercent( [Total Units] )`,
         ['Product', 'Customer Service', 'Delivery', 'Price']
     ):label::STRING AS feedback_category
 FROM customer.feedback;`,
-    codeAfter: `SELECT
+        codeAfter: `SELECT
     feedback_id,
     feedback_text,
     AI_CLASSIFY(
@@ -132,32 +189,60 @@ FROM customer.feedback;`,
         }
     ):labels[0]::STRING AS feedback_category
 FROM customer.feedback;`,
-    whyItMatters:
-      'Beyond just avoiding a deprecated function, AI_CLASSIFY\'s task_description gives the model context CLASSIFY_TEXT never accepted, which matters most on ambiguous tickets ("the box arrived late and damaged" — Delivery or Product?). And because output_mode can flip to \'multi\', the same call can tag a ticket with several relevant categories instead of forcing a single label — useful for feedback that genuinely spans more than one topic.',
-    trendNote:
-      'Editorial note, not a scraped statistic: Snowflake / Cortex-related postings increasingly list "AI SQL functions" or "in-database AI" alongside standard SQL and warehousing skills, rather than treating LLM/ML work as a separate specialization. Worth knowing the AI_ function family by name, not just "Snowflake has some AI stuff now."',
-    references: [
-      {
-        label: 'AI_CLASSIFY — Snowflake Documentation',
-        url: 'https://docs.snowflake.com/en/sql-reference/functions/ai_classify'
-      },
-      {
-        label: 'CLASSIFY_TEXT (SNOWFLAKE.CORTEX) — Snowflake Documentation (legacy, deprecating end of 2026)',
-        url: 'https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex'
-      },
-      {
-        label: 'Nov 04, 2025: Cortex AI Functions (General Availability) — Snowflake Release Notes',
-        url: 'https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-aisql-operators-ga'
-      },
-      {
-        label: 'Cortex AI Functions (including LLM functions) — Snowflake Documentation',
-        url: 'https://docs.snowflake.com/en/user-guide/snowflake-cortex/aisql'
-      },
-      {
-        label: 'Snowflake AI SQL User Guide: AI_CLASSIFY (Snowflake Builders Blog)',
-        url: 'https://medium.com/snowflake/snowflake-ai-sql-user-guide-ai-classify-15e3d474293f'
+        whyItMatters:
+          'Beyond just avoiding a deprecated function, AI_CLASSIFY\'s task_description gives the model context CLASSIFY_TEXT never accepted, which matters most on ambiguous tickets ("the box arrived late and damaged" — Delivery or Product?). And because output_mode can flip to \'multi\', the same call can tag a ticket with several relevant categories instead of forcing a single label.',
+        references: [
+          {
+            label: 'AI_CLASSIFY — Snowflake Documentation',
+            url: 'https://docs.snowflake.com/en/sql-reference/functions/ai_classify'
+          },
+          {
+            label: 'CLASSIFY_TEXT (SNOWFLAKE.CORTEX) — Snowflake Documentation (legacy, deprecating end of 2026)',
+            url: 'https://docs.snowflake.com/en/sql-reference/functions/classify_text-snowflake-cortex'
+          },
+          {
+            label: 'Nov 04, 2025: Cortex AI Functions (General Availability) — Snowflake Release Notes',
+            url: 'https://docs.snowflake.com/en/release-notes/2025/other/2025-11-04-cortex-aisql-operators-ga'
+          },
+          {
+            label: 'Snowflake AI SQL User Guide: AI_CLASSIFY (Snowflake Builders Blog)',
+            url: 'https://medium.com/snowflake/snowflake-ai-sql-user-guide-ai-classify-15e3d474293f'
+          }
+        ]
       }
-    ]
+    ],
+    emergingTools: [
+      {
+        name: 'Databricks Lakebase',
+        description:
+          'A Postgres-compatible, serverless OLTP database built into the Databricks platform, so transactional (operational) data and analytical lakehouse data can sit closer together instead of living in separate systems that need constant syncing.',
+        whyWatch:
+          'Recent releases have added AI-assisted troubleshooting (Insights + Genie) and Beta CDC sync from Lakebase Postgres tables straight into Unity Catalog Delta tables — Databricks is clearly investing in closing the operational/analytical gap, not just shipping it once and moving on.'
+      },
+      {
+        name: 'Snowflake AI Function Studio',
+        description:
+          'A Public Preview tool inside Snowflake Cortex that automates prompt engineering, model selection, and benchmarking for the AI_ SQL functions, aimed at cutting down manual experimentation before an AI SQL call goes to production.',
+        whyWatch:
+          'If it matures out of preview, it lowers the bar for analysts (not just ML engineers) to responsibly tune things like AI_CLASSIFY\'s task_description or pick between model options for AI_COMPLETE — worth a look before it\'s GA and everyone else has caught on.'
+      }
+    ],
+    jobMarketTop5: {
+      methodologyNote:
+        'These are self-reported job-posting-analysis figures from a single source (365 Data Science\'s Data Analyst Job Outlook 2026), not census data — sample size and methodology aren\'t independently verified here, so treat this as directional rather than precise. Different reports/editions can show different numbers; click through to the source before quoting these elsewhere.',
+      items: [
+        { tool: 'SQL', percentage: 52.9 },
+        { tool: 'Excel', percentage: 50.5 },
+        { tool: 'Python', percentage: 31.2 },
+        { tool: 'Power BI', percentage: 29 },
+        { tool: 'Tableau', percentage: 26.2 }
+      ],
+      source: {
+        label: '365 Data Science — Data Analyst Job Outlook 2026',
+        url: 'https://365datascience.com/career-advice/data-analyst-job-outlook/'
+      }
+    },
+    references: []
   }
 ];
 
