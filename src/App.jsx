@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import ScrollStorySection from './components/ScrollStorySection';
 import AboutSection from './components/AboutSection';
 import CoursesSection from './components/CoursesSection';
+import ServicesSection from './components/ServicesSection';
 import YouTubeVideosSection from './components/YouTubeVideosSection';
 import AiMcpSection from './components/AiMcpSection';
 import StatsSection from './components/StatsSection';
@@ -35,6 +36,8 @@ export default function App() {
         <AboutSection />
 
         <CoursesSection />
+
+        <ServicesSection />
 
         <YouTubeVideosSection />
 

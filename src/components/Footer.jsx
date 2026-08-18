@@ -119,6 +119,7 @@ export default function Footer({ onOpenRoadmap }) {
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-400">
               <li><a href="#story" className="hover:text-white transition-colors">8-Step Pipeline</a></li>
+              <li><a href="#services" className="hover:text-[#F2C811] transition-colors">1:1 Services</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">About Hakam</a></li>
               <li><a href="#youtube" className="hover:text-white transition-colors">YouTube Tutorials</a></li>
               <li><a href="#stats" className="hover:text-white transition-colors">Community Stats</a></li>
