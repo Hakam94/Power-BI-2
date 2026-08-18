@@ -1,13 +1,13 @@
 import React from 'react';
-import { Share2, ArrowUpRight, Video } from 'lucide-react';
-import { YoutubeIcon, LinkedinIcon, GithubIcon, InstagramIcon, FacebookIcon } from './BrandIcons';
+import { Share2, ArrowUpRight } from 'lucide-react';
+import { YoutubeIcon, LinkedinIcon, GithubIcon, InstagramIcon } from './BrandIcons';
 
 export default function CommunitySection() {
   const socials = [
     {
       name: 'YouTube',
       handle: '@HakamDataStudio',
-      stats: '50,000+ Subscribers',
+      stats: 'Video Tutorials',
       description: 'In-depth Power BI, SQL, Snowflake & AI video masterclasses.',
       url: 'https://www.youtube.com/@HakamDataStudio',
       icon: YoutubeIcon,
@@ -17,52 +17,32 @@ export default function CommunitySection() {
     {
       name: 'LinkedIn',
       handle: 'Hakam Abushanab',
-      stats: '15,000+ Connections',
+      stats: 'Professional Network',
       description: 'Daily BI engineering tips, DAX code snippets, and career guides.',
-      url: 'https://www.linkedin.com',
+      url: 'https://www.linkedin.com/in/hakam-abushanab-a99523b6',
       icon: LinkedinIcon,
       color: '#0A66C2',
       badge: 'Professional Network'
     },
     {
       name: 'GitHub',
-      handle: 'hakam-data-studio',
+      handle: 'Hakam94',
       stats: 'Open Source Repos',
       description: 'Free PBIX report templates, DAX scripts, and MCP server code.',
-      url: 'https://github.com',
+      url: 'https://github.com/Hakam94',
       icon: GithubIcon,
       color: '#FFFFFF',
       badge: 'Code Repositories'
     },
     {
       name: 'Instagram',
-      handle: '@hakamdatastudio',
+      handle: '@hakam_data_studio',
       stats: 'Bite-Sized Tips',
       description: 'Short reels on DAX formulas, SQL tricks, and analytics cheatsheets.',
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/hakam_data_studio',
       icon: InstagramIcon,
       color: '#E4405F',
       badge: 'Visual Shorts'
-    },
-    {
-      name: 'TikTok',
-      handle: '@hakamdatastudio',
-      stats: 'Viral Tech Shorts',
-      description: 'Quick 60-second analytical breakdown and career advice.',
-      url: 'https://tiktok.com',
-      icon: Video,
-      color: '#00F2FE',
-      badge: 'Short Video'
-    },
-    {
-      name: 'Facebook',
-      handle: 'Hakam Data Studio',
-      stats: 'Data Community Group',
-      description: 'Community Q&A, student project showcases, and feedback.',
-      url: 'https://facebook.com',
-      icon: FacebookIcon,
-      color: '#1877F2',
-      badge: 'Community Forum'
     }
   ];
 
@@ -83,7 +63,7 @@ export default function CommunitySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {socials.map((soc) => {
             const SocIcon = soc.icon;
             return (

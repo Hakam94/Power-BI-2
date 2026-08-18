@@ -1,41 +1,33 @@
 import React from 'react';
-import { GraduationCap, FlaskConical, LineChart, Video, Users, Award, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import { GraduationCap, Building2, Video, Users } from 'lucide-react';
 import TiltCard from './TiltCard';
 import hakamPortrait from '../assets/hakam-portrait.jpg';
 
 export default function AboutSection() {
   const milestones = [
     {
-      year: '2016 - 2020',
-      title: 'Economics Graduate',
-      role: 'B.Sc. Quantitative Economics & Econometrics',
+      year: 'MSc',
+      title: 'International Economics',
+      role: 'Università degli Studi di Milano-Bicocca',
       icon: GraduationCap,
       color: '#00D2FF',
-      description: 'Mastered mathematical modeling, statistical inference, financial forecasting, and economic data structures.'
+      description: 'Built a foundation in economic modeling, statistical analysis, and financial data before moving into enterprise analytics.'
     },
     {
-      year: '2020 - 2022',
-      title: 'Chemical Scientist',
-      role: 'Analytical R&D & Laboratory Data Systems',
-      icon: FlaskConical,
-      color: '#BFFF00',
-      description: 'Applied strict scientific methodologies, precision data logging, automated quality control pipelines, and experimental statistics.'
-    },
-    {
-      year: '2022 - 2024',
-      title: 'Enterprise Data Analyst',
-      role: 'Senior BI Architect & Data Engineer',
-      icon: LineChart,
+      year: 'Present',
+      title: 'Head of Data & AI Enablement',
+      role: 'Siemens Healthineers',
+      icon: Building2,
       color: '#F2C811',
-      description: 'Built multi-terabyte Power BI dashboards, automated SQL warehouses in Snowflake, and developed DAX analytical models for global enterprises.'
+      description: 'Leads Power BI, SAP data, and AI-enablement initiatives across a global healthcare technology organization.'
     },
     {
-      year: '2024 - Present',
+      year: 'Present',
       title: 'Content Creator & Educator',
       role: 'Founder of Hakam Data Studio',
       icon: Video,
       color: '#FF5555',
-      description: 'Educating 50,000+ data analysts, business intelligence engineers, and IT leaders on YouTube and global learning platforms.'
+      description: 'Teaching Power BI, DAX, SQL, and AI workflows to a growing global audience on YouTube and social media.'
     }
   ];
 
@@ -57,7 +49,7 @@ export default function AboutSection() {
             Hakam Abushanab
           </h2>
           <p className="text-gray-400 text-base sm:text-lg">
-            From Quantitative Economics and Chemical Science to Senior Data Analyst and Global Educator.
+            From International Economics to Data & AI leadership at Siemens Healthineers — and global educator.
           </p>
         </div>
 
@@ -81,22 +73,22 @@ export default function AboutSection() {
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-1">Hakam Abushanab</h3>
-              <p className="text-xs font-mono text-[#00D2FF] mb-4">FOUNDER & LEAD BI INSTRUCTOR</p>
-              
+              <p className="text-xs font-mono text-[#00D2FF] mb-4">HEAD OF DATA & AI ENABLEMENT, SIEMENS HEALTHINEERS</p>
+
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 "My mission is simple: eliminate the confusion in data analytics and empower professionals with practical, job-ready skills in Power BI, SQL, and AI."
               </p>
 
-              {/* Key Credentials Badges */}
+              {/* Key Skill Areas */}
               <div className="flex flex-wrap justify-center gap-2 pt-4 border-t border-white/10 text-xs font-mono">
                 <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                  ⚡ Power BI Certified
+                  ⚡ Power BI & DAX
                 </span>
                 <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                  ❄️ Snowflake Pro
+                  🗄️ SAP & Enterprise Data
                 </span>
                 <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-gray-300">
-                  🤖 MCP & AI Specialist
+                  🤖 MCP & AI Workflows
                 </span>
               </div>
             </div>

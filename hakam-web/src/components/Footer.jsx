@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BarChart3, Mail, Send, CheckCircle2, Heart, ArrowUp } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { YoutubeIcon, LinkedinIcon, InstagramIcon, GithubIcon } from './BrandIcons';
 
 export default function Footer({ onOpenRoadmap }) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
@@ -133,10 +134,11 @@ export default function Footer({ onOpenRoadmap }) {
               Official Hub
             </h4>
             <ul className="space-y-2.5 text-xs text-gray-400">
-              <li><a href="https://www.youtube.com/@HakamDataStudio" target="_blank" rel="noreferrer" className="hover:text-[#F2C811] transition-colors">YouTube @HakamDataStudio</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn Community</a></li>
-              <li><a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub Code Repos</a></li>
-              <li><a href="mailto:h.abushanab94@gmail.com" className="hover:text-[#00D2FF] transition-colors">h.abushanab94@gmail.com</a></li>
+              <li><a href="https://www.youtube.com/@HakamDataStudio" target="_blank" rel="noreferrer" className="hover:text-[#F2C811] transition-colors flex items-center gap-2"><YoutubeIcon className="w-3.5 h-3.5" /> YouTube @HakamDataStudio</a></li>
+              <li><a href="https://www.linkedin.com/in/hakam-abushanab-a99523b6" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><LinkedinIcon className="w-3.5 h-3.5" /> LinkedIn</a></li>
+              <li><a href="https://www.instagram.com/hakam_data_studio" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><InstagramIcon className="w-3.5 h-3.5" /> Instagram</a></li>
+              <li><a href="https://github.com/Hakam94" target="_blank" rel="noreferrer" className="hover:text-white transition-colors flex items-center gap-2"><GithubIcon className="w-3.5 h-3.5" /> GitHub</a></li>
+              <li><a href="mailto:h.abushanab94@gmail.com" className="hover:text-[#00D2FF] transition-colors flex items-center gap-2"><Mail className="w-3.5 h-3.5" /> h.abushanab94@gmail.com</a></li>
             </ul>
           </div>
 
