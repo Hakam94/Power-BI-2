@@ -97,7 +97,7 @@ Units YoY %  = YoYPercent( [Total Units] )`,
   },
   {
     slug: 'weekly-roundup-2026-08-18',
-    status: 'draft',
+    status: 'published',
     title: 'Weekly Data & AI Roundup — Aug 18, 2026',
     date: '2026-08-18',
     readTime: '16 min read',
