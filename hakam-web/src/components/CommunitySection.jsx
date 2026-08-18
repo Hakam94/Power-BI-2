@@ -1,6 +1,6 @@
 import React from 'react';
 import { Share2, ArrowUpRight } from 'lucide-react';
-import { YoutubeIcon, LinkedinIcon, GithubIcon, InstagramIcon } from './BrandIcons';
+import { YoutubeIcon, LinkedinIcon, GithubIcon, InstagramIcon, TiktokIcon, FacebookIcon } from './BrandIcons';
 
 export default function CommunitySection() {
   const socials = [
@@ -43,6 +43,26 @@ export default function CommunitySection() {
       icon: InstagramIcon,
       color: '#E4405F',
       badge: 'Visual Shorts'
+    },
+    {
+      name: 'TikTok',
+      handle: '@hakam.datastudio',
+      stats: 'Short-Form Video',
+      description: 'Quick analytical breakdowns and career advice in 60 seconds.',
+      url: 'https://www.tiktok.com/@hakam.datastudio',
+      icon: TiktokIcon,
+      color: '#FFFFFF',
+      badge: 'Short Video'
+    },
+    {
+      name: 'Facebook',
+      handle: 'Hakam Data Studio',
+      stats: 'Community Page',
+      description: 'Updates, tutorials, and community discussion on data analytics.',
+      url: 'https://www.facebook.com/share/1CJ2skgmAW/',
+      icon: FacebookIcon,
+      color: '#1877F2',
+      badge: 'Community Page'
     }
   ];
 
@@ -63,7 +83,7 @@ export default function CommunitySection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {socials.map((soc) => {
             const SocIcon = soc.icon;
             return (
