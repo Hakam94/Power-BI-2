@@ -150,39 +150,61 @@ logo(s); num(s, 1)
 s = prs.slides.add_slide(BLANK)
 bg(s)
 
-# Full-width diagram at top portion
-img(s, "agentic_stack_diagram.png", Inches(0), Inches(0), W, Inches(3.6))
+# ═══════════════════════════════════════════════════
+# SLIDE 2 — 3 ERAS: Left image panel | Right cards
+# ═══════════════════════════════════════════════════
+# LEFT PANEL — dark bg, image centered with correct aspect ratio
+rect(s, Inches(0), Inches(0.06), Inches(6.6), Inches(7.38), CARD)
+bar(s, Inches(0), LIME)
 
-# Dark overlay strip for readability
-rect(s, Inches(0), Inches(3.5), W, Inches(4.0), BG)
-bar(s, Inches(3.5), LIME, Inches(0.05))
+txt(s, "التطور عبر ثلاث مراحل",
+    Inches(0.2), Inches(0.15), Inches(6.2), Inches(0.55),
+    size=20, bold=True, color=LIME, align=PP_ALIGN.RIGHT)
+txt(s, "(Three Eras of Analytics)",
+    Inches(0.2), Inches(0.68), Inches(6.2), Inches(0.38),
+    size=13, color=CYAN, align=PP_ALIGN.RIGHT, rtl=False)
 
-txt(s, "التطور: ثلاث مراحل وصلنا إلى عصر الوكلاء",
-    Inches(0.5), Inches(3.6), Inches(12.5), Inches(0.7),
-    size=26, bold=True, color=WHITE)
-txt(s, "(Evolution: From Dashboards to Autonomous AI Agents)",
-    Inches(0.5), Inches(4.25), Inches(12.5), Inches(0.4),
-    size=15, color=CYAN, align=PP_ALIGN.RIGHT, rtl=False)
+# Image: 6" wide, auto height to preserve aspect ratio (likely ~6" tall for square)
+# Place it centered vertically in the left panel
+img(s, "agentic_stack_diagram.png",
+    Inches(0.3), Inches(1.1), Inches(6.0))   # width only — auto height
 
-# 3 era cards in bottom half
+# RIGHT PANEL — title + 3 stacked era cards
+rect(s, Inches(6.7), Inches(0.06), Inches(6.63), Inches(7.38), BG)
+txt(s, "من لوحات البيانات",
+    Inches(6.9), Inches(0.15), Inches(6.3), Inches(0.55),
+    size=22, bold=True, color=WHITE)
+txt(s, "إلى الوكلاء الذكيين المستقلين",
+    Inches(6.9), Inches(0.68), Inches(6.3), Inches(0.5),
+    size=18, color=LIME)
+rect(s, Inches(6.8), Inches(1.25), Inches(6.2), Inches(0.04), LIME)
+
 eras = [
-    ("+20 سنة", "المرحلة الأولى\n(Dashboard Era)",
-     "لوحات ثابتة — الإنسان يسأل\nوالنظام يجاوب", LIME),
-    ("2022-2025", "المرحلة الثانية\n(Copilot Era)",
-     "مساعد ذكي — يجاوب الأسئلة\nبالكلام الطبيعي", CYAN),
-    ("2026 ←", "المرحلة الثالثة\n(Agentic AI Era)",
-     "وكيل مستقل — يخطط وينفذ\nويحقق الأهداف وحده", LIME),
+    ("+20 سنة", "المرحلة الأولى  (Dashboard Era)",
+     "لوحات ثابتة — الإنسان يسأل والنظام يجاوب\nنموذج سلبي في اتجاه واحد",
+     LIME, "📊"),
+    ("2022-2025", "المرحلة الثانية  (Copilot Era)",
+     "مساعد ذكي — يجاوب الأسئلة بالكلام الطبيعي\nلكن الإنسان يقرر وينفذ",
+     CYAN, "🤝"),
+    ("2026 ←", "المرحلة الثالثة  (Agentic AI Era)",
+     "وكيل مستقل — يخطط وينفذ ويحقق الأهداف\nبدون تدخل بشري في كل خطوة",
+     LIME, "🚀"),
 ]
-for i, (yr, title, desc, col) in enumerate(eras):
-    l = Inches(0.4 + i * 4.3)
-    rect(s, l, Inches(4.75), Inches(4.15), Inches(2.5), CARD,
-         line_color=col)
-    txt(s, yr, l, Inches(4.8), Inches(4.15), Inches(0.45),
-        size=13, bold=True, color=col, align=PP_ALIGN.CENTER, rtl=False)
-    txt(s, title, l, Inches(5.2), Inches(4.15), Inches(0.9),
-        size=16, bold=True, color=WHITE, align=PP_ALIGN.CENTER, rtl=False)
-    txt(s, desc, l, Inches(6.1), Inches(4.15), Inches(1.0),
-        size=13, color=DIMMED, align=PP_ALIGN.CENTER)
+for i, (yr, title, desc, col, icon) in enumerate(eras):
+    top = Inches(1.38 + i * 2.0)
+    rect(s, Inches(6.8), top, Inches(6.2), Inches(1.82), CARD)
+    rect(s, Inches(6.8), top, Inches(0.06), Inches(1.82), col)
+    # Icon + Year badge
+    txt(s, icon, Inches(6.9), top + Inches(0.12),
+        Inches(0.55), Inches(0.55), size=22, align=PP_ALIGN.LEFT, rtl=False)
+    txt(s, yr, Inches(7.5), top + Inches(0.15), Inches(5.2), Inches(0.42),
+        size=13, bold=True, color=col, align=PP_ALIGN.RIGHT)
+    # Title
+    txt(s, title, Inches(6.9), top + Inches(0.62), Inches(5.9), Inches(0.5),
+        size=14, bold=True, color=WHITE)
+    # Desc
+    txt(s, desc, Inches(6.9), top + Inches(1.1), Inches(5.9), Inches(0.65),
+        size=11, color=DIMMED)
 
 logo(s); num(s, 2)
 
@@ -385,44 +407,74 @@ for i, (icon, title, sub) in enumerate(after_items):
 logo(s); num(s, 5)
 
 
-# ══════════════════════════════════════════════════════════
-# SLIDE 6 — MCP: TOP IMAGE | BOTTOM TWO-COLUMN TEXT
-# ══════════════════════════════════════════════════════════
+# ═══════════════════════════════════════════════════════
+# SLIDE 6 — MCP: Left image panel | Right two server cards
+# ═══════════════════════════════════════════════════════
 s = prs.slides.add_slide(BLANK)
 bg(s)
 bar(s, Inches(0), LIME)
 
-# Top — title area
-txt(s, "بروتوكول السياق النموذجي  (MCP — Model Context Protocol)",
-    Inches(0.4), Inches(0.12), Inches(12.5), Inches(0.65),
-    size=24, bold=True, color=LIME)
-txt(s, "زي USB-C للذكاء الاصطناعي — معيار توصيل موحّد  (Universal AI Protocol)",
-    Inches(0.4), Inches(0.75), Inches(12.5), Inches(0.4),
-    size=16, color=WHITE, align=PP_ALIGN.RIGHT, rtl=False)
-
-# Image in top half (full width, constrained height)
+# LEFT PANEL — image at its natural aspect ratio (square-ish)
+# 6" wide will give ~6" tall for a square image — fits nicely in left half
+rect(s, Inches(0), Inches(0.06), Inches(6.55), Inches(7.38), CARD)
+txt(s, "بروتوكول السياق النموذجي",
+    Inches(0.2), Inches(0.15), Inches(6.2), Inches(0.55),
+    size=20, bold=True, color=LIME, align=PP_ALIGN.RIGHT)
+txt(s, "(MCP — Model Context Protocol)",
+    Inches(0.2), Inches(0.68), Inches(6.2), Inches(0.4),
+    size=13, color=CYAN, align=PP_ALIGN.RIGHT, rtl=False)
+# Image: 6" wide, auto height preserves aspect — stays in left panel
 img(s, "mcp_architecture_diagram.png",
-    Inches(0.3), Inches(1.25), Inches(12.7), Inches(3.5))
+    Inches(0.25), Inches(1.15), Inches(6.1))  # width only — no forced height
 
-# Bottom two server cards
-bar(s, Inches(4.82), CYAN, Inches(0.04))
+# USB-C caption at bottom of left panel
+rect(s, Inches(0.2), Inches(6.85), Inches(6.15), Inches(0.45), BG)
+txt(s, "زي USB-C للذكاء الاصطناعي — معيار موحّد  (Universal AI Protocol)",
+    Inches(0.25), Inches(6.88), Inches(6.1), Inches(0.4),
+    size=11, color=DIMMED, align=PP_ALIGN.CENTER)
+
+# RIGHT PANEL — title + two server explanation cards
+rect(s, Inches(6.65), Inches(0.06), Inches(6.68), Inches(7.38), BG)
+txt(s, "نوعان من الخوادم",
+    Inches(6.75), Inches(0.15), Inches(6.4), Inches(0.55),
+    size=22, bold=True, color=LIME, align=PP_ALIGN.LEFT, rtl=False)
+txt(s, "(Two Types of MCP Servers)",
+    Inches(6.75), Inches(0.68), Inches(6.4), Inches(0.4),
+    size=14, color=CYAN, align=PP_ALIGN.LEFT, rtl=False)
+rect(s, Inches(6.75), Inches(1.15), Inches(6.2), Inches(0.04), LIME)
 
 server_cards = [
-    ("خادم التحليل البعيد",
+    ("خادم التحليل البعيد ☁️",
      "(Remote Power BI MCP Server)",
-     ["• يتصل بموديلات الأعمال المنشورة  (Published Semantic Models)",
-      "• يولّد استعلامات داكس تلقائياً  (Auto DAX Queries)",
-      "• يجاوب أسئلة بيانات بالكلام الطبيعي",
-      "• يحترم صلاحيات الأمان  (Row-Level Security)"],
-     CYAN, Inches(0.3)),
-    ("خادم التطوير المحلي",
+     ["◆ يتصل بموديلات الأعمال المنشورة  (Published Semantic Models)",
+      "◆ يولّد استعلامات داكس تلقائياً  (Auto DAX Queries)",
+      "◆ يجاوب أسئلة البيانات بالكلام الطبيعي",
+      "◆ يحترم صلاحيات الأمان  (Row-Level Security)",
+      "◆ لا تحتاج وصول مباشر للبيانات"],
+     CYAN),
+    ("خادم التطوير المحلي 💻",
      "(Local Power BI Modeling MCP Server)",
-     ["• يشتغل على ملفات المشروع المحلية  (.pbip files)",
-      "• تغيير وعمليات جماعية  (Bulk Operations)",
-      "• إنشاء مقاييس داكس  (DAX Measures) تلقائياً",
-      "• يعمل مع بيئات التطوير  (VS Code / Claude Desktop)"],
-     LIME, Inches(6.85)),
+     ["◆ يشتغل على ملفات المشروع المحلية  (.pbip files)",
+      "◆ عمليات جماعية  (Bulk Operations) — تغيير أعمدة وعلاقات دفعة واحدة",
+      "◆ إنشاء مقاييس داكس  (DAX Measures) تلقائياً بالكلام",
+      "◆ يعمل مع بيئات التطوير  (VS Code / Claude Desktop)",
+      "◆ وصول كامل لمشروع Power BI"],
+     LIME),
 ]
+for i, (title, sub, bullets, col) in enumerate(server_cards):
+    top = Inches(1.28 + i * 3.05)
+    rect(s, Inches(6.75), top, Inches(6.3), Inches(2.8), CARD)
+    rect(s, Inches(6.75), top, Inches(0.06), Inches(2.8), col)
+    txt(s, title, Inches(6.95), top + Inches(0.08),
+        Inches(5.95), Inches(0.52), size=16, bold=True, color=col)
+    txt(s, sub, Inches(6.95), top + Inches(0.58),
+        Inches(5.95), Inches(0.38), size=11, color=DIMMED, rtl=False, align=PP_ALIGN.LEFT)
+    rect(s, Inches(6.9), top + Inches(0.95), Inches(5.9), Inches(0.03), col)
+    for j, b in enumerate(bullets):
+        txt(s, b, Inches(6.9), top + Inches(1.05 + j * 0.37),
+            Inches(6.1), Inches(0.35), size=11, color=WHITE)
+
+logo(s); num(s, 6)
 for title, sub, bullets, col, l in server_cards:
     rect(s, l, Inches(4.9), Inches(6.15), Inches(2.4), CARD)
     rect(s, l, Inches(4.9), Inches(0.06), Inches(2.4), col)
