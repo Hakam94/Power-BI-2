@@ -100,11 +100,50 @@ Units YoY %  = YoYPercent( [Total Units] )`,
     status: 'draft',
     title: 'Weekly Data & AI Roundup — Aug 18, 2026',
     date: '2026-08-18',
-    readTime: '13 min read',
-    tags: ['Databricks', 'Snowflake', 'Job Market'],
+    readTime: '16 min read',
+    tags: ['Power BI', 'Databricks', 'Snowflake', 'Job Market'],
     summary:
-      'This week: Databricks Unity Catalog can now natively manage Apache Iceberg tables (no more Delta+UniForm workaround), and Snowflake\'s legacy CLASSIFY_TEXT function is being replaced by AI_CLASSIFY ahead of its end-of-2026 deprecation. Plus two tools worth watching, and a sourced look at which skills actually show up most in data analyst job postings right now.',
+      'This week: Power BI\'s visual calculations reached GA with a new ORDERBY parameter (July 2026 release), Databricks Unity Catalog can now natively manage Apache Iceberg tables (no more Delta+UniForm workaround), and Snowflake\'s legacy CLASSIFY_TEXT function is being replaced by AI_CLASSIFY ahead of its end-of-2026 deprecation. Plus three tools worth watching, and a sourced look at which skills actually show up most in data analyst job postings right now.',
     toolSections: [
+      {
+        tool: 'Power BI',
+        headline: 'Visual Calculations Reach GA — Running Totals Get an ORDERBY Parameter',
+        whatChanged: [
+          'Visual calculations (DAX written directly on a visual instead of in the model) reached general availability in the July 2026 Power BI release.',
+          'Visual-calculation-exclusive window functions — RUNNINGSUM, MOVINGAVERAGE, PREVIOUS, and others — now accept an optional ORDERBY parameter, letting you control the sort order the calculation uses independently of how the visual itself is currently sorted.',
+          'Without ORDERBY, a visual calculation sorts by the visual\'s default axis order; with it, a running sum can accumulate in, say, descending sales order for a Pareto chart regardless of how the table is displayed on screen.',
+          'Visual calculations still live only on the visual they\'re added to — unlike a model measure or a DAX UDF, they aren\'t reusable across other visuals, which is the tradeoff for the simpler syntax.'
+        ],
+        codeLanguage: 'dax',
+        codeBefore: `// Model measure: Pareto running total, the pre-visual-calculations way
+Pareto Running Total =
+VAR CurrentProduct = SELECTEDVALUE( Product[Product Name] )
+VAR SalesRank =
+    RANKX( ALLSELECTED( Product[Product Name] ), [Total Sales], , DESC )
+RETURN
+    CALCULATE(
+        [Total Sales],
+        TOPN( SalesRank, ALLSELECTED( Product[Product Name] ), [Total Sales], DESC )
+    )`,
+        codeAfter: `// Visual calculation, added directly on the table/chart — not in the model
+Pareto Running Total = RUNNINGSUM( [Total Sales], ORDERBY( [Total Sales], DESC ) )`,
+        whyItMatters:
+          'The RANKX + TOPN + ALLSELECTED pattern works, but most analysts have to look it up every time they need it. The visual calculation collapses that to one line, at the cost of not being reusable outside that one visual — for a one-off Pareto chart on a single report page, that\'s usually the right tradeoff; for logic every measure needs, a DAX UDF (see last week\'s update) is still the better fit.',
+        references: [
+          {
+            label: 'Power BI July 2026 Feature Summary — Microsoft Fabric Community',
+            url: 'https://community.fabric.microsoft.com/t5/Power-BI-Updates-Blog/Power-BI-July-2026-Feature-Summary/ba-p/5303533'
+          },
+          {
+            label: 'Visual Calculations Overview — Power BI (Microsoft Learn)',
+            url: 'https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview'
+          },
+          {
+            label: 'RUNNINGSUM — DAX Guide',
+            url: 'https://dax.guide/runningsum/'
+          }
+        ]
+      },
       {
         tool: 'Databricks',
         headline: 'Unity Catalog Now Natively Manages Apache Iceberg Tables',
@@ -225,6 +264,13 @@ FROM customer.feedback;`,
           'A Public Preview tool inside Snowflake Cortex that automates prompt engineering, model selection, and benchmarking for the AI_ SQL functions, aimed at cutting down manual experimentation before an AI SQL call goes to production.',
         whyWatch:
           'If it matures out of preview, it lowers the bar for analysts (not just ML engineers) to responsibly tune things like AI_CLASSIFY\'s task_description or pick between model options for AI_COMPLETE — worth a look before it\'s GA and everyone else has caught on.'
+      },
+      {
+        name: 'ThoughtSpot Spotter',
+        description:
+          'ThoughtSpot\'s "agentic analytics" layer — an AI analyst you ask questions in natural language, which reasons through the steps, checks its own work, and returns an answer, backed by a governed semantic layer rather than a free-form text-to-SQL guess. Related agents (SpotterViz, SpotterModel, SpotterCode) extend the same idea to dashboard building, semantic modeling, and embedded-analytics code.',
+        whyWatch:
+          'It\'s a genuinely different bet than "Copilot bolted onto an existing BI tool" — the whole product is built around the agent doing the querying, not a chat box next to a report canvas. Worth watching whether Power BI Copilot or Snowflake\'s Cortex Analyst converge toward the same shape, since that would say a lot about where BI UX is actually heading.'
       }
     ],
     jobMarketTop5: {
