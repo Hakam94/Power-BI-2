@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Play, Eye, Clock, Sparkles, ExternalLink, X } from 'lucide-react';
+import { Play, Clock, ExternalLink, X } from 'lucide-react';
 import { YoutubeIcon } from './BrandIcons';
 
 export default function YouTubeVideosSection() {
@@ -8,69 +8,43 @@ export default function YouTubeVideosSection() {
   const videos = [
     {
       id: 'video-1',
-      youtubeId: 'dQw4w9WgXcQ', // Clean fallback video or placeholder stream
-      title: 'Power BI End-to-End Masterclass: Build an Executive Financial Dashboard',
-      views: '185,000+ views',
-      duration: '1h 45m',
+      youtubeId: 'E5IwVrO7bvk',
+      title: 'How to Install Power BI & Build Your First Dashboard',
+      part: 'Part 1',
       category: 'Power BI',
-      published: 'Latest Release',
-      thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-      summary: 'Learn how to transform raw transactional data into a production-ready Power BI dashboard using DAX calculations, Star Schema modeling, and custom visual formatting.'
+      summary: 'Import raw coffee-shop sales data, clean it, and create your first visuals — the starting point of the CoffeeShop dashboard series.'
     },
     {
       id: 'video-2',
-      youtubeId: 'dQw4w9WgXcQ',
-      title: 'SQL Window Functions Explained: ROW_NUMBER, RANK, DENSE_RANK & LAG',
-      views: '142,000+ views',
-      duration: '42 mins',
-      category: 'SQL',
-      published: 'Popular Tutorial',
-      thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
-      summary: 'Master SQL window functions with clear visual step-by-step diagrams and real business queries for revenue ranking and period-over-period growth.'
+      youtubeId: 'mXn-_VGXMsI',
+      title: 'Coffee Shop Sales Dashboard — DAX, Profit, Price & MoM Growth',
+      part: 'Part 2',
+      category: 'DAX',
+      summary: 'Dive into DAX: calculating metrics like Profit, Price, and Month-over-Month Growth, and enhancing interactivity.'
     },
     {
       id: 'video-3',
-      youtubeId: 'dQw4w9WgXcQ',
-      title: 'Snowflake Cloud Data Warehouse Crash Course for Beginners',
-      views: '98,000+ views',
-      duration: '58 mins',
-      category: 'Snowflake',
-      published: 'Trending',
-      thumbnail: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=800&auto=format&fit=crop',
-      summary: 'Complete guide to Snowflake virtual warehouses, Zero-Copy cloning, Time Travel disaster recovery, and cost optimization techniques.'
+      youtubeId: 'ysnD_-scwhg',
+      title: 'Dynamic Greeting, Refresh Timestamps & Row-Level Security (RLS)',
+      part: 'Part 3',
+      category: 'Row-Level Security',
+      summary: 'Personalize your dashboard with dynamic greetings, display refresh timestamps, and configure dynamic RLS filters.'
     },
     {
       id: 'video-4',
-      youtubeId: 'dQw4w9WgXcQ',
-      title: 'Microsoft Fabric Direct Lake Mode: Goodbye Import & DirectQuery',
-      views: '115,000+ views',
-      duration: '35 mins',
-      category: 'Microsoft Fabric',
-      published: 'Featured',
-      thumbnail: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop',
-      summary: 'Discover how Microsoft Fabric Direct Lake mode queries Delta Parquet files in OneLake instantly without dataset refresh bottlenecks.'
+      youtubeId: '81GNe3HosF4',
+      title: 'Field Parameters | The Smart Dashboard Technique',
+      part: 'Part 4',
+      category: 'Field Parameters',
+      summary: 'Use Field Parameters to build a flexible, user-driven dashboard that switches dimensions and measures dynamically.'
     },
     {
       id: 'video-5',
-      youtubeId: 'dQw4w9WgXcQ',
-      title: 'AI & MCP Protocol: Connecting ChatGPT to Power BI and Snowflake',
-      views: '210,000+ views',
-      duration: '50 mins',
-      category: 'AI & MCP',
-      published: 'Hot',
-      thumbnail: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=800&auto=format&fit=crop',
-      summary: 'Build an autonomous Model Context Protocol (MCP) server that enables Claude and ChatGPT to safely run DAX & SQL queries directly on enterprise databases.'
-    },
-    {
-      id: 'video-6',
-      youtubeId: 'dQw4w9WgXcQ',
-      title: 'Top 10 DAX Functions Every Data Analyst Must Master in 2026',
-      views: '260,000+ views',
-      duration: '1h 12m',
-      category: 'DAX',
-      published: 'Top Rated',
-      thumbnail: 'https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=800&auto=format&fit=crop',
-      summary: 'Deep dive into CALCULATE, FILTER, ALLSELECTED, SUMX, USERELATIONSHIP, and Time Intelligence patterns for complex reporting.'
+      youtubeId: 'kYJ_tXnZ9c8',
+      title: 'Dashboard Design Basics | Clean Layout, Themes & UX Tips',
+      part: 'Part 5',
+      category: 'Design & UX',
+      summary: 'Dashboard design fundamentals: aligning visuals, formatting themes, and structuring containers for a professional layout.'
     }
   ];
 
@@ -80,7 +54,7 @@ export default function YouTubeVideosSection() {
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full h-[500px] glow-orb-yellow pointer-events-none opacity-10 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div>
@@ -89,10 +63,10 @@ export default function YouTubeVideosSection() {
               <span>Official Channel Showcase</span>
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold text-white tracking-tight">
-              Featured YouTube Tutorials
+              The Power BI CoffeeShop Series
             </h2>
             <p className="text-gray-400 text-base mt-2 max-w-xl">
-              High-impact, practical video tutorials watched by over 50,000 data professionals on @HakamDataStudio.
+              The free, step-by-step tutorial series on @HakamDataStudio — from raw Excel data to a polished executive dashboard.
             </p>
           </div>
 
@@ -111,26 +85,26 @@ export default function YouTubeVideosSection() {
         {/* Video Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {videos.map((vid) => (
-            <div 
+            <div
               key={vid.id}
               className="glass-panel rounded-3xl border border-white/10 overflow-hidden glass-card-hover group flex flex-col justify-between"
             >
               {/* Thumbnail Container */}
-              <div 
+              <div
                 className="relative h-48 sm:h-52 w-full overflow-hidden cursor-pointer bg-gray-900"
                 onClick={() => setActiveVideo(vid)}
               >
-                <img 
-                  src={vid.thumbnail} 
+                <img
+                  src={`https://img.youtube.com/vi/${vid.youtubeId}/hqdefault.jpg`}
                   alt={vid.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0D2229] via-transparent to-transparent"></div>
 
-                {/* Duration Badge */}
+                {/* Part Badge */}
                 <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-[11px] font-mono text-gray-200 border border-white/10 flex items-center gap-1">
                   <Clock className="w-3 h-3 text-[#BFFF00]" />
-                  <span>{vid.duration}</span>
+                  <span>{vid.part}</span>
                 </div>
 
                 {/* Category Badge */}
@@ -149,12 +123,6 @@ export default function YouTubeVideosSection() {
               {/* Text Info */}
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-gray-400 mb-2">
-                    <Eye className="w-3.5 h-3.5 text-[#BFFF00]" />
-                    <span>{vid.views}</span>
-                    <span>•</span>
-                    <span className="text-[#00D2FF]">{vid.published}</span>
-                  </div>
                   <h3 className="font-bold text-white text-base leading-snug mb-3 group-hover:text-[#BFFF00] transition-colors font-heading">
                     {vid.title}
                   </h3>
@@ -181,7 +149,7 @@ export default function YouTubeVideosSection() {
       {activeVideo && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl animate-in fade-in">
           <div className="max-w-4xl w-full glass-panel rounded-3xl border border-white/20 overflow-hidden relative bg-[#0D2229]">
-            
+
             <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
               <div className="flex items-center gap-2">
                 <YoutubeIcon className="w-5 h-5 text-red-500" />
@@ -213,7 +181,7 @@ export default function YouTubeVideosSection() {
                 <span className="px-2.5 py-1 rounded bg-white/5 text-[#BFFF00]">
                   {activeVideo.category}
                 </span>
-                <span>{activeVideo.views}</span>
+                <span>{activeVideo.part}</span>
               </div>
 
               <a
@@ -223,7 +191,7 @@ export default function YouTubeVideosSection() {
                 className="px-6 py-2.5 rounded-full bg-red-600 text-white font-bold text-xs font-mono flex items-center gap-2"
               >
                 <YoutubeIcon className="w-4 h-4 fill-current" />
-                <span>Visit Channel for 150+ More Tutorials</span>
+                <span>Visit the Channel</span>
               </a>
             </div>
 
