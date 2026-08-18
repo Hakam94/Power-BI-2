@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  BarChart3, 
-  Search, 
-  Play, 
-  Sparkles, 
-  Download, 
-  Volume2, 
-  VolumeX, 
-  Menu, 
-  X, 
-  ChevronRight 
+import {
+  BarChart3,
+  Search,
+  Play,
+  Sparkles,
+  Download,
+  Volume2,
+  VolumeX,
+  Menu,
+  X,
+  ChevronRight
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { YoutubeIcon } from './BrandIcons';
 
 export default function Navbar({ onOpenCommandPalette, onOpenRoadmap }) {
@@ -37,6 +38,7 @@ export default function Navbar({ onOpenCommandPalette, onOpenRoadmap }) {
     { name: 'Services', href: '#services' },
     { name: 'Tutorials', href: '#youtube' },
     { name: 'AI & MCP', href: '#ai-mcp' },
+    { name: 'Weekly Updates', to: '/weekly' },
     { name: 'Stats', href: '#stats' },
     { name: 'Community', href: '#community' },
   ];
@@ -69,15 +71,25 @@ export default function Navbar({ onOpenCommandPalette, onOpenRoadmap }) {
 
           {/* Desktop Links */}
           <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] p-1.5 rounded-full border border-white/5">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="px-4 py-1.5 rounded-full text-xs font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
-              >
-                {link.name}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.to ? (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  className="px-4 py-1.5 rounded-full text-xs font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  {link.name}
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="px-4 py-1.5 rounded-full text-xs font-medium text-gray-300 hover:text-white hover:bg-white/10 transition-all duration-200"
+                >
+                  {link.name}
+                </a>
+              )
+            )}
           </nav>
 
           {/* Action Buttons */}
@@ -134,17 +146,29 @@ export default function Navbar({ onOpenCommandPalette, onOpenRoadmap }) {
         {/* Mobile Dropdown */}
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pt-4 border-t border-white/10 flex flex-col gap-3 pb-2 animate-in fade-in slide-in-from-top-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className="px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 flex items-center justify-between"
-              >
-                <span>{link.name}</span>
-                <ChevronRight className="w-4 h-4 text-gray-500" />
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.to ? (
+                <Link
+                  key={link.name}
+                  to={link.to}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 flex items-center justify-between"
+                >
+                  <span>{link.name}</span>
+                  <ChevronRight className="w-4 h-4 text-gray-500" />
+                </Link>
+              ) : (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="px-4 py-2 rounded-lg text-sm text-gray-300 hover:text-white hover:bg-white/10 flex items-center justify-between"
+                >
+                  <span>{link.name}</span>
+                  <ChevronRight className="w-4 h-4 text-gray-500" />
+                </a>
+              )
+            )}
             <div className="pt-2 flex flex-col gap-2">
               <button
                 onClick={() => {

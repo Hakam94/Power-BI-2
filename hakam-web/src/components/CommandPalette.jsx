@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Search, X, BarChart3, Database, BookOpen, Cpu, Download, ArrowRight, Phone } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Search, X, BarChart3, Database, BookOpen, Cpu, Download, ArrowRight, Phone, Radar } from 'lucide-react';
 import { YoutubeIcon } from './BrandIcons';
 
 export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
   const [query, setQuery] = useState('');
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -31,6 +33,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
     { title: 'YouTube Channel @HakamDataStudio', type: 'Channel', href: '#youtube', icon: YoutubeIcon, color: '#FF0000' },
     { title: '8-Step Data Evolution Pipeline', type: 'Story', href: '#story', icon: BookOpen, color: '#BFFF00' },
     { title: 'AI & MCP Protocol Simulator', type: 'Simulator', href: '#ai-mcp', icon: Cpu, color: '#00D2FF' },
+    { title: 'Weekly Best Practices', type: 'Weekly', path: '/weekly', icon: Radar, color: '#00D2FF' },
     { title: 'Download 2026 Data Roadmap PDF', type: 'Roadmap', action: () => { onClose(); onOpenRoadmap(); }, icon: Download, color: '#BFFF00' }
   ];
 
@@ -73,7 +76,10 @@ export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
                   key={idx}
                   onClick={() => {
                     if (item.action) item.action();
-                    else if (item.href) {
+                    else if (item.path) {
+                      navigate(item.path);
+                      onClose();
+                    } else if (item.href) {
                       window.location.href = item.href;
                       onClose();
                     }

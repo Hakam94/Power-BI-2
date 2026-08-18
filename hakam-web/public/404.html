@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Hakam Data Studio</title>
+    <!--
+      GitHub Pages SPA redirect trick (spa-github-pages pattern).
+      GitHub Pages has no server-side rewrite, so a direct link to a client
+      route like /Power-BI-2/weekly/dax-udf-power-bi 404s. This encodes the
+      path into a query string and redirects to index.html, which decodes it
+      back on load (see the matching script in index.html).
+    -->
+    <script type="text/javascript">
+      var pathSegmentsToKeep = 1; // keep "/Power-BI-2" as the app base path
+      var l = window.location;
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+        l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

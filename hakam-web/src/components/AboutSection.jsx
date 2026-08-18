@@ -15,11 +15,11 @@ export default function AboutSection() {
     },
     {
       year: 'Present',
-      title: 'Head of Data & AI Enablement',
-      role: 'Siemens Healthineers',
+      title: 'Data Analyst, Controlling',
+      role: 'Siemens Healthineers — Finance',
       icon: Building2,
       color: '#BFFF00',
-      description: 'Leads Power BI, SAP data, and AI-enablement initiatives across a global healthcare technology organization.'
+      description: 'Builds Power BI dashboards and SAP-driven reporting for the Finance Controlling function at a global healthcare technology organization.'
     },
     {
       year: 'Present',
@@ -49,7 +49,7 @@ export default function AboutSection() {
             Hakam Abushanab
           </h2>
           <p className="text-gray-400 text-base sm:text-lg">
-            From International Economics to Data & AI leadership at Siemens Healthineers — and global educator.
+            From International Economics to Data Analytics in Finance Controlling at Siemens Healthineers — and global educator.
           </p>
         </div>
 
@@ -73,7 +73,7 @@ export default function AboutSection() {
               </div>
 
               <h3 className="text-2xl font-bold text-white mb-1">Hakam Abushanab</h3>
-              <p className="text-xs font-mono text-[#00D2FF] mb-4">HEAD OF DATA & AI ENABLEMENT, SIEMENS HEALTHINEERS</p>
+              <p className="text-xs font-mono text-[#00D2FF] mb-4">DATA ANALYST, CONTROLLING — SIEMENS HEALTHINEERS</p>
 
               <p className="text-gray-300 text-sm leading-relaxed mb-6">
                 "My mission is simple: eliminate the confusion in data analytics and empower professionals with practical, job-ready skills in Power BI, SQL, and AI."

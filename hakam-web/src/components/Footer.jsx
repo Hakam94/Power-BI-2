@@ -1,14 +1,24 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { BarChart3, Mail, Send, CheckCircle2, Heart, ArrowUp } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { YoutubeIcon, LinkedinIcon, InstagramIcon, GithubIcon } from './BrandIcons';
+
+// TODO(Hakam): Create a free Buttondown account at https://buttondown.com
+// (free up to 100 subscribers) and set VITE_BUTTONDOWN_USERNAME in your
+// deploy env (or .env locally) to your real Buttondown username so this
+// form posts to your actual list instead of this placeholder handle.
+const BUTTONDOWN_USERNAME = import.meta.env.VITE_BUTTONDOWN_USERNAME || 'hakamdatastudio';
 
 export default function Footer({ onOpenRoadmap }) {
   const [newsletterEmail, setNewsletterEmail] = useState('');
   const [subscribed, setSubscribed] = useState(false);
 
-  const handleSubscribe = (e) => {
-    e.preventDefault();
+  // Buttondown's embeddable form has no CORS-friendly JSON API for static
+  // sites, so we submit a real <form> POST to a hidden iframe (Buttondown's
+  // documented embed pattern) — the page never navigates away, and we show
+  // our own success state once the POST has gone out.
+  const handleSubscribe = () => {
     if (!newsletterEmail) return;
     confetti({ particleCount: 60, spread: 60 });
     setSubscribed(true);
@@ -43,11 +53,19 @@ export default function Footer({ onOpenRoadmap }) {
 
             <div className="lg:col-span-5">
               {!subscribed ? (
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3">
+                <form
+                  action={`https://buttondown.com/api/emails/embed-subscribe/${BUTTONDOWN_USERNAME}`}
+                  method="post"
+                  target="bd-hidden-iframe"
+                  onSubmit={handleSubscribe}
+                  className="flex flex-col sm:flex-row gap-3"
+                >
+                  <input type="hidden" name="embed" value="1" />
                   <div className="relative flex-1">
                     <Mail className="w-4 h-4 text-gray-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
                     <input
                       type="email"
+                      name="email"
                       required
                       placeholder="Enter your email"
                       value={newsletterEmail}
@@ -62,6 +80,8 @@ export default function Footer({ onOpenRoadmap }) {
                     <span>Join Free</span>
                     <Send className="w-3.5 h-3.5" />
                   </button>
+                  {/* Buttondown POST target — keeps the page from navigating away */}
+                  <iframe name="bd-hidden-iframe" title="newsletter-subscribe" style={{ display: 'none' }} />
                 </form>
               ) : (
                 <div className="p-4 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 text-center">
@@ -123,6 +143,7 @@ export default function Footer({ onOpenRoadmap }) {
               <li><a href="#services" className="hover:text-[#BFFF00] transition-colors">1:1 Services</a></li>
               <li><a href="#about" className="hover:text-white transition-colors">About Hakam</a></li>
               <li><a href="#youtube" className="hover:text-white transition-colors">YouTube Tutorials</a></li>
+              <li><Link to="/weekly" className="hover:text-[#00D2FF] transition-colors">Weekly Best Practices</Link></li>
               <li><a href="#stats" className="hover:text-white transition-colors">Community Stats</a></li>
               <li><button onClick={onOpenRoadmap} className="hover:text-[#BFFF00] transition-colors text-left">Free Roadmap PDF</button></li>
             </ul>

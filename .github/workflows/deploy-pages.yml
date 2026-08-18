@@ -38,6 +38,10 @@ jobs:
         run: npm run build
         env:
           GH_PAGES: true
+          # Optional: set a repo secret named VITE_BUTTONDOWN_USERNAME once
+          # you've created a Buttondown account, so the live newsletter form
+          # posts to your real list instead of the placeholder handle.
+          VITE_BUTTONDOWN_USERNAME: ${{ secrets.VITE_BUTTONDOWN_USERNAME }}
 
       - uses: actions/configure-pages@v5
         with:
