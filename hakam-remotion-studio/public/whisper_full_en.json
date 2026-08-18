@@ -1,0 +1,1807 @@
+[
+  {
+    "startMs": 0,
+    "endMs": 9940,
+    "text": "Ok, here is a log"
+  },
+  {
+    "startMs": 10020,
+    "endMs": 15360,
+    "text": "Imagine while For example when i got music at Power BI"
+  },
+  {
+    "startMs": 15400,
+    "endMs": 15780,
+    "text": "But now"
+  },
+  {
+    "startMs": 15840,
+    "endMs": 20000,
+    "text": "Live and you write a single sentence"
+  },
+  {
+    "startMs": 20040,
+    "endMs": 29300,
+    "text": "And prepare завис 92 important subjects"
+  },
+  {
+    "startMs": 29300,
+    "endMs": 37300,
+    "text": "This is not just a scientific dream, this is what Microsoft has announced in Microsoft Build."
+  },
+  {
+    "startMs": 37300,
+    "endMs": 42300,
+    "text": "There is a conference in Builds in 2026."
+  },
+  {
+    "startMs": 45300,
+    "endMs": 55300,
+    "text": "Welcome to my studio, I am a computer engineer and now we will talk about something very important that will happen in the past."
+  },
+  {
+    "startMs": 55300,
+    "endMs": 63300,
+    "text": "I will make videos that you will see and work with Power BI or Microsoft Fabric."
+  },
+  {
+    "startMs": 63300,
+    "endMs": 65300,
+    "text": "So I will cover this part."
+  },
+  {
+    "startMs": 65300,
+    "endMs": 72300,
+    "text": "Because today we will talk about the transformation of the building that happened in the world of data analysis."
+  },
+  {
+    "startMs": 72300,
+    "endMs": 78300,
+    "text": "The world is under the control of the local government called the agent."
+  },
+  {
+    "startMs": 78300,
+    "endMs": 88300,
+    "text": "This place has changed a lot because the period that has passed has not only developed."
+  },
+  {
+    "startMs": 94300,
+    "endMs": 96300,
+    "text": "The first historical landmark."
+  },
+  {
+    "startMs": 96300,
+    "endMs": 109300,
+    "text": "Let's go back to the paper to understand how we got here."
+  },
+  {
+    "startMs": 109300,
+    "endMs": 116300,
+    "text": "For more than 20 years, the data analysis was based on a stable model."
+  },
+  {
+    "startMs": 116300,
+    "endMs": 123300,
+    "text": "You can ask the data analysis and the experience in Excel or Power BI."
+  },
+  {
+    "startMs": 123300,
+    "endMs": 131300,
+    "text": "You can ask the data analysis and the data analysis will be made and the data analysis will be opened and read the numbers."
+  },
+  {
+    "startMs": 131300,
+    "endMs": 135300,
+    "text": "The model is a simple model, it does not have one direction."
+  },
+  {
+    "startMs": 135300,
+    "endMs": 137300,
+    "text": "But now it is different."
+  },
+  {
+    "startMs": 137300,
+    "endMs": 140300,
+    "text": "Then the AI AI robot comes."
+  },
+  {
+    "startMs": 140300,
+    "endMs": 148300,
+    "text": "It helps you write questions in normal words and it tries to answer you as much as possible."
+  },
+  {
+    "startMs": 148300,
+    "endMs": 151300,
+    "text": "It is a great step, but it is still an AI."
+  },
+  {
+    "startMs": 151300,
+    "endMs": 156300,
+    "text": "You decide and you make and you do everything."
+  },
+  {
+    "startMs": 156300,
+    "endMs": 157300,
+    "text": "Today is a different day."
+  },
+  {
+    "startMs": 157300,
+    "endMs": 163300,
+    "text": "Today we are at the third stage, which is the AI AI AI."
+  },
+  {
+    "startMs": 163300,
+    "endMs": 173300,
+    "text": "At this stage, it is not just a question-answering tool, but the lawyer who makes and thinks, works with a number of systems."
+  },
+  {
+    "startMs": 173300,
+    "endMs": 179300,
+    "text": "If you make a decision to reach the result, you make a decision in a successful program."
+  },
+  {
+    "startMs": 179300,
+    "endMs": 190300,
+    "text": "The difference between the smart assistant and the smart lawyer is the difference between the person who gives you an opinion and the other person who gives you an important opinion and returns to you as a result."
+  },
+  {
+    "startMs": 191300,
+    "endMs": 194300,
+    "text": "It is not just a device that gives you the answer, it is a device."
+  },
+  {
+    "startMs": 194300,
+    "endMs": 200300,
+    "text": "Microsoft has seen this and decided to change everything related to this field."
+  },
+  {
+    "startMs": 200300,
+    "endMs": 208300,
+    "text": "Since Power BI is under Microsoft, I am talking about Microsoft that will help us."
+  },
+  {
+    "startMs": 208300,
+    "endMs": 211300,
+    "text": "The second is the Cobra."
+  },
+  {
+    "startMs": 211300,
+    "endMs": 223300,
+    "text": "In the Microsoft Build in 2026, I was in the version in Mill, because there were three changes in the amount."
+  },
+  {
+    "startMs": 223300,
+    "endMs": 229300,
+    "text": "The way you work with Power BI and with the factory will change."
+  },
+  {
+    "startMs": 229300,
+    "endMs": 232300,
+    "text": "It will never change, not only will it be."
+  },
+  {
+    "startMs": 232300,
+    "endMs": 235300,
+    "text": "There are changes that were very big and serious."
+  },
+  {
+    "startMs": 236300,
+    "endMs": 239300,
+    "text": "The third is the changes in the first."
+  },
+  {
+    "startMs": 240300,
+    "endMs": 243300,
+    "text": "The changes in the first are the lawyer's skills."
+  },
+  {
+    "startMs": 251300,
+    "endMs": 256300,
+    "text": "The first feature is called the lawyer's skills for Power BI, agent skills for Power BI."
+  },
+  {
+    "startMs": 256300,
+    "endMs": 261300,
+    "text": "It is in the specific stage and now it is a review."
+  },
+  {
+    "startMs": 261300,
+    "endMs": 276300,
+    "text": "Imagine that you say to the owner of a product, build a model for sales, to my company with a report showing the month's performance and the results of the Cobra BI project."
+  },
+  {
+    "startMs": 276300,
+    "endMs": 288300,
+    "text": "The owner of the product will go to the AI agent and create the details and connections in the work model, which is called the English semantic model."
+  },
+  {
+    "startMs": 288300,
+    "endMs": 307300,
+    "text": "It will write the DAX list and the DAX mission must create the pages, reports and pages and choose the appropriate details for the visuals, based on the best practices."
+  },
+  {
+    "startMs": 308300,
+    "endMs": 315300,
+    "text": "And we will share everything in the factory's field."
+  },
+  {
+    "startMs": 315300,
+    "endMs": 326300,
+    "text": "How this happens and through the development of Power BI, which is called Power BI Authoring Plugin,"
+  },
+  {
+    "startMs": 326300,
+    "endMs": 332300,
+    "text": "there are factory tools, skills for the factory, and marketing."
+  },
+  {
+    "startMs": 332300,
+    "endMs": 335300,
+    "text": "This is a marketplace, if it is like a market."
+  },
+  {
+    "startMs": 335300,
+    "endMs": 350300,
+    "text": "Most importantly, you can not only give me financial instructions, but you can also put a screenshot of the report you like and it will be in Power BI."
+  },
+  {
+    "startMs": 350300,
+    "endMs": 353300,
+    "text": "So you will have a very good step."
+  },
+  {
+    "startMs": 353300,
+    "endMs": 361300,
+    "text": "The important thing is that the time has changed greatly."
+  },
+  {
+    "startMs": 365300,
+    "endMs": 368300,
+    "text": "The fourth change is called factory applications."
+  },
+  {
+    "startMs": 368300,
+    "endMs": 373300,
+    "text": "This is done in the same marketplace as the existing applications."
+  },
+  {
+    "startMs": 373300,
+    "endMs": 381300,
+    "text": "The second feature is called the factory, the work model is a factory apps for semantic models."
+  },
+  {
+    "startMs": 382300,
+    "endMs": 385300,
+    "text": "The idea is simple but strong."
+  },
+  {
+    "startMs": 385300,
+    "endMs": 390300,
+    "text": "Imagine that you have a complete work model in the factory."
+  },
+  {
+    "startMs": 390300,
+    "endMs": 393300,
+    "text": "The semantic model in the factory."
+  },
+  {
+    "startMs": 393300,
+    "endMs": 397300,
+    "text": "The structure of the relationships, the requirements, everything is connected."
+  },
+  {
+    "startMs": 397300,
+    "endMs": 401300,
+    "text": "And now you are building a full web application."
+  },
+  {
+    "startMs": 401300,
+    "endMs": 409300,
+    "text": "This model was developed before the front-end developer."
+  },
+  {
+    "startMs": 409300,
+    "endMs": 413300,
+    "text": "It was developed for the front-end developer."
+  },
+  {
+    "startMs": 413300,
+    "endMs": 416300,
+    "text": "It was needed for the back-end developer."
+  },
+  {
+    "startMs": 416300,
+    "endMs": 423300,
+    "text": "It is a primary application for the API, the designer, and a few weeks of work."
+  },
+  {
+    "startMs": 423300,
+    "endMs": 426300,
+    "text": "So you can realize that you are doing this work."
+  },
+  {
+    "startMs": 426300,
+    "endMs": 431300,
+    "text": "Now the designer is building a basic web application for the factory."
+  },
+  {
+    "startMs": 431300,
+    "endMs": 433300,
+    "text": "The native web app."
+  },
+  {
+    "startMs": 433300,
+    "endMs": 437300,
+    "text": "Directly above the work model in normal words."
+  },
+  {
+    "startMs": 437300,
+    "endMs": 440300,
+    "text": "And it is directly spread in the factory."
+  },
+  {
+    "startMs": 440300,
+    "endMs": 442300,
+    "text": "Without doing it."
+  },
+  {
+    "startMs": 442300,
+    "endMs": 447300,
+    "text": "So in a week you can change the model of the data to apply the management app."
+  },
+  {
+    "startMs": 447300,
+    "endMs": 450300,
+    "text": "The inventory management app."
+  },
+  {
+    "startMs": 450300,
+    "endMs": 452300,
+    "text": "You can do it from this name."
+  },
+  {
+    "startMs": 452300,
+    "endMs": 454300,
+    "text": "You can apply the management app."
+  },
+  {
+    "startMs": 454300,
+    "endMs": 457300,
+    "text": "You can apply the data in the campaign."
+  },
+  {
+    "startMs": 457300,
+    "endMs": 462300,
+    "text": "Or if you are an amphibian, you can start the management and amphibian board."
+  },
+  {
+    "startMs": 462300,
+    "endMs": 466300,
+    "text": "The whole development was different."
+  },
+  {
+    "startMs": 466300,
+    "endMs": 471300,
+    "text": "This is a great explanation for the development of the technical projects."
+  },
+  {
+    "startMs": 471300,
+    "endMs": 475300,
+    "text": "Because there will be an explanation in a different way."
+  },
+  {
+    "startMs": 478300,
+    "endMs": 481300,
+    "text": "The third change is the experience."
+  },
+  {
+    "startMs": 481300,
+    "endMs": 487300,
+    "text": "The experience is also something very important for all the skills."
+  },
+  {
+    "startMs": 487300,
+    "endMs": 492300,
+    "text": "Microsoft launched a factory tool."
+  },
+  {
+    "startMs": 492300,
+    "endMs": 494300,
+    "text": "Skills for Fabric."
+  },
+  {
+    "startMs": 494300,
+    "endMs": 497300,
+    "text": "Because this new model is a marketplace."
+  },
+  {
+    "startMs": 497300,
+    "endMs": 501300,
+    "text": "A complete market for tools and smart documents."
+  },
+  {
+    "startMs": 501300,
+    "endMs": 503300,
+    "text": "Like a application tool."
+  },
+  {
+    "startMs": 503300,
+    "endMs": 505300,
+    "text": "But for the business."
+  },
+  {
+    "startMs": 505300,
+    "endMs": 509300,
+    "text": "You can download a size and give it to the smart lawyer."
+  },
+  {
+    "startMs": 509300,
+    "endMs": 511300,
+    "text": "From any AI agent."
+  },
+  {
+    "startMs": 511300,
+    "endMs": 515300,
+    "text": "And he knows how to work on a factory with a professional."
+  },
+  {
+    "startMs": 515300,
+    "endMs": 520300,
+    "text": "The idea is that Microsoft builds a factory."
+  },
+  {
+    "startMs": 520300,
+    "endMs": 525300,
+    "text": "From a simple data platform to a company with a professional."
+  },
+  {
+    "startMs": 525300,
+    "endMs": 528300,
+    "text": "And they talk to each other with all professional."
+  },
+  {
+    "startMs": 528300,
+    "endMs": 530300,
+    "text": "With a complete try."
+  },
+  {
+    "startMs": 530300,
+    "endMs": 531300,
+    "text": "The governance."
+  },
+  {
+    "startMs": 531300,
+    "endMs": 535300,
+    "text": "This project is built by Microsoft."
+  },
+  {
+    "startMs": 535300,
+    "endMs": 539300,
+    "text": "So how will this work be different with us?"
+  },
+  {
+    "startMs": 542300,
+    "endMs": 545300,
+    "text": "The smart protocol."
+  },
+  {
+    "startMs": 545300,
+    "endMs": 550300,
+    "text": "Which is called MSB."
+  },
+  {
+    "startMs": 550300,
+    "endMs": 552300,
+    "text": "Now let's understand how."
+  },
+  {
+    "startMs": 552300,
+    "endMs": 556300,
+    "text": "How do smart and AI communication work?"
+  },
+  {
+    "startMs": 556300,
+    "endMs": 560300,
+    "text": "The answer is that there is something called smart protocol."
+  },
+  {
+    "startMs": 560300,
+    "endMs": 562300,
+    "text": "The model is called MSB."
+  },
+  {
+    "startMs": 562300,
+    "endMs": 564300,
+    "text": "Model Context Protocol."
+  },
+  {
+    "startMs": 564300,
+    "endMs": 569300,
+    "text": "The idea is like UBS USB C."
+  },
+  {
+    "startMs": 569300,
+    "endMs": 573300,
+    "text": "For you to connect to USB C."
+  },
+  {
+    "startMs": 573300,
+    "endMs": 574300,
+    "text": "And work with you."
+  },
+  {
+    "startMs": 574300,
+    "endMs": 575300,
+    "text": "With one or more people."
+  },
+  {
+    "startMs": 575300,
+    "endMs": 576300,
+    "text": "To make any smart lawyer."
+  },
+  {
+    "startMs": 576300,
+    "endMs": 578300,
+    "text": "Talk to each other."
+  },
+  {
+    "startMs": 578300,
+    "endMs": 581300,
+    "text": "In a single and standard way."
+  },
+  {
+    "startMs": 581300,
+    "endMs": 586300,
+    "text": "Microsoft now has two types of this protocol."
+  },
+  {
+    "startMs": 586300,
+    "endMs": 588300,
+    "text": "Power BI MSB server."
+  },
+  {
+    "startMs": 588300,
+    "endMs": 594300,
+    "text": "The first is remote power BI MSB server."
+  },
+  {
+    "startMs": 594300,
+    "endMs": 596300,
+    "text": "And this protocol."
+  },
+  {
+    "startMs": 596300,
+    "endMs": 597300,
+    "text": "And the end."
+  },
+  {
+    "startMs": 597300,
+    "endMs": 598300,
+    "text": "It makes the lawyer."
+  },
+  {
+    "startMs": 598300,
+    "endMs": 601300,
+    "text": "Connect directly to the work models."
+  },
+  {
+    "startMs": 601300,
+    "endMs": 603300,
+    "text": "And the public in the factory."
+  },
+  {
+    "startMs": 603300,
+    "endMs": 606300,
+    "text": "The semantic model in the factory."
+  },
+  {
+    "startMs": 606300,
+    "endMs": 609300,
+    "text": "With the use of DAX."
+  },
+  {
+    "startMs": 609300,
+    "endMs": 610300,
+    "text": "And queries."
+  },
+  {
+    "startMs": 610300,
+    "endMs": 613300,
+    "text": "And answers to the questions."
+  },
+  {
+    "startMs": 613300,
+    "endMs": 615300,
+    "text": "With the complete protection."
+  },
+  {
+    "startMs": 615300,
+    "endMs": 617300,
+    "text": "On security."
+  },
+  {
+    "startMs": 617300,
+    "endMs": 618300,
+    "text": "That is to say."
+  },
+  {
+    "startMs": 618300,
+    "endMs": 620300,
+    "text": "Raw level security."
+  },
+  {
+    "startMs": 620300,
+    "endMs": 622300,
+    "text": "The second is."
+  },
+  {
+    "startMs": 622300,
+    "endMs": 624300,
+    "text": "The local development service."
+  },
+  {
+    "startMs": 624300,
+    "endMs": 626300,
+    "text": "Local power BI."
+  },
+  {
+    "startMs": 626300,
+    "endMs": 629300,
+    "text": "Modeling MSB server."
+  },
+  {
+    "startMs": 629300,
+    "endMs": 630300,
+    "text": "And this development."
+  },
+  {
+    "startMs": 630300,
+    "endMs": 631300,
+    "text": "And the building."
+  },
+  {
+    "startMs": 631300,
+    "endMs": 632300,
+    "text": "Works directly."
+  },
+  {
+    "startMs": 632300,
+    "endMs": 634300,
+    "text": "Locally on your device."
+  },
+  {
+    "startMs": 634300,
+    "endMs": 636300,
+    "text": "It gives the entire professional lawyer."
+  },
+  {
+    "startMs": 636300,
+    "endMs": 638300,
+    "text": "On the project files."
+  },
+  {
+    "startMs": 638300,
+    "endMs": 639300,
+    "text": "Power BI."
+  },
+  {
+    "startMs": 639300,
+    "endMs": 643300,
+    "text": "Which is called BBB."
+  },
+  {
+    "startMs": 643300,
+    "endMs": 646300,
+    "text": "It can do a lot of work."
+  },
+  {
+    "startMs": 646300,
+    "endMs": 647300,
+    "text": "For one payment."
+  },
+  {
+    "startMs": 647300,
+    "endMs": 649300,
+    "text": "Which is bulk operation."
+  },
+  {
+    "startMs": 649300,
+    "endMs": 650300,
+    "text": "And change the name."
+  },
+  {
+    "startMs": 650300,
+    "endMs": 652300,
+    "text": "The name is column names."
+  },
+  {
+    "startMs": 652300,
+    "endMs": 654300,
+    "text": "And the security system."
+  },
+  {
+    "startMs": 654300,
+    "endMs": 657300,
+    "text": "And building files."
+  },
+  {
+    "startMs": 657300,
+    "endMs": 659300,
+    "text": "Which is called relationships."
+  },
+  {
+    "startMs": 659300,
+    "endMs": 662300,
+    "text": "All in normal words."
+  },
+  {
+    "startMs": 662300,
+    "endMs": 665300,
+    "text": "And for all those who need."
+  },
+  {
+    "startMs": 665300,
+    "endMs": 667300,
+    "text": "Is the factory manager."
+  },
+  {
+    "startMs": 667300,
+    "endMs": 669300,
+    "text": "For the specialized number."
+  },
+  {
+    "startMs": 669300,
+    "endMs": 670300,
+    "text": "It's called."
+  },
+  {
+    "startMs": 670300,
+    "endMs": 672300,
+    "text": "Admin sitting."
+  },
+  {
+    "startMs": 672300,
+    "endMs": 674300,
+    "text": "Admin."
+  },
+  {
+    "startMs": 674300,
+    "endMs": 675300,
+    "text": "And it can be used."
+  },
+  {
+    "startMs": 675300,
+    "endMs": 677300,
+    "text": "From any development."
+  },
+  {
+    "startMs": 677300,
+    "endMs": 678300,
+    "text": "To choose."
+  },
+  {
+    "startMs": 678300,
+    "endMs": 679300,
+    "text": "VS Code."
+  },
+  {
+    "startMs": 679300,
+    "endMs": 680300,
+    "text": "Or Clothes."
+  },
+  {
+    "startMs": 680300,
+    "endMs": 682300,
+    "text": "Or even Antitropic."
+  },
+  {
+    "startMs": 682300,
+    "endMs": 684300,
+    "text": "I am currently."
+  },
+  {
+    "startMs": 684300,
+    "endMs": 686300,
+    "text": "Working on Antitropic."
+  },
+  {
+    "startMs": 686300,
+    "endMs": 687300,
+    "text": "To enter."
+  },
+  {
+    "startMs": 687300,
+    "endMs": 688300,
+    "text": "I want to understand."
+  },
+  {
+    "startMs": 688300,
+    "endMs": 689300,
+    "text": "What is the."
+  },
+  {
+    "startMs": 689300,
+    "endMs": 690300,
+    "text": "What is the."
+  },
+  {
+    "startMs": 690300,
+    "endMs": 691300,
+    "text": "And I will soon."
+  },
+  {
+    "startMs": 691300,
+    "endMs": 692300,
+    "text": "Continue."
+  },
+  {
+    "startMs": 692300,
+    "endMs": 693300,
+    "text": "Smart Fabric."
+  },
+  {
+    "startMs": 693300,
+    "endMs": 694300,
+    "text": "Of course."
+  },
+  {
+    "startMs": 694300,
+    "endMs": 695300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 695300,
+    "endMs": 696300,
+    "text": "The official."
+  },
+  {
+    "startMs": 696300,
+    "endMs": 698300,
+    "text": "Now this is another point."
+  },
+  {
+    "startMs": 698300,
+    "endMs": 701300,
+    "text": "We talk about it."
+  },
+  {
+    "startMs": 701300,
+    "endMs": 702300,
+    "text": "In this video."
+  },
+  {
+    "startMs": 702300,
+    "endMs": 704300,
+    "text": "Before we continue."
+  },
+  {
+    "startMs": 704300,
+    "endMs": 705300,
+    "text": "The concept."
+  },
+  {
+    "startMs": 705300,
+    "endMs": 706300,
+    "text": "You should understand."
+  },
+  {
+    "startMs": 706300,
+    "endMs": 707300,
+    "text": "Smart Fabric."
+  },
+  {
+    "startMs": 707300,
+    "endMs": 708300,
+    "text": "It is."
+  },
+  {
+    "startMs": 708300,
+    "endMs": 709300,
+    "text": "Fabric IQ."
+  },
+  {
+    "startMs": 709300,
+    "endMs": 710300,
+    "text": "Smart Fabric."
+  },
+  {
+    "startMs": 710300,
+    "endMs": 712300,
+    "text": "And the main smart."
+  },
+  {
+    "startMs": 712300,
+    "endMs": 713300,
+    "text": "Which is."
+  },
+  {
+    "startMs": 713300,
+    "endMs": 714300,
+    "text": "Fabric AIQ."
+  },
+  {
+    "startMs": 714300,
+    "endMs": 716300,
+    "text": "In the platform."
+  },
+  {
+    "startMs": 716300,
+    "endMs": 717300,
+    "text": "In the platform."
+  },
+  {
+    "startMs": 717300,
+    "endMs": 718300,
+    "text": "Think about."
+  },
+  {
+    "startMs": 718300,
+    "endMs": 719300,
+    "text": "As a brain."
+  },
+  {
+    "startMs": 719300,
+    "endMs": 720300,
+    "text": "All smart."
+  },
+  {
+    "startMs": 720300,
+    "endMs": 721300,
+    "text": "All smart."
+  },
+  {
+    "startMs": 721300,
+    "endMs": 723300,
+    "text": "In the real business."
+  },
+  {
+    "startMs": 723300,
+    "endMs": 724300,
+    "text": "The problem."
+  },
+  {
+    "startMs": 724300,
+    "endMs": 725300,
+    "text": "Which was."
+  },
+  {
+    "startMs": 725300,
+    "endMs": 726300,
+    "text": "There."
+  },
+  {
+    "startMs": 726300,
+    "endMs": 727300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 727300,
+    "endMs": 728300,
+    "text": "Made."
+  },
+  {
+    "startMs": 728300,
+    "endMs": 729300,
+    "text": "Without."
+  },
+  {
+    "startMs": 729300,
+    "endMs": 730300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 730300,
+    "endMs": 731300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 731300,
+    "endMs": 732300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 732300,
+    "endMs": 733300,
+    "text": "But not for a minute."
+  },
+  {
+    "startMs": 733300,
+    "endMs": 734300,
+    "text": "Because."
+  },
+  {
+    "startMs": 734300,
+    "endMs": 735300,
+    "text": "There was."
+  },
+  {
+    "startMs": 735300,
+    "endMs": 736300,
+    "text": "There was."
+  },
+  {
+    "startMs": 736300,
+    "endMs": 737300,
+    "text": "There was."
+  },
+  {
+    "startMs": 737300,
+    "endMs": 738300,
+    "text": "The basis."
+  },
+  {
+    "startMs": 738300,
+    "endMs": 739300,
+    "text": "The name."
+  },
+  {
+    "startMs": 739300,
+    "endMs": 740300,
+    "text": "The name."
+  },
+  {
+    "startMs": 740300,
+    "endMs": 741300,
+    "text": "The basis."
+  },
+  {
+    "startMs": 741300,
+    "endMs": 742300,
+    "text": "The real business."
+  },
+  {
+    "startMs": 742300,
+    "endMs": 743300,
+    "text": "You have."
+  },
+  {
+    "startMs": 743300,
+    "endMs": 744300,
+    "text": "In your pocket."
+  },
+  {
+    "startMs": 744300,
+    "endMs": 745300,
+    "text": "Model."
+  },
+  {
+    "startMs": 745300,
+    "endMs": 746300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 746300,
+    "endMs": 747300,
+    "text": "Fabric."
+  },
+  {
+    "startMs": 747300,
+    "endMs": 748300,
+    "text": "Solves this problem."
+  },
+  {
+    "startMs": 748300,
+    "endMs": 749300,
+    "text": "With."
+  },
+  {
+    "startMs": 749300,
+    "endMs": 750300,
+    "text": "The."
+  },
+  {
+    "startMs": 750300,
+    "endMs": 751300,
+    "text": "And."
+  },
+  {
+    "startMs": 751300,
+    "endMs": 752300,
+    "text": "The."
+  },
+  {
+    "startMs": 752300,
+    "endMs": 753300,
+    "text": "And."
+  },
+  {
+    "startMs": 753300,
+    "endMs": 754300,
+    "text": "The."
+  },
+  {
+    "startMs": 754300,
+    "endMs": 755300,
+    "text": "And."
+  },
+  {
+    "startMs": 755300,
+    "endMs": 756300,
+    "text": "And."
+  },
+  {
+    "startMs": 756300,
+    "endMs": 757300,
+    "text": "And."
+  },
+  {
+    "startMs": 757300,
+    "endMs": 758300,
+    "text": "And."
+  },
+  {
+    "startMs": 758300,
+    "endMs": 759300,
+    "text": "All together."
+  },
+  {
+    "startMs": 759300,
+    "endMs": 760300,
+    "text": "All together."
+  },
+  {
+    "startMs": 760300,
+    "endMs": 761300,
+    "text": "So."
+  },
+  {
+    "startMs": 761300,
+    "endMs": 762300,
+    "text": "ats."
+  },
+  {
+    "startMs": 762300,
+    "endMs": 763300,
+    "text": "Smart."
+  },
+  {
+    "startMs": 763300,
+    "endMs": 764300,
+    "text": "Coaches."
+  },
+  {
+    "startMs": 764300,
+    "endMs": 765300,
+    "text": "And."
+  },
+  {
+    "startMs": 765300,
+    "endMs": 766300,
+    "text": "I need help."
+  },
+  {
+    "startMs": 766300,
+    "endMs": 767300,
+    "text": "Thank you to."
+  },
+  {
+    "startMs": 767300,
+    "endMs": 768300,
+    "text": "Trist."
+  },
+  {
+    "startMs": 768300,
+    "endMs": 769300,
+    "text": "Thank you to the face."
+  },
+  {
+    "startMs": 769300,
+    "endMs": 770300,
+    "text": "So."
+  },
+  {
+    "startMs": 770300,
+    "endMs": 771300,
+    "text": "This session."
+  },
+  {
+    "startMs": 771300,
+    "endMs": 772300,
+    "text": "The thing."
+  },
+  {
+    "startMs": 772300,
+    "endMs": 773180,
+    "text": "For the head of the"
+  },
+  {
+    "startMs": 773180,
+    "endMs": 774180,
+    "text": "The."
+  },
+  {
+    "startMs": 774180,
+    "endMs": 775180,
+    "text": "DatУ."
+  },
+  {
+    "startMs": 775180,
+    "endMs": 776300,
+    "text": "Content."
+  },
+  {
+    "startMs": 776300,
+    "endMs": 777300,
+    "text": "The picture of yourself."
+  },
+  {
+    "startMs": 777300,
+    "endMs": 778300,
+    "text": "A."
+  },
+  {
+    "startMs": 778300,
+    "endMs": 779300,
+    "text": "I'm a."
+  },
+  {
+    "startMs": 779300,
+    "endMs": 781300,
+    "text": "Bitten time yet um,"
+  },
+  {
+    "startMs": 781300,
+    "endMs": 782300,
+    "text": "No."
+  },
+  {
+    "startMs": 782300,
+    "endMs": 783300,
+    "text": "So."
+  },
+  {
+    "startMs": 783300,
+    "endMs": 784300,
+    "text": "It's in psychOLD."
+  },
+  {
+    "startMs": 784300,
+    "endMs": 785300,
+    "text": "So."
+  },
+  {
+    "startMs": 785300,
+    "endMs": 786300,
+    "text": "It's bigger out."
+  },
+  {
+    "startMs": 786300,
+    "endMs": 787300,
+    "text": "Wow."
+  },
+  {
+    "startMs": 787300,
+    "endMs": 790300,
+    "text": "FABRIK, FABRIK IQ,"
+  },
+  {
+    "startMs": 790300,
+    "endMs": 793800,
+    "text": "the business management and marketing industry."
+  },
+  {
+    "startMs": 793800,
+    "endMs": 798100,
+    "text": "The known one is FUNDRY IQ,"
+  },
+  {
+    "startMs": 798100,
+    "endMs": 801000,
+    "text": "the basic knowledge of the market."
+  },
+  {
+    "startMs": 801000,
+    "endMs": 802300,
+    "text": "As a result,"
+  },
+  {
+    "startMs": 802300,
+    "endMs": 806300,
+    "text": "many people can work together"
+  },
+  {
+    "startMs": 806300,
+    "endMs": 809800,
+    "text": "on shared and market data,"
+  },
+  {
+    "startMs": 809800,
+    "endMs": 812800,
+    "text": "and try without making mistakes."
+  },
+  {
+    "startMs": 812800,
+    "endMs": 818300,
+    "text": "FABRIK is the one who turns the model of the semantic model"
+  },
+  {
+    "startMs": 818300,
+    "endMs": 824300,
+    "text": "from just a Power BI to a strategy."
+  },
+  {
+    "startMs": 824300,
+    "endMs": 827300,
+    "text": "For all the smart drivers in the institution,"
+  },
+  {
+    "startMs": 827300,
+    "endMs": 830300,
+    "text": "because when the institution is buying everything,"
+  },
+  {
+    "startMs": 830300,
+    "endMs": 833300,
+    "text": "Microsoft has the opportunity to enter it on Teams,"
+  },
+  {
+    "startMs": 833300,
+    "endMs": 836800,
+    "text": "they can enter your applications, emails,"
+  },
+  {
+    "startMs": 836800,
+    "endMs": 839800,
+    "text": "your shares, your one share point."
+  },
+  {
+    "startMs": 840300,
+    "endMs": 844300,
+    "text": "It has the opportunity to enter all your applications,"
+  },
+  {
+    "startMs": 844300,
+    "endMs": 845300,
+    "text": "and this is FABRIK."
+  },
+  {
+    "startMs": 845300,
+    "endMs": 847300,
+    "text": "What does this mean to you?"
+  },
+  {
+    "startMs": 847300,
+    "endMs": 849300,
+    "text": "As a data provider,"
+  },
+  {
+    "startMs": 849300,
+    "endMs": 851300,
+    "text": "what will make this development different?"
+  },
+  {
+    "startMs": 851300,
+    "endMs": 853300,
+    "text": "Of course, it will make a difference."
+  },
+  {
+    "startMs": 853300,
+    "endMs": 855300,
+    "text": "The question now is,"
+  },
+  {
+    "startMs": 855300,
+    "endMs": 858300,
+    "text": "what does this development mean?"
+  },
+  {
+    "startMs": 858300,
+    "endMs": 860300,
+    "text": "As a data provider,"
+  },
+  {
+    "startMs": 860300,
+    "endMs": 863300,
+    "text": "because we have this channel in our data provider,"
+  },
+  {
+    "startMs": 863300,
+    "endMs": 865300,
+    "text": "and it is a Power BI development,"
+  },
+  {
+    "startMs": 865300,
+    "endMs": 866300,
+    "text": "how will it make a difference?"
+  },
+  {
+    "startMs": 866300,
+    "endMs": 868300,
+    "text": "Power BI Developer or Data Analysis?"
+  },
+  {
+    "startMs": 868300,
+    "endMs": 870300,
+    "text": "Let me be honest with you."
+  },
+  {
+    "startMs": 870300,
+    "endMs": 873300,
+    "text": "The reverse work will make a difference."
+  },
+  {
+    "startMs": 873300,
+    "endMs": 878300,
+    "text": "All those who took hours from the model data modeling,"
+  },
+  {
+    "startMs": 878300,
+    "endMs": 882300,
+    "text": "and the basic basic tax,"
+  },
+  {
+    "startMs": 882300,
+    "endMs": 885300,
+    "text": "they wanted a quick tax,"
+  },
+  {
+    "startMs": 885300,
+    "endMs": 890300,
+    "text": "and the smart drivers and the smart drivers will take it."
+  },
+  {
+    "startMs": 890300,
+    "endMs": 893300,
+    "text": "This is not just a challenge,"
+  },
+  {
+    "startMs": 893300,
+    "endMs": 896300,
+    "text": "this is a liberation for your time for important things."
+  },
+  {
+    "startMs": 896300,
+    "endMs": 899300,
+    "text": "The model of work is the most important thing."
+  },
+  {
+    "startMs": 899300,
+    "endMs": 901300,
+    "text": "The semantic model you can do,"
+  },
+  {
+    "startMs": 901300,
+    "endMs": 903300,
+    "text": "the semantic model of the public,"
+  },
+  {
+    "startMs": 903300,
+    "endMs": 905300,
+    "text": "is the most important thing."
+  },
+  {
+    "startMs": 905300,
+    "endMs": 907300,
+    "text": "I don't know how to write this,"
+  },
+  {
+    "startMs": 907300,
+    "endMs": 910300,
+    "text": "but the lawyer can write it."
+  },
+  {
+    "startMs": 910300,
+    "endMs": 913300,
+    "text": "But the one who understands how to build a work model,"
+  },
+  {
+    "startMs": 913300,
+    "endMs": 915300,
+    "text": "whether it is a semantic model,"
+  },
+  {
+    "startMs": 915300,
+    "endMs": 918300,
+    "text": "a correct, logical, and logical,"
+  },
+  {
+    "startMs": 918300,
+    "endMs": 920300,
+    "text": "will need the resources."
+  },
+  {
+    "startMs": 920300,
+    "endMs": 922300,
+    "text": "Because the smart driver,"
+  },
+  {
+    "startMs": 922300,
+    "endMs": 930780,
+    "text": "who works on a"
+  },
+  {
+    "startMs": 930780,
+    "endMs": 932300,
+    "text": "linear model,"
+  },
+  {
+    "startMs": 932300,
+    "endMs": 934300,
+    "text": "will give you a linear answer."
+  },
+  {
+    "startMs": 934300,
+    "endMs": 936300,
+    "text": "So you will enter a linear,"
+  },
+  {
+    "startMs": 936300,
+    "endMs": 938300,
+    "text": "and the linear will come out."
+  },
+  {
+    "startMs": 938300,
+    "endMs": 940300,
+    "text": "Carbide N, Carbide A."
+  },
+  {
+    "startMs": 940300,
+    "endMs": 943300,
+    "text": "The solution is to develop,"
+  },
+  {
+    "startMs": 943300,
+    "endMs": 945300,
+    "text": "not to hide,"
+  },
+  {
+    "startMs": 945300,
+    "endMs": 949300,
+    "text": "from the implementation of the project to the implementation of the problems."
+  },
+  {
+    "startMs": 949300,
+    "endMs": 951300,
+    "text": "The quality of the insurance,"
+  },
+  {
+    "startMs": 951300,
+    "endMs": 954300,
+    "text": "the human added value,"
+  },
+  {
+    "startMs": 954300,
+    "endMs": 957300,
+    "text": "has moved to a strategic level."
+  },
+  {
+    "startMs": 957300,
+    "endMs": 960300,
+    "text": "So it became more complicated."
+  },
+  {
+    "startMs": 960300,
+    "endMs": 963300,
+    "text": "The foundations that started to try these tools,"
+  },
+  {
+    "startMs": 963300,
+    "endMs": 965300,
+    "text": "have decreased,"
+  },
+  {
+    "startMs": 965300,
+    "endMs": 969300,
+    "text": "to 80% during the recovery process."
+  },
+  {
+    "startMs": 969300,
+    "endMs": 971300,
+    "text": "There are many things that are really repeated in the work."
+  },
+  {
+    "startMs": 971300,
+    "endMs": 973300,
+    "text": "This is not just a challenge,"
+  },
+  {
+    "startMs": 973300,
+    "endMs": 976300,
+    "text": "this is a research in 2026."
+  },
+  {
+    "startMs": 976300,
+    "endMs": 978300,
+    "text": "Microsoft has a clear view."
+  },
+  {
+    "startMs": 978300,
+    "endMs": 980300,
+    "text": "This is a search on their website."
+  },
+  {
+    "startMs": 980300,
+    "endMs": 983300,
+    "text": "Of course, this is a promotion,"
+  },
+  {
+    "startMs": 983300,
+    "endMs": 987300,
+    "text": "but this is not just a real challenge,"
+  },
+  {
+    "startMs": 987300,
+    "endMs": 989300,
+    "text": "because there are other people."
+  },
+  {
+    "startMs": 989300,
+    "endMs": 992300,
+    "text": "Now, the end of this video."
+  },
+  {
+    "startMs": 992300,
+    "endMs": 994300,
+    "text": "That's all for the talk."
+  },
+  {
+    "startMs": 994300,
+    "endMs": 998300,
+    "text": "Microsoft announced in the year 2026,"
+  },
+  {
+    "startMs": 998300,
+    "endMs": 1001300,
+    "text": "and Microsoft built a few more in Milan."
+  },
+  {
+    "startMs": 1001300,
+    "endMs": 1003300,
+    "text": "They are going to turn this into a real one,"
+  },
+  {
+    "startMs": 1003300,
+    "endMs": 1005300,
+    "text": "not a special one."
+  },
+  {
+    "startMs": 1005300,
+    "endMs": 1008300,
+    "text": "They are going to turn this into a tool for Power BI,"
+  },
+  {
+    "startMs": 1008300,
+    "endMs": 1011300,
+    "text": "Agents Skills for Power BI,"
+  },
+  {
+    "startMs": 1011300,
+    "endMs": 1014300,
+    "text": "built entirely in the natural language."
+  },
+  {
+    "startMs": 1014300,
+    "endMs": 1016300,
+    "text": "Or, in the video,"
+  },
+  {
+    "startMs": 1016300,
+    "endMs": 1017300,
+    "text": "the screenshot,"
+  },
+  {
+    "startMs": 1017300,
+    "endMs": 1019300,
+    "text": "you can do a lot of things."
+  },
+  {
+    "startMs": 1019300,
+    "endMs": 1021300,
+    "text": "The apps factory for the model,"
+  },
+  {
+    "startMs": 1021300,
+    "endMs": 1024300,
+    "text": "the factory apps for the semantic model,"
+  },
+  {
+    "startMs": 1024300,
+    "endMs": 1026300,
+    "text": "and the apps with the entire web,"
+  },
+  {
+    "startMs": 1026300,
+    "endMs": 1029300,
+    "text": "over the semantic model model."
+  },
+  {
+    "startMs": 1029300,
+    "endMs": 1033300,
+    "text": "The protocol uses the MCB servers,"
+  },
+  {
+    "startMs": 1033300,
+    "endMs": 1037300,
+    "text": "and a\">"
+  },
+  {
+    "startMs": 1037300,
+    "endMs": 1039300,
+    "text": "this."
+  },
+  {
+    "startMs": 1039300,
+    "endMs": 1042300,
+    "text": "The 막 immortal consumption,"
+  },
+  {
+    "startMs": 1042300,
+    "endMs": 1045300,
+    "text": "parallel to ID strategies."
+  },
+  {
+    "startMs": 1045300,
+    "endMs": 1047300,
+    "text": "So that there is technology to огромZ"
+  },
+  {
+    "startMs": 1047300,
+    "endMs": 1049300,
+    "text": "and make beautiful videos."
+  },
+  {
+    "startMs": 1049300,
+    "endMs": 1052300,
+    "text": "This shows in Ac工作 that"
+  },
+  {
+    "startMs": 1052300,
+    "endMs": 1054180,
+    "text": "Microsoft can compliment to the"
+  },
+  {
+    "startMs": 1054180,
+    "endMs": 1056380,
+    "text": "neuroge Work Lab worldwide and"
+  },
+  {
+    "startMs": 1056380,
+    "endMs": 1058300,
+    "text": "make videos fashion oriented."
+  },
+  {
+    "startMs": 1058300,
+    "endMs": 1059840,
+    "text": "Our company humiliates and"
+  },
+  {
+    "startMs": 1059840,
+    "endMs": 1062300,
+    "text": "wants to bastard work,"
+  },
+  {
+    "startMs": 1062300,
+    "endMs": 1067080,
+    "text": "If you liked the video, subscribe to the channel and leave a like."
+  },
+  {
+    "startMs": 1067080,
+    "endMs": 1069080,
+    "text": "This helps us reach more people."
+  },
+  {
+    "startMs": 1069080,
+    "endMs": 1075380,
+    "text": "And in the comments, write me any feature that interests you more."
+  },
+  {
+    "startMs": 1075380,
+    "endMs": 1080140,
+    "text": "Are these the skills of the lawyer or the factory applications?"
+  },
+  {
+    "startMs": 1080140,
+    "endMs": 1083460,
+    "text": "Any one who uses it, I will see you in the next video."
+  },
+  {
+    "startMs": 1083460,
+    "endMs": 1086960,
+    "text": "And peace be upon you."
+  },
+  {
+    "startMs": 1086960,
+    "endMs": 1088960,
+    "text": "Peace be upon you."
+  }
+]

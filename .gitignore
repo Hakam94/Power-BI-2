@@ -1,2 +1,20 @@
 **/.pbi/localSettings.json
 **/.pbi/cache.abf
+test/
+
+# Dependencies & Build artifacts
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+.env
+.env.local
+*.env
+
+# Large media / render outputs
+**/out/*.mp4
+**/out/inspection/*.mp4
+*.MP4
+*.mp4
+!part-6/assets/broll_opening_hook_video.mp4
+

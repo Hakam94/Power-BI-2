@@ -1,0 +1,1266 @@
+[
+  {
+    "text": "تخيّل",
+    "textEn": "IMAGINE THIS...",
+    "startMs": 400,
+    "endMs": 1300,
+    "timestampMs": 400,
+    "confidence": 0.99
+  },
+  {
+    "text": "معي...",
+    "textEn": "IMAGINE THIS...",
+    "startMs": 1300,
+    "endMs": 2200,
+    "timestampMs": 1300,
+    "confidence": 0.99
+  },
+  {
+    "text": "بدل",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 2300,
+    "endMs": 2650,
+    "timestampMs": 2300,
+    "confidence": 0.99
+  },
+  {
+    "text": "ما",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 2650,
+    "endMs": 3000,
+    "timestampMs": 2650,
+    "confidence": 0.99
+  },
+  {
+    "text": "تقعد",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 3000,
+    "endMs": 3350,
+    "timestampMs": 3000,
+    "confidence": 0.99
+  },
+  {
+    "text": "ساعات",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 3350,
+    "endMs": 3700,
+    "timestampMs": 3350,
+    "confidence": 0.99
+  },
+  {
+    "text": "تبني",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 3700,
+    "endMs": 4050,
+    "timestampMs": 3700,
+    "confidence": 0.99
+  },
+  {
+    "text": "موديل",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 4050,
+    "endMs": 4400,
+    "timestampMs": 4050,
+    "confidence": 0.99
+  },
+  {
+    "text": "بيانات",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 4400,
+    "endMs": 4750,
+    "timestampMs": 4400,
+    "confidence": 0.99
+  },
+  {
+    "text": "في",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 4750,
+    "endMs": 5100,
+    "timestampMs": 4750,
+    "confidence": 0.99
+  },
+  {
+    "text": "Power",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 5100,
+    "endMs": 5450,
+    "timestampMs": 5100,
+    "confidence": 0.99
+  },
+  {
+    "text": "BI",
+    "textEn": "INSTEAD OF SPENDING HOURS BUILDING DATA MODELS IN POWER BI",
+    "startMs": 5450,
+    "endMs": 5800,
+    "timestampMs": 5450,
+    "confidence": 0.99
+  },
+  {
+    "text": "تكتب",
+    "textEn": "YOU WRITE JUST A SINGLE PLAIN ENGLISH PROMPT",
+    "startMs": 5900,
+    "endMs": 6475,
+    "timestampMs": 5900,
+    "confidence": 0.99
+  },
+  {
+    "text": "جملة",
+    "textEn": "YOU WRITE JUST A SINGLE PLAIN ENGLISH PROMPT",
+    "startMs": 6475,
+    "endMs": 7050,
+    "timestampMs": 6475,
+    "confidence": 0.99
+  },
+  {
+    "text": "واحدة",
+    "textEn": "YOU WRITE JUST A SINGLE PLAIN ENGLISH PROMPT",
+    "startMs": 7050,
+    "endMs": 7625,
+    "timestampMs": 7050,
+    "confidence": 0.99
+  },
+  {
+    "text": "بالإنجليزي",
+    "textEn": "YOU WRITE JUST A SINGLE PLAIN ENGLISH PROMPT",
+    "startMs": 7625,
+    "endMs": 8200,
+    "timestampMs": 7625,
+    "confidence": 0.99
+  },
+  {
+    "text": "وبالذكاء",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 8300,
+    "endMs": 8790,
+    "timestampMs": 8300,
+    "confidence": 0.99
+  },
+  {
+    "text": "الاصطناعي",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 8790,
+    "endMs": 9280,
+    "timestampMs": 8790,
+    "confidence": 0.99
+  },
+  {
+    "text": "ينشئ",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 9280,
+    "endMs": 9770,
+    "timestampMs": 9280,
+    "confidence": 0.99
+  },
+  {
+    "text": "لك",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 9770,
+    "endMs": 10260,
+    "timestampMs": 9770,
+    "confidence": 0.99
+  },
+  {
+    "text": "الجداول",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 10260,
+    "endMs": 10750,
+    "timestampMs": 10260,
+    "confidence": 0.99
+  },
+  {
+    "text": "والعلاقات",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 10750,
+    "endMs": 11240,
+    "timestampMs": 10750,
+    "confidence": 0.99
+  },
+  {
+    "text": "والـ",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 11240,
+    "endMs": 11730,
+    "timestampMs": 11240,
+    "confidence": 0.99
+  },
+  {
+    "text": "DAX",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 11730,
+    "endMs": 12220,
+    "timestampMs": 11730,
+    "confidence": 0.99
+  },
+  {
+    "text": "والتقارير",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 12220,
+    "endMs": 12710,
+    "timestampMs": 12220,
+    "confidence": 0.99
+  },
+  {
+    "text": "كاملة",
+    "textEn": "AND AI GENERATES TABLES, DAX & FULL REPORTS AUTOMATICALLY",
+    "startMs": 12710,
+    "endMs": 13200,
+    "timestampMs": 12710,
+    "confidence": 0.99
+  },
+  {
+    "text": "بدون",
+    "textEn": "WITHOUT EVEN TOUCHING YOUR MOUSE!",
+    "startMs": 13300,
+    "endMs": 13925,
+    "timestampMs": 13300,
+    "confidence": 0.99
+  },
+  {
+    "text": "ما",
+    "textEn": "WITHOUT EVEN TOUCHING YOUR MOUSE!",
+    "startMs": 13925,
+    "endMs": 14550,
+    "timestampMs": 13925,
+    "confidence": 0.99
+  },
+  {
+    "text": "تلمس",
+    "textEn": "WITHOUT EVEN TOUCHING YOUR MOUSE!",
+    "startMs": 14550,
+    "endMs": 15175,
+    "timestampMs": 14550,
+    "confidence": 0.99
+  },
+  {
+    "text": "الماوس!",
+    "textEn": "WITHOUT EVEN TOUCHING YOUR MOUSE!",
+    "startMs": 15175,
+    "endMs": 15800,
+    "timestampMs": 15175,
+    "confidence": 0.99
+  },
+  {
+    "text": "هذا",
+    "textEn": "THIS IS NOT SCIENCE FICTION",
+    "startMs": 16000,
+    "endMs": 16550,
+    "timestampMs": 16000,
+    "confidence": 0.99
+  },
+  {
+    "text": "مش",
+    "textEn": "THIS IS NOT SCIENCE FICTION",
+    "startMs": 16550,
+    "endMs": 17100,
+    "timestampMs": 16550,
+    "confidence": 0.99
+  },
+  {
+    "text": "خيال",
+    "textEn": "THIS IS NOT SCIENCE FICTION",
+    "startMs": 17100,
+    "endMs": 17650,
+    "timestampMs": 17100,
+    "confidence": 0.99
+  },
+  {
+    "text": "علمي",
+    "textEn": "THIS IS NOT SCIENCE FICTION",
+    "startMs": 17650,
+    "endMs": 18200,
+    "timestampMs": 17650,
+    "confidence": 0.99
+  },
+  {
+    "text": "هذا",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 18300,
+    "endMs": 18636,
+    "timestampMs": 18300,
+    "confidence": 0.99
+  },
+  {
+    "text": "ما",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 18636,
+    "endMs": 18972,
+    "timestampMs": 18636,
+    "confidence": 0.99
+  },
+  {
+    "text": "أعلنت",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 18972,
+    "endMs": 19309,
+    "timestampMs": 18972,
+    "confidence": 0.99
+  },
+  {
+    "text": "عنه",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 19309,
+    "endMs": 19645,
+    "timestampMs": 19309,
+    "confidence": 0.99
+  },
+  {
+    "text": "Microsoft",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 19645,
+    "endMs": 19981,
+    "timestampMs": 19645,
+    "confidence": 0.99
+  },
+  {
+    "text": "في",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 19981,
+    "endMs": 20318,
+    "timestampMs": 19981,
+    "confidence": 0.99
+  },
+  {
+    "text": "Build",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 20318,
+    "endMs": 20654,
+    "timestampMs": 20318,
+    "confidence": 0.99
+  },
+  {
+    "text": "2026",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 20654,
+    "endMs": 20990,
+    "timestampMs": 20654,
+    "confidence": 0.99
+  },
+  {
+    "text": "قبل",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 20990,
+    "endMs": 21327,
+    "timestampMs": 20990,
+    "confidence": 0.99
+  },
+  {
+    "text": "أسابيع",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 21327,
+    "endMs": 21663,
+    "timestampMs": 21327,
+    "confidence": 0.99
+  },
+  {
+    "text": "قليلة",
+    "textEn": "THIS IS WHAT MICROSOFT ANNOUNCED AT BUILD 2026 FEW WEEKS AGO",
+    "startMs": 21663,
+    "endMs": 22000,
+    "timestampMs": 21663,
+    "confidence": 0.99
+  },
+  {
+    "text": "أهلاً",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 22100,
+    "endMs": 22487,
+    "timestampMs": 22100,
+    "confidence": 0.99
+  },
+  {
+    "text": "وسهلاً،",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 22487,
+    "endMs": 22875,
+    "timestampMs": 22487,
+    "confidence": 0.99
+  },
+  {
+    "text": "أنا",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 22875,
+    "endMs": 23262,
+    "timestampMs": 22875,
+    "confidence": 0.99
+  },
+  {
+    "text": "حكم،",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 23262,
+    "endMs": 23650,
+    "timestampMs": 23262,
+    "confidence": 0.99
+  },
+  {
+    "text": "من",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 23650,
+    "endMs": 24037,
+    "timestampMs": 23650,
+    "confidence": 0.99
+  },
+  {
+    "text": "Hakam",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 24037,
+    "endMs": 24425,
+    "timestampMs": 24037,
+    "confidence": 0.99
+  },
+  {
+    "text": "Data",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 24425,
+    "endMs": 24812,
+    "timestampMs": 24425,
+    "confidence": 0.99
+  },
+  {
+    "text": "Studio",
+    "textEn": "WELCOME! I AM HAKAM FROM HAKAM DATA STUDIO",
+    "startMs": 24812,
+    "endMs": 25200,
+    "timestampMs": 24812,
+    "confidence": 0.99
+  },
+  {
+    "text": "وهذا",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 25300,
+    "endMs": 25688,
+    "timestampMs": 25300,
+    "confidence": 0.99
+  },
+  {
+    "text": "الفيديو",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 25688,
+    "endMs": 26077,
+    "timestampMs": 25688,
+    "confidence": 0.99
+  },
+  {
+    "text": "راح",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 26077,
+    "endMs": 26466,
+    "timestampMs": 26077,
+    "confidence": 0.99
+  },
+  {
+    "text": "يكون",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 26466,
+    "endMs": 26855,
+    "timestampMs": 26466,
+    "confidence": 0.99
+  },
+  {
+    "text": "من",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 26855,
+    "endMs": 27244,
+    "timestampMs": 26855,
+    "confidence": 0.99
+  },
+  {
+    "text": "أهم",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 27244,
+    "endMs": 27633,
+    "timestampMs": 27244,
+    "confidence": 0.99
+  },
+  {
+    "text": "الفيديوهات",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 27633,
+    "endMs": 28022,
+    "timestampMs": 27633,
+    "confidence": 0.99
+  },
+  {
+    "text": "اللي",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 28022,
+    "endMs": 28411,
+    "timestampMs": 28022,
+    "confidence": 0.99
+  },
+  {
+    "text": "تشوفها",
+    "textEn": "THIS WILL BE ONE OF THE MOST IMPORTANT VIDEOS YOU WATCH",
+    "startMs": 28411,
+    "endMs": 28800,
+    "timestampMs": 28411,
+    "confidence": 0.99
+  },
+  {
+    "text": "لأن",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 28900,
+    "endMs": 29227,
+    "timestampMs": 28900,
+    "confidence": 0.99
+  },
+  {
+    "text": "اليوم",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 29227,
+    "endMs": 29554,
+    "timestampMs": 29227,
+    "confidence": 0.99
+  },
+  {
+    "text": "نتكلم",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 29554,
+    "endMs": 29881,
+    "timestampMs": 29554,
+    "confidence": 0.99
+  },
+  {
+    "text": "عن",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 29881,
+    "endMs": 30209,
+    "timestampMs": 29881,
+    "confidence": 0.99
+  },
+  {
+    "text": "التحول",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 30209,
+    "endMs": 30536,
+    "timestampMs": 30209,
+    "confidence": 0.99
+  },
+  {
+    "text": "الجذري",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 30536,
+    "endMs": 30863,
+    "timestampMs": 30536,
+    "confidence": 0.99
+  },
+  {
+    "text": "—",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 30863,
+    "endMs": 31190,
+    "timestampMs": 30863,
+    "confidence": 0.99
+  },
+  {
+    "text": "عصر",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 31190,
+    "endMs": 31518,
+    "timestampMs": 31190,
+    "confidence": 0.99
+  },
+  {
+    "text": "الـ",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 31518,
+    "endMs": 31845,
+    "timestampMs": 31518,
+    "confidence": 0.99
+  },
+  {
+    "text": "Agentic",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 31845,
+    "endMs": 32172,
+    "timestampMs": 31845,
+    "confidence": 0.99
+  },
+  {
+    "text": "AI",
+    "textEn": "BECAUSE TODAY WE COVER THE MAJOR SHIFT — ERA OF AGENTIC AI",
+    "startMs": 32172,
+    "endMs": 32500,
+    "timestampMs": 32172,
+    "confidence": 0.99
+  },
+  {
+    "text": "خلونا",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 33000,
+    "endMs": 33422,
+    "timestampMs": 33000,
+    "confidence": 0.99
+  },
+  {
+    "text": "نرجع",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 33422,
+    "endMs": 33844,
+    "timestampMs": 33422,
+    "confidence": 0.99
+  },
+  {
+    "text": "شوي",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 33844,
+    "endMs": 34266,
+    "timestampMs": 33844,
+    "confidence": 0.99
+  },
+  {
+    "text": "للوراء",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 34266,
+    "endMs": 34688,
+    "timestampMs": 34266,
+    "confidence": 0.99
+  },
+  {
+    "text": "عشان",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 34688,
+    "endMs": 35111,
+    "timestampMs": 34688,
+    "confidence": 0.99
+  },
+  {
+    "text": "نفهم",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 35111,
+    "endMs": 35533,
+    "timestampMs": 35111,
+    "confidence": 0.99
+  },
+  {
+    "text": "كيف",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 35533,
+    "endMs": 35955,
+    "timestampMs": 35533,
+    "confidence": 0.99
+  },
+  {
+    "text": "وصلنا",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 35955,
+    "endMs": 36377,
+    "timestampMs": 35955,
+    "confidence": 0.99
+  },
+  {
+    "text": "لهنا",
+    "textEn": "LET US STEP BACK TO UNDERSTAND HOW WE GOT HERE",
+    "startMs": 36377,
+    "endMs": 36800,
+    "timestampMs": 36377,
+    "confidence": 0.99
+  },
+  {
+    "text": "لأكثر",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 37000,
+    "endMs": 37312,
+    "timestampMs": 37000,
+    "confidence": 0.99
+  },
+  {
+    "text": "من",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 37312,
+    "endMs": 37625,
+    "timestampMs": 37312,
+    "confidence": 0.99
+  },
+  {
+    "text": "20",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 37625,
+    "endMs": 37937,
+    "timestampMs": 37625,
+    "confidence": 0.99
+  },
+  {
+    "text": "سنة،",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 37937,
+    "endMs": 38250,
+    "timestampMs": 37937,
+    "confidence": 0.99
+  },
+  {
+    "text": "كان",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 38250,
+    "endMs": 38562,
+    "timestampMs": 38250,
+    "confidence": 0.99
+  },
+  {
+    "text": "عالم",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 38562,
+    "endMs": 38875,
+    "timestampMs": 38562,
+    "confidence": 0.99
+  },
+  {
+    "text": "البيانات",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 38875,
+    "endMs": 39187,
+    "timestampMs": 38875,
+    "confidence": 0.99
+  },
+  {
+    "text": "يعتمد",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 39187,
+    "endMs": 39500,
+    "timestampMs": 39187,
+    "confidence": 0.99
+  },
+  {
+    "text": "على",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 39500,
+    "endMs": 39812,
+    "timestampMs": 39500,
+    "confidence": 0.99
+  },
+  {
+    "text": "نموذج",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 39812,
+    "endMs": 40125,
+    "timestampMs": 39812,
+    "confidence": 0.99
+  },
+  {
+    "text": "واحد:",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 40125,
+    "endMs": 40437,
+    "timestampMs": 40125,
+    "confidence": 0.99
+  },
+  {
+    "text": "أنت",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 40437,
+    "endMs": 40750,
+    "timestampMs": 40437,
+    "confidence": 0.99
+  },
+  {
+    "text": "تسأل",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 40750,
+    "endMs": 41062,
+    "timestampMs": 40750,
+    "confidence": 0.99
+  },
+  {
+    "text": "والـ",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 41062,
+    "endMs": 41375,
+    "timestampMs": 41062,
+    "confidence": 0.99
+  },
+  {
+    "text": "Dashboard",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 41375,
+    "endMs": 41687,
+    "timestampMs": 41375,
+    "confidence": 0.99
+  },
+  {
+    "text": "يجاوب",
+    "textEn": "FOR 20+ YEARS, DATA WAS PASSIVE: YOU ASK, DASHBOARDS ANSWER",
+    "startMs": 41687,
+    "endMs": 42000,
+    "timestampMs": 41687,
+    "confidence": 0.99
+  },
+  {
+    "text": "بعدين",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 42200,
+    "endMs": 42727,
+    "timestampMs": 42200,
+    "confidence": 0.99
+  },
+  {
+    "text": "جاء",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 42727,
+    "endMs": 43254,
+    "timestampMs": 42727,
+    "confidence": 0.99
+  },
+  {
+    "text": "الـ",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 43254,
+    "endMs": 43781,
+    "timestampMs": 43254,
+    "confidence": 0.99
+  },
+  {
+    "text": "Copilot",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 43781,
+    "endMs": 44309,
+    "timestampMs": 43781,
+    "confidence": 0.99
+  },
+  {
+    "text": "—",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 44309,
+    "endMs": 44836,
+    "timestampMs": 44309,
+    "confidence": 0.99
+  },
+  {
+    "text": "مساعد",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 44836,
+    "endMs": 45363,
+    "timestampMs": 44836,
+    "confidence": 0.99
+  },
+  {
+    "text": "ذكي",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 45363,
+    "endMs": 45890,
+    "timestampMs": 45363,
+    "confidence": 0.99
+  },
+  {
+    "text": "تكتب",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 45890,
+    "endMs": 46418,
+    "timestampMs": 45890,
+    "confidence": 0.99
+  },
+  {
+    "text": "له",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 46418,
+    "endMs": 46945,
+    "timestampMs": 46418,
+    "confidence": 0.99
+  },
+  {
+    "text": "وينفذ",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 46945,
+    "endMs": 47472,
+    "timestampMs": 46945,
+    "confidence": 0.99
+  },
+  {
+    "text": "لك",
+    "textEn": "THEN COPILOT ARRIVED — AN AI ASSISTANT THAT EXECUTES YOUR PROMPTS",
+    "startMs": 47472,
+    "endMs": 48000,
+    "timestampMs": 47472,
+    "confidence": 0.99
+  },
+  {
+    "text": "والآن",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 48200,
+    "endMs": 48723,
+    "timestampMs": 48200,
+    "confidence": 0.99
+  },
+  {
+    "text": "نحن",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 48723,
+    "endMs": 49246,
+    "timestampMs": 48723,
+    "confidence": 0.99
+  },
+  {
+    "text": "في",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 49246,
+    "endMs": 49769,
+    "timestampMs": 49246,
+    "confidence": 0.99
+  },
+  {
+    "text": "المرحلة",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 49769,
+    "endMs": 50292,
+    "timestampMs": 49769,
+    "confidence": 0.99
+  },
+  {
+    "text": "الثالثة",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 50292,
+    "endMs": 50815,
+    "timestampMs": 50292,
+    "confidence": 0.99
+  },
+  {
+    "text": "—",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 50815,
+    "endMs": 51338,
+    "timestampMs": 50815,
+    "confidence": 0.99
+  },
+  {
+    "text": "عصر",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 51338,
+    "endMs": 51861,
+    "timestampMs": 51338,
+    "confidence": 0.99
+  },
+  {
+    "text": "الـ",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 51861,
+    "endMs": 52384,
+    "timestampMs": 51861,
+    "confidence": 0.99
+  },
+  {
+    "text": "Agentic",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 52384,
+    "endMs": 52907,
+    "timestampMs": 52384,
+    "confidence": 0.99
+  },
+  {
+    "text": "AI،",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 52907,
+    "endMs": 53430,
+    "timestampMs": 52907,
+    "confidence": 0.99
+  },
+  {
+    "text": "الذكاء",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 53430,
+    "endMs": 53953,
+    "timestampMs": 53430,
+    "confidence": 0.99
+  },
+  {
+    "text": "الاصطناعي",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 53953,
+    "endMs": 54476,
+    "timestampMs": 53953,
+    "confidence": 0.99
+  },
+  {
+    "text": "الوكيل",
+    "textEn": "NOW WE ENTER STAGE 3 — AGENTIC AI: AUTONOMOUS AI AGENTS",
+    "startMs": 54476,
+    "endMs": 55000,
+    "timestampMs": 54476,
+    "confidence": 0.99
+  },
+  {
+    "text": "3",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 55200,
+    "endMs": 55685,
+    "timestampMs": 55200,
+    "confidence": 0.99
+  },
+  {
+    "text": "تغييرات",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 55685,
+    "endMs": 56171,
+    "timestampMs": 55685,
+    "confidence": 0.99
+  },
+  {
+    "text": "جوهرية:",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 56171,
+    "endMs": 56657,
+    "timestampMs": 56171,
+    "confidence": 0.99
+  },
+  {
+    "text": "Agent",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 56657,
+    "endMs": 57142,
+    "timestampMs": 56657,
+    "confidence": 0.99
+  },
+  {
+    "text": "Skills",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 57142,
+    "endMs": 57628,
+    "timestampMs": 57142,
+    "confidence": 0.99
+  },
+  {
+    "text": "for",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 57628,
+    "endMs": 58114,
+    "timestampMs": 57628,
+    "confidence": 0.99
+  },
+  {
+    "text": "Power",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 58114,
+    "endMs": 58600,
+    "timestampMs": 58114,
+    "confidence": 0.99
+  },
+  {
+    "text": "BI",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 58600,
+    "endMs": 59085,
+    "timestampMs": 58600,
+    "confidence": 0.99
+  },
+  {
+    "text": "+",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 59085,
+    "endMs": 59571,
+    "timestampMs": 59085,
+    "confidence": 0.99
+  },
+  {
+    "text": "MCP",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 59571,
+    "endMs": 60057,
+    "timestampMs": 59571,
+    "confidence": 0.99
+  },
+  {
+    "text": "Protocol",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 60057,
+    "endMs": 60542,
+    "timestampMs": 60057,
+    "confidence": 0.99
+  },
+  {
+    "text": "+",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 60542,
+    "endMs": 61028,
+    "timestampMs": 60542,
+    "confidence": 0.99
+  },
+  {
+    "text": "Fabric",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 61028,
+    "endMs": 61514,
+    "timestampMs": 61028,
+    "confidence": 0.99
+  },
+  {
+    "text": "IQ",
+    "textEn": "3 GAME CHANGERS: AGENT SKILLS + MCP PROTOCOL + FABRIC IQ",
+    "startMs": 61514,
+    "endMs": 62000,
+    "timestampMs": 61514,
+    "confidence": 0.99
+  },
+  {
+    "text": "الآن",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 62200,
+    "endMs": 62800,
+    "timestampMs": 62200,
+    "confidence": 0.99
+  },
+  {
+    "text": "الـ",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 62800,
+    "endMs": 63400,
+    "timestampMs": 62800,
+    "confidence": 0.99
+  },
+  {
+    "text": "Agent",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 63400,
+    "endMs": 64000,
+    "timestampMs": 63400,
+    "confidence": 0.99
+  },
+  {
+    "text": "يستطيع",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 64000,
+    "endMs": 64600,
+    "timestampMs": 64000,
+    "confidence": 0.99
+  },
+  {
+    "text": "بناء",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 64600,
+    "endMs": 65200,
+    "timestampMs": 64600,
+    "confidence": 0.99
+  },
+  {
+    "text": "الـ",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 65200,
+    "endMs": 65800,
+    "timestampMs": 65200,
+    "confidence": 0.99
+  },
+  {
+    "text": "Semantic",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 65800,
+    "endMs": 66400,
+    "timestampMs": 65800,
+    "confidence": 0.99
+  },
+  {
+    "text": "Model",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 66400,
+    "endMs": 67000,
+    "timestampMs": 66400,
+    "confidence": 0.99
+  },
+  {
+    "text": "والـ",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 67000,
+    "endMs": 67600,
+    "timestampMs": 67000,
+    "confidence": 0.99
+  },
+  {
+    "text": "DAX",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 67600,
+    "endMs": 68200,
+    "timestampMs": 67600,
+    "confidence": 0.99
+  },
+  {
+    "text": "والتقرير",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 68200,
+    "endMs": 68800,
+    "timestampMs": 68200,
+    "confidence": 0.99
+  },
+  {
+    "text": "بالكامل",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 68800,
+    "endMs": 69400,
+    "timestampMs": 68800,
+    "confidence": 0.99
+  },
+  {
+    "text": "تلقائياً",
+    "textEn": "NOW AGENTS BUILD SEMANTIC MODELS, DAX & REPORTS END-TO-END",
+    "startMs": 69400,
+    "endMs": 70000,
+    "timestampMs": 69400,
+    "confidence": 0.99
+  },
+  {
+    "text": "اشترك",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 70200,
+    "endMs": 70733,
+    "timestampMs": 70200,
+    "confidence": 0.99
+  },
+  {
+    "text": "في",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 70733,
+    "endMs": 71266,
+    "timestampMs": 70733,
+    "confidence": 0.99
+  },
+  {
+    "text": "القناة",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 71266,
+    "endMs": 71800,
+    "timestampMs": 71266,
+    "confidence": 0.99
+  },
+  {
+    "text": "لتبقى",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 71800,
+    "endMs": 72333,
+    "timestampMs": 71800,
+    "confidence": 0.99
+  },
+  {
+    "text": "في",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 72333,
+    "endMs": 72866,
+    "timestampMs": 72333,
+    "confidence": 0.99
+  },
+  {
+    "text": "مقدمة",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 72866,
+    "endMs": 73400,
+    "timestampMs": 72866,
+    "confidence": 0.99
+  },
+  {
+    "text": "ثورة",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 73400,
+    "endMs": 73933,
+    "timestampMs": 73400,
+    "confidence": 0.99
+  },
+  {
+    "text": "تحليل",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 73933,
+    "endMs": 74466,
+    "timestampMs": 73933,
+    "confidence": 0.99
+  },
+  {
+    "text": "البيانات!",
+    "textEn": "SUBSCRIBE TO HAKAM DATA STUDIO TO STAY AHEAD IN DATA & AI!",
+    "startMs": 74466,
+    "endMs": 75000,
+    "timestampMs": 74466,
+    "confidence": 0.99
+  }
+]
