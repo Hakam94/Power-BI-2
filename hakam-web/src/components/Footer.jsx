@@ -136,7 +136,7 @@ export default function Footer({ onOpenRoadmap }) {
               <li><a href="https://www.youtube.com/@HakamDataStudio" target="_blank" rel="noreferrer" className="hover:text-[#F2C811] transition-colors">YouTube @HakamDataStudio</a></li>
               <li><a href="https://linkedin.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">LinkedIn Community</a></li>
               <li><a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white transition-colors">GitHub Code Repos</a></li>
-              <li><a href="mailto:contact@hakamdatastudio.com" className="hover:text-[#00D2FF] transition-colors">contact@hakamdatastudio.com</a></li>
+              <li><a href="mailto:h.abushanab94@gmail.com" className="hover:text-[#00D2FF] transition-colors">h.abushanab94@gmail.com</a></li>
             </ul>
           </div>
 

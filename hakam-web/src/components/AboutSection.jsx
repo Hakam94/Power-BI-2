@@ -1,5 +1,7 @@
 import React from 'react';
 import { GraduationCap, FlaskConical, LineChart, Video, Users, Award, CheckCircle2, ArrowUpRight } from 'lucide-react';
+import TiltCard from './TiltCard';
+import hakamPortrait from '../assets/hakam-portrait.jpg';
 
 export default function AboutSection() {
   const milestones = [
@@ -64,15 +66,17 @@ export default function AboutSection() {
           
           {/* Left Column: Avatar & Quick Stats Card */}
           <div className="lg:col-span-5">
+            <TiltCard max={6} className="relative">
             <div className="glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden text-center group">
-              
+
               {/* Profile Avatar Graphic */}
               <div className="relative w-36 h-36 mx-auto mb-6 rounded-3xl bg-gradient-to-tr from-[#F2C811] via-[#00D2FF] to-[#BFFF00] p-[2px] shadow-2xl shadow-yellow-500/20">
                 <div className="w-full h-full bg-[#0B0B0B] rounded-[22px] flex items-center justify-center overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-b from-[#1A1A22] to-[#0B0B0B] flex flex-col items-center justify-center p-4 text-center">
-                    <span className="text-3xl font-bold text-white font-heading tracking-tight">HAKAM</span>
-                    <span className="text-[10px] text-[#F2C811] font-mono tracking-widest mt-1">DATA STUDIO</span>
-                  </div>
+                  <img
+                    src={hakamPortrait}
+                    alt="Hakam Abushanab"
+                    className="w-full h-full object-cover object-top rounded-[22px]"
+                  />
                 </div>
               </div>
 
@@ -96,6 +100,7 @@ export default function AboutSection() {
                 </span>
               </div>
             </div>
+            </TiltCard>
           </div>
 
           {/* Right Column: Timeline Journey */}

@@ -32,13 +32,68 @@ mirror any price change in `api/_lib/services.js` (the server-side catalog —
 this is the price actually charged, so it's the one that matters for
 security).
 
+## Design system
+
+The visual identity (near-black `#0B0B0B` background, glassmorphism panels,
+PowerBI-yellow `#F2C811` / electric-cyan `#00D2FF` / lime `#BFFF00` accents,
+Space Grotesk headings) lives in `src/index.css` as reusable utility classes
+(`.glass-panel`, `.gradient-text-yellow`, `.cyber-grid`, etc.) — reuse those
+rather than inventing new colors when adding sections.
+
+`src/components/TiltCard.jsx` adds the mouse-follow 3D tilt + glare effect
+used on the Services, Courses, and About cards. Wrap any `glass-panel` card
+in it for the same effect elsewhere:
+
+```jsx
+<TiltCard><div className="glass-panel ...">...</div></TiltCard>
+```
+
 ## PayPal integration
 
-Payments use PayPal's Orders API v2 with a **server-authoritative price**:
-the browser only ever sends a `serviceId`; the serverless functions in `/api`
-look up the real price and create/capture the order with PayPal directly.
-This prevents a buyer from tampering with the amount in devtools before
-paying — a risk with pure client-side PayPal button integrations.
+There are two checkout modes, and `PayPalCheckoutModal.jsx` picks between
+them automatically:
+
+| | Classic checkout (default) | Embedded checkout (optional upgrade) |
+| --- | --- | --- |
+| Works with | Any PayPal account, personal or business | PayPal Business account |
+| Setup needed | Just an email — none | A REST API app (Client ID + Secret) |
+| Buyer experience | Redirects to paypal.com, then back | Pays in an on-page widget, no redirect |
+| Price integrity | Set in the browser, like any PayPal button | Enforced server-side in `/api` |
+
+### Classic checkout (what's live right now)
+
+Uses PayPal's long-standing hosted "Website Payments Standard" checkout —
+just a form that posts to `paypal.com` with the receiving account's email.
+No developer account, API app, or backend needed.
+
+`VITE_PAYPAL_BUSINESS_EMAIL` defaults to **h.abushanab94@gmail.com** directly
+in `PayPalCheckoutModal.jsx`, so this works out of the box. To use a
+different receiving account later, set `VITE_PAYPAL_BUSINESS_EMAIL` in your
+environment (see `.env.example`) — it overrides the default.
+
+One setting worth turning on in your PayPal account, so buyers land back on
+the site automatically instead of seeing a "Return to Merchant" link: log
+into paypal.com → **Account Settings → Website preferences** → turn on
+**Auto Return**, with the return URL set to your site's `/` (or leave it off
+and buyers just click through manually — payment still goes through either
+way).
+
+**Note on trust:** this mode is genuinely simple and money will land in your
+account correctly, but the "Payment complete" banner that appears back on
+the site is just reading the redirect — it isn't cryptographically verified.
+For a $150–350 consulting service that's a normal, low-risk tradeoff (check
+your PayPal inbox/dashboard as the source of truth for what was actually
+paid). If this business grows into higher order volumes or a need for
+verified, database-backed order records, upgrade to the embedded flow below.
+
+### Embedded checkout (optional, for later)
+
+Payments happen via PayPal's Orders API v2 with a **server-authoritative
+price** — the browser only ever sends a `serviceId`; the serverless
+functions in `/api` look up the real price and create/capture the order
+directly. This is the more tamper-resistant option (a buyer can't edit the
+amount in devtools) and skips the redirect, but requires a PayPal Business
+account and a few minutes of setup:
 
 ```
 src/components/PayPalCheckoutModal.jsx   → renders PayPal Buttons (frontend)
@@ -48,50 +103,29 @@ api/_lib/services.js                     → authoritative service catalog + pri
 api/_lib/paypal.js                       → PayPal REST auth + fetch helper
 ```
 
-### 1. Get PayPal credentials
+1. Go to the [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/applications) and log in.
+2. Under **Sandbox → Apps & Credentials**, create an app to get a sandbox **Client ID** and **Secret** for testing with fake money.
+3. Copy `.env.example` to `.env` and fill in `VITE_PAYPAL_CLIENT_ID`, `PAYPAL_CLIENT_ID`, and `PAYPAL_CLIENT_SECRET` with those values.
+4. Run the app on a host that executes the `/api` functions (see Deployment below) and pay with a [sandbox buyer account](https://developer.paypal.com/dashboard/accounts) — no real money moves.
+5. When ready for real payments: create a **Live** app (requires upgrading to a Business account), swap in its Client ID/Secret, and set `PAYPAL_ENV=live`.
 
-1. Go to the [PayPal Developer Dashboard](https://developer.paypal.com/dashboard/applications) and log in with your PayPal business account.
-2. Under **Sandbox → Apps & Credentials**, create (or use the default) app to get a sandbox **Client ID** and **Secret** for testing with fake money.
-3. Later, do the same under **Live → Apps & Credentials** for real payments.
-
-### 2. Configure environment variables
-
-Copy `.env.example` to `.env` and fill in the sandbox values:
-
-```bash
-cp .env.example .env
-```
+Setting `VITE_PAYPAL_CLIENT_ID` makes the embedded flow take over automatically — the classic checkout above becomes the fallback again if you unset it.
 
 | Variable | Where it's used | Notes |
 | --- | --- | --- |
-| `VITE_PAYPAL_CLIENT_ID` | Frontend (bundled into JS) | Same value as `PAYPAL_CLIENT_ID`, safe to expose |
+| `VITE_PAYPAL_BUSINESS_EMAIL` | Frontend | Classic checkout receiving account; defaults to h.abushanab94@gmail.com |
+| `VITE_PAYPAL_CLIENT_ID` | Frontend (bundled into JS) | Same value as `PAYPAL_CLIENT_ID`; set to enable embedded checkout |
 | `PAYPAL_CLIENT_ID` | `/api` functions | Same Client ID, read server-side |
 | `PAYPAL_CLIENT_SECRET` | `/api` functions | **Never** expose this to the browser |
 | `PAYPAL_ENV` | `/api` functions | `sandbox` or `live` |
 
-### 3. Test with sandbox
-
-Run the app on a host that executes the `/api` functions (see Deployment
-below), open a service card, and pay with a [sandbox buyer
-account](https://developer.paypal.com/dashboard/accounts) — no real money
-moves. Confirm the order appears under **Sandbox → Notifications** in the
-dashboard.
-
-### 4. Go live
-
-1. Swap the sandbox values in your host's environment variables for the
-   **Live** Client ID/Secret.
-2. Set `PAYPAL_ENV=live`.
-3. Make a small real test purchase yourself to confirm end-to-end delivery.
-
 ### Fulfillment
 
-There's no database or booking system wired up yet — after a successful
-payment, the confirmation screen prompts the buyer to email
-`contact@hakamdatastudio.com` to schedule. **Update that address** in
-`PayPalCheckoutModal.jsx` to your real inbox. Consider replacing the mailto
-link with a [Calendly](https://calendly.com) booking link once you have one,
-and/or checking the PayPal dashboard periodically for new orders.
+There's no database or booking system wired up — after a successful
+payment, the buyer is prompted to email `h.abushanab94@gmail.com` to
+schedule. Consider replacing that mailto link with a
+[Calendly](https://calendly.com) booking link once you have one, and check
+your PayPal account periodically for new orders either way.
 
 ## Deployment
 

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Phone, Search, Bot, CheckCircle2, ArrowRight, Sparkles } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Phone, Search, Bot, CheckCircle2, ArrowRight, Sparkles, Mail } from 'lucide-react';
 import PayPalCheckoutModal from './PayPalCheckoutModal';
+import TiltCard from './TiltCard';
 
 const SERVICES = [
   {
@@ -52,12 +53,55 @@ const SERVICES = [
 
 export default function ServicesSection() {
   const [checkoutService, setCheckoutService] = useState(null);
+  const [paidService, setPaidService] = useState(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('paid') === '1') {
+      const service = SERVICES.find((s) => s.id === params.get('service'));
+      setPaidService(service || true);
+      params.delete('paid');
+      params.delete('service');
+      const query = params.toString();
+      window.history.replaceState(
+        {},
+        '',
+        `${window.location.pathname}${query ? `?${query}` : ''}#services`
+      );
+    }
+  }, []);
 
   return (
     <section id="services" className="py-24 relative overflow-hidden bg-[#070709]">
       <div className="absolute top-0 right-0 w-96 h-96 glow-orb-yellow pointer-events-none opacity-20 blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {paidService && (
+          <div className="glass-panel p-6 rounded-3xl border border-emerald-500/30 bg-emerald-500/5 mb-12 flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
+            <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center shrink-0">
+              <CheckCircle2 className="w-6 h-6 text-[#BFFF00]" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-bold text-white text-base mb-1">Payment complete — thank you!</h3>
+              <p className="text-sm text-gray-300">
+                {paidService.name
+                  ? `You're booked for ${paidService.name}. `
+                  : "You're booked. "}
+                Email the details below and I'll reply within 24 hours with available times.
+              </p>
+            </div>
+            <a
+              href={`mailto:h.abushanab94@gmail.com?subject=${encodeURIComponent(
+                `Booking: ${paidService.name || 'Service'}`
+              )}`}
+              className="shrink-0 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#F2C811] text-black font-bold text-xs font-mono shadow-lg shadow-yellow-500/20 hover:bg-yellow-400"
+            >
+              <Mail className="w-4 h-4" />
+              <span>Email to Schedule</span>
+            </a>
+          </div>
+        )}
+
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811] mb-4">
             <Sparkles className="w-3.5 h-3.5" />
@@ -76,9 +120,9 @@ export default function ServicesSection() {
           {SERVICES.map((service) => {
             const ServiceIcon = service.icon;
             return (
+              <TiltCard key={service.id} className="relative">
               <div
-                key={service.id}
-                className="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between glass-card-hover group"
+                className="glass-panel p-6 rounded-3xl border border-white/10 flex flex-col justify-between glass-card-hover group h-full"
               >
                 <div>
                   <div className="flex items-center gap-3.5 mb-4">
@@ -121,6 +165,7 @@ export default function ServicesSection() {
                   </button>
                 </div>
               </div>
+              </TiltCard>
             );
           })}
         </div>
