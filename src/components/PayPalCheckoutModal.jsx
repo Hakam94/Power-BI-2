@@ -69,7 +69,7 @@ export default function PayPalCheckoutModal({ service, onClose }) {
             </p>
             <a
               href={`mailto:h.abushanab94@gmail.com?subject=${encodeURIComponent(`Booking: ${service.name}`)}`}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#F2C811] text-black font-bold text-xs font-mono shadow-lg shadow-yellow-500/20 hover:bg-yellow-400"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#BFFF00] text-black font-bold text-xs font-mono shadow-lg shadow-lime-500/20 hover:bg-lime-400"
             >
               <Mail className="w-4 h-4" />
               <span>Email to Schedule</span>
@@ -78,7 +78,7 @@ export default function PayPalCheckoutModal({ service, onClose }) {
         ) : (
           <>
             <div className="mb-6">
-              <span className="text-xs font-mono text-[#F2C811] uppercase tracking-wider block mb-2">
+              <span className="text-xs font-mono text-[#BFFF00] uppercase tracking-wider block mb-2">
                 Secure Checkout
               </span>
               <h3 className="text-xl font-bold text-white font-heading mb-1">{service.name}</h3>
@@ -125,7 +125,7 @@ export default function PayPalCheckoutModal({ service, onClose }) {
                 />
                 <button
                   type="submit"
-                  className="w-full py-3.5 rounded-full bg-[#F2C811] text-black font-bold text-sm shadow-lg shadow-yellow-500/20 hover:bg-yellow-400 transition-all flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-full bg-[#BFFF00] text-black font-bold text-sm shadow-lg shadow-lime-500/20 hover:bg-lime-400 transition-all flex items-center justify-center gap-2"
                 >
                   <span>Pay ${service.price} with PayPal</span>
                   <ExternalLink className="w-4 h-4" />
@@ -135,8 +135,8 @@ export default function PayPalCheckoutModal({ service, onClose }) {
                 </p>
               </form>
             ) : (
-              <div className="p-4 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 flex items-start gap-3">
-                <AlertTriangle className="w-4 h-4 text-[#F2C811] shrink-0 mt-0.5" />
+              <div className="p-4 rounded-2xl bg-lime-500/10 border border-lime-500/20 flex items-start gap-3">
+                <AlertTriangle className="w-4 h-4 text-[#BFFF00] shrink-0 mt-0.5" />
                 <p className="text-xs text-gray-200 leading-relaxed">
                   PayPal checkout isn't configured yet. Set <code>VITE_PAYPAL_BUSINESS_EMAIL</code> (or{' '}
                   <code>VITE_PAYPAL_CLIENT_ID</code>) in your environment to enable payments.

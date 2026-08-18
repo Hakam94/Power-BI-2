@@ -182,7 +182,7 @@ AI Reasoning:
   const IconComponent = current.icon;
 
   return (
-    <section id="story" className="py-24 relative overflow-hidden bg-[#0B0B0B]">
+    <section id="story" className="py-24 relative overflow-hidden bg-[#0D2229]">
       {/* Background Subtle Lines */}
       <div className="absolute inset-0 cyber-grid opacity-10 pointer-events-none"></div>
 
@@ -190,7 +190,7 @@ AI Reasoning:
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#BFFF00] mb-4">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Interactive Data Transformation Pipeline</span>
           </div>
@@ -213,7 +213,7 @@ AI Reasoning:
                 onClick={() => setActiveStep(idx)}
                 className={`flex items-center gap-2 px-4 py-2.5 rounded-full text-xs font-mono transition-all duration-300 whitespace-nowrap border ${
                   isActive 
-                    ? 'bg-white/10 text-white border-yellow-500/50 shadow-lg shadow-yellow-500/10 scale-105' 
+                    ? 'bg-white/10 text-white border-lime-500/50 shadow-lg shadow-lime-500/10 scale-105'
                     : 'bg-white/[0.02] text-gray-400 border-white/5 hover:text-white hover:bg-white/5'
                 }`}
               >
@@ -231,7 +231,7 @@ AI Reasoning:
           <div className="lg:col-span-5 glass-panel p-8 rounded-3xl border border-white/10 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811]">
+                <span className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#BFFF00]">
                   {current.badge}
                 </span>
                 <span className="text-xs font-mono text-gray-500">
@@ -267,7 +267,7 @@ AI Reasoning:
               <button
                 disabled={activeStep === steps.length - 1}
                 onClick={() => setActiveStep(prev => Math.min(steps.length - 1, prev + 1))}
-                className="px-4 py-2 rounded-full text-xs font-mono bg-[#F2C811] text-black font-semibold hover:bg-yellow-400 disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1"
+                className="px-4 py-2 rounded-full text-xs font-mono bg-[#BFFF00] text-black font-semibold hover:bg-lime-400 disabled:opacity-30 disabled:cursor-not-allowed flex items-center gap-1"
               >
                 <span>Next Stage</span>
                 <ArrowRight className="w-3.5 h-3.5" />
@@ -285,7 +285,7 @@ AI Reasoning:
                 <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                 <div className="w-3 h-3 rounded-full bg-green-500/80"></div>
                 <span className="text-xs font-mono text-gray-400 ml-2 flex items-center gap-1.5">
-                  <Code2 className="w-3.5 h-3.5 text-[#F2C811]" />
+                  <Code2 className="w-3.5 h-3.5 text-[#BFFF00]" />
                   {current.id}_pipeline.script
                 </span>
               </div>
@@ -295,7 +295,7 @@ AI Reasoning:
             </div>
 
             {/* Code Block Display */}
-            <div className="bg-[#070709] p-5 rounded-2xl font-mono text-xs sm:text-sm text-gray-200 overflow-x-auto border border-white/5 mb-6">
+            <div className="bg-[#061114] p-5 rounded-2xl font-mono text-xs sm:text-sm text-gray-200 overflow-x-auto border border-white/5 mb-6">
               <pre className="text-emerald-400 leading-relaxed">{current.code}</pre>
             </div>
 
@@ -312,7 +312,7 @@ AI Reasoning:
               <div className="grid grid-cols-2 gap-4 mt-3">
                 <div className="p-3 rounded-xl bg-white/5 border border-white/5">
                   <span className="text-[10px] text-gray-400 block font-mono">EXECUTION EFFICIENCY</span>
-                  <span className="text-sm font-bold text-[#F2C811] font-mono">10x Speedup</span>
+                  <span className="text-sm font-bold text-[#BFFF00] font-mono">10x Speedup</span>
                 </div>
                 <div className="p-3 rounded-xl bg-white/5 border border-white/5">
                   <span className="text-[10px] text-gray-400 block font-mono">DATA INTEGRITY</span>

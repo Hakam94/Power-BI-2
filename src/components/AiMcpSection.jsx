@@ -61,7 +61,7 @@ export default function AiMcpSection() {
   const current = prompts[selectedPrompt];
 
   return (
-    <section id="ai-mcp" className="py-24 relative overflow-hidden bg-[#0B0B0B]">
+    <section id="ai-mcp" className="py-24 relative overflow-hidden bg-[#0D2229]">
       {/* Glow Orbs */}
       <div className="absolute top-1/2 right-0 w-[500px] h-[500px] glow-orb-cyan pointer-events-none opacity-20 blur-3xl"></div>
 
@@ -157,7 +157,7 @@ export default function AiMcpSection() {
           {/* Prompts Menu */}
           <div className="lg:col-span-5 glass-panel p-6 rounded-3xl border border-white/10">
             <h3 className="text-sm font-mono text-gray-300 mb-4 flex items-center gap-2">
-              <Terminal className="w-4 h-4 text-[#F2C811]" />
+              <Terminal className="w-4 h-4 text-[#BFFF00]" />
               TRY AN INTELLECTUAL AI PROMPT:
             </h3>
 
@@ -169,12 +169,12 @@ export default function AiMcpSection() {
                   disabled={isSimulating}
                   className={`w-full p-4 rounded-2xl text-left border transition-all duration-200 ${
                     selectedPrompt === idx
-                      ? 'bg-white/10 border-[#F2C811] text-white shadow-lg shadow-yellow-500/10'
+                      ? 'bg-white/10 border-[#BFFF00] text-white shadow-lg shadow-lime-500/10'
                       : 'bg-white/5 border-white/5 text-gray-300 hover:bg-white/10'
                   }`}
                 >
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-[#F2C811]">
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/10 text-[#BFFF00]">
                       Prompt #{idx + 1}
                     </span>
                     {selectedPrompt === idx && isSimulating && (
@@ -188,7 +188,7 @@ export default function AiMcpSection() {
           </div>
 
           {/* Execution Terminal Result */}
-          <div className="lg:col-span-7 glass-panel p-6 rounded-3xl border border-white/10 bg-[#070709] flex flex-col justify-between">
+          <div className="lg:col-span-7 glass-panel p-6 rounded-3xl border border-white/10 bg-[#061114] flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between pb-3 mb-4 border-b border-white/10 text-xs font-mono">
                 <span className="text-[#00D2FF] flex items-center gap-1.5">
@@ -211,7 +211,7 @@ export default function AiMcpSection() {
               </div>
             </div>
 
-            <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-yellow-500/10 via-cyan-500/10 to-lime-500/10 border border-yellow-500/20 flex items-center justify-between">
+            <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-lime-500/10 via-cyan-500/10 to-lime-500/10 border border-lime-500/20 flex items-center justify-between">
               <div>
                 <span className="text-[10px] font-mono text-gray-400">POWER BI KPI RESULT</span>
                 <p className="text-2xl font-bold text-white font-heading">{current.kpi}</p>

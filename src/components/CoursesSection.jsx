@@ -144,7 +144,7 @@ export default function CoursesSection() {
     : courses.filter(c => c.category === activeCategory);
 
   return (
-    <section id="courses" className="py-24 relative overflow-hidden bg-[#0B0B0B]">
+    <section id="courses" className="py-24 relative overflow-hidden bg-[#0D2229]">
       {/* Background Grid */}
       <div className="absolute inset-0 cyber-grid opacity-15 pointer-events-none"></div>
 
@@ -152,7 +152,7 @@ export default function CoursesSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#BFFF00] mb-4">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Mastery Curriculum</span>
           </div>
@@ -171,7 +171,7 @@ export default function CoursesSection() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2 rounded-full text-xs font-mono transition-all duration-200 border ${
                   activeCategory === cat
-                    ? 'bg-[#F2C811] text-black font-semibold border-[#F2C811] shadow-lg shadow-yellow-500/20'
+                    ? 'bg-[#BFFF00] text-black font-semibold border-[#BFFF00] shadow-lg shadow-lime-500/20'
                     : 'bg-white/5 text-gray-300 border-white/10 hover:border-white/30'
                 }`}
               >
@@ -227,7 +227,7 @@ export default function CoursesSection() {
 
                   <button
                     onClick={() => setSelectedCourse(course)}
-                    className="w-full py-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-[#F2C811] hover:text-black text-white font-semibold text-xs font-mono transition-all duration-200 flex items-center justify-center gap-2 group-hover:border-yellow-500/50"
+                    className="w-full py-2.5 rounded-full bg-white/5 border border-white/10 hover:bg-[#BFFF00] hover:text-black text-white font-semibold text-xs font-mono transition-all duration-200 flex items-center justify-center gap-2 group-hover:border-lime-500/50"
                   >
                     <span>View Curriculum & Details</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -258,7 +258,7 @@ export default function CoursesSection() {
                 <selectedCourse.icon className="w-6 h-6" style={{ color: selectedCourse.color }} />
               </div>
               <div>
-                <span className="text-xs font-mono text-[#F2C811]">{selectedCourse.badge}</span>
+                <span className="text-xs font-mono text-[#BFFF00]">{selectedCourse.badge}</span>
                 <h3 className="text-2xl font-bold text-white font-heading">{selectedCourse.title}</h3>
               </div>
             </div>
@@ -281,8 +281,8 @@ export default function CoursesSection() {
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-yellow-500/10 border border-yellow-500/20 mb-6">
-              <span className="text-[11px] font-mono text-[#F2C811] block mb-1">CAPSTONE PROJECT</span>
+            <div className="p-4 rounded-2xl bg-lime-500/10 border border-lime-500/20 mb-6">
+              <span className="text-[11px] font-mono text-[#BFFF00] block mb-1">CAPSTONE PROJECT</span>
               <p className="text-xs font-bold text-white">{selectedCourse.project}</p>
             </div>
 
@@ -297,7 +297,7 @@ export default function CoursesSection() {
                 href="https://www.youtube.com/@HakamDataStudio"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="px-6 py-2.5 rounded-full bg-[#F2C811] text-black font-bold text-xs font-mono shadow-lg shadow-yellow-500/20 hover:bg-yellow-400"
+                className="px-6 py-2.5 rounded-full bg-[#BFFF00] text-black font-bold text-xs font-mono shadow-lg shadow-lime-500/20 hover:bg-lime-400"
               >
                 Start Learning Free on YouTube
               </a>

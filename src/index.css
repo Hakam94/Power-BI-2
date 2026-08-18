@@ -2,11 +2,10 @@
 
 @layer base {
   :root {
-    --bg-dark: #0B0B0B;
-    --powerbi-yellow: #F2C811;
-    --lime-glow: #BFFF00;
+    --bg-dark: #0D2229;
+    --lime-primary: #BFFF00;
     --electric-cyan: #00D2FF;
-    --glass-bg: rgba(18, 18, 22, 0.75);
+    --glass-bg: rgba(13, 34, 41, 0.75);
     --glass-border: rgba(255, 255, 255, 0.1);
   }
 
@@ -24,7 +23,7 @@
 
 /* Glassmorphism Utilities */
 .glass-panel {
-  background: rgba(18, 18, 22, 0.7);
+  background: rgba(13, 34, 41, 0.7);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -32,11 +31,11 @@
 }
 
 .glass-panel-gold {
-  background: rgba(242, 200, 17, 0.03);
+  background: rgba(191, 255, 0, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(242, 200, 17, 0.2);
-  box-shadow: 0 10px 40px rgba(242, 200, 17, 0.08);
+  border: 1px solid rgba(191, 255, 0, 0.2);
+  box-shadow: 0 10px 40px rgba(191, 255, 0, 0.08);
 }
 
 .glass-panel-cyan {
@@ -52,13 +51,13 @@
 }
 .glass-card-hover:hover {
   transform: translateY(-4px) scale(1.01);
-  border-color: rgba(242, 200, 17, 0.4);
-  box-shadow: 0 20px 40px rgba(242, 200, 17, 0.15);
+  border-color: rgba(191, 255, 0, 0.4);
+  box-shadow: 0 20px 40px rgba(191, 255, 0, 0.15);
 }
 
 /* Text Glow & Gradients */
 .text-glow-yellow {
-  text-shadow: 0 0 20px rgba(242, 200, 17, 0.6);
+  text-shadow: 0 0 20px rgba(191, 255, 0, 0.6);
 }
 
 .text-glow-cyan {
@@ -66,7 +65,7 @@
 }
 
 .gradient-text-yellow {
-  background: linear-gradient(135deg, #FFFFFF 0%, #F2C811 100%);
+  background: linear-gradient(135deg, #FFFFFF 0%, #BFFF00 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -93,7 +92,7 @@
 
 /* Glowing Orbs */
 .glow-orb-yellow {
-  background: radial-gradient(circle, rgba(242, 200, 17, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+  background: radial-gradient(circle, rgba(191, 255, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
 }
 
 .glow-orb-cyan {
@@ -105,14 +104,14 @@
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0B0B;
+  background: #0D2229;
 }
 ::-webkit-scrollbar-thumb {
-  background: #222228;
+  background: #1A3339;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #F2C811;
+  background: #BFFF00;
 }
 
 /* Pulse Keyframes */

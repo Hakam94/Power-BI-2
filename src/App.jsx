@@ -18,7 +18,7 @@ export default function App() {
   const [roadmapModalOpen, setRoadmapModalOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-[#0B0B0B] text-white selection:bg-[#F2C811] selection:text-black font-sans antialiased overflow-x-hidden">
+    <div className="min-h-screen bg-[#0D2229] text-white selection:bg-[#BFFF00] selection:text-black font-sans antialiased overflow-x-hidden">
       {/* Top Navbar */}
       <Navbar 
         onOpenCommandPalette={() => setCommandPaletteOpen(true)}

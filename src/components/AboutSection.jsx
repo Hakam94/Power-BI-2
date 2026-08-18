@@ -18,7 +18,7 @@ export default function AboutSection() {
       title: 'Head of Data & AI Enablement',
       role: 'Siemens Healthineers',
       icon: Building2,
-      color: '#F2C811',
+      color: '#BFFF00',
       description: 'Leads Power BI, SAP data, and AI-enablement initiatives across a global healthcare technology organization.'
     },
     {
@@ -32,7 +32,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#070709]">
+    <section id="about" className="py-24 relative overflow-hidden bg-[#061114]">
       {/* Glow Orbs */}
       <div className="absolute top-1/2 left-0 w-96 h-96 glow-orb-yellow pointer-events-none opacity-20 blur-3xl"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 glow-orb-cyan pointer-events-none opacity-20 blur-3xl"></div>
@@ -41,7 +41,7 @@ export default function AboutSection() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#BFFF00] mb-4">
             <Users className="w-3.5 h-3.5" />
             <span>Meet The Founder</span>
           </div>
@@ -62,8 +62,8 @@ export default function AboutSection() {
             <div className="glass-panel p-8 rounded-3xl border border-white/10 relative overflow-hidden text-center group">
 
               {/* Profile Avatar Graphic */}
-              <div className="relative w-36 h-36 mx-auto mb-6 rounded-3xl bg-gradient-to-tr from-[#F2C811] via-[#00D2FF] to-[#BFFF00] p-[2px] shadow-2xl shadow-yellow-500/20">
-                <div className="w-full h-full bg-[#0B0B0B] rounded-[22px] flex items-center justify-center overflow-hidden">
+              <div className="relative w-36 h-36 mx-auto mb-6 rounded-3xl bg-gradient-to-tr from-[#BFFF00] via-[#00D2FF] to-[#BFFF00] p-[2px] shadow-2xl shadow-lime-500/20">
+                <div className="w-full h-full bg-[#0D2229] rounded-[22px] flex items-center justify-center overflow-hidden">
                   <img
                     src={hakamPortrait}
                     alt="Hakam Abushanab"
@@ -102,7 +102,7 @@ export default function AboutSection() {
               return (
                 <div 
                   key={idx} 
-                  className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-yellow-500/30 transition-all duration-300 flex items-start gap-5 group"
+                  className="glass-panel p-6 rounded-2xl border border-white/5 hover:border-lime-500/30 transition-all duration-300 flex items-start gap-5 group"
                 >
                   <div className="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform">
                     <MilestoneIcon className="w-6 h-6" style={{ color: item.color }} />

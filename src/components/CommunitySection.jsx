@@ -67,11 +67,11 @@ export default function CommunitySection() {
   ];
 
   return (
-    <section id="community" className="py-24 relative overflow-hidden bg-[#0B0B0B]">
+    <section id="community" className="py-24 relative overflow-hidden bg-[#0D2229]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#F2C811] mb-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-[#BFFF00] mb-4">
             <Share2 className="w-3.5 h-3.5" />
             <span>Connect Everywhere</span>
           </div>
@@ -106,7 +106,7 @@ export default function CommunitySection() {
 
                   <h3 className="font-bold text-white text-lg font-heading flex items-center gap-1.5">
                     <span>{soc.name}</span>
-                    <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-[#F2C811] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
+                    <ArrowUpRight className="w-4 h-4 text-gray-500 group-hover:text-[#BFFF00] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all" />
                   </h3>
                   <p className="text-xs font-mono text-[#00D2FF] mb-3">{soc.handle}</p>
                   
@@ -117,7 +117,7 @@ export default function CommunitySection() {
 
                 <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs font-mono text-gray-400">
                   <span>{soc.stats}</span>
-                  <span className="text-[#F2C811] group-hover:underline">Follow →</span>
+                  <span className="text-[#BFFF00] group-hover:underline">Follow →</span>
                 </div>
               </a>
             );

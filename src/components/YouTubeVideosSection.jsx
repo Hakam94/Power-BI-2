@@ -75,7 +75,7 @@ export default function YouTubeVideosSection() {
   ];
 
   return (
-    <section id="youtube" className="py-24 relative overflow-hidden bg-[#070709]">
+    <section id="youtube" className="py-24 relative overflow-hidden bg-[#061114]">
       {/* Background Orbs */}
       <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-full h-[500px] glow-orb-yellow pointer-events-none opacity-10 blur-3xl"></div>
 
@@ -125,11 +125,11 @@ export default function YouTubeVideosSection() {
                   alt={vid.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-80 group-hover:opacity-100"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D2229] via-transparent to-transparent"></div>
 
                 {/* Duration Badge */}
                 <div className="absolute bottom-3 right-3 px-2.5 py-1 rounded-md bg-black/80 backdrop-blur-md text-[11px] font-mono text-gray-200 border border-white/10 flex items-center gap-1">
-                  <Clock className="w-3 h-3 text-[#F2C811]" />
+                  <Clock className="w-3 h-3 text-[#BFFF00]" />
                   <span>{vid.duration}</span>
                 </div>
 
@@ -150,12 +150,12 @@ export default function YouTubeVideosSection() {
               <div className="p-6 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center gap-2 text-xs font-mono text-gray-400 mb-2">
-                    <Eye className="w-3.5 h-3.5 text-[#F2C811]" />
+                    <Eye className="w-3.5 h-3.5 text-[#BFFF00]" />
                     <span>{vid.views}</span>
                     <span>•</span>
                     <span className="text-[#00D2FF]">{vid.published}</span>
                   </div>
-                  <h3 className="font-bold text-white text-base leading-snug mb-3 group-hover:text-[#F2C811] transition-colors font-heading">
+                  <h3 className="font-bold text-white text-base leading-snug mb-3 group-hover:text-[#BFFF00] transition-colors font-heading">
                     {vid.title}
                   </h3>
                   <p className="text-gray-400 text-xs line-clamp-2 leading-relaxed mb-4">
@@ -180,7 +180,7 @@ export default function YouTubeVideosSection() {
       {/* Video Lightbox Player Modal */}
       {activeVideo && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-2xl animate-in fade-in">
-          <div className="max-w-4xl w-full glass-panel rounded-3xl border border-white/20 overflow-hidden relative bg-[#0B0B0B]">
+          <div className="max-w-4xl w-full glass-panel rounded-3xl border border-white/20 overflow-hidden relative bg-[#0D2229]">
             
             <div className="flex items-center justify-between p-4 sm:p-6 border-b border-white/10">
               <div className="flex items-center gap-2">
@@ -210,7 +210,7 @@ export default function YouTubeVideosSection() {
 
             <div className="p-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-[#0E0F14]">
               <div className="flex items-center gap-3 text-xs font-mono text-gray-400">
-                <span className="px-2.5 py-1 rounded bg-white/5 text-[#F2C811]">
+                <span className="px-2.5 py-1 rounded bg-white/5 text-[#BFFF00]">
                   {activeVideo.category}
                 </span>
                 <span>{activeVideo.views}</span>

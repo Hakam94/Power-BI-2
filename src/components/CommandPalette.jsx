@@ -25,13 +25,13 @@ export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
   if (!isOpen) return null;
 
   const items = [
-    { title: 'Power BI Masterclass 2026', type: 'Course', href: '#courses', icon: BarChart3, color: '#F2C811' },
+    { title: 'Power BI Masterclass 2026', type: 'Course', href: '#courses', icon: BarChart3, color: '#BFFF00' },
     { title: 'Modern SQL & Data Warehousing', type: 'Course', href: '#courses', icon: Database, color: '#00D2FF' },
-    { title: '1:1 Power BI & DAX Strategy Session', type: 'Service', href: '#services', icon: Phone, color: '#F2C811' },
+    { title: '1:1 Power BI & DAX Strategy Session', type: 'Service', href: '#services', icon: Phone, color: '#BFFF00' },
     { title: 'YouTube Channel @HakamDataStudio', type: 'Channel', href: '#youtube', icon: YoutubeIcon, color: '#FF0000' },
     { title: '8-Step Data Evolution Pipeline', type: 'Story', href: '#story', icon: BookOpen, color: '#BFFF00' },
     { title: 'AI & MCP Protocol Simulator', type: 'Simulator', href: '#ai-mcp', icon: Cpu, color: '#00D2FF' },
-    { title: 'Download 2026 Data Roadmap PDF', type: 'Roadmap', action: () => { onClose(); onOpenRoadmap(); }, icon: Download, color: '#F2C811' }
+    { title: 'Download 2026 Data Roadmap PDF', type: 'Roadmap', action: () => { onClose(); onOpenRoadmap(); }, icon: Download, color: '#BFFF00' }
   ];
 
   const filtered = items.filter(i => 
@@ -45,7 +45,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
         
         {/* Search Input Bar */}
         <div className="flex items-center gap-3 px-4 py-3 border-b border-white/10">
-          <Search className="w-5 h-5 text-[#F2C811]" />
+          <Search className="w-5 h-5 text-[#BFFF00]" />
           <input
             type="text"
             placeholder="Search courses, tutorials, DAX measures, or jump to section..."
@@ -93,7 +93,7 @@ export default function CommandPalette({ isOpen, onClose, onOpenRoadmap }) {
                     <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 text-gray-400">
                       {item.type}
                     </span>
-                    <ArrowRight className="w-3.5 h-3.5 text-gray-500 group-hover:text-[#F2C811] group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3.5 h-3.5 text-gray-500 group-hover:text-[#BFFF00] group-hover:translate-x-1 transition-transform" />
                   </div>
                 </div>
               );
