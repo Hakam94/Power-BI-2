@@ -17,6 +17,8 @@ In these step-by-step videos, you’ll learn to build a complete, interactive da
   Learn dashboard design fundamentals, aligning visuals, formatting themes, and structuring containers for a professional layout. ([YouTube][5])
 * **Part 6 – Connect Power BI Semantic Models to AI Agents**
   Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity using the Power BI Modeling MCP server. ([Part 6 guide](part-6/README.md))
+* **Part 7 – Coming Soon** 🚧
+  The next level of the series. Details and the video link will be added once Part 7 is published. ([Part 7 folder](part-7/README.md))
 
 ---
 
@@ -32,6 +34,7 @@ Power-BI-CoffeeShop/
 ├── part-4/        # Field Parameters & Smart Dashboard Technique
 ├── part-5/        # Dashboard design, layouts, themes & UX tips
 ├── part-6/        # Connect Power BI semantic models to AI agents
+├── part-7/        # Coming soon: the next level of the series
 ├── shared/        # Reusable M & DAX code snippets used across parts
 └── README.md      # You're here: overview of all parts
 ```
@@ -48,6 +51,7 @@ Power-BI-CoffeeShop/
 | **Part 4**              | Set up Field Parameters to allow users to toggle dimensions and measures dynamically in report visuals. ([YouTube][4])                                 |
 | **Part 5**              | Apply professional design principles: layout grid spacing, alignment, custom themes, and container groupings for clean UX. ([YouTube][5])              |
 | **Part 6**              | Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity safely with the Power BI Modeling MCP server. ([Part 6 guide](part-6/README.md)) |
+| **Part 7**              | 🚧 Coming soon — the next level of the series. ([Part 7 folder](part-7/README.md)) |
 
 ---
 
