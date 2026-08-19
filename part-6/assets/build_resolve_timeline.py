@@ -1,36 +1,47 @@
-import os
-import sys
-import glob
+#!/usr/bin/env python3
+"""
+build_resolve_timeline.py — Part 6 Rough-Cut Timeline Generator (FCPXML)
+==========================================================================
+Channel: @HakamDataStudio
 
-# ==============================================================================
-# DaVinci Resolve Auto-Assembly Script — Part 6
-# Channel: @HakamDataStudio
-#
-# Drives a RUNNING copy of DaVinci Resolve (via its scripting API) to build a
-# rough-cut timeline automatically:
-#   - Track V1 / A1: your trimmed narration/talking-head footage
-#   - Track V2:      the 8 branded Gemini B-roll clips, dropped in at the
-#                     exact chapter timestamps from youtube_video_script_part6.md
-#   - Markers:        one per chapter, named to match the script
-#
-# You still do the final trims/transitions/color by hand — this just removes
-# the "drag every clip to the right spot" busywork.
-#
-# ------------------------------------------------------------------------------
-# ONE-TIME SETUP (Windows):
-#   1. Open DaVinci Resolve.
-#   2. Preferences -> System -> General -> "External scripting using" -> Local
-#   3. Restart Resolve.
-#   4. In PowerShell, before running this script:
-#        $env:RESOLVE_SCRIPT_API  = "C:\ProgramData\Blackmagic Design\DaVinci Resolve\Support\Developer\Scripting"
-#        $env:RESOLVE_SCRIPT_LIB  = "C:\Program Files\Blackmagic Design\DaVinci Resolve\fusionscript.dll"
-#        $env:PYTHONPATH          = "$env:RESOLVE_SCRIPT_API\Modules;$env:PYTHONPATH"
-#   5. Resolve must be OPEN (this drives the live app, it does not run headless).
-#
-# USAGE:
-#   python build_resolve_timeline.py --narration "C:\path\to\trimmed_narration.mp4"
-#   python build_resolve_timeline.py --narration ... --broll-dir gemini_broll --fps 30
-# ==============================================================================
+Free DaVinci Resolve does NOT expose the live scripting API (that became
+Studio-only starting with Resolve 19.1). So instead of driving a running
+copy of Resolve, this script builds an .fcpxml timeline file OFFLINE:
+
+  - Track 1 (spine):  your trimmed narration (from auto_edit.py)
+  - Track 2 (lane 1): the 8 branded Gemini B-roll clips, positioned at
+                       their exact chapter timestamps from
+                       youtube_video_script_part6.md
+
+You then do ONE import in Resolve — File > Import > Timeline... — and the
+rough cut appears already laid out, instead of a blank timeline. You still
+do the fine trims, transitions, and color by hand afterward.
+
+Works on FREE Resolve. Requires no live app, no scripting-API setup, no
+Studio purchase. Requires `ffprobe` (ships with ffmpeg, already used by
+auto_edit.py) to be on PATH so real clip durations can be read.
+
+CAVEAT: FCPXML lane offsets are timeline-absolute per spec, but exact
+interpretation can vary slightly between app versions. If a B-roll clip
+lands a frame or two off after import, nudge it — this file exists to
+save you from starting on a blank timeline, not to guarantee frame-perfect
+placement without a look.
+
+USAGE:
+    python build_resolve_timeline.py --narration "C:\\path\\to\\trimmed_narration.mp4"
+    python build_resolve_timeline.py --narration ... --broll-dir gemini_broll --fps 30 --output part6_rough_cut.fcpxml
+
+THEN IN RESOLVE:
+    File > Import > Timeline... > select the .fcpxml this script wrote.
+"""
+
+import argparse
+import glob
+import os
+import subprocess
+import sys
+from pathlib import Path
+from xml.sax.saxutils import escape
 
 ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -38,42 +49,48 @@ ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 # scene_file must match the output naming from generate_gemini_broll.py:
 #   part6_broll_<id>.mp4
 CHAPTERS = [
-    {"id": "01_hook",                     "start": "00:00", "name": "Hook"},
-    {"id": "02_tool_comparison",          "start": "00:35", "name": "Why Antigravity AI"},
-    {"id": "03_pbip_vs_pbix",             "start": "02:00", "name": "PBIP vs PBIX"},
-    {"id": "04_mcp_setup",                "start": "04:00", "name": "MCP Setup"},
-    {"id": "05_dax_tmdl_generation",      "start": "07:15", "name": "DAX/TMDL Generation"},
+    {"id": "01_hook",                       "start": "00:00", "name": "Hook"},
+    {"id": "02_tool_comparison",            "start": "00:35", "name": "Why Antigravity AI"},
+    {"id": "03_pbip_vs_pbix",               "start": "02:00", "name": "PBIP vs PBIX"},
+    {"id": "04_mcp_setup",                  "start": "04:00", "name": "MCP Setup"},
+    {"id": "05_dax_tmdl_generation",        "start": "07:15", "name": "DAX/TMDL Generation"},
     {"id": "06_executive_dashboard_reveal", "start": "10:30", "name": "Executive Dashboards"},
-    {"id": "07_brand_theme_test",         "start": "13:15", "name": "Brand Theme Test"},
-    {"id": "08_outro",                    "start": "14:15", "name": "Outro"},
+    {"id": "07_brand_theme_test",           "start": "13:15", "name": "Brand Theme Test"},
+    {"id": "08_outro",                      "start": "14:15", "name": "Outro"},
 ]
 
 
-def timestamp_to_frames(ts: str, fps: int) -> int:
+def ffprobe_duration(path: str) -> float:
+    result = subprocess.run(
+        ["ffprobe", "-v", "error", "-show_entries", "format=duration",
+         "-of", "default=noprint_wrappers=1:nokey=1", path],
+        capture_output=True, text=True,
+    )
+    if result.returncode != 0 or not result.stdout.strip():
+        print(f"❌ ffprobe failed to read duration for: {path}")
+        print("   Is ffmpeg/ffprobe installed and on PATH?")
+        sys.exit(1)
+    return float(result.stdout.strip())
+
+
+def to_file_url(path: str) -> str:
+    return Path(os.path.abspath(path)).as_uri()
+
+
+def frames(seconds: float, fps: int) -> int:
+    return round(seconds * fps)
+
+
+def rational(frame_count: int, fps: int) -> str:
+    return f"{frame_count}/{fps}s"
+
+
+def timestamp_to_seconds(ts: str) -> int:
     minutes, seconds = ts.split(":")
-    total_seconds = int(minutes) * 60 + int(seconds)
-    return total_seconds * fps
-
-
-def connect_resolve():
-    try:
-        import DaVinciResolveScript as dvr_script
-    except ImportError:
-        print("❌ Could not import DaVinciResolveScript.")
-        print("   Make sure RESOLVE_SCRIPT_API / RESOLVE_SCRIPT_LIB / PYTHONPATH are set")
-        print("   (see the setup instructions in this file's header) and that Resolve is running.")
-        sys.exit(1)
-
-    resolve = dvr_script.scriptapp("Resolve")
-    if resolve is None:
-        print("❌ Could not connect to Resolve. Is it open, and is external scripting enabled")
-        print("   in Preferences -> System -> General -> External scripting using -> Local?")
-        sys.exit(1)
-    return resolve
+    return int(minutes) * 60 + int(seconds)
 
 
 def find_broll_clips(broll_dir: str) -> dict:
-    """Map chapter id -> clip filepath, based on generate_gemini_broll.py's output naming."""
     found = {}
     for chapter in CHAPTERS:
         pattern = os.path.join(broll_dir, f"part6_broll_{chapter['id']}*.mp4")
@@ -83,17 +100,83 @@ def find_broll_clips(broll_dir: str) -> dict:
     return found
 
 
+def build_fcpxml(narration_path: str, broll_clips: dict, fps: int) -> str:
+    resources = [
+        f'<format id="r1" name="FFVideoFormat1080p{fps}" frameDuration="1/{fps}s" width="1920" height="1080"/>'
+    ]
+
+    next_id = [2]
+
+    def add_asset(name: str, path: str):
+        dur_frames = frames(ffprobe_duration(path), fps)
+        rid = f"r{next_id[0]}"
+        next_id[0] += 1
+        resources.append(
+            f'<asset id="{rid}" name="{escape(name)}" src="{escape(to_file_url(path))}" '
+            f'hasVideo="1" hasAudio="1" format="r1" duration="{rational(dur_frames, fps)}"/>'
+        )
+        return rid, dur_frames
+
+    narration_rid, narration_frames = add_asset("narration", narration_path)
+
+    broll_rids = {}
+    for chapter_id, path in broll_clips.items():
+        broll_rids[chapter_id] = add_asset(f"broll_{chapter_id}", path)
+
+    connected = []
+    for chapter in CHAPTERS:
+        if chapter["id"] not in broll_rids:
+            continue
+        rid, dur_frames = broll_rids[chapter["id"]]
+        offset_frames = frames(timestamp_to_seconds(chapter["start"]), fps)
+        connected.append(
+            f'      <asset-clip ref="{rid}" lane="1" offset="{rational(offset_frames, fps)}" '
+            f'name="{escape(chapter["name"])}" start="0/{fps}s" duration="{rational(dur_frames, fps)}"/>'
+        )
+        connected.append(
+            f'      <marker start="{rational(offset_frames, fps)}" duration="1/{fps}s" '
+            f'value="{escape(chapter["name"])}"/>'
+        )
+
+    spine_clip = (
+        f'    <asset-clip ref="{narration_rid}" offset="0/{fps}s" name="narration" '
+        f'start="0/{fps}s" duration="{rational(narration_frames, fps)}">\n'
+        + "\n".join(connected) +
+        "\n    </asset-clip>"
+    )
+
+    resources_xml = "\n    ".join(resources)
+
+    return f"""<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fcpxml>
+<fcpxml version="1.9">
+  <resources>
+    {resources_xml}
+  </resources>
+  <library>
+    <event name="Part 6">
+      <project name="Part 6 Auto Assembly">
+        <sequence format="r1" duration="{rational(narration_frames, fps)}" tcStart="0/{fps}s">
+          <spine>
+{spine_clip}
+          </spine>
+        </sequence>
+      </project>
+    </event>
+  </library>
+</fcpxml>
+"""
+
+
 def main():
-    import argparse
-    parser = argparse.ArgumentParser(description="Auto-assemble the Part 6 Resolve timeline")
+    parser = argparse.ArgumentParser(description="Generate the Part 6 rough-cut FCPXML for free Resolve")
     parser.add_argument("--narration", required=True,
                          help="Path to the trimmed narration/talking-head video (e.g. auto_edit.py output)")
     parser.add_argument("--broll-dir",
                          default=os.path.join(ASSETS_DIR, "gemini_broll"),
                          help="Folder containing part6_broll_*.mp4 clips (default: assets/gemini_broll)")
-    parser.add_argument("--project-name", default="Cafe Part 6 - YouTube Edit")
-    parser.add_argument("--timeline-name", default="Part 6 Auto Assembly")
     parser.add_argument("--fps", type=int, default=30)
+    parser.add_argument("--output", default=os.path.join(ASSETS_DIR, "part6_rough_cut.fcpxml"))
     args = parser.parse_args()
 
     if not os.path.exists(args.narration):
@@ -106,74 +189,17 @@ def main():
         status = "✅" if chapter["id"] in broll_clips else "⚠️  missing"
         print(f"   {status}  {chapter['id']}")
 
-    resolve = connect_resolve()
-    project_manager = resolve.GetProjectManager()
+    print("\n🎬 Reading clip durations and building FCPXML...")
+    fcpxml = build_fcpxml(args.narration, broll_clips, args.fps)
 
-    project = project_manager.LoadProject(args.project_name)
-    if project is None:
-        print(f"📌 Project '{args.project_name}' not found, creating it...")
-        project = project_manager.CreateProject(args.project_name)
-        if project is None:
-            print("❌ Failed to create/load project.")
-            sys.exit(1)
-
-    media_pool = project.GetMediaPool()
-    media_storage = resolve.GetMediaStorage()
-
-    print("🚀 Importing narration...")
-    narration_items = media_storage.AddItemListToMediaPool(args.narration)
-    if not narration_items:
-        print("❌ Failed to import narration into media pool.")
-        sys.exit(1)
-    narration_clip = narration_items[0]
-
-    print("🚀 Importing B-roll clips...")
-    broll_pool_items = {}
-    for chapter_id, path in broll_clips.items():
-        items = media_storage.AddItemListToMediaPool(path)
-        if items:
-            broll_pool_items[chapter_id] = items[0]
-
-    print(f"🚀 Creating timeline '{args.timeline_name}'...")
-    timeline = media_pool.CreateEmptyTimeline(args.timeline_name)
-    if timeline is None:
-        print("❌ Failed to create timeline.")
-        sys.exit(1)
-    project.SetCurrentTimeline(timeline)
-
-    print("🎬 Appending narration to V1/A1...")
-    media_pool.AppendToTimeline([narration_clip])
-
-    print("🎬 Placing B-roll on V2 at chapter timestamps + adding chapter markers...")
-    timeline.AddTrack("video")  # creates V2
-
-    for chapter in CHAPTERS:
-        start_frame = timestamp_to_frames(chapter["start"], args.fps)
-
-        timeline.AddMarker(
-            start_frame,
-            "Blue",
-            chapter["name"],
-            f"Chapter: {chapter['name']}",
-            1,
-        )
-
-        clip = broll_pool_items.get(chapter["id"])
-        if clip is None:
-            continue
-
-        media_pool.AppendToTimeline([{
-            "mediaPoolItem": clip,
-            "trackIndex": 2,
-            "recordFrame": start_frame,
-        }])
+    with open(args.output, "w", encoding="utf-8") as f:
+        f.write(fcpxml)
 
     print("\n========================================================================")
-    print(" ✅ Rough cut assembled in Resolve.")
-    print(f"    Project:  {args.project_name}")
-    print(f"    Timeline: {args.timeline_name}")
-    print("    Narration on V1/A1, B-roll on V2 at chapter marks, markers added.")
-    print("    Now: trim overlaps, add transitions/color, and polish by hand.")
+    print(f" ✅ Rough-cut timeline written: {args.output}")
+    print(" Next: in Resolve, File > Import > Timeline... and pick this file.")
+    print(" Narration lands on the primary track, B-roll on a track above it at")
+    print(" each chapter mark, with markers labeling each chapter.")
     print("========================================================================")
 
 
