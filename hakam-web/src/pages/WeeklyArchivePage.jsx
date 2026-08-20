@@ -2,12 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Radar, ArrowRight, ArrowLeft } from 'lucide-react';
 import { getPublishedWeeklyUpdates } from '../data/weeklyUpdates';
+import SEO from '../components/SEO';
 
 export default function WeeklyArchivePage() {
   const sorted = getPublishedWeeklyUpdates().sort((a, b) => new Date(b.date) - new Date(a.date));
 
   return (
     <main className="pt-32 pb-24 relative overflow-hidden bg-[#0D2229] min-h-screen">
+      <SEO
+        title="Weekly Best Practices"
+        description="A running archive of what changed in Power BI, Snowflake, Databricks, and the rest of the modern data stack — each entry rewrites a real before/after code example."
+        path="/weekly"
+      />
       <div className="absolute top-0 left-1/3 w-96 h-96 glow-orb-cyan pointer-events-none opacity-20 blur-3xl"></div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

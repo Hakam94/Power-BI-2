@@ -2,6 +2,8 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import { ArrowLeft, Radar, BookOpen, TrendingUp, ExternalLink, Sparkles, AlertTriangle, Telescope, BarChart3 } from 'lucide-react';
 import { getWeeklyUpdateBySlug } from '../data/weeklyUpdates';
+import SEO from '../components/SEO';
+import { SITE_URL } from '../config/site';
 
 // Renders one tool's "what changed / before-after / why it matters" block.
 // Used both for the legacy single-tool schema (fields live on `update`
@@ -96,8 +98,27 @@ export default function WeeklyArticlePage() {
     ...(update.toolSections ? update.toolSections.flatMap((s) => s.references || []) : [])
   ];
 
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: update.title,
+    description: update.summary,
+    datePublished: update.date,
+    author: { '@type': 'Person', name: 'Hakam Abushanab' },
+    publisher: { '@type': 'Organization', name: 'Hakam Data Studio' },
+    url: `${SITE_URL}/weekly/${update.slug}`
+  };
+
   return (
     <main className="pt-32 pb-24 relative overflow-hidden bg-[#0D2229] min-h-screen">
+      <SEO
+        title={update.title}
+        description={update.summary}
+        path={`/weekly/${update.slug}`}
+        type="article"
+        jsonLd={articleJsonLd}
+        noIndex={update.status !== 'published'}
+      />
       <div className="absolute top-0 left-1/3 w-96 h-96 glow-orb-cyan pointer-events-none opacity-20 blur-3xl"></div>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

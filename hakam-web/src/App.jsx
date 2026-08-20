@@ -16,10 +16,33 @@ import CommandPalette from './components/CommandPalette';
 import RoadmapModal from './components/RoadmapModal';
 import WeeklyArchivePage from './pages/WeeklyArchivePage';
 import WeeklyArticlePage from './pages/WeeklyArticlePage';
+import SEO from './components/SEO';
+import { SITE_URL } from './config/site';
+
+const ORGANIZATION_JSON_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Hakam Data Studio',
+  url: `${SITE_URL}/`,
+  founder: { '@type': 'Person', name: 'Hakam Abushanab' },
+  sameAs: [
+    'https://www.youtube.com/@HakamDataStudio',
+    'https://www.linkedin.com/in/hakam-abushanab-a99523b6',
+    'https://www.instagram.com/hakam_data_studio',
+    'https://github.com/Hakam94',
+    'https://www.tiktok.com/@hakam.datastudio',
+    'https://www.facebook.com/share/1CJ2skgmAW/'
+  ]
+};
 
 function HomePage({ onOpenRoadmap }) {
   return (
     <main>
+      <SEO
+        description="Learn Data Analytics, Power BI, SQL, Snowflake, AI, Microsoft Fabric, and Data Engineering with Hakam Abushanab. Weekly tool updates, real project tutorials, and 1:1 services."
+        path="/"
+        jsonLd={ORGANIZATION_JSON_LD}
+      />
       <HeroSection onOpenRoadmap={onOpenRoadmap} />
       <ScrollStorySection />
       <AboutSection />
