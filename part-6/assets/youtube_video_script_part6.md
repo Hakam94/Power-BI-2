@@ -41,7 +41,7 @@
 > **[VISUAL ON SCREEN]**: Diagram — Claude Code, OpenAI Codex, and Antigravity AI as three boxes, each with an arrow into the same "Power BI Modeling MCP Server" box. Then a second diagram: "Antigravity" splitting into "Antigravity CLI" (terminal icon) and "Antigravity IDE" (editor window icon), both pointing to one shared "Antigravity Agent" box.
 >
 > **SPEAKER**:
-> *"Before we touch any code, two quick clarifications—because I got these wrong last time and I'd rather slow down here than confuse you later.
+> *"Before we touch any code, two quick clarifications—these are the two things people get stuck on most, so let's settle them up front instead of leaving you confused later.
 >
 > First: Claude Code, OpenAI Codex, and Antigravity AI can all connect to the exact same official Microsoft MCP server we're using today. This isn't about one being smarter than the others. I'm using Antigravity for this tutorial because it's free to run with no token metering, so if you're following along step-by-step, you won't hit a paywall halfway through. If you already pay for Claude Code or Codex, everything here works the same way—I'll show you that exact connection command for each one in a minute.
 >
@@ -160,7 +160,7 @@
 > **SPEAKER**:
 > *"Quick honesty check before I show you this page: everything you're about to see, I built ahead of time with the same AI workflow we just walked through—I'm not going to make you sit through fifteen minutes of me typing prompts and waiting for pages to render. This is the result.
 >
-> First, let's define the term on the CFO page, because I skipped this last time and got called out for it—fair. **EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization.** It's a way of looking at how profitable the core business is, before you factor in financing costs, tax structure, or how fast equipment is depreciating.
+> First, let's define the term on the CFO page, since not everyone watching will know it off the top of their head. **EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization.** It's a way of looking at how profitable the core business is, before you factor in financing costs, tax structure, or how fast equipment is depreciating.
 >
 > Our coffee shop dataset doesn't have interest, tax, or depreciation columns—it's just revenue and cost per sale. So for this specific model, EBITDA and operating Profit are the same number, and I want that to be transparent instead of hand-wavy. Here's the actual measure I added to `Sheet1.tmdl`:
 > ```dax
