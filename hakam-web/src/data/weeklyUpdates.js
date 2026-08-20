@@ -292,7 +292,7 @@ FROM customer.feedback;`,
   },
   {
     slug: 'july-2026-data-tools-month-in-review',
-    status: 'draft',
+    status: 'published',
     title: 'July 2026 in Review: What Changed in Power BI, Databricks, Snowflake & Fabric',
     date: '2026-07-31',
     readTime: '14 min read',
