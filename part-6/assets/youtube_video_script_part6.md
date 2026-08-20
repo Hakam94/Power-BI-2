@@ -79,14 +79,16 @@
 >
 > **What's `npx`?** It's a small command that ships automatically with Node.js. When you type `npx` followed by a package name, it downloads that package temporarily and runs it—you're not permanently installing anything on your machine. So this next command isn't installing software, it's just asking npx to fetch Microsoft's official MCP server and start it, for this session only.
 >
-> **Step 1a — check Node.js is installed.** Open any terminal—doesn't matter which yet—and type `node -v` and hit Enter. If you see something like `v20` or higher, you're set, skip ahead. If it says 'command not found,' or the version's below 20, go to nodejs.org, download the LTS installer, run it with all the default options, then close that terminal window completely and open a fresh one—`node -v` won't pick up a fresh install until you restart the terminal.
+> **Step 1: open Antigravity and point it at your project folder.** Launch Antigravity IDE. Click File, then Open Folder, and select the folder on your computer where you cloned or saved this project—for us that's the Power-BI-2 folder. Once that folder loads, click Terminal in the top menu, then New Terminal—or just press Ctrl plus backtick. A terminal panel opens at the bottom, already sitting inside that exact project folder.
 >
-> **Step 1b — open a terminal that's actually IN your project folder**, not just any terminal—this matters, because the next command needs to run from inside the folder your Power BI files live in. In Antigravity IDE: File menu, Open Folder, and select the folder on your computer where you cloned or saved this project—for us that's the Power-BI-2 folder. Once that folder loads as your workspace, open Terminal menu, New Terminal—or just press Ctrl plus backtick. That terminal opens already sitting inside that exact folder, so you don't need to type `cd` anywhere. If you're using plain VS Code or Windows PowerShell instead, the equivalent is: right-click inside that folder in File Explorer and choose 'Open in Terminal.'
+> **Step 2: check Node.js, right in that same terminal.** Type `node -v` and hit Enter. If you see something like `v20` or higher, you're good, move on. If it says 'command not found,' or the version's below 20, pause here: go to nodejs.org, download the LTS installer, run it with the default options, then fully close Antigravity and reopen it before continuing—the terminal won't see a fresh Node install until you restart the app.
 >
-> **Step 1c**: In that terminal, run:
+> **Step 3: in that same terminal, write the following command:**
 > 💬 `npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
 >
 > That `--readonly` flag matters—we start every session in read-only mode, so the AI can inspect the model but can't accidentally change anything yet.
+>
+> (Quick aside if you're on Claude Code or Codex instead of Antigravity: same idea, different app—open that tool's own terminal or its built-in MCP command instead, which I'll show in a second.)
 >
 > **Step 2, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly. Paste in this:
 > ```json
