@@ -289,6 +289,159 @@ FROM customer.feedback;`,
       }
     },
     references: []
+  },
+  {
+    slug: 'july-2026-data-tools-month-in-review',
+    status: 'draft',
+    title: 'July 2026 in Review: What Changed in Power BI, Databricks, Snowflake & Fabric',
+    date: '2026-07-31',
+    readTime: '14 min read',
+    tags: ['Power BI', 'Databricks', 'Snowflake', 'Microsoft Fabric'],
+    summary:
+      'A test run of this feature\'s research process: instead of one update, this pulls every dated, officially-sourced July 2026 change across Power BI, Databricks, Snowflake, and Microsoft Fabric, and asks the same question of each one — what does this actually change about how a data analyst works day to day? Sourced directly from each vendor\'s own release notes/changelog first, not secondary blogs.',
+    toolSections: [
+      {
+        tool: 'Power BI',
+        headline: 'Visual Calculations Reach GA — a Second Reusability Track Alongside DAX UDFs',
+        whatChanged: [
+          'Per the official Power BI July 2026 Feature Summary (Microsoft Fabric Community blog), visual calculations reached general availability this month, alongside expanded modern visual defaults, conditional formatting improvements for line charts/legends, Model Options moving into the Power BI Service, and TMDL view on the web.',
+          'Visual-calculation window functions (RUNNINGSUM, MOVINGAVERAGE, PREVIOUS, and others) gained an optional ORDERBY parameter, so a calculation\'s sort order can be set independently of how the visual itself is currently sorted.'
+        ],
+        codeLanguage: 'dax',
+        codeBefore: `// Model measure: the pre-visual-calculations way to get a Pareto running total
+Pareto Running Total =
+VAR SalesRank =
+    RANKX( ALLSELECTED( Product[Product Name] ), [Total Sales], , DESC )
+RETURN
+    CALCULATE(
+        [Total Sales],
+        TOPN( SalesRank, ALLSELECTED( Product[Product Name] ), [Total Sales], DESC )
+    )`,
+        codeAfter: `// Visual calculation, added directly on the table/chart — not in the model
+Pareto Running Total = RUNNINGSUM( [Total Sales], ORDERBY( [Total Sales], DESC ) )`,
+        whyItMatters:
+          'Impact on analyst work: this is the second "stop writing the same DAX pattern from scratch" release in two months (after DAX UDFs went GA in June) — Microsoft is visibly investing in two parallel reusability tracks: UDFs for logic that needs to live in the model and be called from anywhere, visual calculations for one-off visual-scoped logic like running totals and Pareto charts. An analyst who only learned UDFs is now missing the faster tool for the more common case — a single visual that needs a running total or moving average.',
+        references: [
+          {
+            label: 'Power BI July 2026 Feature Summary — Microsoft Fabric Community (official)',
+            url: 'https://community.fabric.microsoft.com/t5/Power-BI-Updates-Blog/Power-BI-July-2026-Feature-Summary/ba-p/5303533'
+          },
+          {
+            label: 'Visual Calculations Overview — Power BI (Microsoft Learn, official)',
+            url: 'https://learn.microsoft.com/en-us/power-bi/transform-model/desktop-visual-calculations-overview'
+          },
+          {
+            label: 'RUNNINGSUM — DAX Guide',
+            url: 'https://dax.guide/runningsum/'
+          }
+        ]
+      },
+      {
+        tool: 'Databricks',
+        headline: 'Packaged Clean Rooms Reach GA',
+        whatChanged: [
+          'Per Databricks\' official July 2026 release notes, packaged clean rooms are now generally available. In a packaged clean room, a provider supplies notebooks, JARs, and data that a consumer runs against their own data — without the consumer ever seeing the provider\'s code or data assets.',
+          'This is a provider/consumer model, distinct from standard Databricks clean rooms which require equal privileges between all collaborators.',
+          'Requires a workspace enabled for both serverless compute and Unity Catalog.',
+          'Also this month: an OpenAI connector for Lakeflow Connect entered Beta, and a web terminal for notebooks on serverless GPU compute entered Public Preview.'
+        ],
+        whyItMatters:
+          'Impact on analyst work: previously, running a partner\'s proprietary analysis against your own data meant either trusting them with your data, or building a bespoke equal-privilege clean room where both sides had to agree on shared logic. A packaged clean room means an analyst can now run a certified, pre-built notebook from a partner (say, an ad-attribution model or a supply-chain benchmark) against internal data directly, with neither side\'s IP exposed — this is a procurement/legal unlock as much as a technical one, and it changes which cross-company analyses are even feasible to ask for.',
+        references: [
+          {
+            label: 'July 2026 — Databricks on AWS (official release notes)',
+            url: 'https://docs.databricks.com/aws/en/release-notes/product/2026/july'
+          },
+          {
+            label: 'What is Databricks Clean Rooms? — Databricks Docs (official)',
+            url: 'https://docs.databricks.com/aws/en/clean-rooms/'
+          },
+          {
+            label: 'Databricks Clean Rooms: Now Generally Available on AWS and Azure — Databricks Blog (official)',
+            url: 'https://www.databricks.com/blog/databricks-clean-rooms-now-generally-available-aws-and-azure'
+          }
+        ]
+      },
+      {
+        tool: 'Snowflake',
+        headline: 'VOLATILE Scalar UDFs Now Work With Dynamic Table Incremental Refresh',
+        whatChanged: [
+          'Per Snowflake\'s official release notes (dated July 16, 2026), VOLATILE scalar UDFs are now supported with dynamic table incremental refresh, and are General Availability.',
+          'Previously, incremental refresh effectively required a UDF marked IMMUTABLE — genuinely non-deterministic logic (masking, tokenization, anything with real randomness) meant either mislabeling a UDF as IMMUTABLE, or accepting FULL refresh mode, which re-scans and rebuilds the entire table every cycle.',
+          'For incremental refresh, VOLATILE UDFs are supported only in the SELECT clause of the dynamic table definition.'
+        ],
+        codeLanguage: 'sql',
+        codeBefore: `CREATE FUNCTION mask_email(email STRING)
+RETURNS STRING
+AS
+$$
+  SELECT LEFT(email, 2) || '***@' || SPLIT_PART(email, '@', 2)
+$$;
+-- Genuinely VOLATILE by default. To get incremental refresh before this
+-- release, teams had to either mislabel it IMMUTABLE or fall back to:
+
+CREATE DYNAMIC TABLE masked_customers
+  TARGET_LAG = '1 hour'
+  WAREHOUSE = analytics_wh
+  REFRESH_MODE = FULL
+AS
+SELECT customer_id, mask_email(email) AS email
+FROM customers;`,
+        codeAfter: `CREATE FUNCTION mask_email(email STRING)
+RETURNS STRING
+AS
+$$
+  SELECT LEFT(email, 2) || '***@' || SPLIT_PART(email, '@', 2)
+$$;
+-- Still VOLATILE — no mislabeling needed.
+
+CREATE DYNAMIC TABLE masked_customers
+  TARGET_LAG = '1 hour'
+  WAREHOUSE = analytics_wh
+  REFRESH_MODE = INCREMENTAL
+AS
+SELECT customer_id, mask_email(email) AS email
+FROM customers;`,
+        whyItMatters:
+          'Impact on analyst work: FULL refresh on a large dynamic table is slow and expensive, so analysts building masking, tokenization, or randomized-sampling logic into a pipeline previously had to choose between honest UDF metadata and refresh cost. That tradeoff is gone for the SELECT-clause case — the more common one — so pipelines that were quietly over-paying for FULL refresh (or quietly mislabeling a UDF) can be corrected without a redesign.',
+        references: [
+          {
+            label: 'July 16, 2026: VOLATILE scalar UDFs supported with dynamic table incremental refresh (GA) — Snowflake Release Notes (official)',
+            url: 'https://docs.snowflake.com/en/release-notes/2026/other/2026-07-16-volatile-udf-incremental-dynamic-tables'
+          },
+          {
+            label: 'Dynamic table refresh modes — Snowflake Documentation (official)',
+            url: 'https://docs.snowflake.com/en/user-guide/dynamic-tables/refresh-modes'
+          },
+          {
+            label: 'Custom incrementalization — Snowflake Documentation (official)',
+            url: 'https://docs.snowflake.com/en/user-guide/dynamic-tables/custom-incrementalization'
+          }
+        ]
+      },
+      {
+        tool: 'Microsoft Fabric',
+        headline: 'Native Execution Engine Speeds Up Python UDFs, Scala UDFs & Complex Data Types — No Code Change Required',
+        whatChanged: [
+          'Per the official Fabric July 2026 Feature Summary, faster Python UDFs, Scala UDFs, and complex data types in the native execution engine reached General Availability this month.',
+          'This is a runtime engine improvement, not a syntax change — existing Spark/PySpark code that already uses UDFs or complex (nested/struct/array) data types runs faster without being rewritten.',
+          'Also this month: fabric-cicd v1.2.0 added bulk publish mode, using the Fabric bulk import API to publish multiple items in one call instead of one API call per item.'
+        ],
+        whyItMatters:
+          'Impact on analyst work: not every "update" needs a rewrite to matter — this one is worth noting specifically because it doesn\'t. An analyst\'s existing PySpark notebook full of UDFs (often the slowest part of a Spark job, since UDFs historically bypass a lot of the engine\'s optimizations) gets faster automatically on next run. The action item here isn\'t "change your code," it\'s "re-baseline your job\'s runtime before assuming a pipeline still needs a rewrite for performance."',
+        references: [
+          {
+            label: 'Fabric July 2026 Feature Summary — Microsoft Fabric Community (official)',
+            url: 'https://community.fabric.microsoft.com/t5/Fabric-Updates-Blog/Fabric-July-2026-Feature-Summary/ba-p/5325823'
+          },
+          {
+            label: "What's New? — Microsoft Fabric (Microsoft Learn, official)",
+            url: 'https://learn.microsoft.com/en-us/fabric/fundamentals/whats-new'
+          }
+        ]
+      }
+    ],
+    references: []
   }
 ];
 
