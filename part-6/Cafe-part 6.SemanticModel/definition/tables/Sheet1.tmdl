@@ -75,6 +75,12 @@ table Sheet1
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 7a89b012-c345-4678-90ab-cdef01234567
 
+	/// This dataset has no interest, tax, depreciation, or amortization columns,
+	/// so for this single-location coffee shop EBITDA reduces to operating Profit.
+	measure EBITDA = [Profit]
+		formatString: \$#,##0.00;(\$#,##0.00);\$0.00
+		lineageTag: d4e5f678-9012-4a3b-8c4d-5e6f78901234
+
 	column Date
 		dataType: dateTime
 		formatString: Short Date

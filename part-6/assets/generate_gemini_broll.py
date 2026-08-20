@@ -97,7 +97,7 @@ SCENES = [
     },
     {
         "id": "04_mcp_setup",
-        "timestamp": "04:00-07:15",
+        "timestamp": "04:00-08:00",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -110,7 +110,7 @@ SCENES = [
     },
     {
         "id": "05_dax_tmdl_generation",
-        "timestamp": "07:15-10:30",
+        "timestamp": "08:00-10:30",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
         "prompt": (

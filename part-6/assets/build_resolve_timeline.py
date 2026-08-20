@@ -53,7 +53,7 @@ CHAPTERS = [
     {"id": "02_tool_comparison",            "start": "00:35", "name": "Why Antigravity AI"},
     {"id": "03_pbip_vs_pbix",               "start": "02:00", "name": "PBIP vs PBIX"},
     {"id": "04_mcp_setup",                  "start": "04:00", "name": "MCP Setup"},
-    {"id": "05_dax_tmdl_generation",        "start": "07:15", "name": "DAX/TMDL Generation"},
+    {"id": "05_dax_tmdl_generation",        "start": "08:00", "name": "DAX/TMDL Generation"},
     {"id": "06_executive_dashboard_reveal", "start": "10:30", "name": "Executive Dashboards"},
     {"id": "07_brand_theme_test",           "start": "13:15", "name": "Brand Theme Test"},
     {"id": "08_outro",                      "start": "14:15", "name": "Outro"},
