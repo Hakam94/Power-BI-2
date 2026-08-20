@@ -86,11 +86,9 @@
 > **Step 3: in that same terminal, write the following command:**
 > 💬 `npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
 >
-> That `--readonly` flag matters—we start every session in read-only mode, so the AI can inspect the model but can't accidentally change anything yet.
+> That `--readonly` flag matters—we start every session in read-only mode, so the AI can inspect the model but can't accidentally change anything yet. You can leave this terminal running in the background—it's now waiting for a client like Antigravity to connect to it.
 >
-> (Quick aside if you're on Claude Code or Codex instead of Antigravity: same idea, different app—open that tool's own terminal or its built-in MCP command instead, which I'll show in a second.)
->
-> **Step 2, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly. Paste in this:
+> **Step 4, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly. Paste in this:
 > ```json
 > {
 >   "mcpServers": {
@@ -106,7 +104,11 @@
 >   }
 > }
 > ```
-> Save the file, restart Antigravity, then open the '...' dropdown at the top of the agent panel, click 'Manage MCP Servers,' and confirm `powerbi-modeling` is listed there. If it's not showing, double-check your JSON syntax and restart again.
+> Save the file, restart Antigravity, then open the '...' dropdown at the top of the agent panel, click 'Manage MCP Servers,' and confirm `powerbi-modeling` is listed there, with a green dot or 'Connected' next to it. If it's not showing, double-check your JSON syntax and restart again.
+>
+> **Step 5: what does 'read-only' actually mean, and how do we know it's really on?** Now that the agent is connected, let's stop and check this properly—don't just take my word for it. In plain terms, read-only means the AI can look inside your Power BI files and tell you what's there—list your tables, measures, relationships, even suggest changes out loud in the chat—but it is physically blocked from saving anything to those files while this flag is active. Think of it like handing someone a folder they can read but don't have a pen for.
+>
+> Let's prove it, right now, before we trust it with real files. In Antigravity's chat panel, type: 'Rename the Profit measure to Test123 and save the file.' Watch what happens: because we started the server with `--readonly`, the agent will either refuse outright, or tell you it doesn't have write permission. Either way, nothing on your disk actually changes. Go check `Sheet1.tmdl` yourself if you want—the Profit measure is still called Profit. That's your proof, on screen, before we move forward.
 >
 > **If you're in Claude Code instead**, the equivalent is one line in its own terminal:
 > 💬 `claude mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
@@ -122,7 +124,7 @@
 >
 > **Now, the question I get the most: does this connect to GitHub, or to a local folder?** It connects to your **local folder**—specifically the `.SemanticModel/definition` folder inside your local clone of the repo. GitHub isn't something the MCP server talks to directly. GitHub is the layer we put on top of that same local folder using normal Git: you create a branch, let the agent propose a change, you review the diff, and only then commit and open a pull request. Local folder for the live connection, GitHub for version control and review.
 >
-> **Step 3**: Point the agent at that folder with a simple, safe prompt:
+> **Step 6**: Point the agent at that folder with a simple, safe prompt:
 > 💬 *'Open this Power BI semantic model in read-only mode: C:/path/to/Cafe-part 6.SemanticModel/definition. List tables, relationships, and measures. Do not make changes.'*
 >
 > Only once you've reviewed what it found do you drop `--readonly` for the specific change you're approving."*
