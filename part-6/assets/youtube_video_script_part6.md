@@ -154,12 +154,12 @@
 ---
 
 ### 🎨 13:15 - 14:15 | Step 5: Matching Channel Colors & Live Testing in Power BI Desktop
-> **[VISUAL ON SCREEN]**: Double-clicking `Cafe-part 6.pbip`, showing Power BI Desktop opening smoothly with all 3 pages rendered in Dark Emerald Green and Cyber Cyan.
+> **[VISUAL ON SCREEN]**: Double-clicking `Cafe-part 6.pbip`, showing Power BI Desktop opening smoothly with all 3 pages rendered in Cyber Slate and Neon Lime.
 >
 > **SPEAKER**:
 > *"Now let's test our work live in Power BI Desktop!
 >
-> To make the report look clean and professional, we sampled our channel branding colors—Dark Emerald Green (`#051915`), Neon Lime (`#39FF14`), and Cyber Cyan (`#00E5FF`)—and registered them in our Power BI theme JSON file (`Elektra873060879558101.json`).
+> To make the report look clean and professional, we used our actual channel theme file, `Elektra873060879558101.json`: background Cyber Slate (`#0D2229`), primary accent Neon Lime (`#39FF14`), and secondary accent Electric Cyan (`#00D2FF`)—the exact three colors registered in that file, nothing approximated.
 >
 > When we double-click **`Cafe-part 6.pbip`**, Power BI Desktop opens up with Page 1, Page 2 CFO Action Plan, and Page 3 Executive Dashboard all fully rendered, perfectly formatted, and ready to present!"*
 

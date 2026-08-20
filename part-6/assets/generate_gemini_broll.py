@@ -35,9 +35,10 @@ VIDEO_MODEL = os.getenv("GEMINI_VIDEO_MODEL", "veo-3.1-generate-preview")
 # ------------------------------------------------------------------------------
 BRAND_STYLE = (
     "Brand: @HakamDataStudio, a premium '1% BI & AI Engineer' data analytics "
-    "channel. Visual identity: dark cyber-slate / deep emerald background "
-    "(#051915, #0D2229), glowing neon lime green accents (#39FF14, #BFFF00) "
-    "and electric cyber cyan accents (#00D2FF, #00E5FF), holographic data "
+    "channel. Visual identity taken directly from the channel's registered "
+    "Power BI theme (Elektra873060879558101.json): dark cyber-slate "
+    "background (#0D2229), glowing neon lime green primary accent (#39FF14), "
+    "electric cyan secondary accent (#00D2FF), holographic data "
     "particles, glassy glowing UI panels. Presenter Hakam: confident, "
     "high-energy, direct-to-camera data engineer, beige double-breasted suit, "
     "sharp and premium. Overall mood: cinematic, hyper-realistic, futuristic "
