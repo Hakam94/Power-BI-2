@@ -33,6 +33,10 @@ jobs:
         working-directory: hakam-web
         run: npm ci
 
+      - name: Install Playwright Chromium
+        working-directory: hakam-web
+        run: npx playwright install --with-deps chromium
+
       - name: Build
         working-directory: hakam-web
         run: npm run build

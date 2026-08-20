@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-sitemap.mjs",
+    "build": "vite build && node scripts/generate-sitemap.mjs && node scripts/prerender.mjs",
     "lint": "oxlint",
     "preview": "vite preview"
   },
@@ -30,6 +30,7 @@
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.4",
     "oxlint": "^1.75.0",
+    "playwright": "1.56.1",
     "vite": "^8.2.0"
   }
 }
