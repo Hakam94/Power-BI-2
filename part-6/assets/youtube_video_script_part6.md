@@ -57,13 +57,17 @@
 > **SPEAKER**:
 > *"Now let's talk about how Power BI Developer Mode—`.pbip`—works, because this matters for everything we do next.
 >
+> Quick dates so you know where this stands: Microsoft put Power BI Projects into public preview back in June 2023, and as of right now, General Availability is targeted for later this year. So everything we're doing today is still technically preview functionality—stable enough to build on, but worth knowing it's not fully finalized yet.
+>
 > Traditionally, Power BI uses `.pbix` files. But `.pbix` files are binary blobs—if an AI touches them directly, they can easily get corrupted.
 >
-> With `.pbip`, Power BI breaks your project down into clean, human-readable text files:
-> - **PBIR Files (`.pbir`)**: layout and visuals in JSON.
-> - **TMDL Files (`.tmdl`)**: Tabular Model Definition Language—tables, columns, and DAX measures.
+> With `.pbip`, Power BI breaks your project down into two pieces: a `.SemanticModel` folder full of TMDL files—Tabular Model Definition Language—for your tables, columns, and DAX measures, and a `.Report` folder for the visuals and layout.
 >
-> Because these are plain text files, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in Git, which we'll use in a minute.
+> Here's a detail worth clearing up, because it trips people up when they go looking: inside that Report folder, there's actually just ONE file that ends in `.pbir`—it's called `definition.pbir`, and it's a small pointer file that basically says 'the real content of this report lives in the definition folder right next to me.' Everything inside that definition folder—every page, every single visual—is stored as a plain `.json` file, not a `.pbir` file. So if you go looking for '.pbir files' plural and only find one, that's not a bug, that's exactly how it's supposed to look—just look for `.json` files for the actual pages and visuals.
+>
+> Because all of this is plain text, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in Git, which we'll use in a minute.
+>
+> One important limitation before we move on, so you're not confused later: if Power BI Desktop already has your `.pbip` open while an AI agent edits these files, Desktop will NOT automatically refresh to show the change—this is a known limitation as of this recording. You have to close the project in Power BI Desktop and reopen the `.pbip` file to see what changed. No live preview yet, unfortunately. Keep that in mind every time we make a change today.
 >
 > One more thing before we move on: everything in this tutorial works two ways. You can start completely from scratch—an empty `.pbip` folder, and have the AI scaffold your tables, measures, and pages from zero. Or, like most of you watching, you can point this at a Power BI report you already built months ago and use it to extend or fix that existing model instead. Same MCP connection, same workflow, either direction. We're doing the second one today, since we already have a report to build on."*
 
@@ -79,7 +83,9 @@
 >
 > **What's `npx`?** It's a small command that ships automatically with Node.js. When you type `npx` followed by a package name, it downloads that package temporarily and runs it—you're not permanently installing anything on your machine. So this next command isn't installing software, it's just asking npx to fetch Microsoft's official MCP server and start it, for this session only.
 >
-> **Step 1: open Antigravity and point it at your project folder.** Launch Antigravity IDE. Click File, then Open Folder, and select the folder on your computer where you cloned or saved this project—for us that's the Power-BI-2 folder. Once that folder loads, click Terminal in the top menu, then New Terminal—or just press Ctrl plus backtick. A terminal panel opens at the bottom, already sitting inside that exact project folder.
+> **Step 1: open Antigravity and point it at your project folder.** Quick note on that folder first: this whole project is actually shared on GitHub, and what's sitting on my computer is a local clone—basically just a copy of it, downloaded onto my machine. For everything we do today, you don't need to think about GitHub at all—just treat it as a normal folder on your computer. For us that's the Power-BI-2 folder.
+>
+> Launch Antigravity IDE. Click File, then Open Folder, and select that folder. Once it loads, you have two options to reach a command line: click Terminal in the top menu, then New Terminal—or just press Ctrl plus backtick, and a terminal panel opens at the bottom, already sitting inside that exact project folder. Or, if Antigravity already opened its agent chat panel on the right side, you can skip the terminal entirely and just type these same instructions straight into that chat—Antigravity can run terminal commands for you when you ask it to. I'll use the terminal directly so it's easy to follow on screen.
 >
 > **Step 2: check Node.js, right in that same terminal.** Type `node -v` and hit Enter. If you see something like `v20` or higher, you're good, move on. If it says 'command not found,' or the version's below 20, pause here: go to nodejs.org, download the LTS installer, run it with the default options, then fully close Antigravity and reopen it before continuing—the terminal won't see a fresh Node install until you restart the app.
 >
@@ -88,7 +94,7 @@
 >
 > That `--readonly` flag matters—we start every session in read-only mode, so the AI can inspect the model but can't accidentally change anything yet. You can leave this terminal running in the background—it's now waiting for a client like Antigravity to connect to it.
 >
-> **Step 4, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly. Paste in this:
+> **Step 4, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly, which will likely be empty or near-empty right now. Here's exactly what you're pasting in, and what it means, since I don't want to just say 'paste this' without explaining it: you're adding one entry, named `powerbi-modeling`, that tells Antigravity 'when you need this server, run this exact command'—and that command is the same `npx` command from Step 3, readonly flag included. So you're not typing the command again by hand; you're just telling Antigravity to run it automatically whenever it needs to. You can see the full JSON on screen right now—pause the video here if you want to copy it exactly.
 > ```json
 > {
 >   "mcpServers": {
@@ -108,7 +114,7 @@
 >
 > **Step 5: what does 'read-only' actually mean, and how do we know it's really on?** Now that the agent is connected, let's stop and check this properly—don't just take my word for it. In plain terms, read-only means the AI can look inside your Power BI files and tell you what's there—list your tables, measures, relationships, even suggest changes out loud in the chat—but it is physically blocked from saving anything to those files while this flag is active. Think of it like handing someone a folder they can read but don't have a pen for.
 >
-> Let's prove it, right now, before we trust it with real files. In Antigravity's chat panel, type: 'Rename the Profit measure to Test123 and save the file.' Watch what happens: because we started the server with `--readonly`, the agent will either refuse outright, or tell you it doesn't have write permission. Either way, nothing on your disk actually changes. Go check `Sheet1.tmdl` yourself if you want—the Profit measure is still called Profit. That's your proof, on screen, before we move forward.
+> Let's prove it, right now, before we trust it with real files. In Antigravity's chat panel, type: 'Rename the Profit measure to Test123 and save the file.' Watch what happens: because we started the server with `--readonly`, the agent will either refuse outright, or tell you it doesn't have write permission. Either way, nothing on your disk actually changes. Go check `Sheet1.tmdl` yourself if you want—the Profit measure is still called Profit. Or, if Power BI Desktop is already open with this project, close and reopen the `.pbip`—remember, no live refresh—and you'll see nothing changed there either. That's your proof, on screen, before we move forward.
 >
 > **If you're in Claude Code instead**, the equivalent is one line in its own terminal:
 > 💬 `claude mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
@@ -140,7 +146,7 @@
 > Here is the exact prompt we use:
 > 💬 *'In Sheet1.tmdl, create DAX measures for Total Revenue, Total Profit, and Profit Margin % formatted as 0.00%. Save all files strictly in UTF-8 without BOM.'*
 >
-> Take a look at how fast the agent updates our `Sheet1.tmdl` file:
+> Take a look at how fast the agent updates our `Sheet1.tmdl` file—and remember what we covered earlier: if you want to see these new measures show up inside Power BI Desktop itself, you'll need to close and reopen the `.pbip` file first, since it won't refresh on its own.
 > ```dax
 > measure 'Total Revenue' = SUM(Sheet1[Revenue])
 >   formatString: $#,0.00
@@ -184,17 +190,17 @@
 > **SPEAKER (framing, before going live)**:
 > *"Everything so far was pre-built, and I told you that upfront. But I don't want this video to feel like a slideshow of finished screenshots, so here's something I have genuinely NOT built yet, and we're going to do it together, live, right now.
 >
-> Right now, our model has an EBITDA measure, but nothing breaking it down by store, and no EBITDA Margin percentage. Let's ask the agent to add both, live."*
+> Remember Action 3 from the CFO page—Downtown has the highest operational cost of any store? Here's what we DON'T know yet: does Downtown's revenue actually make up for that, or is it quietly our worst-performing store once costs are factored in properly? Let's find out live, and build a per-store EBITDA Margin comparison to answer it for real."*
 >
 > **[LIVE — DO NOT PRE-RECORD OR SCRIPT THE OUTPUT]**
 > Prompt to type on camera:
-> 💬 *'In Sheet1.tmdl, add an EBITDA Margin % measure (EBITDA divided by Total Revenue, formatted as a percentage). Then add a bar chart to Page 3 showing EBITDA by Store. Save in UTF-8 without BOM.'*
+> 💬 *'In Sheet1.tmdl, add an EBITDA Margin % measure (EBITDA divided by Total Revenue, formatted as a percentage). Then add a bar chart to Page 3 showing EBITDA Margin % by Store, sorted highest to lowest. Tell me which store has the lowest EBITDA Margin and whether Downtown is it. Save in UTF-8 without BOM.'*
 >
 > **[DIRECTOR'S NOTE — read this, don't cut it from the final edit]**:
-> Whatever the agent actually produces, react to it honestly on camera. If it nails it first try, say so. If the DAX needs a follow-up correction, or the chart lands in the wrong spot, show that too and fix it live—that's more useful to viewers than a fake perfect take, and it's the whole reason this segment exists. Don't reshoot this part to make it look smoother than it was.
+> Whatever the agent actually produces, react to it honestly on camera. If it nails it first try, say so. If the DAX needs a follow-up correction, or the chart lands in the wrong spot, show that too and fix it live—that's more useful to viewers than a fake perfect take, and it's the whole reason this segment exists. Don't reshoot this part to make it look smoother than it was. Whatever store actually comes out lowest, react to that specific real result—don't paraphrase it away.
 >
-> **SPEAKER (after the live result, whatever it turned out to be)**:
-> *"And that's the real difference between watching a finished dashboard and watching the actual workflow—warts and all. That's what you're signing up for when you connect an agent to your own reports."*
+> **SPEAKER (after the live result — replace the bracket below with what actually happened before you publish)**:
+> *"So there's our real answer: [state the actual store and EBITDA Margin % the agent found on camera] — and that's not something I knew before we hit record. That's the real difference between watching a finished dashboard and watching the actual workflow—warts and all. That's what you're signing up for when you connect an agent to your own reports."*
 
 ---
 
