@@ -54,7 +54,7 @@ BRAND_STYLE = (
 SCENES = [
     {
         "id": "01_hook",
-        "timestamp": "00:00-00:45",
+        "timestamp": "00:00-00:20",
         "image": "broll_opening_hook.png",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
@@ -70,7 +70,7 @@ SCENES = [
     },
     {
         "id": "02_tool_comparison",
-        "timestamp": "00:35-02:00",
+        "timestamp": "00:25-03:00",
         "duration_seconds": 6,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -84,7 +84,7 @@ SCENES = [
     },
     {
         "id": "03_pbip_vs_pbix",
-        "timestamp": "02:00-04:00",
+        "timestamp": "03:00-05:00",
         "duration_seconds": 6,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -98,7 +98,7 @@ SCENES = [
     },
     {
         "id": "04_mcp_setup",
-        "timestamp": "04:00-08:00",
+        "timestamp": "05:00-10:00",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -111,7 +111,7 @@ SCENES = [
     },
     {
         "id": "05_dax_tmdl_generation",
-        "timestamp": "08:00-10:30",
+        "timestamp": "10:00-12:30",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -125,7 +125,7 @@ SCENES = [
     },
     {
         "id": "06_executive_dashboard_reveal",
-        "timestamp": "10:30-13:15",
+        "timestamp": "12:30-15:15",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -133,26 +133,26 @@ SCENES = [
             "hovering in 3D holographic space: KPI cards for revenue, "
             "profit and margin snap into place one by one, followed by a "
             "6-chart grid of bar, donut and matrix visuals assembling in "
-            "sync, all rendered in dark emerald background with neon lime "
-            "and cyber cyan chart accents. Smooth slow orbit camera move."
+            "sync, all rendered on a cyber slate background with neon lime "
+            "and electric cyan chart accents. Smooth slow orbit camera move."
         ),
     },
     {
         "id": "07_brand_theme_test",
-        "timestamp": "13:15-14:15",
+        "timestamp": "15:15-16:15",
         "duration_seconds": 6,
         "aspect_ratio": "16:9",
         "prompt": (
             "Power BI Desktop application window opening on a dark studio "
             "desk setup, three report page tabs rendering in sequence, each "
-            "styled in dark emerald green with neon lime and cyber cyan "
-            "chart colors matching brand swatches floating beside the "
+            "styled with a cyber slate background, neon lime and electric "
+            "cyan chart colors matching brand swatches floating beside the "
             "screen. Clean, professional, satisfying snap-into-focus motion."
         ),
     },
     {
         "id": "08_outro",
-        "timestamp": "14:15-15:00",
+        "timestamp": "16:15-17:00",
         "image": "hakam_presenter_photo.jpg",
         "duration_seconds": 6,
         "aspect_ratio": "16:9",

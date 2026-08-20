@@ -50,13 +50,13 @@ ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 #   part6_broll_<id>.mp4
 CHAPTERS = [
     {"id": "01_hook",                       "start": "00:00", "name": "Hook"},
-    {"id": "02_tool_comparison",            "start": "00:35", "name": "Why Antigravity AI"},
-    {"id": "03_pbip_vs_pbix",               "start": "02:00", "name": "PBIP vs PBIX"},
-    {"id": "04_mcp_setup",                  "start": "04:00", "name": "MCP Setup"},
-    {"id": "05_dax_tmdl_generation",        "start": "08:00", "name": "DAX/TMDL Generation"},
-    {"id": "06_executive_dashboard_reveal", "start": "10:30", "name": "Executive Dashboards"},
-    {"id": "07_brand_theme_test",           "start": "13:15", "name": "Brand Theme Test"},
-    {"id": "08_outro",                      "start": "14:15", "name": "Outro"},
+    {"id": "02_tool_comparison",            "start": "00:25", "name": "Why Antigravity AI"},
+    {"id": "03_pbip_vs_pbix",               "start": "03:00", "name": "PBIP vs PBIX"},
+    {"id": "04_mcp_setup",                  "start": "05:00", "name": "MCP Setup"},
+    {"id": "05_dax_tmdl_generation",        "start": "10:00", "name": "DAX/TMDL Generation"},
+    {"id": "06_executive_dashboard_reveal", "start": "12:30", "name": "Executive Dashboards"},
+    {"id": "07_brand_theme_test",           "start": "15:15", "name": "Brand Theme Test"},
+    {"id": "08_outro",                      "start": "16:15", "name": "Outro"},
 ]
 
 
