@@ -48,15 +48,20 @@ ASSETS_DIR = os.path.dirname(os.path.abspath(__file__))
 # Chapter timestamps, mirrored from generate_gemini_broll.py / youtube_video_script_part6.md.
 # scene_file must match the output naming from generate_gemini_broll.py:
 #   part6_broll_<id>.mp4
+#
+# Note: there's an intentional gap between 06_executive_dashboard_reveal's
+# end (~14:00) and 07_brand_theme_test's start (16:30). That's the live,
+# unscripted on-camera segment from the script (Step 4b) — raw screen
+# recording, not a generated B-roll clip, so it has no chapter entry here.
 CHAPTERS = [
     {"id": "01_hook",                       "start": "00:00", "name": "Hook"},
     {"id": "02_tool_comparison",            "start": "00:25", "name": "Why Antigravity AI"},
     {"id": "03_pbip_vs_pbix",               "start": "03:00", "name": "PBIP vs PBIX"},
     {"id": "04_mcp_setup",                  "start": "05:00", "name": "MCP Setup"},
     {"id": "05_dax_tmdl_generation",        "start": "10:00", "name": "DAX/TMDL Generation"},
-    {"id": "06_executive_dashboard_reveal", "start": "12:30", "name": "Executive Dashboards"},
-    {"id": "07_brand_theme_test",           "start": "15:15", "name": "Brand Theme Test"},
-    {"id": "08_outro",                      "start": "16:15", "name": "Outro"},
+    {"id": "06_executive_dashboard_reveal", "start": "12:30", "name": "Executive Dashboards (Already Built)"},
+    {"id": "07_brand_theme_test",           "start": "16:30", "name": "Brand Theme Test"},
+    {"id": "08_outro",                      "start": "17:30", "name": "Outro"},
 ]
 
 

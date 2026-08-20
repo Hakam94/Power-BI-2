@@ -1,6 +1,6 @@
 # 🎬 Alex The Analyst Style YouTube Script — Part 6
 **Channel**: `@HakamDataStudio`
-**Video Length**: ~15-17 Minutes
+**Video Length**: ~16-18 Minutes
 **Series**: Coffee Shop Sales Analytics (Part 6)
 **Style**: Alex The Analyst (Practical, Friendly, Relatable, Step-by-Step Data Analyst Voice)
 
@@ -15,9 +15,10 @@
 - **03:00 - 05:00**: 📌 Step 1: PBIP & TMDL Files — Why Text-Based Power BI Matters
 - **05:00 - 10:00**: ⚙️ Step 2: Connecting the Official Power BI Modeling MCP Server (terminal explained, npx explained, verified per tool: Antigravity IDE / Claude Code / Codex, local folder vs GitHub)
 - **10:00 - 12:30**: 🧮 Step 3: Writing DAX Measures & TMDL Files with AI Prompts
-- **12:30 - 15:15**: 📊 Step 4: Building Executive Dashboards, CFO Action Plans & What EBITDA Means Here
-- **15:15 - 16:15**: 🎨 Step 5: Matching Channel Colors & Testing Live in Power BI Desktop
-- **16:15 - 17:00**: 🚀 Step 6: Wrap Up, Free Code Downloads & Outro
+- **12:30 - 14:00**: 📊 Step 4a: What We Already Built — CFO Action Plans & What EBITDA Means Here
+- **14:00 - 16:30**: 🔴 Step 4b: LIVE & UNSCRIPTED — Building Something New On Camera
+- **16:30 - 17:30**: 🎨 Step 5: Matching Channel Colors & Testing Live in Power BI Desktop
+- **17:30 - 18:15**: 🚀 Step 6: Wrap Up, Free Code Downloads & Outro
 
 ---
 
@@ -62,7 +63,9 @@
 > - **PBIR Files (`.pbir`)**: layout and visuals in JSON.
 > - **TMDL Files (`.tmdl`)**: Tabular Model Definition Language—tables, columns, and DAX measures.
 >
-> Because these are plain text files, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in Git, which we'll use in a minute."*
+> Because these are plain text files, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in Git, which we'll use in a minute.
+>
+> One more thing before we move on: everything in this tutorial works two ways. You can start completely from scratch—an empty `.pbip` folder, and have the AI scaffold your tables, measures, and pages from zero. Or, like most of you watching, you can point this at a Power BI report you already built months ago and use it to extend or fix that existing model instead. Same MCP connection, same workflow, either direction. We're doing the second one today, since we already have a report to build on."*
 
 ---
 
@@ -143,21 +146,20 @@
 
 ---
 
-### 📊 12:30 - 15:15 | Step 4: Executive Dashboards, CFO Action Plans & What EBITDA Actually Means Here
-> **[VISUAL ON SCREEN]**: Displaying Page 2 (`cfo_executive_insights`) KPI cards and Page 3 (`executive_mcp_dashboard`) 6-chart grid layout. Cut to `Sheet1.tmdl` scrolled to the new `EBITDA` measure.
+### 📊 12:30 - 14:00 | Step 4a: What We Already Built — CFO Action Plans & What EBITDA Actually Means Here
+> **[VISUAL ON SCREEN]**: Displaying Page 2 (`cfo_executive_insights`) KPI cards and Page 3 (`executive_mcp_dashboard`) 6-chart grid layout. Cut to `Sheet1.tmdl` scrolled to the `EBITDA` measure.
 >
 > **SPEAKER**:
-> *"Before I show you the CFO page, let's actually define the term on it, because I skipped this last time and got called out for it—fair. **EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization.** It's a way of looking at how profitable the core business is, before you factor in financing costs, tax structure, or how fast equipment is depreciating.
+> *"Quick honesty check before I show you this page: everything you're about to see, I built ahead of time with the same AI workflow we just walked through—I'm not going to make you sit through fifteen minutes of me typing prompts and waiting for pages to render. This is the result.
+>
+> First, let's define the term on the CFO page, because I skipped this last time and got called out for it—fair. **EBITDA stands for Earnings Before Interest, Taxes, Depreciation, and Amortization.** It's a way of looking at how profitable the core business is, before you factor in financing costs, tax structure, or how fast equipment is depreciating.
 >
 > Our coffee shop dataset doesn't have interest, tax, or depreciation columns—it's just revenue and cost per sale. So for this specific model, EBITDA and operating Profit are the same number, and I want that to be transparent instead of hand-wavy. Here's the actual measure I added to `Sheet1.tmdl`:
 > ```dax
 > measure EBITDA = [Profit]
 >   formatString: $#,##0.00
 > ```
-> That's it—no hidden math, no invented multiplier. If your own dataset has interest or depreciation data, you'd subtract those out separately; ours doesn't, so EBITDA here simply IS Profit, computed live from Revenue minus Cost.
->
-> Now let's prompt the AI to build our CFO action plan on top of that:
-> 💬 *'Build Page 2 CFO Executive Action Plan featuring cards with data evidence on margin performance by drink type. Then build Page 3 Executive MCP Dashboard with a 6-KPI header and a 6-chart grid layout.'*
+> That's it—no hidden math, no invented multiplier.
 >
 > Here's what's actually on the CFO page, reading straight off the cards:
 > - **Action 1 — Scale High-Margin Espresso Sales**: Espresso holds the highest profit margin in the portfolio at 66.67%, followed by Cold Brew at 62.50%. Expanding that sales mix at Corporate Park and University will maximize net EBITDA—which, as we just showed, is our Profit measure.
@@ -168,7 +170,27 @@
 
 ---
 
-### 🎨 15:15 - 16:15 | Step 5: Matching Channel Colors & Live Testing in Power BI Desktop
+### 🔴 14:00 - 16:30 | Step 4b: LIVE & UNSCRIPTED — Building Something New On Camera
+> **[VISUAL ON SCREEN]**: Full, real, unedited screen recording — no cuts. Hakam's face cam stays on throughout, reacting genuinely to whatever the agent produces.
+>
+> **SPEAKER (framing, before going live)**:
+> *"Everything so far was pre-built, and I told you that upfront. But I don't want this video to feel like a slideshow of finished screenshots, so here's something I have genuinely NOT built yet, and we're going to do it together, live, right now.
+>
+> Right now, our model has an EBITDA measure, but nothing breaking it down by store, and no EBITDA Margin percentage. Let's ask the agent to add both, live."*
+>
+> **[LIVE — DO NOT PRE-RECORD OR SCRIPT THE OUTPUT]**
+> Prompt to type on camera:
+> 💬 *'In Sheet1.tmdl, add an EBITDA Margin % measure (EBITDA divided by Total Revenue, formatted as a percentage). Then add a bar chart to Page 3 showing EBITDA by Store. Save in UTF-8 without BOM.'*
+>
+> **[DIRECTOR'S NOTE — read this, don't cut it from the final edit]**:
+> Whatever the agent actually produces, react to it honestly on camera. If it nails it first try, say so. If the DAX needs a follow-up correction, or the chart lands in the wrong spot, show that too and fix it live—that's more useful to viewers than a fake perfect take, and it's the whole reason this segment exists. Don't reshoot this part to make it look smoother than it was.
+>
+> **SPEAKER (after the live result, whatever it turned out to be)**:
+> *"And that's the real difference between watching a finished dashboard and watching the actual workflow—warts and all. That's what you're signing up for when you connect an agent to your own reports."*
+
+---
+
+### 🎨 16:30 - 17:30 | Step 5: Matching Channel Colors & Live Testing in Power BI Desktop
 > **[VISUAL ON SCREEN]**: Double-clicking `Cafe-part 6.pbip`, showing Power BI Desktop opening smoothly with all 3 pages rendered in Cyber Slate and Neon Lime.
 >
 > **SPEAKER**:
@@ -180,11 +202,11 @@
 
 ---
 
-### 🚀 16:15 - 17:00 | Step 6: Wrap Up, Free Code Downloads & Outro
+### 🚀 17:30 - 18:15 | Step 6: Wrap Up, Free Code Downloads & Outro
 > **[VISUAL ON SCREEN]**: Hakam back on camera, full screen showing final 3-page dashboard project.
 >
 > **SPEAKER**:
-> *"And that is how you connect an AI coding agent to a real Power BI semantic model—locally, safely, in read-only mode by default—and use it to write DAX, build a CFO action plan, and know exactly where every number on that dashboard came from.
+> *"And that is how you connect an AI coding agent to a real Power BI semantic model—locally, safely, in read-only mode by default—whether you're building from scratch or, like we just did live, extending a report you already have. You saw the finished result, and you saw the actual unscripted process behind it.
 >
 > All the source files—dataset, TMDL measures, theme JSON, prompt templates—are completely free and linked in the description below.
 >

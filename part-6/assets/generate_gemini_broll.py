@@ -125,7 +125,7 @@ SCENES = [
     },
     {
         "id": "06_executive_dashboard_reveal",
-        "timestamp": "12:30-15:15",
+        "timestamp": "12:30-14:00",
         "duration_seconds": 8,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -139,7 +139,7 @@ SCENES = [
     },
     {
         "id": "07_brand_theme_test",
-        "timestamp": "15:15-16:15",
+        "timestamp": "16:30-17:30",
         "duration_seconds": 6,
         "aspect_ratio": "16:9",
         "prompt": (
@@ -152,7 +152,7 @@ SCENES = [
     },
     {
         "id": "08_outro",
-        "timestamp": "16:15-17:00",
+        "timestamp": "17:30-18:15",
         "image": "hakam_presenter_photo.jpg",
         "duration_seconds": 6,
         "aspect_ratio": "16:9",
