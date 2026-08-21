@@ -291,26 +291,31 @@ FROM customer.feedback;`,
     references: []
   },
   {
-    slug: 'power-bi-desktop-open-in-vscode',
+    slug: 'power-bi-desktop-bridge-and-vscode-integration',
     status: 'draft',
-    title: 'Power BI Desktop Can Now Open Your Project Directly in VS Code',
+    title: 'The Power BI Desktop Bridge Is a Bigger Deal Than the New "Open in VS Code" Button',
     tool: 'Power BI',
     date: '',
-    readTime: '4 min read',
-    tags: ['Power BI', 'VS Code', 'Developer Tooling'],
+    readTime: '6 min read',
+    tags: ['Power BI', 'VS Code', 'Agentic AI', 'Developer Tooling'],
     summary:
-      'The August 2026 Power BI Feature Summary adds a built-in entry point in Power BI Desktop that opens your current .pbip project directly in Visual Studio Code — no manual "Open Folder" hop required. Separately (and easy to confuse with this), the TMDL Visual Studio Code extension — DAX/Power Query semantic highlighting, breadcrumb navigation, code actions, code formatting inside TMDL files — reached General Availability back in November 2025, so it\'s not new this month, just newly relevant now that jumping into VS Code from Desktop is one click away.',
+      'Power BI Desktop\'s August 2026 release adds a one-click "Open in VS Code" entry point — a nice shortcut, nothing more. The feature actually worth restructuring your workflow around shipped two months earlier, in June 2026: the Power BI Desktop Bridge (Preview), which exposes local APIs letting an external AI agent or tool tell a running Desktop instance to reload a project from disk — no more manually closing and reopening your .pbip after an agent edits it. It has no write API of its own; agents still edit TMDL/PBIR files on disk exactly as before, the Bridge just handles the reload.',
     whatChanged: [
-      'Power BI Desktop (August 2026 release) adds a built-in "Open in VS Code" entry point, launching your current .pbip project folder directly in Visual Studio Code from inside Desktop.',
-      'This is separate from the TMDL VS Code extension, which reached GA in November 2025 and adds DAX semantic highlighting inside .tmdl files, Power Query semantic highlighting, breadcrumb navigation, code actions, and code formatting — install it from the VS Code Marketplace if you\'re editing TMDL by hand.',
-      'Also separate from AI-IDE forks like Antigravity, Cursor, or Windsurf: those are full standalone applications built on VS Code\'s codebase, not the official Microsoft VS Code that this new Desktop button opens. Don\'t assume "opens in VS Code" means it opens in Antigravity — it opens plain VS Code.',
-      'Together these three things point the same direction: Microsoft treating VS Code as a first-party tool for Power BI developers, not just Power BI Desktop\'s GUI.'
+      'Power BI Desktop (August 2026) adds a built-in "Open in VS Code" button that opens your current .pbip project folder directly in plain Visual Studio Code from inside Desktop — a navigation shortcut, not a new capability.',
+      'The Power BI Desktop Bridge (Preview), introduced in the June 2026 release, exposes local APIs that let external tools — AI agents, scripts, VS Code — ask a running Power BI Desktop instance to reload the currently open project from disk, and take screenshots for validation.',
+      'The Bridge has no write API: it does not let an agent edit your model directly. An agent still writes TMDL into the semantic model folder and PBIR JSON into the report folder the normal way — the Bridge only handles telling Desktop to reload afterward, replacing the manual close-and-reopen step.',
+      'To enable it: File > Options and settings > Options > Preview features > "Enable external tool access to Power BI Desktop through secure local APIs." On some newer builds it may already be on by default. Requires a June 2026 or later Desktop build.',
+      'Separately, the TMDL Visual Studio Code extension (DAX/Power Query semantic highlighting, breadcrumb navigation, code actions, code formatting inside .tmdl files) reached General Availability back in November 2025 — not new this month, but worth having installed if you edit TMDL by hand.'
     ],
     whyItMatters:
-      'For anyone using an AI coding agent against a Power BI Project (PBIP) — the exact workflow this channel teaches — this lowers the friction of moving between "I want to see this rendered in Desktop" and "I want to inspect/edit the raw TMDL/PBIR text." One click instead of manually opening a folder. Combined with the TMDL extension\'s semantic highlighting, hand-editing TMDL outside an AI agent is also less error-prone than it was a year ago.',
+      'This directly changes the "AI agent edits your Power BI model" workflow this channel teaches. Without the Bridge, every change means closing and reopening Power BI Desktop to see it. With the Bridge enabled and a tool wired to call it, that manual step goes away. Whether the specific Power BI Modeling MCP server used in Part 6 already calls the Bridge automatically hasn\'t been verified yet here — that\'s the next thing to actually test on camera, not assume.',
     trendNote:
-      'Editorial note, not a scraped statistic: this is the second consecutive month (July\'s visual calculations GA, now this) where the Power BI release notes read like they\'re courting developers specifically, not just report authors. Worth watching whether "PBIP/Git/VS Code fluency" starts showing up as an explicit line item in BI job postings the way "semantic model" language already has.',
+      'Editorial note, not a scraped statistic: two releases in a row now (July\'s visual calculations GA, June\'s Desktop Bridge, August\'s VS Code button) where Power BI shipped something aimed squarely at people driving the tool through code and AI agents, not just building reports by hand. Worth watching whether "agentic Power BI" or "PBIP + AI agent" starts showing up as its own line in BI job postings.',
     references: [
+      {
+        label: 'What is the Power BI Desktop Bridge? (Preview) — Power BI (Microsoft Learn)',
+        url: 'https://learn.microsoft.com/en-us/power-bi/developer/agentic/power-bi-desktop-bridge-overview'
+      },
       {
         label: 'Power BI August 2026 Feature Summary (Microsoft Fabric Community)',
         url: 'https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-august-2026-feature-summary/5348434'

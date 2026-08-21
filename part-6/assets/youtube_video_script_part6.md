@@ -1,6 +1,6 @@
 # 🎬 Alex The Analyst Style YouTube Script — Part 6
 **Channel**: `@HakamDataStudio`
-**Video Length**: ~16-18 Minutes
+**Video Length**: ~18-20 Minutes
 **Series**: Coffee Shop Sales Analytics (Part 6)
 **Style**: Alex The Analyst (Practical, Friendly, Relatable, Step-by-Step Data Analyst Voice)
 
@@ -18,7 +18,8 @@
 - **12:30 - 14:00**: 📊 Step 4a: What We Already Built — CFO Action Plans & What EBITDA Means Here
 - **14:00 - 16:30**: 🔴 Step 4b: LIVE & UNSCRIPTED — Building Something New On Camera
 - **16:30 - 17:30**: 🎨 Step 5: Matching Channel Colors & Testing Live in Power BI Desktop
-- **17:30 - 18:15**: 🚀 Step 6: Wrap Up, Free Code Downloads & Outro
+- **17:30 - 19:00**: 🆕 Step 5b: Two Brand-New Power BI Features (Open in VS Code button, Power BI Desktop Bridge for live reload)
+- **19:00 - 19:45**: 🚀 Step 6: Wrap Up, Free Code Downloads & Outro
 
 ---
 
@@ -73,7 +74,7 @@
 >
 > Because all of this is plain text, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in **Git**. Quick definition, since we'll use this in a minute: Git is a tool that records a history of every change made to a file over time, like a detailed, undoable timeline. It's what makes it safe to let an AI edit these files—if anything ever goes wrong, we can always look back and see exactly what changed.
 >
-> One important limitation before we move on, so you're not confused later: if Power BI Desktop already has your `.pbip` open while an AI agent edits these files, Desktop will NOT automatically refresh to show the change—this is a known limitation as of this recording. You have to close the project in Power BI Desktop and reopen the `.pbip` file to see what changed. No live preview yet, unfortunately. Keep that in mind every time we make a change today.
+> One important limitation before we move on, so you're not confused later: if Power BI Desktop already has your `.pbip` open while an AI agent edits these files, Desktop will NOT automatically refresh to show the change by default—you normally have to close the project and reopen the `.pbip` file to see what changed. Microsoft actually shipped a preview fix for exactly this back in their June 2026 release, called the Power BI Desktop Bridge—I'll show you how to turn that on and test it near the end of this video. But don't assume it's already active for you; until you've explicitly enabled it, close-and-reopen is still what you should expect. Keep that in mind every time we make a change today.
 >
 > One more thing before we move on: everything in this tutorial works two ways. You can start completely from scratch—an empty `.pbip` folder, and have the AI scaffold your tables, measures, and pages from zero. Or, like most of you watching, you can point this at a Power BI report you already built months ago and use it to extend or fix that existing model instead. Same MCP connection, same workflow, either direction. We're doing the second one today, since we already have a report to build on."*
 
@@ -149,7 +150,7 @@
 > Here is the exact prompt we use:
 > 💬 *'In Sheet1.tmdl, create DAX measures for Total Revenue, Total Profit, and Profit Margin % formatted as 0.00%. Save all files strictly in UTF-8 without BOM.'*
 >
-> Take a look at how fast the agent updates our `Sheet1.tmdl` file—and remember what we covered earlier: if you want to see these new measures show up inside Power BI Desktop itself, you'll need to close and reopen the `.pbip` file first, since it won't refresh on its own.
+> Take a look at how fast the agent updates our `Sheet1.tmdl` file—and remember what we covered earlier: unless you've enabled the Desktop Bridge we'll get to shortly, you'll need to close and reopen the `.pbip` file first to see these new measures inside Power BI Desktop itself, since it won't refresh on its own by default.
 > ```dax
 > measure 'Total Revenue' = SUM(Sheet1[Revenue])
 >   formatString: $#,0.00
@@ -219,7 +220,23 @@
 
 ---
 
-### 🚀 17:30 - 18:15 | Step 6: Wrap Up, Free Code Downloads & Outro
+### 🆕 17:30 - 19:00 | Step 5b: Two Brand-New Power BI Features Worth Knowing
+> **[VISUAL ON SCREEN]**: Power BI Desktop still open from Step 5. First, cursor finds and clicks the new "Open in VS Code" entry point. Then Options dialog opens to the Preview features toggle for the Desktop Bridge.
+>
+> **SPEAKER**:
+> *"Since we're recording this right as it's shipping, let me show you two things Microsoft just added to Power BI Desktop—one simple, one that actually changes something I told you earlier in this video.
+>
+> **First, the simple one.** Power BI Desktop's August 2026 release added a built-in button that opens your current project folder directly in plain Visual Studio Code—not Antigravity, just regular VS Code. Look for it in Desktop's ribbon or File menu, labeled something like 'Open in VS Code.' Click it, and instead of manually browsing to your project folder, VS Code launches already pointed at it. That's it—a shortcut, nothing more. Handy if you want to peek at a TMDL file by hand without leaving Desktop.
+>
+> **Second, the one that matters more.** Remember me telling you, earlier in this video, that Power BI Desktop won't refresh automatically when an AI agent edits your files—you have to close and reopen? Microsoft shipped a preview fix for exactly that in their June 2026 release: it's called the **Power BI Desktop Bridge**. Here's what it actually does, in plain terms: it opens up a small set of local APIs that let an external tool—an AI agent, a script, VS Code—ask a running copy of Power BI Desktop to reload the project from disk, without you closing and reopening it yourself. Important honesty check: the Bridge does NOT let an agent write changes directly—your agent still edits the TMDL and PBIR files on disk exactly like we've been doing all video. All the Bridge adds is a way to trigger the reload afterward automatically instead of manually.
+>
+> **How to turn it on:** File, then Options and Settings, then Options. Click Preview Features in the left list. Look for 'Enable external tool access to Power BI Desktop through secure local APIs' and make sure it's checked—on newer Desktop builds it may already be on by default, so check first before assuming you need to enable it. You'll need a reasonably recent Desktop build—June 2026 or later—for this option to even exist.
+>
+> One thing I have NOT verified for you: whether the exact Power BI Modeling MCP server we set up earlier already calls this Bridge automatically, or whether that's a separate wiring you'd need to test yourself. I'm not going to claim it's seamless until I've actually seen it work end-to-end—so treat this as 'here's a powerful new option to go test,' not 'this now happens automatically because we enabled a checkbox.'"*
+
+---
+
+### 🚀 19:00 - 19:45 | Step 6: Wrap Up, Free Code Downloads & Outro
 > **[VISUAL ON SCREEN]**: Hakam back on camera, full screen showing final 3-page dashboard project.
 >
 > **SPEAKER**:
