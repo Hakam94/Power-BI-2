@@ -87,14 +87,14 @@
 >
 > Launch Antigravity IDE. Click File, then Open Folder, and select that folder. Once it loads, you have two options to reach a command line: click Terminal in the top menu, then New Terminal—or just press Ctrl plus backtick, and a terminal panel opens at the bottom, already sitting inside that exact project folder. Or, if Antigravity already opened its agent chat panel on the right side, you can skip the terminal entirely and just type these same instructions straight into that chat—Antigravity can run terminal commands for you when you ask it to. I'll use the terminal directly so it's easy to follow on screen.
 >
-> **Step 2: check Node.js, right in that same terminal.** Type `node -v` and hit Enter. If you see something like `v20` or higher, you're good, move on. If it says 'command not found,' or the version's below 20, pause here: go to nodejs.org, download the LTS installer, run it with the default options, then fully close Antigravity and reopen it before continuing—the terminal won't see a fresh Node install until you restart the app.
+> **Step 2: let the agent handle Node.js for you.** You don't need to manually check versions in a terminal—just type this straight into Antigravity's chat: 'Check if Node.js version 20 or later is installed on my machine. If it's missing or outdated, install the latest LTS version for me.' Antigravity will check, and if needed, walk through installing it for you. Much simpler than doing it by hand.
 >
 > **Step 3: in that same terminal, write the following command:**
-> 💬 `npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
+> 💬 `npx -y @microsoft/powerbi-modeling-mcp@latest --start`
 >
-> That `--readonly` flag matters—we start every session in read-only mode, so the AI can inspect the model but can't accidentally change anything yet. You can leave this terminal running in the background—it's now waiting for a client like Antigravity to connect to it.
+> Leave this terminal running in the background—it's now waiting for a client like Antigravity to connect to it.
 >
-> **Step 4, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly, which will likely be empty or near-empty right now. Here's exactly what you're pasting in, and what it means, since I don't want to just say 'paste this' without explaining it: you're adding one entry, named `powerbi-modeling`, that tells Antigravity 'when you need this server, run this exact command'—and that command is the same `npx` command from Step 3, readonly flag included. So you're not typing the command again by hand; you're just telling Antigravity to run it automatically whenever it needs to. You can see the full JSON on screen right now—pause the video here if you want to copy it exactly.
+> **Step 4, in Antigravity IDE specifically**: go to Settings, click the Customizations tab, and click 'Open MCP Config'—that opens `mcp_config.json` directly, which will likely be empty or near-empty right now. Here's exactly what you're pasting in, and what it means, since I don't want to just say 'paste this' without explaining it: you're adding one entry, named `powerbi-modeling`, that tells Antigravity 'when you need this server, run this exact command'—and that command is the same `npx` command from Step 3. So you're not typing the command again by hand; you're just telling Antigravity to run it automatically whenever it needs to. You can see the full JSON on screen right now—pause the video here if you want to copy it exactly.
 > ```json
 > {
 >   "mcpServers": {
@@ -103,8 +103,7 @@
 >       "args": [
 >         "-y",
 >         "@microsoft/powerbi-modeling-mcp@latest",
->         "--start",
->         "--readonly"
+>         "--start"
 >       ]
 >     }
 >   }
@@ -113,23 +112,23 @@
 > Save the file, restart Antigravity, then open the '...' dropdown at the top of the agent panel, click 'Manage MCP Servers,' and confirm `powerbi-modeling` is listed there, with a green dot or 'Connected' next to it. If it's not showing, double-check your JSON syntax and restart again.
 >
 > **If you're in Claude Code instead**, the equivalent is one line in its own terminal:
-> 💬 `claude mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
+> 💬 `claude mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start`
 > Then verify it with:
 > 💬 `claude mcp list`
 > —or type `/mcp` inside a Claude Code session to see connected servers and their status.
 >
 > **If you're in Codex**, it's almost identical:
-> 💬 `codex mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
+> 💬 `codex mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start`
 > Then verify with:
 > 💬 `codex mcp list`
 > Restart the client after adding the server, in all three cases.
 >
 > **Now, the question I get the most: does this connect to GitHub, or to a local folder?** It connects to your **local folder**—specifically the `.SemanticModel/definition` folder inside your local clone of the repo. GitHub isn't something the MCP server talks to directly. GitHub is the layer we put on top of that same local folder using normal Git: you create a branch, let the agent propose a change, you review the diff, and only then commit and open a pull request. Local folder for the live connection, GitHub for version control and review.
 >
-> **Step 6**: Point the agent at that folder with a simple, safe prompt:
-> 💬 *'Open this Power BI semantic model in read-only mode: C:/path/to/Cafe-part 6.SemanticModel/definition. List tables, relationships, and measures. Do not make changes.'*
+> **Step 6**: Point the agent at that folder with a simple prompt:
+> 💬 *'Open this Power BI semantic model: C:/path/to/Cafe-part 6.SemanticModel/definition. List tables, relationships, and measures.'*
 >
-> Only once you've reviewed what it found do you drop `--readonly` for the specific change you're approving."*
+> Once you've reviewed what it found, you're ready to make real edits."*
 
 ---
 
@@ -216,7 +215,7 @@
 > **[VISUAL ON SCREEN]**: Hakam back on camera, full screen showing final 3-page dashboard project.
 >
 > **SPEAKER**:
-> *"And that is how you connect an AI coding agent to a real Power BI semantic model—locally, safely, in read-only mode by default—whether you're building from scratch or, like we just did live, extending a report you already have. You saw the finished result, and you saw the actual unscripted process behind it.
+> *"And that is how you connect an AI coding agent to a real Power BI semantic model—locally and safely—whether you're building from scratch or, like we just did live, extending a report you already have. You saw the finished result, and you saw the actual unscripted process behind it.
 >
 > All the source files—dataset, TMDL measures, theme JSON, prompt templates—are completely free and linked in the description below.
 >
