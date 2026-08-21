@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node scripts/generate-sitemap.mjs && node scripts/prerender.mjs",
+    "build": "npm run editorial:check && vite build && node scripts/generate-sitemap.mjs && node scripts/prerender.mjs",
     "lint": "oxlint",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "editorial:check": "node scripts/validate-editorial.mjs"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
