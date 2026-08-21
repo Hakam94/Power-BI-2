@@ -112,10 +112,6 @@
 > ```
 > Save the file, restart Antigravity, then open the '...' dropdown at the top of the agent panel, click 'Manage MCP Servers,' and confirm `powerbi-modeling` is listed there, with a green dot or 'Connected' next to it. If it's not showing, double-check your JSON syntax and restart again.
 >
-> **Step 5: what does 'read-only' actually mean, and how do we know it's really on?** Now that the agent is connected, let's stop and check this properly—don't just take my word for it. In plain terms, read-only means the AI can look inside your Power BI files and tell you what's there—list your tables, measures, relationships, even suggest changes out loud in the chat—but it is physically blocked from saving anything to those files while this flag is active. Think of it like handing someone a folder they can read but don't have a pen for.
->
-> Let's prove it, right now, before we trust it with real files. In Antigravity's chat panel, type: 'Rename the Profit measure to Test123 and save the file.' Watch what happens: because we started the server with `--readonly`, the agent will either refuse outright, or tell you it doesn't have write permission. Either way, nothing on your disk actually changes. Go check `Sheet1.tmdl` yourself if you want—the Profit measure is still called Profit. Or, if Power BI Desktop is already open with this project, close and reopen the `.pbip`—remember, no live refresh—and you'll see nothing changed there either. That's your proof, on screen, before we move forward.
->
 > **If you're in Claude Code instead**, the equivalent is one line in its own terminal:
 > 💬 `claude mcp add powerbi-modeling -- npx -y @microsoft/powerbi-modeling-mcp@latest --start --readonly`
 > Then verify it with:
