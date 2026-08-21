@@ -57,7 +57,7 @@
 > **SPEAKER**:
 > *"Now let's talk about how Power BI Developer Mode—`.pbip`—works, because this matters for everything we do next.
 >
-> Quick dates so you know where this stands: Microsoft put Power BI Projects into public preview back in June 2023, and as of right now, General Availability is targeted for later this year. So everything we're doing today is still technically preview functionality—stable enough to build on, but worth knowing it's not fully finalized yet.
+> Quick dates so you know where this stands, because there are two different things going on here: Power BI Projects, as a feature, actually isn't new—Microsoft put it into public preview back in June 2023. What IS new this year: Power BI Desktop switched to making this the DEFAULT report format earlier in 2026, and General Availability is being targeted for later this year. So if this feels like something that just showed up, that's because the rollout and default-on switch are recent—the underlying feature itself has been around since 2023, just not turned on for everyone until now. Either way, it's still technically preview functionality until GA lands—stable enough to build on, but worth knowing it's not fully finalized yet.
 >
 > Traditionally, Power BI uses `.pbix` files. But `.pbix` files are binary blobs—if an AI touches them directly, they can easily get corrupted.
 >
