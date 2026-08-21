@@ -446,21 +446,35 @@ FROM customers;`,
   {
     slug: 'power-bi-august-2026-monthly-update',
     status: 'draft',
-    title: 'Power BI, August 2026: DAX Calculated Columns Come to Direct Lake',
-    tool: 'Power BI',
+    title: 'Power BI, August 2026: PBIP Meets VS Code, Direct Lake Gets DAX Columns, Matrix Finally Expands Both Ways',
     date: '2026-08-21',
-    readTime: '6 min read',
-    tags: ['Power BI', 'Direct Lake', 'DAX', 'Monthly Update'],
+    readTime: '9 min read',
+    tags: ['Power BI', 'Direct Lake', 'Developer Experience', 'Data Visualization'],
     summary:
-      'The official Power BI August 2026 Feature Summary went up on the Microsoft Fabric Community blog on August 20 — this covers it the next day. Reporting/formatting items make up most of the release (chart padding, Azure map improvements, slicer styling), but the change worth an analyst\'s attention is DAX calculated columns reaching general availability inside Direct Lake semantic models.',
-    whatChanged: [
-      'Per the official Power BI August 2026 Feature Summary (Microsoft Fabric Community blog, published August 20, 2026): DAX calculated columns can now be defined directly in a semantic model — including Direct Lake models — via web modeling or Power BI Desktop, without changing the table\'s storage mode or modifying data upstream.',
-      'These columns don\'t materialize; they\'re evaluated at query time, same as in an Import-mode model.',
-      'Until this release, Direct Lake models didn\'t support calculated columns at all — the documented workarounds were adding the logic at the Lakehouse level (a SQL view or Spark transformation upstream) or using a measure instead, both of which require someone else\'s pipeline to change.',
-      'Also this month, mostly formatting/reporting GA items: outer padding for bar/column/line/ribbon/waterfall charts, Azure map reference-layer shape-matching and filtered autozoom, and slicer visual dropdown border/icon color controls.'
-    ],
-    codeLanguage: 'sql',
-    codeBefore: `-- Before: Direct Lake had no calculated columns, so simple derived
+      'The official Power BI August 2026 Feature Summary went up on the Microsoft Fabric Community blog on August 20 — this covers it the next day, the first article under Hakam Data Studio\'s new monthly Power BI cadence. Most of this release is routine formatting polish, but three items are genuinely worth a working analyst\'s attention: Power BI Desktop finally talks to VS Code with live reload, DAX calculated columns reach Direct Lake, and the matrix visual can expand columns, not just rows, after years of being asked for it.',
+    toolSections: [
+      {
+        tool: 'Developer Experience',
+        headline: 'Power BI Desktop Gets a Real VS Code Bridge — Edit Outside, Reload Without Restarting',
+        whatChanged: [
+          'Power BI Desktop now has a built-in entry point that opens the current .pbip project directly in Visual Studio Code — no manually hunting for the project folder.',
+          'Edit the project\'s files (TMDL for the semantic model, PBIR JSON for the report) in VS Code, and Power BI Desktop picks up the change instantly: it detects the file change and either reloads live or prompts you to accept it with one click, depending on what changed — without restarting Desktop.',
+          'This builds on the Power BI Desktop Bridge, a preview capability (File > Options and Settings > Options > Preview Features > "Enable external access to Power BI Desktop through secure local APIs") that exposes local APIs for reloading the model and capturing screenshots — the same mechanism that lets GitHub Copilot, Claude Code, and other AI coding agents drive Power BI Desktop directly against a .pbip project via the powerbi-report-authoring skill and MCP tooling. The VS Code entry point is the human-facing front door to that same bridge.',
+          '.pbix stays a single compressed container an external editor can\'t touch file-by-file — this workflow requires Power BI Projects (.pbip): File > Save As > Power BI project.'
+        ],
+        whyItMatters:
+          'Impact on analyst work: this is the gap that made Power BI feel unlike every other codebase you touch. A .pbip project is already just TMDL and JSON on disk — real text files, diffable, reviewable — but until now you were stuck editing them by closing Desktop, hand-editing, and reopening, or living entirely inside Desktop\'s UI. Now you can genuinely live in VS Code — rename fifty measures with a multi-cursor edit, run a find-and-replace across a TMDL file, use source control diffs properly — and see the result in Desktop within seconds instead of a restart. It\'s also the same door AI coding agents walk through: if you\'re going to work alongside Copilot or Claude Code on a semantic model this year, this bridge is the plumbing that makes it possible, so it\'s worth understanding even if you never open VS Code yourself.'
+      },
+      {
+        tool: 'Direct Lake',
+        headline: 'DAX Calculated Columns Reach Direct Lake — No More Pushing Logic Upstream',
+        whatChanged: [
+          'DAX calculated columns can now be defined directly in a semantic model — including Direct Lake models — via web modeling or Power BI Desktop, without changing the table\'s storage mode or modifying data upstream.',
+          'These columns don\'t materialize; they\'re evaluated at query time, the same behavior as a calculated column in an Import-mode model.',
+          'Until this release, Direct Lake simply didn\'t support calculated columns — the documented workarounds were adding the logic at the Lakehouse level (a SQL view or Spark transformation upstream) or reaching for a measure instead, both of which meant depending on someone else\'s pipeline for something as small as a tier or a flag.'
+        ],
+        codeLanguage: 'sql',
+        codeBefore: `-- Before: Direct Lake had no calculated columns, so simple derived
 -- logic had to be pushed upstream into the Lakehouse/SQL layer instead
 CREATE OR ALTER VIEW dbo.vw_Orders AS
 SELECT
@@ -470,15 +484,28 @@ FROM dbo.Orders;
 -- The Direct Lake semantic model reads PriceTier as an ordinary column —
 -- but every analyst needing this logic depends on someone else
 -- maintaining that upstream view.`,
-    codeAfter: `-- After: DAX calculated column, defined directly in the semantic model
+        codeAfter: `-- After: DAX calculated column, defined directly in the semantic model
 -- (web modeling or Power BI Desktop) — no upstream SQL view needed
 Orders[PriceTier] =
 IF ( Orders[UnitPrice] > 100, "Premium", "Standard" )
 -- Doesn't materialize — evaluated at query time, same as Import mode.`,
-    whyItMatters:
-      'Impact on analyst work: this removes a real dependency. Previously, a Direct Lake analyst who needed even a simple derived column — a tier, a flag, a bucket — had to file a request against the upstream Lakehouse/warehouse team or maintain their own SQL view, something an Import-mode analyst never had to think about. Direct Lake is chosen specifically for its performance and freshness advantages, so this closes one of the most common reasons teams were quietly falling back to Import mode just to keep basic modeling self-service.',
-    trendNote:
-      'This is the first entry under a new monthly cadence: Power BI publishes its Feature Summary on the Microsoft Fabric Community blog roughly in the third week of each month (confirmed dates found so far: March 18, May 20, and August 20, 2026) — not an officially documented fixed day, but a consistent enough window that this site now checks for it daily during that window and drafts a same-day writeup once it\'s live, rather than waiting for the next scheduled research cycle.',
+        whyItMatters:
+          'Impact on analyst work: this closes one of the most common reasons teams quietly fell back to Import mode. Direct Lake is chosen specifically for its performance and freshness advantages over Import, but losing basic self-service modeling — needing a ticket against the warehouse team for a simple derived column — was a real enough tax that some teams paid the freshness cost of Import mode just to keep it. That trade-off gets a lot less necessary starting this release.'
+      },
+      {
+        tool: 'Data Visualization',
+        headline: 'Matrix Visuals Can Finally Expand Columns, Not Just Rows',
+        whatChanged: [
+          'The matrix visual now supports expanding and collapsing column headers the same way row headers always could — when a matrix has more than one field in the Columns well, +/- icons appear on the column headers to expand, collapse, or drill into column groups.',
+          'This closes a gap that existed since the matrix visual shipped: row hierarchies could be freely expanded and collapsed, but column hierarchies with multiple fields could not — you either saw every column combination flattened out, or nothing.',
+          'This was one of the more heavily requested items on the Fabric/Power BI Ideas forum — a long-standing ask (thousands of votes) finally shipping, not a feature nobody was waiting for.'
+        ],
+        whyItMatters:
+          'Impact on analyst work: anyone building a matrix with a genuinely wide column hierarchy — say, Year > Quarter > Month across the top, with dozens of category rows down the side — previously had to choose between an unreadable wall of flattened columns or building several separate matrices to fake collapsibility. That workaround is gone. It\'s a small, unglamorous feature, but it\'s the kind of "why did this take so long" fix that quietly saves real report-build time every week, which is exactly why it had thousands of votes behind it.'
+      }
+    ],
+    finalThought:
+      'Three different kinds of update in one release, and they don\'t compete for attention so much as stack. The VS Code bridge is the one to actually sit with: it\'s not just a convenience feature, it\'s Microsoft building the plumbing for Power BI to be treated like a normal software project — version-controlled, scriptable, editable by both humans and AI agents through the same door. Analysts who keep working exclusively inside the Desktop UI will still ship reports, but the ones who move into .pbip + VS Code now are the ones who\'ll be fluent when AI-assisted model editing stops being a preview feature and starts being how the job gets done. The Direct Lake calculated-column fix and the matrix column expand are smaller in scope but the same shape of story: real, specific friction that had been reported and requested for a while, getting resolved. None of this is flashy — no headline "Copilot does X" moment this month — but "flashy" was never the useful signal anyway. The useful signal is: does this change what you\'re able to do at your desk on Monday morning. This month, for three different kinds of Power BI work, the answer is yes.',
     references: [
       {
         label: 'Power BI August 2026 Feature Summary — Microsoft Fabric Community (official)',
@@ -491,6 +518,10 @@ IF ( Orders[UnitPrice] > 100, "Premium", "Standard" )
       {
         label: 'Edit semantic models in the Power BI service — Microsoft Learn (official)',
         url: 'https://learn.microsoft.com/en-us/power-bi/transform-model/service-edit-data-models'
+      },
+      {
+        label: 'Create a matrix visual in Power BI — Microsoft Learn (official)',
+        url: 'https://learn.microsoft.com/en-us/power-bi/visuals/power-bi-visualization-matrix-visual'
       }
     ]
   }

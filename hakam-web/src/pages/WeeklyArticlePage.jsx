@@ -244,6 +244,19 @@ export default function WeeklyArticlePage() {
           </section>
         )}
 
+        {/* Final Thought — editorial synthesis closing out the article */}
+        {update.finalThought && (
+          <section className="glass-panel rounded-3xl border border-[#BFFF00]/20 p-6 sm:p-8 mb-8 bg-gradient-to-r from-lime-500/5 via-transparent to-transparent">
+            <div className="flex items-center gap-2 mb-4">
+              <Sparkles className="w-4 h-4 text-[#BFFF00]" />
+              <h2 className="font-bold text-white text-lg font-heading">Final Thought</h2>
+            </div>
+            <p className="text-sm text-gray-300 leading-relaxed whitespace-pre-line">
+              {update.finalThought}
+            </p>
+          </section>
+        )}
+
         {/* References */}
         {allReferences.length > 0 && (
           <section className="mb-8">
