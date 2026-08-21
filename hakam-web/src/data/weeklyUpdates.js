@@ -442,6 +442,57 @@ FROM customers;`,
       }
     ],
     references: []
+  },
+  {
+    slug: 'power-bi-august-2026-monthly-update',
+    status: 'draft',
+    title: 'Power BI, August 2026: DAX Calculated Columns Come to Direct Lake',
+    tool: 'Power BI',
+    date: '2026-08-21',
+    readTime: '6 min read',
+    tags: ['Power BI', 'Direct Lake', 'DAX', 'Monthly Update'],
+    summary:
+      'The official Power BI August 2026 Feature Summary went up on the Microsoft Fabric Community blog on August 20 — this covers it the next day. Reporting/formatting items make up most of the release (chart padding, Azure map improvements, slicer styling), but the change worth an analyst\'s attention is DAX calculated columns reaching general availability inside Direct Lake semantic models.',
+    whatChanged: [
+      'Per the official Power BI August 2026 Feature Summary (Microsoft Fabric Community blog, published August 20, 2026): DAX calculated columns can now be defined directly in a semantic model — including Direct Lake models — via web modeling or Power BI Desktop, without changing the table\'s storage mode or modifying data upstream.',
+      'These columns don\'t materialize; they\'re evaluated at query time, same as in an Import-mode model.',
+      'Until this release, Direct Lake models didn\'t support calculated columns at all — the documented workarounds were adding the logic at the Lakehouse level (a SQL view or Spark transformation upstream) or using a measure instead, both of which require someone else\'s pipeline to change.',
+      'Also this month, mostly formatting/reporting GA items: outer padding for bar/column/line/ribbon/waterfall charts, Azure map reference-layer shape-matching and filtered autozoom, and slicer visual dropdown border/icon color controls.'
+    ],
+    codeLanguage: 'sql',
+    codeBefore: `-- Before: Direct Lake had no calculated columns, so simple derived
+-- logic had to be pushed upstream into the Lakehouse/SQL layer instead
+CREATE OR ALTER VIEW dbo.vw_Orders AS
+SELECT
+    *,
+    CASE WHEN UnitPrice > 100 THEN 'Premium' ELSE 'Standard' END AS PriceTier
+FROM dbo.Orders;
+-- The Direct Lake semantic model reads PriceTier as an ordinary column —
+-- but every analyst needing this logic depends on someone else
+-- maintaining that upstream view.`,
+    codeAfter: `-- After: DAX calculated column, defined directly in the semantic model
+-- (web modeling or Power BI Desktop) — no upstream SQL view needed
+Orders[PriceTier] =
+IF ( Orders[UnitPrice] > 100, "Premium", "Standard" )
+-- Doesn't materialize — evaluated at query time, same as Import mode.`,
+    whyItMatters:
+      'Impact on analyst work: this removes a real dependency. Previously, a Direct Lake analyst who needed even a simple derived column — a tier, a flag, a bucket — had to file a request against the upstream Lakehouse/warehouse team or maintain their own SQL view, something an Import-mode analyst never had to think about. Direct Lake is chosen specifically for its performance and freshness advantages, so this closes one of the most common reasons teams were quietly falling back to Import mode just to keep basic modeling self-service.',
+    trendNote:
+      'This is the first entry under a new monthly cadence: Power BI publishes its Feature Summary on the Microsoft Fabric Community blog roughly in the third week of each month (confirmed dates found so far: March 18, May 20, and August 20, 2026) — not an officially documented fixed day, but a consistent enough window that this site now checks for it daily during that window and drafts a same-day writeup once it\'s live, rather than waiting for the next scheduled research cycle.',
+    references: [
+      {
+        label: 'Power BI August 2026 Feature Summary — Microsoft Fabric Community (official)',
+        url: 'https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-august-2026-feature-summary/5348434'
+      },
+      {
+        label: "What's New in Power BI — Microsoft Learn (official)",
+        url: 'https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new'
+      },
+      {
+        label: 'Edit semantic models in the Power BI service — Microsoft Learn (official)',
+        url: 'https://learn.microsoft.com/en-us/power-bi/transform-model/service-edit-data-models'
+      }
+    ]
   }
 ];
 
