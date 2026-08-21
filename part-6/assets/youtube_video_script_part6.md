@@ -41,9 +41,11 @@
 > **[VISUAL ON SCREEN]**: Diagram — Claude Code, OpenAI Codex, and Antigravity AI as three boxes, each with an arrow into the same "Power BI Modeling MCP Server" box. Then a second diagram: "Antigravity" splitting into "Antigravity CLI" (terminal icon) and "Antigravity IDE" (editor window icon), both pointing to one shared "Antigravity Agent" box.
 >
 > **SPEAKER**:
-> *"Before we touch any code, two quick clarifications—these are the two things people get stuck on most, so let's settle them up front instead of leaving you confused later.
+> *"Before we touch any code, quick definition first, since I'm about to say this word a lot: **MCP** stands for Model Context Protocol. Think of it as a universal adapter that lets an AI coding agent talk directly to another piece of software—in our case, Power BI—in a structured way, instead of you copy-pasting data back and forth by hand. When I say 'MCP server,' I just mean the small program that acts as that adapter for Power BI specifically. That's the whole concept—everything else today is just wiring it up.
 >
-> First: Claude Code, OpenAI Codex, and Antigravity AI can all connect to the exact same official Microsoft MCP server we're using today. This isn't about one being smarter than the others. I'm using Antigravity for this tutorial because it's free to run with no token metering, so if you're following along step-by-step, you won't hit a paywall halfway through. If you already pay for Claude Code or Codex, everything here works the same way—I'll show you that exact connection command for each one in a minute.
+> Now, two quick clarifications—these are the two things people get stuck on most, so let's settle them up front instead of leaving you confused later.
+>
+> First: Claude Code, OpenAI Codex, and Antigravity AI can all connect to that exact same official Microsoft MCP server we're using today. This isn't about one being smarter than the others. I'm using Antigravity for this tutorial because it's free to run with no token metering, so if you're following along step-by-step, you won't hit a paywall halfway through. If you already pay for Claude Code or Codex, everything here works the same way—I'll show you that exact connection command for each one in a minute.
 >
 > Second: if you went looking for 'Antigravity' inside your normal VS Code and couldn't find it, that's not a mistake on your end. Antigravity isn't a VS Code extension you install into an existing editor—it's a separate standalone application, built as its own fork of VS Code's codebase, similar to how tools like Cursor work. That's also why, when you install it, you're sometimes prompted to grab the IDE as a separate download: Google actually ships Antigravity as a few different surfaces—an Antigravity CLI, which is a fast, terminal-only agent for people who live in the command line, and the Antigravity IDE, which is the full visual editor where you can see the agent's code changes and accept or reject them line by line. They both run the same underlying agent and share the same settings—it's purely a workflow choice.
 >
@@ -63,9 +65,11 @@
 >
 > With `.pbip`, Power BI breaks your project down into two pieces: a `.SemanticModel` folder full of TMDL files—Tabular Model Definition Language—for your tables, columns, and DAX measures, and a `.Report` folder for the visuals and layout.
 >
+> Quick side note on two terms I just used: **DAX**, short for Data Analysis Expressions, is just the formula language Power BI uses for calculations—think Excel formulas, but built specifically for how Power BI's data model works. And when I say **JSON**, that's just a simple, structured way of writing data as plain text—labels paired with values, nested inside each other—that both humans and computers can read easily. You'll see both terms a lot today.
+>
 > Here's a detail worth clearing up, because it trips people up when they go looking: inside that Report folder, there's actually just ONE file that ends in `.pbir`—it's called `definition.pbir`, and it's a small pointer file that basically says 'the real content of this report lives in the definition folder right next to me.' Everything inside that definition folder—every page, every single visual—is stored as a plain `.json` file, not a `.pbir` file. So if you go looking for '.pbir files' plural and only find one, that's not a bug, that's exactly how it's supposed to look—just look for `.json` files for the actual pages and visuals.
 >
-> Because all of this is plain text, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in Git, which we'll use in a minute.
+> Because all of this is plain text, AI agents can read your schema, write DAX, and construct report pages without breaking anything—and we can track every change in **Git**. Quick definition, since we'll use this in a minute: Git is a tool that records a history of every change made to a file over time, like a detailed, undoable timeline. It's what makes it safe to let an AI edit these files—if anything ever goes wrong, we can always look back and see exactly what changed.
 >
 > One important limitation before we move on, so you're not confused later: if Power BI Desktop already has your `.pbip` open while an AI agent edits these files, Desktop will NOT automatically refresh to show the change—this is a known limitation as of this recording. You have to close the project in Power BI Desktop and reopen the `.pbip` file to see what changed. No live preview yet, unfortunately. Keep that in mind every time we make a change today.
 >
@@ -87,7 +91,9 @@
 >
 > Launch Antigravity IDE. Click File, then Open Folder, and select that folder. Once it loads, you have two options to reach a command line: click Terminal in the top menu, then New Terminal—or just press Ctrl plus backtick, and a terminal panel opens at the bottom, already sitting inside that exact project folder. Or, if Antigravity already opened its agent chat panel on the right side, you can skip the terminal entirely and just type these same instructions straight into that chat—Antigravity can run terminal commands for you when you ask it to. I'll use the terminal directly so it's easy to follow on screen.
 >
-> **Step 2: let the agent handle Node.js for you.** You don't need to manually check versions in a terminal—just type this straight into Antigravity's chat: 'Check if Node.js version 20 or later is installed on my machine. If it's missing or outdated, install the latest LTS version for me.' Antigravity will check, and if needed, walk through installing it for you. Much simpler than doing it by hand.
+> **Step 2: let the agent handle Node.js for you.** Quick 'why' before we do this: Node.js is a program that lets a certain kind of code run directly on your computer. The MCP server we're about to use is built with it—without Node installed, that server simply can't start, the same way an app won't open without its required software present. That's the only reason we're checking for it.
+>
+> You don't need to manually check versions in a terminal—just type this straight into Antigravity's chat: 'Check if Node.js version 20 or later is installed on my machine. If it's missing or outdated, install the latest LTS version for me.' Antigravity will check, and if needed, walk through installing it for you. Much simpler than doing it by hand.
 >
 > **Step 3: in that same terminal, write the following command:**
 > 💬 `npx -y @microsoft/powerbi-modeling-mcp@latest --start`
@@ -123,7 +129,7 @@
 > 💬 `codex mcp list`
 > Restart the client after adding the server, in all three cases.
 >
-> **Now, the question I get the most: does this connect to GitHub, or to a local folder?** It connects to your **local folder**—specifically the `.SemanticModel/definition` folder inside your local clone of the repo. GitHub isn't something the MCP server talks to directly. GitHub is the layer we put on top of that same local folder using normal Git: you create a branch, let the agent propose a change, you review the diff, and only then commit and open a pull request. Local folder for the live connection, GitHub for version control and review.
+> **Now, the question I get the most: does this connect to GitHub, or to a local folder?** It connects to your **local folder**—specifically the `.SemanticModel/definition` folder inside your local clone of the repo. GitHub isn't something the MCP server talks to directly. GitHub is just a website that hosts your project's Git history online so it can be shared—that's really all it is. GitHub is the layer we put on top of that same local folder: you create a **branch**, which is just a separate, safe copy of the project to experiment in without touching the original; you let the agent propose a change; you review the **diff**, a simple before-and-after comparison showing exactly what it changed; and only then do you commit and open a **pull request**, which is just a formal request saying 'here's my change, please merge it into the real project.' Local folder for the live connection, GitHub for version control and review.
 >
 > **Step 6**: Point the agent at that folder with a simple prompt:
 > 💬 *'Open this Power BI semantic model: C:/path/to/Cafe-part 6.SemanticModel/definition. List tables, relationships, and measures.'*
@@ -173,7 +179,7 @@
 > Here's what's actually on the CFO page, reading straight off the cards:
 > - **Action 1 — Scale High-Margin Espresso Sales**: Espresso holds the highest profit margin in the portfolio at 66.67%, followed by Cold Brew at 62.50%. Expanding that sales mix at Corporate Park and University will maximize net EBITDA—which, as we just showed, is our Profit measure.
 > - **Action 2 — Premium Price Tiering**: Premium items average $5.70 in revenue per unit. Repricing Standard-tier items up by 5% yields an estimated $4.2K net monthly gain.
-> - **Action 3 — RLS Store Cost Control**: The Store Managers row-level-security tables show Downtown has the highest operational cost, which is why we're proposing store-level monthly cost caps there specifically.
+> - **Action 3 — RLS Store Cost Control**: Quick definition—**RLS**, row-level security, is a way to restrict which rows of data a person can see based on who's logged in, like each store manager only ever seeing their own store's numbers instead of everyone else's. The Store Managers RLS tables show Downtown has the highest operational cost, which is why we're proposing store-level monthly cost caps there specifically.
 >
 > Every number you just heard is either a live DAX measure or literally typed on the card you're looking at—nothing here is a made-up placeholder."*
 
