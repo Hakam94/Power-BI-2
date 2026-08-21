@@ -289,6 +289,41 @@ FROM customer.feedback;`,
       }
     },
     references: []
+  },
+  {
+    slug: 'power-bi-desktop-open-in-vscode',
+    status: 'draft',
+    title: 'Power BI Desktop Can Now Open Your Project Directly in VS Code',
+    tool: 'Power BI',
+    date: '',
+    readTime: '4 min read',
+    tags: ['Power BI', 'VS Code', 'Developer Tooling'],
+    summary:
+      'The August 2026 Power BI Feature Summary adds a built-in entry point in Power BI Desktop that opens your current .pbip project directly in Visual Studio Code — no manual "Open Folder" hop required. Separately (and easy to confuse with this), the TMDL Visual Studio Code extension — DAX/Power Query semantic highlighting, breadcrumb navigation, code actions, code formatting inside TMDL files — reached General Availability back in November 2025, so it\'s not new this month, just newly relevant now that jumping into VS Code from Desktop is one click away.',
+    whatChanged: [
+      'Power BI Desktop (August 2026 release) adds a built-in "Open in VS Code" entry point, launching your current .pbip project folder directly in Visual Studio Code from inside Desktop.',
+      'This is separate from the TMDL VS Code extension, which reached GA in November 2025 and adds DAX semantic highlighting inside .tmdl files, Power Query semantic highlighting, breadcrumb navigation, code actions, and code formatting — install it from the VS Code Marketplace if you\'re editing TMDL by hand.',
+      'Also separate from AI-IDE forks like Antigravity, Cursor, or Windsurf: those are full standalone applications built on VS Code\'s codebase, not the official Microsoft VS Code that this new Desktop button opens. Don\'t assume "opens in VS Code" means it opens in Antigravity — it opens plain VS Code.',
+      'Together these three things point the same direction: Microsoft treating VS Code as a first-party tool for Power BI developers, not just Power BI Desktop\'s GUI.'
+    ],
+    whyItMatters:
+      'For anyone using an AI coding agent against a Power BI Project (PBIP) — the exact workflow this channel teaches — this lowers the friction of moving between "I want to see this rendered in Desktop" and "I want to inspect/edit the raw TMDL/PBIR text." One click instead of manually opening a folder. Combined with the TMDL extension\'s semantic highlighting, hand-editing TMDL outside an AI agent is also less error-prone than it was a year ago.',
+    trendNote:
+      'Editorial note, not a scraped statistic: this is the second consecutive month (July\'s visual calculations GA, now this) where the Power BI release notes read like they\'re courting developers specifically, not just report authors. Worth watching whether "PBIP/Git/VS Code fluency" starts showing up as an explicit line item in BI job postings the way "semantic model" language already has.',
+    references: [
+      {
+        label: 'Power BI August 2026 Feature Summary (Microsoft Fabric Community)',
+        url: 'https://community.fabric.microsoft.com/blog/fbc_pbiupdatesblog/power-bi-august-2026-feature-summary/5348434'
+      },
+      {
+        label: 'TMDL Visual Studio Code Extension (Generally Available) — Microsoft Power BI Blog',
+        url: 'https://powerbi.microsoft.com/en-us/blog/tmdl-visual-studio-code-extension-generally-available/'
+      },
+      {
+        label: 'What\'s new in Power BI — Microsoft Learn',
+        url: 'https://learn.microsoft.com/en-us/power-bi/fundamentals/whats-new'
+      }
+    ]
   }
 ];
 

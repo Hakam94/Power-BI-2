@@ -49,7 +49,9 @@
 >
 > Second: if you went looking for 'Antigravity' inside your normal VS Code and couldn't find it, that's not a mistake on your end. Antigravity isn't a VS Code extension you install into an existing editor—it's a separate standalone application, built as its own fork of VS Code's codebase, similar to how tools like Cursor work. That's also why, when you install it, you're sometimes prompted to grab the IDE as a separate download: Google actually ships Antigravity as a few different surfaces—an Antigravity CLI, which is a fast, terminal-only agent for people who live in the command line, and the Antigravity IDE, which is the full visual editor where you can see the agent's code changes and accept or reject them line by line. They both run the same underlying agent and share the same settings—it's purely a workflow choice.
 >
-> For this tutorial specifically, I'm using the IDE, not the CLI, because you need to actually see the TMDL file changing on screen to follow along—that's much harder to show clearly in a plain terminal window."*
+> For this tutorial specifically, I'm using the IDE, not the CLI, because you need to actually see the TMDL file changing on screen to follow along—that's much harder to show clearly in a plain terminal window.
+>
+> One more thing worth flagging, since we're recording this right as it landed: Power BI Desktop itself just added a built-in 'Open in VS Code' button in the August 2026 update, so you can jump from Desktop straight into a real VS Code window on the same project. That's a different thing from what we're doing today—that's Desktop handing a project TO plain VS Code for editing, while we're using Antigravity, which is its own separate VS Code-based IDE, connected through MCP. Two different tools, don't mix them up—but worth knowing Desktop-to-VS-Code exists now too, since you'll probably see that button in your own Desktop soon if you haven't already."*
 
 ---
 
