@@ -164,3 +164,17 @@ The React Compiler is not enabled on this template because of its impact on dev 
 ### Expanding the Oxlint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+
+## Weekly editorial workflow
+
+The weekly Power BI articles are maintained in src/data/weeklyUpdates.js. Each update starts as status draft and becomes visible in the public archive only after review and a status change to published.
+
+The editorial standard is source-first and analyst-focused:
+
+1. Verify the change against Microsoft Power BI/Fabric documentation or an official release source.
+2. Label the availability clearly (released, preview, roadmap, ecosystem, or governance).
+3. Explain the before/after workflow and what changes for BI analysts and data analysts.
+4. Include a qualitative job-market signal without inventing scraped statistics.
+5. Include primary references and run npm run editorial:check before committing.
+
+Drafts stay out of the homepage teaser, archive, and sitemap until approved.
