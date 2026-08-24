@@ -11,6 +11,10 @@ dist/
 .env.local
 *.env
 
+# Python cache
+__pycache__/
+*.pyc
+
 # Large media / render outputs
 **/out/*.mp4
 **/out/inspection/*.mp4

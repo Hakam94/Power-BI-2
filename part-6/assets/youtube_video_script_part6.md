@@ -21,7 +21,7 @@
 ## 🎬 Full Video Script (Alex The Analyst Style)
 
 ### 🚀 00:00 - 00:45 | 1% BI & AI Engineer Hook (Immediate High-Impact Opening — No "Welcome")
-> **[VISUAL ON SCREEN]**: High-voltage opening. No slow intro. Fast-paced visual cut of an AI prompt in VS Code generating a complete 3-page Power BI dashboard programmatically. Hakam looking directly into the camera with high energy and sharp confidence.
+> **[VISUAL ON SCREEN]**: High-voltage opening shot (00:00–00:45 | B-Roll Duration: 8s | Aspect: 16:9). Reference Keyframe: [`part-6/assets/broll_opening_hook.png`](file:///c:/Users/z004mbcw/.gemini/antigravity/scratch/Power-BI-2/part-6/assets/broll_opening_hook.png). Brand Identity: `@HakamDataStudio` dark cyber-slate (`#0D2229`) & deep emerald (`#051915`) background, glowing neon lime accents (`#39FF14`, `#BFFF00`) and electric cyber cyan accents (`#00D2FF`, `#00E5FF`), holographic data particles, glassy glowing UI panels. Presenter Hakam: confident, high-energy, direct-to-camera data engineer in a sharp beige double-breasted suit. Scene: Hakam stands in a futuristic data studio looking directly into the camera with sharp confidence, then turns and gestures toward a glowing 3D laptop screen. Streams of cyan and neon lime data particles flow from an AI prompt box into a live multi-page Power BI dashboard assembling itself in real time with KPI cards and bar charts snapping into place automatically. Fast, punchy camera push-in zoom (60fps look, shallow depth of field, no burned-in text).
 >
 > **HAKAM (SPEAKER)**:  
 > *"What if you could build a complete, production-ready Power BI report—with formatted DAX measures, CFO financial models, and multi-page executive dashboards—without touching a single visual button in Power BI Desktop?  

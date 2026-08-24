@@ -3,6 +3,8 @@ import sys
 import time
 import requests
 import json
+if hasattr(sys.stdout, 'reconfigure'):
+    sys.stdout.reconfigure(encoding='utf-8')
 
 # ==============================================================================
 # Seedance AI Video Generation Integration Script — Part 6 B-Roll Hook
@@ -19,15 +21,17 @@ SEEDANCE_API_KEY = os.getenv("SEEDANCE_API_KEY") or os.getenv("BYTEDANCE_API_KEY
 API_ENDPOINT = "https://api.seedance.ai/v1/video/generations"  # Standard Seedance AI endpoint
 
 PROMPT = (
-    "High-energy cinematic studio shot of a handsome male presenter in a beige double-breasted suit "
-    "pointing rightward toward a glowing 3D laptop. Holographic cyan (#00D2FF) and neon lime (#BFFF00) "
-    "data particles stream from an AI prompt box into a live multi-page Power BI dashboard assembling "
-    "KPI cards and bar charts automatically. Smooth 4K cinematic camera movement, hyper-realistic, 60fps."
+    "High-energy 4K cinematic studio opening shot (8s). Presenter Hakam in a sharp beige double-breasted suit "
+    "stands in a futuristic tech studio with dark cyber-slate (#0D2229) and deep emerald (#051915) background. "
+    "He looks directly into the camera with confident energy, then turns and gestures toward a glowing 3D laptop screen. "
+    "Holographic streams of electric cyber cyan (#00D2FF, #00E5FF) and neon lime (#39FF14, #BFFF00) data particles flow "
+    "from an AI prompt box into a live multi-page Power BI dashboard floating in 3D space. KPI cards and bar charts snap "
+    "into place in real time with glassy glowing UI panels. Fast, punchy camera push-in zoom, 60fps cinematic motion, shallow depth of field."
 )
 
 def main():
     print("========================================================================")
-    print(" 🎬 Seedance AI Video Generator — Part 6 B-Roll Hook Automation")
+    print(" 🎬 Seedance AI / Veo Video Generator — Part 6 B-Roll Hook Automation")
     print("========================================================================")
     print(f"📌 Keyframe Image: {IMAGE_PATH}")
     print(f"📌 Output Path:    {OUTPUT_VIDEO_PATH}")
@@ -44,7 +48,8 @@ def main():
             "aspect_ratio": "16:9",
             "motion_bucket_id": 127,
             "fps": 60,
-            "duration": 5
+            "duration": 8,
+            "camera_motion": "fast_push_in_zoom"
         }, indent=2))
         return
 
@@ -56,9 +61,9 @@ def main():
     payload = {
         "prompt": PROMPT,
         "aspect_ratio": "16:9",
-        "duration": 5,
+        "duration": 8,
         "fps": 60,
-        "camera_motion": "pan_right_zoom_in"
+        "camera_motion": "fast_push_in_zoom"
     }
 
     print("\n🚀 Initiating Seedance AI video generation request...")
