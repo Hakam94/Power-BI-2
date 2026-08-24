@@ -1,6 +1,6 @@
 # 🎬 Alex The Analyst Style YouTube Script — Part 6
 **Channel**: `@HakamDataStudio`
-**Video Length**: ~18-20 Minutes
+**Video Length**: ~19-21 Minutes
 **Series**: Coffee Shop Sales Analytics (Part 6)
 **Style**: Alex The Analyst (Practical, Friendly, Relatable, Step-by-Step Data Analyst Voice)
 
@@ -18,8 +18,8 @@
 - **12:30 - 14:00**: 📊 Step 4a: What We Already Built — CFO Action Plans & What EBITDA Means Here
 - **14:00 - 16:30**: 🔴 Step 4b: LIVE & UNSCRIPTED — Building Something New On Camera
 - **16:30 - 17:30**: 🎨 Step 5: Matching Channel Colors & Testing Live in Power BI Desktop
-- **17:30 - 19:00**: 🆕 Step 5b: Two Brand-New Power BI Features (Open in VS Code button, Power BI Desktop Bridge for live reload)
-- **19:00 - 19:45**: 🚀 Step 6: Wrap Up, Free Code Downloads & Outro
+- **17:30 - 20:00**: 🆕 Step 5b: Three Things From the August 2026 Release (Open in VS Code button, Power BI Desktop Bridge for live reload, Copilot in Model View vs. this video's MCP approach)
+- **20:00 - 20:45**: 🚀 Step 6: Wrap Up, Free Code Downloads & Outro
 
 ---
 
@@ -220,7 +220,7 @@
 
 ---
 
-### 🆕 17:30 - 19:00 | Step 5b: Two Brand-New Power BI Features Worth Knowing
+### 🆕 17:30 - 20:00 | Step 5b: Three Things From the August 2026 Release
 > **[VISUAL ON SCREEN]**: Power BI Desktop still open from Step 5. First, cursor finds and clicks the new "Open in VS Code" entry point. Then Options dialog opens to the Preview features toggle for the Desktop Bridge.
 >
 > **SPEAKER**:
@@ -232,11 +232,19 @@
 >
 > **How to turn it on:** File, then Options and Settings, then Options. Click Preview Features in the left list. Look for 'Enable external tool access to Power BI Desktop through secure local APIs' and make sure it's checked—on newer Desktop builds it may already be on by default, so check first before assuming you need to enable it. You'll need a reasonably recent Desktop build—June 2026 or later—for this option to even exist.
 >
-> One thing I have NOT verified for you: whether the exact Power BI Modeling MCP server we set up earlier already calls this Bridge automatically, or whether that's a separate wiring you'd need to test yourself. I'm not going to claim it's seamless until I've actually seen it work end-to-end—so treat this as 'here's a powerful new option to go test,' not 'this now happens automatically because we enabled a checkbox.'"*
+> One thing I have NOT verified for you: whether the exact Power BI Modeling MCP server we set up earlier already calls this Bridge automatically, or whether that's a separate wiring you'd need to test yourself. I'm not going to claim it's seamless until I've actually seen it work end-to-end—so treat this as 'here's a powerful new option to go test,' not 'this now happens automatically because we enabled a checkbox.'
+>
+> **One more thing from the same August 2026 release, and it's the most important one to be upfront about, because it cuts right at a question you might already be asking: why go through all this—MCP servers, coding agents, local files—when Microsoft's own Copilot might already do it for you?**
+>
+> Here's what's real: in the Power BI Service, if you open a semantic model's Model view and switch to Editing mode, Copilot can now analyze your model, suggest fixes, rename tables and columns, create relationships, and generate DAX measures—all from natural language prompts, built directly into Power BI. No external agent, no MCP server, no terminal.
+>
+> So why did we just spend twenty minutes setting up Antigravity and MCP instead of just using that? A few honest reasons. What we built today works on your LOCAL `.pbip` project files, with full Git history behind it—branches, diffs, pull requests—reviewed before anything touches your published model. Copilot in Model view works directly against the model already in the Service. And a general coding agent like Antigravity, Claude Code, or Codex isn't limited to Power BI—it's the same tool you'd use for the rest of your data stack, so you're building one transferable skill, not a Power-BI-only shortcut.
+>
+> Both approaches are legitimate, and I'm not going to pretend one makes the other pointless. If you just need a quick rename or a simple measure and you're comfortable working in the Service, native Copilot is probably faster. If you want local file control, version history, and one AI workflow across your whole toolchain, that's what today's video was for."*
 
 ---
 
-### 🚀 19:00 - 19:45 | Step 6: Wrap Up, Free Code Downloads & Outro
+### 🚀 20:00 - 20:45 | Step 6: Wrap Up, Free Code Downloads & Outro
 > **[VISUAL ON SCREEN]**: Hakam back on camera, full screen showing final 3-page dashboard project.
 >
 > **SPEAKER**:
