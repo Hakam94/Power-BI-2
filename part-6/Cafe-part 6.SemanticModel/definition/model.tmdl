@@ -10,7 +10,7 @@ annotation PBI_QueryOrder = ["Sheet1","Managers_WithStore","Stores"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","DaxQueryView_Desktop","TMDLView_Desktop"]
 
 ref table Sheet1
 ref table Dates

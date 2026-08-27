@@ -2,6 +2,10 @@
 
 All assets generated for **Part 6: Connecting Power BI MCP to Antigravity AI** on **@HakamDataStudio**.
 
+## Published Video
+
+The latest Part 6 video is available at [https://youtu.be/traamnTfixY](https://youtu.be/traamnTfixY).
+
 ## 📄 Included Assets:
 1. `youtube_video_script_part6.md` - Complete 15-minute video script with 20s hook & chapters.
 2. `youtube_thumbnail_16x9_1920x1080.png` - 16:9 Widescreen YouTube Thumbnail (1920x1080).
