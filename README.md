@@ -16,7 +16,7 @@ In these step-by-step videos, you’ll learn to build a complete, interactive da
 * **Part 5 – Dashboard Design Basics | Clean Layout, Themes & UX Tips**
   Learn dashboard design fundamentals, aligning visuals, formatting themes, and structuring containers for a professional layout. ([YouTube][5])
 * **Part 6 – Connect Power BI Semantic Models to AI Agents**
-  Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity using the Power BI Modeling MCP server. ([Part 6 guide](part-6/README.md))
+  Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity using the Power BI Modeling MCP server. ([Watch Part 6](https://youtu.be/traamnTfixY) · [Part 6 guide](part-6/README.md))
 
 ---
 
@@ -47,7 +47,7 @@ Power-BI-CoffeeShop/
 | **Part 3**              | Implement time-of-day greeting logic, show local and UTC refresh timestamps, and apply dynamic Row-Level Security (RLS). ([YouTube][3])                |
 | **Part 4**              | Set up Field Parameters to allow users to toggle dimensions and measures dynamically in report visuals. ([YouTube][4])                                 |
 | **Part 5**              | Apply professional design principles: layout grid spacing, alignment, custom themes, and container groupings for clean UX. ([YouTube][5])              |
-| **Part 6**              | Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity safely with the Power BI Modeling MCP server. ([Part 6 guide](part-6/README.md)) |
+| **Part 6**              | Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity safely with the Power BI Modeling MCP server. ([Watch video](https://youtu.be/traamnTfixY) · [Part 6 guide](part-6/README.md)) |
 
 ---
 

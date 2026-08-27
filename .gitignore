@@ -21,4 +21,10 @@ __pycache__/
 *.MP4
 *.mp4
 !part-6/assets/broll_opening_hook_video.mp4
+
+# Private production assets - raw footage, editor projects, local backups
+# (not meant for the public repo; keep local only)
+part-6/part 6 raw video/
+part-6-backup/
+output/
 

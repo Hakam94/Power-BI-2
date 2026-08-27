@@ -1,18 +1,18 @@
 {
-  "name": "HakamDataStudio_Clean_Dark",
+  "name": "HakamDataStudio_Official_Theme",
   "dataColors": [
-    "#39FF14",
+    "#BFFF00",
     "#00D2FF",
-    "#38EF7D",
+    "#39FF14",
+    "#00F5D4",
     "#FFD700",
     "#FF007F",
-    "#A855F7",
-    "#3B82F6",
-    "#10B981"
+    "#8338EC",
+    "#3B82F6"
   ],
   "background": "#0D2229",
   "foreground": "#FFFFFF",
-  "tableAccent": "#39FF14",
+  "tableAccent": "#BFFF00",
   "visualStyles": {
     "*": {
       "*": {
@@ -34,7 +34,7 @@
                 "color": "#1A3B47"
               }
             },
-            "radius": 10
+            "radius": 12
           }
         ],
         "dropShadow": [
@@ -58,7 +58,7 @@
             "show": true,
             "fontColor": {
               "solid": {
-                "color": "#39FF14"
+                "color": "#BFFF00"
               }
             },
             "fontFamily": "Segoe UI, sans-serif",
@@ -96,10 +96,10 @@
           {
             "color": {
               "solid": {
-                "color": "#39FF14"
+                "color": "#BFFF00"
               }
             },
-            "fontSize": 22,
+            "fontSize": 24,
             "fontFamily": "Segoe UI, sans-serif",
             "bold": true
           }
@@ -123,7 +123,7 @@
           {
             "color": {
               "solid": {
-                "color": "#39FF14"
+                "color": "#BFFF00"
               }
             },
             "fontSize": 12,
@@ -164,7 +164,7 @@
             },
             "backColor": {
               "solid": {
-                "color": "#39FF14"
+                "color": "#BFFF00"
               }
             },
             "fontFamily": "Segoe UI, sans-serif",
@@ -217,7 +217,7 @@
             },
             "backColor": {
               "solid": {
-                "color": "#39FF14"
+                "color": "#BFFF00"
               }
             },
             "fontFamily": "Segoe UI, sans-serif",

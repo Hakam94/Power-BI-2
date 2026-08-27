@@ -10,7 +10,7 @@ annotation PBI_QueryOrder = ["Sheet1","Managers_WithStore","Stores"]
 
 annotation __PBI_TimeIntelligenceEnabled = 1
 
-annotation PBI_ProTooling = ["DevMode"]
+annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 
 ref table Sheet1
 ref table Dates
@@ -18,6 +18,7 @@ ref table Managers_WithStore
 ref table Stores
 ref table DimentionSelector
 ref table Meaureselector
+ref table SAP_ACDOCA_Financials
 
 ref role 'Store Managers'
 

@@ -1,12 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
-  "name": "cfo_title_banner",
+  "name": "fin_header_banner",
   "position": {
     "x": 40,
-    "y": 20,
+    "y": 15,
     "z": 1000,
-    "height": 60,
-    "width": 1200,
+    "height": 55,
+    "width": 665,
     "tabOrder": 100
   },
   "visual": {
@@ -19,10 +19,10 @@
               {
                 "textRuns": [
                   {
-                    "value": "🎯 CFO STRATEGIC ACTION PLAN & DATA EVIDENCE",
+                    "value": "⚡ HAKAM DATA STUDIO | SAP S/4HANA ACDOCA Financial Modeling & P&L Intelligence",
                     "textStyle": {
                       "fontFamily": "Segoe UI, sans-serif",
-                      "fontSize": "16pt",
+                      "fontSize": "15pt",
                       "fontWeight": "bold",
                       "color": "#BFFF00"
                     }

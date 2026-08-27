@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_kpi_ebit",
+  "position": {
+    "x": 1015,
+    "y": 78,
+    "z": 6000,
+    "height": 95,
+    "width": 225,
+    "tabOrder": 600
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "EBIT Current Month"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.EBIT Current Month",
+              "nativeQueryRef": "Operating EBIT"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "EBIT MoM Indicator"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.EBIT MoM Indicator",
+              "nativeQueryRef": "Profit Momentum"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

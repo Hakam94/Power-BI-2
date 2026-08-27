@@ -16,36 +16,49 @@ table Sheet1
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure CurrentMonth = CALCULATE(sum(Sheet1[Revenue]),DATESINPERIOD(Dates[Date],MAX(Dates[Date]),-1,MONTH))
+	measure CurrentMonth =
+			VAR _CalendarMax = MAX(Dates[Date])
+			VAR _DataMax = CALCULATE(MAX(Sheet1[Date]), ALL(Sheet1))
+			VAR _EffectiveMax = IF(_CalendarMax > _DataMax, _DataMax, _CalendarMax)
+			VAR _MonthEnd = EOMONTH(_EffectiveMax, 0)
+			RETURN
+				CALCULATE(
+					[Total Revenue],
+					REMOVEFILTERS(Dates),
+					DATESBETWEEN(Dates[Date], DATE(YEAR(_MonthEnd), MONTH(_MonthEnd), 1), _MonthEnd)
+				)
 		lineageTag: 0c7e48d7-3278-4f6f-a7ac-f1942aa779a0
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure PrevMonth = CALCULATE(sum(Sheet1[Revenue]),DATEADD(Dates[Date],-1,MONTH))
+	measure PrevMonth =
+			VAR _CalendarMax = MAX(Dates[Date])
+			VAR _DataMax = CALCULATE(MAX(Sheet1[Date]), ALL(Sheet1))
+			VAR _EffectiveMax = IF(_CalendarMax > _DataMax, _DataMax, _CalendarMax)
+			VAR _MonthEnd = EOMONTH(_EffectiveMax, -1)
+			RETURN
+				CALCULATE(
+					[Total Revenue],
+					REMOVEFILTERS(Dates),
+					DATESBETWEEN(Dates[Date], DATE(YEAR(_MonthEnd), MONTH(_MonthEnd), 1), _MonthEnd)
+				)
 		lineageTag: 89d67660-49a3-4b01-8737-b97bc1106afc
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	measure 'MoM Growth % 1' = DIVIDE([CurrentMonth]-[PrevMonth],[PrevMonth],0)
+	measure 'MoM Growth % 1' =
+			VAR _CurrentMonth = [CurrentMonth]
+			VAR _PreviousMonth = [PrevMonth]
+			RETURN
+				IF(
+					ISBLANK(_PreviousMonth) || _PreviousMonth = 0,
+					BLANK(),
+					DIVIDE(_CurrentMonth - _PreviousMonth, _PreviousMonth)
+				)
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 8e61ff87-d635-450f-b828-49e5fe282e30
 
-	measure 'MoM Growth % Var' = ```
-			
-			VAR CurrentMonth =
-			    CALCULATE(
-			        SUM(Sheet1[Revenue]),
-			        DATESINPERIOD(Dates[Date], MAX(Dates[Date]), -1, MONTH)
-			    )
-			VAR PrevMonth =
-			    CALCULATE(
-			        SUM(Sheet1[Revenue]),
-			        DATEADD(Dates[Date], -1, MONTH)
-			    )
-			RETURN
-			    DIVIDE(CurrentMonth - PrevMonth, PrevMonth, 0)
-			
-			```
+	measure 'MoM Growth % Var' = [MoM Growth % 1]
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 2c946321-e5d6-44de-a3ea-22bddaec6a3d
 

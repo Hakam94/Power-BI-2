@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_kpi_gross_profit",
+  "position": {
+    "x": 527,
+    "y": 78,
+    "z": 4000,
+    "height": 95,
+    "width": 225,
+    "tabOrder": 400
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Gross Profit Current Month"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Gross Profit Current Month",
+              "nativeQueryRef": "Gross Profit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Gross Profit MoM Indicator"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Gross Profit MoM Indicator",
+              "nativeQueryRef": "Margin Momentum"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

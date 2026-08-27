@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_kpi_cogs",
+  "position": {
+    "x": 283,
+    "y": 78,
+    "z": 3000,
+    "height": 95,
+    "width": 225,
+    "tabOrder": 300
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "COGS Current Month"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.COGS Current Month",
+              "nativeQueryRef": "Total COGS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "COGS MoM Indicator"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.COGS MoM Indicator",
+              "nativeQueryRef": "Cost Efficiency"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

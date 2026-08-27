@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_kpi_gross_revenue",
+  "position": {
+    "x": 40,
+    "y": 78,
+    "z": 2000,
+    "height": 95,
+    "width": 225,
+    "tabOrder": 200
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Revenue Current Month"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Revenue Current Month",
+              "nativeQueryRef": "Gross Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Revenue MoM Indicator"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Revenue MoM Indicator",
+              "nativeQueryRef": "MoM Growth"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

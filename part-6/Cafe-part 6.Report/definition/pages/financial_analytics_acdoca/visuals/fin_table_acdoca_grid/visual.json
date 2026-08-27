@@ -1,0 +1,108 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_table_acdoca_grid",
+  "position": {
+    "x": 540,
+    "y": 560,
+    "z": 10000,
+    "height": 400,
+    "width": 700,
+    "tabOrder": 1000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Posting_Date"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Posting_Date",
+              "nativeQueryRef": "Posting Date"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Document_Number"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Document_Number",
+              "nativeQueryRef": "Document #"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Store"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Store",
+              "nativeQueryRef": "Store / PRCTR"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Cost_Center"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Cost_Center",
+              "nativeQueryRef": "Cost Center"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "GL_Account_Name"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.GL_Account_Name",
+              "nativeQueryRef": "GL Account Description"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Amount_USD"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Amount_USD",
+              "nativeQueryRef": "Amount (USD)"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

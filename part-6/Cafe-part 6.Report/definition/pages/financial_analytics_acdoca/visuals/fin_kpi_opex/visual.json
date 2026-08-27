@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_kpi_opex",
+  "position": {
+    "x": 771,
+    "y": 78,
+    "z": 5000,
+    "height": 95,
+    "width": 225,
+    "tabOrder": 500
+  },
+  "visual": {
+    "visualType": "multiRowCard",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "OPEX Current Month"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.OPEX Current Month",
+              "nativeQueryRef": "Total OPEX"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "OPEX MoM Indicator"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.OPEX MoM Indicator",
+              "nativeQueryRef": "OPEX Control"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

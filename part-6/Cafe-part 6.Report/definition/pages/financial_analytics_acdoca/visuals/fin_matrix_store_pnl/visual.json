@@ -1,0 +1,141 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.10.0/schema.json",
+  "name": "fin_matrix_store_pnl",
+  "position": {
+    "x": 40,
+    "y": 180,
+    "z": 7000,
+    "height": 360,
+    "width": 585,
+    "tabOrder": 700
+  },
+  "visual": {
+    "visualType": "pivotTable",
+    "query": {
+      "queryState": {
+        "Rows": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Store"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Store",
+              "nativeQueryRef": "Profit Center / Store",
+              "active": true
+            }
+          ]
+        },
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Gross Revenue (ACDOCA)"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Gross Revenue (ACDOCA)",
+              "nativeQueryRef": "Revenue"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Total COGS (Direct Costs)"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Total COGS (Direct Costs)",
+              "nativeQueryRef": "COGS"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Gross Profit (ACDOCA)"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Gross Profit (ACDOCA)",
+              "nativeQueryRef": "Gross Profit"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Total OPEX"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Total OPEX",
+              "nativeQueryRef": "OPEX"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "EBITDA"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.EBITDA",
+              "nativeQueryRef": "EBITDA"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "Operating Income (EBIT)"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.Operating Income (EBIT)",
+              "nativeQueryRef": "EBIT"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "SAP_ACDOCA_Financials"
+                    }
+                  },
+                  "Property": "EBIT Margin %"
+                }
+              },
+              "queryRef": "SAP_ACDOCA_Financials.EBIT Margin %",
+              "nativeQueryRef": "EBIT %"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

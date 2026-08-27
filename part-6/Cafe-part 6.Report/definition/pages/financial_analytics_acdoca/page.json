@@ -1,7 +1,7 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/2.1.0/schema.json",
-  "name": "executive_mcp_dashboard",
-  "displayName": "MCP Executive Dashboard",
+  "name": "financial_analytics_acdoca",
+  "displayName": "SAP Financials & ACDOCA P&L",
   "displayOption": "FitToPage",
   "height": 1000,
   "width": 1280,

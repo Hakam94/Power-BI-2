@@ -2,6 +2,12 @@
 
 Part 6 continues the Coffee Shop Sales Dashboard series by showing how to use an AI coding agent with a Power BI semantic model safely. The goal is to explore, document, validate, and improve a model while keeping Power BI and GitHub as the source of truth.
 
+## Updated Video
+
+Watch the latest Part 6 walkthrough: [Connect Power BI Semantic Models to AI Agents](https://youtu.be/traamnTfixY).
+
+The video demonstrates the Power BI Modeling MCP workflow, PBIP/TMDL changes, validation, and working with external changes while a PBIP project is open in Power BI Desktop.
+
 ## What You Will Learn
 
 - Choose the right Power BI model format for AI-assisted work.
