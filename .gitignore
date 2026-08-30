@@ -7,6 +7,10 @@ node_modules/
 **/node_modules/
 dist/
 **/dist/
+
+# Claude Design seeded canvas payload (regeneratable from Main.dc.html
+# + canvas.json in the same folder via seed-canvas.mjs -- not source)
+part-6/assets/promo_thumbnail/part6-promo-thumbnail.html
 .env
 .env.local
 *.env
