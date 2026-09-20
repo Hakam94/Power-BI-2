@@ -16,7 +16,7 @@ Part 6 (published against the November 2025 release) covered connecting AI agent
 
 Part 7 is built around those two GAs, because they directly replace patterns we taught as "the way to do it" back in Part 2.
 
-**Why these two topics specifically:** a keyword and outlier search (via VidIQ) confirmed Visual Calculations already has a proven audience — a real breakout video exists on the exact topic, at decent search volume. DAX UDFs scored an even *better* keyword opportunity (lower competition on "power bi udf" / "dax udf" once you use the terms people actually search) but had zero breakout videos yet — an early-mover topic, not a proven one. Rather than bet the whole episode on the unproven one, Part 7 leads with the validated topic and adds the UDF refactor as a second, lower-risk-but-still-fresh section.
+**Why these two topics specifically:** a keyword and outlier search (via VidIQ) confirmed Visual Calculations already has a proven audience — a real breakout video exists on the exact topic, at decent (if not huge) search volume, and a *Medium* opportunity score of 61.6/100. DAX UDFs is honestly weaker on search demand: "power bi udf" / "dax udf" score a marginally higher opportunity (~64–66/100) mostly because almost nobody searches them yet (~3,500/mo vs. the ~100K/mo for "power bi tutorial"), and there are zero breakout videos on the topic at all — not an underserved audience, just an unproven one. Part 7 keeps the UDF section anyway, on teaching merit rather than search demand: refactoring Part 2's `CurrentMonth`/`PrevMonth` into one function is a genuine best-practice moment regardless of whether the keyword ranks. Don't expect it to be the video's traffic driver.
 
 ---
 
