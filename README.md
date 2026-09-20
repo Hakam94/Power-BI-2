@@ -16,7 +16,7 @@ In these step-by-step videos, you’ll learn to build a complete, interactive da
 * **Part 5 – Dashboard Design Basics | Clean Layout, Themes & UX Tips**
   Learn dashboard design fundamentals, aligning visuals, formatting themes, and structuring containers for a professional layout. ([YouTube][5])
 * **Part 6 – Connect Power BI Semantic Models to AI Agents**
-  Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity using the Power BI Modeling MCP server. ([Part 6 guide](part-6/README.md))
+  Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity using the Power BI Modeling MCP server. ([YouTube][6] · [Part 6 guide](part-6/README.md))
 * **Part 7 – Visual Calculations & Model Best Practices** 🚧
   Rebuild Part 2's DAX measures as Visual Calculations (GA May 2026), use Custom Totals, and audit the model with the Best Practice Analyzer and Performance Analyzer. Video coming soon. ([Part 7 guide](part-7/README.md))
 
@@ -50,7 +50,7 @@ Power-BI-CoffeeShop/
 | **Part 3**              | Implement time-of-day greeting logic, show local and UTC refresh timestamps, and apply dynamic Row-Level Security (RLS). ([YouTube][3])                |
 | **Part 4**              | Set up Field Parameters to allow users to toggle dimensions and measures dynamically in report visuals. ([YouTube][4])                                 |
 | **Part 5**              | Apply professional design principles: layout grid spacing, alignment, custom themes, and container groupings for clean UX. ([YouTube][5])              |
-| **Part 6**              | Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity safely with the Power BI Modeling MCP server. ([Part 6 guide](part-6/README.md)) |
+| **Part 6**              | Connect PBIP, PBIX/Desktop, and Fabric semantic models to Codex, Claude Code, and Antigravity safely with the Power BI Modeling MCP server. ([YouTube][6] · [Part 6 guide](part-6/README.md)) |
 | **Part 7**              | 🚧 Rebuild MoM Growth, running totals, and moving averages as Visual Calculations (GA May 2026); audit the model with the Best Practice Analyzer and Performance Analyzer. ([Part 7 guide](part-7/README.md)) |
 
 ---
@@ -95,3 +95,4 @@ Reach out on LinkedIn or GitHub for questions or collaboration
 [3]: https://youtu.be/ysnD_-scwhg
 [4]: https://youtu.be/81GNe3HosF4
 [5]: https://www.youtube.com/watch?v=kYJ_tXnZ9c8
+[6]: https://youtu.be/traamnTfixY

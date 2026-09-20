@@ -1,5 +1,7 @@
 # Part 6 – Connect Power BI Semantic Models to AI Agents
 
+📺 [Watch on YouTube](https://youtu.be/traamnTfixY)
+
 Part 6 continues the Coffee Shop Sales Dashboard series by showing how to use an AI coding agent with a Power BI semantic model safely. The goal is to explore, document, validate, and improve a model while keeping Power BI and GitHub as the source of truth.
 
 ## What You Will Learn
