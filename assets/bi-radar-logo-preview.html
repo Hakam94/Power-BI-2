@@ -1,0 +1,300 @@
+<title>BI Radar Mark</title>
+<style>
+  /* Layout: single dark brand world (matches the live site's navy/cyan/lime system) —
+     lineage block on top, the new mark large below, then a lockup + in-context nav mockup */
+  :root {
+    --bg: #061114;
+    --panel: #0D2229;
+    --panel-2: #0a1719;
+    --line: rgba(255,255,255,0.08);
+    --line-strong: rgba(255,255,255,0.14);
+    --text: #F2F6F5;
+    --muted: #8BA3A0;
+    --muted-2: #6B7D83;
+    --cyan: #00D2FF;
+    --lime: #BFFF00;
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-display);
+    margin: 0;
+    padding-inline: 20px;
+    padding-block: 48px;
+    line-height: 1.5;
+  }
+
+  .wrap { max-width: 920px; margin: 0 auto; display: flex; flex-direction: column; gap: 56px; }
+
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lime);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .kicker::before { content: ''; width: 18px; height: 1px; background: var(--lime); }
+
+  h1 {
+    font-size: clamp(28px, 4.5vw, 40px);
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin: 10px 0 0;
+    text-wrap: balance;
+  }
+
+  .lede {
+    color: var(--muted);
+    max-width: 62ch;
+    margin: 10px 0 0;
+    font-size: 15px;
+  }
+
+  /* --- lineage strip --- */
+  .lineage {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    padding: 20px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: var(--panel-2);
+  }
+  .lineage-item { display: flex; align-items: center; gap: 12px; min-width: 0; }
+  .lineage-item svg { flex-shrink: 0; }
+  .lineage-label { font-size: 12px; color: var(--muted); max-width: 20ch; }
+  .lineage-label strong { display: block; color: var(--text); font-size: 13px; margin-bottom: 2px; }
+  .lineage-arrow { color: var(--muted-2); font-family: var(--font-mono); font-size: 13px; flex-shrink: 0; }
+
+  /* --- showcase --- */
+  .showcase {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media (min-width: 720px) {
+    .showcase { grid-template-columns: 280px 1fr; }
+  }
+
+  .mark-stage {
+    border: 1px solid var(--line-strong);
+    border-radius: 20px;
+    background: radial-gradient(circle at 50% 35%, rgba(0,210,255,0.08), transparent 65%), var(--panel);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px;
+    min-height: 260px;
+  }
+
+  .detail-card {
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    background: var(--panel-2);
+    padding: 24px 26px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: center;
+  }
+  .detail-card h2 { font-size: 15px; margin: 0; color: var(--text); font-weight: 700; }
+  .detail-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+  .detail-list li { display: flex; gap: 10px; font-size: 13.5px; color: var(--muted); }
+  .detail-list li strong { color: var(--text); font-weight: 600; }
+  .dot { width: 7px; height: 7px; border-radius: 50%; margin-top: 6px; flex-shrink: 0; }
+  .dot-cyan { background: var(--cyan); }
+  .dot-lime { background: var(--lime); }
+
+  /* --- lockup --- */
+  .lockup-stage {
+    border: 1px solid var(--line-strong);
+    border-radius: 20px;
+    background: var(--panel);
+    padding: 40px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: auto;
+  }
+
+  /* --- in-context nav mockup --- */
+  .context-label { font-family: var(--font-mono); font-size: 11px; color: var(--muted-2); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+  .nav-mockup {
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255,255,255,0.03);
+    backdrop-filter: blur(6px);
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .nav-links { display: flex; gap: 4px; font-size: 11px; color: var(--muted); font-weight: 500; }
+  .nav-links span { padding: 6px 12px; border-radius: 999px; white-space: nowrap; }
+  .nav-links span.on { background: rgba(255,255,255,0.08); color: var(--text); }
+  @media (max-width: 560px) { .nav-links { display: none; } }
+
+  footer { font-family: var(--font-mono); font-size: 11px; color: var(--muted-2); border-top: 1px solid var(--line); padding-top: 16px; }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<div class="wrap">
+
+  <header>
+    <div class="kicker">Hakam Data Studio — sub-mark proposal</div>
+    <h1>BI Radar</h1>
+    <p class="lede">Built from the same construction as the main Hakam Data Studio logo — the dashed cyan ring, the lime accent arc, the dark inner disc — so it reads as a feature of the same brand, not a different product. The one piece that changes is the center: the play-button triangle becomes a radar sweep.</p>
+  </header>
+
+  <section class="lineage">
+    <div class="lineage-item">
+      <svg width="52" height="52" viewBox="0 0 68 68" fill="none" aria-label="Hakam Data Studio mark">
+        <defs>
+          <linearGradient id="orig-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient>
+          <linearGradient id="orig-lime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5FF80"/><stop offset="100%" stop-color="#BFFF00"/></linearGradient>
+        </defs>
+        <g transform="translate(4,4)">
+          <circle cx="30" cy="30" r="28" stroke="#00D2FF" stroke-width="1.8" stroke-dasharray="16 8 28 8" stroke-linecap="round" opacity="0.35"/>
+          <circle cx="30" cy="30" r="28" stroke="url(#orig-lime)" stroke-width="2.2" stroke-dasharray="20 80" stroke-linecap="round"/>
+          <circle cx="30" cy="30" r="16" fill="#0D2229" stroke="url(#orig-cyan)" stroke-width="1.8"/>
+          <path d="M 27 22 L 38 30 L 27 38 Z" fill="url(#orig-cyan)"/>
+          <circle cx="30" cy="6" r="2.2" fill="#BFFF00"/>
+        </g>
+      </svg>
+      <div class="lineage-label"><strong>Hakam Data Studio</strong>The existing site mark — play button at center</div>
+    </div>
+    <span class="lineage-arrow">→ inspired →</span>
+    <div class="lineage-item">
+      <svg width="52" height="52" viewBox="0 0 68 68" fill="none" aria-label="BI Radar mark">
+        <defs>
+          <linearGradient id="lin-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient>
+          <linearGradient id="lin-lime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5FF80"/><stop offset="100%" stop-color="#BFFF00"/></linearGradient>
+        </defs>
+        <g transform="translate(4,4)">
+          <circle cx="30" cy="30" r="28" stroke="#00D2FF" stroke-width="1.8" stroke-dasharray="16 8 28 8" stroke-linecap="round" opacity="0.35"/>
+          <circle cx="30" cy="30" r="28" stroke="url(#lin-lime)" stroke-width="2.2" stroke-dasharray="20 80" stroke-linecap="round"/>
+          <circle cx="30" cy="30" r="16" fill="#0D2229" stroke="url(#lin-cyan)" stroke-width="1.8"/>
+          <circle cx="30" cy="30" r="10" stroke="#00D2FF" stroke-width="1" opacity="0.28" fill="none"/>
+          <circle cx="30" cy="30" r="5.5" stroke="#00D2FF" stroke-width="1" opacity="0.4" fill="none"/>
+          <path d="M 30 30 L 30 16 A 14 14 0 0 1 43.16 25.21 Z" fill="url(#lin-cyan)" opacity="0.45"/>
+          <line x1="30" y1="30" x2="43.16" y2="25.21" stroke="url(#lin-lime)" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="35.1" cy="23.9" r="1.6" fill="#BFFF00"/>
+          <circle cx="20.5" cy="35.5" r="1.3" fill="#00E5FF"/>
+          <circle cx="30" cy="6" r="2.2" fill="#BFFF00"/>
+        </g>
+      </svg>
+      <div class="lineage-label"><strong>BI Radar</strong>Same ring system — radar sweep + blips at center</div>
+    </div>
+  </section>
+
+  <section>
+    <div class="showcase">
+      <div class="mark-stage">
+        <svg width="180" height="180" viewBox="0 0 68 68" fill="none" aria-label="BI Radar mark, large">
+          <defs>
+            <linearGradient id="big-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient>
+            <linearGradient id="big-lime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5FF80"/><stop offset="100%" stop-color="#BFFF00"/></linearGradient>
+          </defs>
+          <g transform="translate(4,4)">
+            <circle cx="30" cy="30" r="28" stroke="#00D2FF" stroke-width="1.8" stroke-dasharray="16 8 28 8" stroke-linecap="round" opacity="0.35"/>
+            <circle cx="30" cy="30" r="28" stroke="url(#big-lime)" stroke-width="2.2" stroke-dasharray="20 80" stroke-linecap="round"/>
+            <circle cx="30" cy="30" r="16" fill="#0D2229" stroke="url(#big-cyan)" stroke-width="1.8"/>
+            <circle cx="30" cy="30" r="10" stroke="#00D2FF" stroke-width="1" opacity="0.28" fill="none"/>
+            <circle cx="30" cy="30" r="5.5" stroke="#00D2FF" stroke-width="1" opacity="0.4" fill="none"/>
+            <path d="M 30 30 L 30 16 A 14 14 0 0 1 43.16 25.21 Z" fill="url(#big-cyan)" opacity="0.45"/>
+            <line x1="30" y1="30" x2="43.16" y2="25.21" stroke="url(#big-lime)" stroke-width="1.4" stroke-linecap="round"/>
+            <circle cx="35.1" cy="23.9" r="1.6" fill="#BFFF00"/>
+            <circle cx="20.5" cy="35.5" r="1.3" fill="#00E5FF"/>
+            <circle cx="30" cy="6" r="2.2" fill="#BFFF00"/>
+          </g>
+        </svg>
+      </div>
+      <div class="detail-card">
+        <h2>What changed, and why</h2>
+        <ul class="detail-list">
+          <li><span class="dot dot-cyan"></span><span><strong>Outer dashed ring + lime arc</strong> — kept pixel-for-pixel from the main mark. This is the part that says "Hakam Data Studio."</span></li>
+          <li><span class="dot dot-lime"></span><span><strong>Radar sweep wedge</strong> replaces the play-button triangle — a scan beam, not a "press play" cue, since this feature measures and detects rather than runs a process.</span></li>
+          <li><span class="dot dot-cyan"></span><span><strong>Two concentric rings + two blips</strong> read as a literal radar screen at a glance, even at 24px in a nav bar.</span></li>
+          <li><span class="dot dot-lime"></span><span><strong>Top lime dot</strong> — kept as-is. A small continuity detail that ties every Hakam Data Studio mark together.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="context-label">Horizontal lockup</div>
+    <div class="lockup-stage">
+      <svg width="340" height="62" viewBox="0 0 380 70" fill="none" aria-label="BI Radar, horizontal lockup">
+        <defs>
+          <linearGradient id="lock-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient>
+          <linearGradient id="lock-lime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5FF80"/><stop offset="100%" stop-color="#BFFF00"/></linearGradient>
+        </defs>
+        <g transform="translate(6,5)">
+          <circle cx="30" cy="30" r="28" stroke="#00D2FF" stroke-width="1.8" stroke-dasharray="16 8 28 8" stroke-linecap="round" opacity="0.35"/>
+          <circle cx="30" cy="30" r="28" stroke="url(#lock-lime)" stroke-width="2.2" stroke-dasharray="20 80" stroke-linecap="round"/>
+          <circle cx="30" cy="30" r="16" fill="#0D2229" stroke="url(#lock-cyan)" stroke-width="1.8"/>
+          <circle cx="30" cy="30" r="10" stroke="#00D2FF" stroke-width="1" opacity="0.28" fill="none"/>
+          <circle cx="30" cy="30" r="5.5" stroke="#00D2FF" stroke-width="1" opacity="0.4" fill="none"/>
+          <path d="M 30 30 L 30 16 A 14 14 0 0 1 43.16 25.21 Z" fill="url(#lock-cyan)" opacity="0.45"/>
+          <line x1="30" y1="30" x2="43.16" y2="25.21" stroke="url(#lock-lime)" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="35.1" cy="23.9" r="1.6" fill="#BFFF00"/>
+          <circle cx="20.5" cy="35.5" r="1.3" fill="#00E5FF"/>
+          <circle cx="30" cy="6" r="2.2" fill="#BFFF00"/>
+        </g>
+        <text x="80" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="800" fill="#F2F6F5" letter-spacing="-0.4">BI Radar</text>
+        <text x="80" y="53" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="700" fill="#BFFF00" letter-spacing="1">SEE EXACTLY WHERE YOU STAND</text>
+      </svg>
+    </div>
+  </section>
+
+  <section>
+    <div class="context-label">In the nav bar, next to the main logo</div>
+    <div class="nav-mockup">
+      <svg width="28" height="28" viewBox="0 0 68 68" fill="none" aria-hidden="true">
+        <defs><linearGradient id="nav-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient><linearGradient id="nav-lime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5FF80"/><stop offset="100%" stop-color="#BFFF00"/></linearGradient></defs>
+        <g transform="translate(4,4)">
+          <circle cx="30" cy="30" r="28" stroke="#00D2FF" stroke-width="1.8" stroke-dasharray="16 8 28 8" stroke-linecap="round" opacity="0.35"/>
+          <circle cx="30" cy="30" r="28" stroke="url(#nav-lime)" stroke-width="2.2" stroke-dasharray="20 80" stroke-linecap="round"/>
+          <circle cx="30" cy="30" r="16" fill="#0D2229" stroke="url(#nav-cyan)" stroke-width="1.8"/>
+          <path d="M 27 22 L 38 30 L 27 38 Z" fill="url(#nav-cyan)"/>
+          <circle cx="30" cy="6" r="2.2" fill="#BFFF00"/>
+        </g>
+      </svg>
+      <div class="nav-links">
+        <span>Story</span><span>About</span><span>Courses</span><span>Services</span><span class="on">BI Radar</span><span>Weekly</span>
+      </div>
+      <svg width="26" height="26" viewBox="0 0 68 68" fill="none" aria-label="BI Radar icon">
+        <defs><linearGradient id="nav2-cyan" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#00E5FF"/><stop offset="100%" stop-color="#0066FF"/></linearGradient><linearGradient id="nav2-lime" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#E5FF80"/><stop offset="100%" stop-color="#BFFF00"/></linearGradient></defs>
+        <g transform="translate(4,4)">
+          <circle cx="30" cy="30" r="28" stroke="#00D2FF" stroke-width="1.8" stroke-dasharray="16 8 28 8" stroke-linecap="round" opacity="0.35"/>
+          <circle cx="30" cy="30" r="28" stroke="url(#nav2-lime)" stroke-width="2.2" stroke-dasharray="20 80" stroke-linecap="round"/>
+          <circle cx="30" cy="30" r="16" fill="#0D2229" stroke="url(#nav2-cyan)" stroke-width="1.8"/>
+          <circle cx="30" cy="30" r="10" stroke="#00D2FF" stroke-width="1" opacity="0.28" fill="none"/>
+          <circle cx="30" cy="30" r="5.5" stroke="#00D2FF" stroke-width="1" opacity="0.4" fill="none"/>
+          <path d="M 30 30 L 30 16 A 14 14 0 0 1 43.16 25.21 Z" fill="url(#nav2-cyan)" opacity="0.45"/>
+          <line x1="30" y1="30" x2="43.16" y2="25.21" stroke="url(#nav2-lime)" stroke-width="1.4" stroke-linecap="round"/>
+          <circle cx="35.1" cy="23.9" r="1.6" fill="#BFFF00"/>
+          <circle cx="20.5" cy="35.5" r="1.3" fill="#00E5FF"/>
+          <circle cx="30" cy="6" r="2.2" fill="#BFFF00"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <footer>career-radar-icon.svg · career-radar-horizontal.svg — ready to hand to Replit once approved</footer>
+
+</div>
